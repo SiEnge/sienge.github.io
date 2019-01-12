@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Пинк</title>
+  <link href="css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body class="page">
+  <header class="main-header">
+    <nav class="main-menu main-menu--nojs main-menu--closed">
+      <div class="container">
+        <div class="main-menu__wrap">
+          <div class="main-menu__top">
+            <a class="main-menu__logo" href="index.html">Пинк
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/icons/logo-pink-white-desktop.svg">
+                <source media="(min-width: 700px)" srcset="img/icons/logo-pink-white-tablet.svg">
+                <img src="img/icons/logo-pink-white-mobile.svg" width="147" height="40" alt="Приложение «Пинк»">
+              </picture>
+            </a>
+            <button class="main-menu__burger" type="button">
+              Открыть меню
+            </button>
+          </div>
+          <ul class="main-menu__list">
+            <li class="main-menu__item"><a href="index.html">Главная</a></li>
+            <li class="main-menu__item main-menu__item--active"><a href="photo.html">Фотографии</a></li>
+            <li class="main-menu__item"><a href="form.html">Конкурс</a></li>
+            <li class="main-menu__item"><a href="academy.html">HTML Academy</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main-header__bottom container">
+      <h1 class="main-header__title">Фотографии<br>пользователей</h1>
+    </div>
+  </header>
+  <main class="main-page">
+    <div class="container">
+      <p class="main-page__intro">Взгляните на фотографии, которые выкладывают пользователи! <span class="main-page__text">Видите,&nbsp;как&nbsp;не хватает ваших?</span></p>
+    </div>
+    <div class="container">
+      <div class="photo-block__gallery">
+        <article class="photo-block photo-block__panorama">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/panorama-desktop@1x.jpg 1x, img/panorama-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/panorama-tablet@1x.jpg 1x, img/panorama-tablet@2x.jpg 2x">
+              <img src="img/panorama-mobile@1x.jpg" srcset="img/panorama-mobile@2x.jpg 2x" alt="Панорама">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Анна</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(5 минут назад)</time>
+            </div>
+            <p class="photo-block__text">Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
+            <p class="photo-block__like">Нравится: 215</p>
+          </blockquote>
+        </article>
+        <article class="photo-block">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-1-desktop@1x.jpg 1x, img/photo-1-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-1-tablet@1x.jpg 1x, img/photo-1-tablet@2x.jpg 2x">
+              <img src="img/photo-1-mobile@1x.jpg" srcset="img/photo-1-mobile@2x.jpg 2x" alt="Фото">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Левон</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(5 часов назад)</time>
+            </div>
+            <p class="photo-block__text">Вчера он на луну летал, сегодня в руки к нам попал.</p>
+            <p class="photo-block__like">Нравится: 356</p>
+          </blockquote>
+        </article>
+        <article class="photo-block">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-2-desktop@1x.jpg 1x, img/photo-2-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-2-tablet@1x.jpg 1x, img/photo-2-tablet@2x.jpg 2x">
+              <img src="img/photo-2-mobile@1x.jpg" srcset="img/photo-2-mobile@2x.jpg 2x" alt="Фото" class="">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Антон</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(12 часов назад)</time>
+            </div>
+            <p class="photo-block__text">Соседи будут рады!</p>
+            <p class="photo-block__like">Нравится: 666</p>
+          </blockquote>
+        </article>
+        <article class="photo-block">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-3-desktop@1x.jpg 1x, img/photo-3-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-3-tablet@1x.jpg 1x, img/photo-3-tablet@2x.jpg 2x">
+              <img src="img/photo-3-mobile@1x.jpg" srcset="img/photo-3-mobile@2x.jpg 2x" alt="Фото" class="">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Борис</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(20 часов назад)</time>
+            </div>
+            <p class="photo-block__text">Здесь могла быть ваша цитата о высоком и вечном.</p>
+            <p class="photo-block__like">Нравится: 215</p>
+          </blockquote>
+        </article>
+        <article class="photo-block">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-4-desktop@1x.jpg 1x, img/photo-4-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-4-tablet@1x.jpg 1x, img/photo-4-tablet@2x.jpg 2x">
+              <img src="img/photo-4-mobile@1x.jpg" srcset="img/photo-4-mobile@2x.jpg 2x" alt="Фото" class="">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Сергей</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(25 часов назад)</time>
+            </div>
+            <p class="photo-block__text">Самая кубанская в мире!</p>
+            <p class="photo-block__like">Нравится: 4</p>
+          </blockquote>
+        </article>
+        <article class="photo-block">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-5-desktop@1x.jpg 1x, img/photo-5-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-5-tablet@1x.jpg 1x, img/photo-5-tablet@2x.jpg 2x">
+              <img src="img/photo-5-mobile@1x.jpg" srcset="img/photo-5-mobile@2x.jpg 2x" alt="Фото" class="">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Максим</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(40 часов назад)</time>
+            </div>
+            <p class="photo-block__text">Где снег-то?</p>
+            <p class="photo-block__like">Нравится: 150</p>
+          </blockquote>
+        </article>
+        <article class="photo-block">
+          <a class="photo-block__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-6-desktop@1x.jpg 1x, img/photo-6-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-6-tablet@1x.jpg 1x, img/photo-6-tablet@2x.jpg 2x">
+              <img src="img/photo-6-mobile@1x.jpg" srcset="img/photo-6-mobile@2x.jpg 2x" alt="Фото" class="">
+            </picture>
+          </a>
+          <blockquote class="photo-block__signature">
+            <div class="photo-block__title">
+              <cite class="photo-block__name">Надежда</cite>
+              <time class="photo-block__time" datetime="2017-04-01T13:53">(45 часов назад)</time>
+            </div>
+            <p class="photo-block__text">Всем GM и взаимные лайки!</p>
+            <p class="photo-block__like">Нравится: 2560</p>
+          </blockquote>
+        </article>
+      </div>
+    </div>
+    <section class="photo-upload container">
+      <p class="photo-upload__intro">
+        Затмите их всех!<br>Выкладывыйте&nbsp;все,&nbsp;что&nbsp;накопилось в телефоне!
+      </p>
+      <div class="container">
+        <div class="photo-upload__wrap">
+          <div class="photo-upload__img">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/photo-7-desktop@1x.jpg 1x, img/photo-7-desktop@2x.jpg 2x">
+              <source media="(min-width: 700px)" srcset="img/photo-7-tablet@1x.jpg 1x, img/photo-7-tablet@2x.jpg 2x">
+              <img src="img/photo-7-mobile@1x.jpg" srcset="img/photo-7-mobile@2x.jpg 2x" alt="Обработка фото" class="">
+            </picture>
+          </div>
+          <div class="photo-upload__editor-wrap">
+            <div class="photo-upload__editor">
+              <div class="photo-upload__edit-wrap">
+                <div class="photo-upload__edit photo-upload__edit--active">
+                  <div class="photo-upload__icon photo-upload__crop">Кадрирование
+                    <svg x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                      <path fill="none" d="M0,0h48v48H0V0z"/>
+                      <path d="M34,30h4V14c0-2.21-1.79-4-4-4H18v4h16V30z M14,34V2h-4v8H2v4h8v20c0,2.21,1.79,4,4,4h20v8h4v-8h8v-4H14z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="photo-upload__edit">
+                  <div class="photo-upload__icon photo-upload__fill">Заливка
+                    <svg x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                      <path fill="none" d="M0,0h48v48H0V0z"/>
+                      <path d="M33.12,17.88L15.24,0l-2.83,2.83l4.76,4.76L6.88,17.88c-1.17,1.17-1.17,3.07,0,4.24l11,11
+                  	C18.46,33.71,19.23,34,20,34c0.771,0,1.54-0.29,2.12-0.88l11-11C34.29,20.95,34.29,19.05,33.12,17.88z M10.41,20L20,10.42L29.59,20
+                  	H10.41z M38,23c0,0-4,4.33-4,7c0,2.21,1.79,4,4,4s4-1.79,4-4C42,27.33,38,23,38,23z"/>
+                      <rect x="0" y="40" width="48" height="3"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="photo-upload__edit">
+                  <div class="photo-upload__icon photo-upload__contrast">Контраст
+                    <svg x="0px" y="0px" width="48" height="48" viewBox="-8.04 -8.04 48 48">
+                      <path d="M16.038,4c6.595,0,11.96,5.365,11.96,11.96s-5.365,11.96-11.96,11.96s-11.96-5.365-11.96-11.96	S9.443,4,16.038,4 M16.038,0C7.224,0,0.078,7.145,0.078,15.96c0,8.813,7.146,15.96,15.96,15.96c8.814,0,15.96-7.146,15.96-15.96	C31.998,7.145,24.852,0,16.038,0L16.038,0z"/>
+                      <path d="M16.038,24.291c4.706,0,8.521-3.813,8.521-8.52c0-4.705-3.813-8.519-8.521-8.519V24.291z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="photo-upload__scale-wrap">
+                <div class="photo-upload__scale photo-upload__scale-crop photo-upload__scale--active">
+                  <div class="photo-upload__bar"></div>
+                  <div class="photo-upload__toggle"></div>
+                </div>
+                <div class="photo-upload__scale photo-upload__scale-fill">
+                  <div class="photo-upload__bar"></div>
+                  <div class="photo-upload__toggle"></div>
+                </div>
+                <div class="photo-upload__scale photo-upload__scale-contrast">
+                  <div class="photo-upload__bar"></div>
+                  <div class="photo-upload__toggle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="photo-upload__btn-wrap">
+              <button class="photo-upload__btn photo-upload__post" type="submit"><span>Запостить</span></button>
+              <button class="photo-upload__btn photo-upload__cancel" type="submit"><span>Отмена</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer container">
+    <div class="main-footer__wrap">
+      <p class="main-footer__logo">
+        <a class="main-footer__logo-img" href="index.html">
+          Пинк
+          <picture>
+            <source media="(min-width: 1200px)" srcset="img/icons/logo-pink-blue-desktop.svg">
+            <img src="img/icons/logo-pink-blue-mobile.svg" width="147" height="40" alt="Приложение «Пинк»">
+          </picture>
+        </a>
+      </p>
+      <p class="main-footer__social">
+        <a class="social-link social-link--tw" href="https://twitter.com/?lang=ru">
+          Twitter
+          <svg x="0px" y="0px" width="17" height="14" viewBox="0 0 17.5 14.663" enable-background="new 0 0 17.5 14.663" xml:space="preserve">
+            <path d="M11.283,0.153c1.736-0.485,3.074,0.263,3.685,1.151 c0.694-0.226,1.372-0.47,2.072-0.691c-0.004,0.841-0.538,1.478-0.883,1.727C16.861,2.506,17.5,1.86,17.5,1.86 c-0.175,0.976-1.035,1.746-1.611,1.977C15.65,10.429,12.617,14.793,5.507,14.66c-0.538,0,0.077,0-0.46,0 c-0.422,0-4.29-0.45-5.047-1.843c2.341,0.192,4.011-0.412,4.835-1.15c-0.989-0.293-2.761-0.464-3.07-2.881 c0.362,0.105,0.583,0.223,1.228,0.117C1.757,8.067,0.385,7.366,0.461,5.218c0.294,0.32,1.1,0.523,1.381,0.461 c-0.725-0.235-2.03-3.281-0.921-4.836C2.794,2.654,4.769,4.364,8.29,4.528C8.506,2.288,9.461,0.787,11.283,0.153z"/>
+          </svg>
+        </a>
+        <a class="social-link social-link--fb" href="https://www.facebook.com/">
+          Facebook
+          <svg x="0px" y="0px" width="8" height="17" viewBox="0 0 8.673 18.944" enable-background="new 0 0 8.673 18.944" xml:space="preserve">
+            <path d="M6.275,3.357c0.799,0,1.599,0,2.398,0c0-1.119,0-2.238,0-3.357c-0.959,0-1.92,0-2.878,0C2.656,0.181,1.54,2.387,1.948,6.115 H0v3.517h1.958c0,3.104,0,6.208,0,9.312c1.279,0,2.558,0,3.837,0c0-3.104,0-6.208,0-9.312h2.857V6.115H5.786 C5.765,5.07,5.75,3.709,6.275,3.357z"/>
+          </svg>
+        </a>
+        <a class="social-link social-link--yt" href="https://www.youtube.com/">
+          YouTube
+          <svg x="0px" y="0px" width="14" height="13" viewBox="0 0 14.64 13.96" enable-background="new 0 0 14.64 13.96" xml:space="preserve">
+            <path d="M1.775,13.78C0.799,14.257,0,13.758,0,12.671V1.29c0-1.088,0.799-1.585,1.775-1.109l12.133,5.932 c0.975,0.478,0.975,1.258,0,1.736L1.775,13.78z"/>
+          </svg>
+        </a>
+      </p>
+      <p class="main-footer__copyright">
+        <span class="main-footer__copyright--text">Разработано</span>
+        <a class="main-footer__copyright--link" href="https://htmlacademy.ru/">
+          HTML Academy
+          <svg x="0px" y="0px" width="27" height="34" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve">
+              <path d="M13.62,0.017L13.472,0L0,1.412v24.661l13.472,8.017l13.43-7.99l0.042-0.026V1.412L13.62,0.017z M25.019,12.127L13.495,5.334 l-0.001-0.104L13.407,5.28l-0.088-0.056v0.109L1.925,12.118V3.147l11.547-1.212l11.547,1.212V12.127z M13.405,6.787L24.923,13.5 l-4.479,2.64l-7.093-4.221l-0.013,1.415l5.904,3.513l-0.86,0.507l-5.031-2.992l-0.013,1.415l3.827,2.275l-0.782,0.523l-3.032-1.787 l-0.013,1.413l1.852,1.091l-1.8,1.081L2.034,13.622L13.405,6.787z M1.925,15.127l11.411,6.791l0.015,1.044l-7.941-4.728L5.395,19.65 l7.979,4.796l0.017,1.076l-7.972-4.741l-0.013,1.415l8.021,4.821l0.045,0.026l8.143-4.872v-1.268l-0.011-0.148v-3.761l3.415-2.036 v10.02L13.472,31.85L1.925,24.979V15.127z"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+  <script src="js/picturefill.js"></script>
+</body>
+
+</html>

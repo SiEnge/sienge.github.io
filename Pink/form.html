@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Пинк</title>
+  <link href="css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body class="page">
+  <header class="main-header">
+    <nav class="main-menu main-menu--nojs main-menu--closed">
+      <div class="container">
+        <div class="main-menu__wrap">
+          <div class="main-menu__top">
+            <a class="main-menu__logo" href="index.html">Пинк
+              <picture>
+                <source media="(min-width: 1200px)" srcset="img/icons/logo-pink-white-desktop.svg">
+                <source media="(min-width: 700px)" srcset="img/icons/logo-pink-white-tablet.svg">
+                <img src="img/icons/logo-pink-white-mobile.svg" width="147" height="40" alt="Приложение «Пинк»">
+              </picture>
+            </a>
+            <button class="main-menu__burger" type="button">
+              Открыть меню
+            </button>
+          </div>
+          <ul class="main-menu__list">
+            <li class="main-menu__item"><a href="index.html">Главная</a></li>
+            <li class="main-menu__item"><a href="photo.html">Фотографии</a></li>
+            <li class="main-menu__item main-menu__item--active"><a href="form.html">Конкурс</a></li>
+            <li class="main-menu__item"><a href="academy.html">HTML Academy</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main-header__bottom container">
+      <h1 class="main-header__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+    </div>
+  </header>
+  <main class="main-page">
+    <div class="container">
+      <p class="main-page__intro">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="main-page__intro--hidden"><br>Пожалуйста, заполните форму ниже:</span></p>
+    </div>
+    <form class="contest-form container" action="https://echo.htmlacademy.ru/" method="post">
+      <div class="contest-form__wrap">
+        <fieldset class="contest-form__field contest-form__field--hidden contest-form__field-name">
+          <p class="contest-form__item">
+            <label class="contest-form__label" for="surname">Фамилия:</label>
+            <input class="contest-form__input" type="text" name="surname" id="surname" placeholder="Укажите фамилию *" required>
+          </p>
+          <p class="contest-form__item">
+            <label class="contest-form__label" for="name">Имя:</label>
+            <input class="contest-form__input" type="text" name="name" id="name" placeholder="Введите ваше имя *" required>
+          </p>
+          <p class="contest-form__item">
+            <label class="contest-form__label" for="middle-name">Отчество:</label>
+            <input class="contest-form__input" type="text" name="middle-name" id="middle-name" placeholder="Ну и отчество тоже">
+          </p>
+        </fieldset>
+        <fieldset class="contest-form__field contest-form__field--bg-grey contest-form__field-progress">
+          <legend class="contest-form__legend">Ваши безбашенные достижения в путешествии</legend>
+          <div class="contest-form__wrap-progress">
+            <div class="contest-form__col-progress">
+              <label class="contest-form__checkbox" for="selfie-shark">
+              <input class="contest-form__checkbox-input" type="checkbox" name="selfie-shark" id="selfie-shark">
+              <span class="contest-form__checkbox-label">Сделал селфи с акулой</span>
+            </label>
+              <label class="contest-form__checkbox" for="burn-beach">
+              <input class="contest-form__checkbox-input" type="checkbox" name="burn-beach" id="burn-beach">
+              <span class="contest-form__checkbox-label">Обгорел на пляже</span>
+            </label>
+            </div>
+            <div class="contest-form__col-progress">
+              <label class="contest-form__checkbox" for="chuck-norris">
+              <input class="contest-form__checkbox-input" type="checkbox" name="chuck-norris" id="chuck-norris">
+              <span class="contest-form__checkbox-label">Видел Чака Норриса</span>
+            </label>
+              <label class="contest-form__checkbox" for="buy-souvenirs">
+              <input class="contest-form__checkbox-input" type="checkbox" name="buy-souvenirs" id="buy-souvenirs">
+              <span class="contest-form__checkbox-label">Накупил сувениров</span>
+            </label>
+            </div>
+            <div class="contest-form__col-progress">
+              <label class="contest-form__checkbox" for="keep-tower">
+              <input class="contest-form__checkbox-input" type="checkbox" name="keep-tower" id="keep-tower">
+              <span class="contest-form__checkbox-label">Удержал башню</span>
+            </label>
+              <label class="contest-form__checkbox" for="defeat-hotel">
+              <input class="contest-form__checkbox-input" type="checkbox" name="defeat-hotel" id="defeat-hotel">
+              <span class="contest-form__checkbox-label">Разгромил отель</span>
+            </label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="contest-form__field contest-form__field-contact">
+          <legend class="contest-form__legend contest-form__legend--hidden">Контактная информация</legend>
+          <div class="contest-form__wrap-contact">
+            <div class="contest-form__item-wrap">
+              <p class="contest-form__item-cont contest-form__cont-phone">
+                <label class="contest-form__label" for="phone">Номер телефона</label>
+                <input class="contest-form__input" type="tel" name="phone" id="phone" placeholder="Номер, пожалуйста">
+              </p>
+            </div>
+            <div class="contest-form__item-wrap">
+              <p class="contest-form__item-cont contest-form__cont-mail">
+                <label class="contest-form__label" for="mail">Адрес почты</label>
+                <input class="contest-form__input" type="email" name="mail" id="mail" placeholder="Введите почту *" required>
+              </p>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="contest-form__field contest-form__field--bg-grey contest-form__field-app">
+          <legend class="contest-form__legend">С каким приложением путешествовали?</legend>
+          <label class="contest-form__radio" for="ios">
+            <input class="contest-form__radio-input" type="radio" name="app" value="ios" id="ios">
+            <span class="contest-form__radio-label">Pink для iOS</span>
+          </label>
+          <label class="contest-form__radio" for="android">
+            <input class="contest-form__radio-input" type="radio" name="app" value="android" id="android">
+            <span class="contest-form__radio-label">Pink для Android</span>
+          </label>
+          <label class="contest-form__radio" for="windows-phone">
+            <input class="contest-form__radio-input" type="radio" name="app" value="windows-phone" id="windows-phone">
+            <span class="contest-form__radio-label">Windows Phone</span>
+          </label>
+        </fieldset>
+        <fieldset class="contest-form__field contest-form__field-emotion">
+          <legend class="contest-form__legend">Опишите свои эмоции</legend>
+          <textarea class="contest-form__input contest-form__input-emotion" name="emotions" placeholder="Можно прям в красках, не стесняясь в выражениях" id="emotions">
+          </textarea>
+        </fieldset>
+        <div class="contest-form__bottom">
+          <button class="contest-form__btn" type="submit"><span>Отправить форму</span></button>
+          <p class="contest-form__comment"><span class="contest-form__hint">*</span> — обязательные <span class="contest-form__comment--hidden">для заполнения </span>поля</p>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer class="main-footer container">
+    <div class="main-footer__wrap">
+      <p class="main-footer__logo">
+        <a class="main-footer__logo-img" href="index.html">
+          Пинк
+          <picture>
+            <source media="(min-width: 1200px)" srcset="img/icons/logo-pink-blue-desktop.svg">
+            <img src="img/icons/logo-pink-blue-mobile.svg" width="147" height="40" alt="Приложение «Пинк»">
+          </picture>
+        </a>
+      </p>
+      <p class="main-footer__social">
+        <a class="social-link social-link--tw" href="https://twitter.com/?lang=ru">
+          Twitter
+          <svg x="0px" y="0px" width="17" height="14" viewBox="0 0 17.5 14.663" enable-background="new 0 0 17.5 14.663" xml:space="preserve">
+            <path d="M11.283,0.153c1.736-0.485,3.074,0.263,3.685,1.151 c0.694-0.226,1.372-0.47,2.072-0.691c-0.004,0.841-0.538,1.478-0.883,1.727C16.861,2.506,17.5,1.86,17.5,1.86 c-0.175,0.976-1.035,1.746-1.611,1.977C15.65,10.429,12.617,14.793,5.507,14.66c-0.538,0,0.077,0-0.46,0 c-0.422,0-4.29-0.45-5.047-1.843c2.341,0.192,4.011-0.412,4.835-1.15c-0.989-0.293-2.761-0.464-3.07-2.881 c0.362,0.105,0.583,0.223,1.228,0.117C1.757,8.067,0.385,7.366,0.461,5.218c0.294,0.32,1.1,0.523,1.381,0.461 c-0.725-0.235-2.03-3.281-0.921-4.836C2.794,2.654,4.769,4.364,8.29,4.528C8.506,2.288,9.461,0.787,11.283,0.153z"/>
+          </svg>
+        </a>
+        <a class="social-link social-link--fb" href="https://www.facebook.com/">
+          Facebook
+          <svg x="0px" y="0px" width="8" height="17" viewBox="0 0 8.673 18.944" enable-background="new 0 0 8.673 18.944" xml:space="preserve">
+            <path d="M6.275,3.357c0.799,0,1.599,0,2.398,0c0-1.119,0-2.238,0-3.357c-0.959,0-1.92,0-2.878,0C2.656,0.181,1.54,2.387,1.948,6.115 H0v3.517h1.958c0,3.104,0,6.208,0,9.312c1.279,0,2.558,0,3.837,0c0-3.104,0-6.208,0-9.312h2.857V6.115H5.786 C5.765,5.07,5.75,3.709,6.275,3.357z"/>
+          </svg>
+        </a>
+        <a class="social-link social-link--yt" href="https://www.youtube.com/">
+          YouTube
+          <svg x="0px" y="0px" width="14" height="13" viewBox="0 0 14.64 13.96" enable-background="new 0 0 14.64 13.96" xml:space="preserve">
+            <path d="M1.775,13.78C0.799,14.257,0,13.758,0,12.671V1.29c0-1.088,0.799-1.585,1.775-1.109l12.133,5.932 c0.975,0.478,0.975,1.258,0,1.736L1.775,13.78z"/>
+          </svg>
+        </a>
+      </p>
+      <p class="main-footer__copyright">
+        <span class="main-footer__copyright--text">Разработано</span>
+        <a class="main-footer__copyright--link" href="https://htmlacademy.ru/">
+          HTML Academy
+          <svg x="0px" y="0px" width="27" height="34" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve">
+              <path d="M13.62,0.017L13.472,0L0,1.412v24.661l13.472,8.017l13.43-7.99l0.042-0.026V1.412L13.62,0.017z M25.019,12.127L13.495,5.334 l-0.001-0.104L13.407,5.28l-0.088-0.056v0.109L1.925,12.118V3.147l11.547-1.212l11.547,1.212V12.127z M13.405,6.787L24.923,13.5 l-4.479,2.64l-7.093-4.221l-0.013,1.415l5.904,3.513l-0.86,0.507l-5.031-2.992l-0.013,1.415l3.827,2.275l-0.782,0.523l-3.032-1.787 l-0.013,1.413l1.852,1.091l-1.8,1.081L2.034,13.622L13.405,6.787z M1.925,15.127l11.411,6.791l0.015,1.044l-7.941-4.728L5.395,19.65 l7.979,4.796l0.017,1.076l-7.972-4.741l-0.013,1.415l8.021,4.821l0.045,0.026l8.143-4.872v-1.268l-0.011-0.148v-3.761l3.415-2.036 v10.02L13.472,31.85L1.925,24.979V15.127z"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+  <div class="popup popup__checkin popup--hidden">
+    <div class="popup__title">Ваша заявка отправлена</div>
+    <p class="popup__text">Спасибо за ваше участие, ваша заявка уже поступила к нам. В ближайшее время мы рассмотрим ее и оповестим&nbsp;вас.</p>
+    <div class="popup__wrap popup__wrap--grey">
+      <a class="popup__btn" href="#">Закрыть окно</a>
+    </div>
+  </div>
+  <div class="popup popup__error popup--hidden">
+    <div class="popup__title">Что-то пошло не&nbsp;так!</div>
+    <p class="popup__text">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+    <div class="popup__wrap">
+      <a class="popup__btn" href="#">ОК</a>
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+  <script src="js/picturefill.js"></script>
+</body>
+
+</html>
