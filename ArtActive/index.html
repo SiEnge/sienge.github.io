@@ -9,9 +9,7 @@
 <body class="page">
   <header class="header">
     <div class="container">
-
       <div class="header__nav">
-
         <nav class="nav nav--closed nav--nojs">
           <a class="nav__logo">
             <img src="img/logo.svg" alt="Логотип типографии «ArtActive»" width="105" height="20">
@@ -26,14 +24,13 @@
               <li class="nav__item"><a href="#">Контакты</a></li>
             </ul>
           </div>
-
           <div class="header__call header__call--hidden">
             <p class="header__call-phone">+7 (920) 148 81 31</p>
             <a class="header__call-button" href="#">Заказать звонок</a>
           </div>
         </nav>
-      <!-- </div> -->
-      <div class="header__wrap">
+      </div>
+      <div class="header__wrap container">
         <div class="header__block">
           <p class="header__title">Размер <br> не имеет значения!</p>
           <p class="header__lead"><b>Оперативная полиграфия <br> и широкоформатная печать любого размера</b></p>
@@ -87,6 +84,9 @@
             <li class="slider__item slider__item--showing">
               <p class="services__slide-wrap">
                 <picture>
+                  <source type="image/webp" media="(min-width: 1170px)" srcset="img/banner1_desktop.webp">
+                  <source type="image/webp" media="(min-width: 750px)" srcset="img/banner1_tablet.webp">
+                  <source type="image/webp" srcset="img/banner1_mobile.webp">
                   <source media="(min-width: 1170px)" srcset="img/banner1_desktop.jpg">
                   <source media="(min-width: 750px)" srcset="img/banner1_tablet.jpg">
                   <img src="img/banner1_mobile.jpg" alt="Пример работы: растяжка на ул. Ленина">
@@ -97,6 +97,9 @@
             <li class="slider__item">
               <p class="services__slide-wrap">
                 <picture>
+                  <source type="image/webp" media="(min-width: 1170px)" srcset="img/banner2_desktop.webp">
+                  <source type="image/webp" media="(min-width: 750px)" srcset="img/banner2_tablet.webp">
+                  <source type="image/webp" srcset="img/banner2_mobile.webp">
                   <source media="(min-width: 1170px)" srcset="img/banner2_desktop.jpg">
                   <source media="(min-width: 750px)" srcset="img/banner2_tablet.jpg">
                   <img src="img/banner2_mobile.jpg" alt="Пример работы: растяжка «Люкс Вода»">
@@ -158,7 +161,10 @@
         <ul class="slider">
           <li class="slider__item slider__item--showing">
             <blockquote class="feedback__item">
-              <img class="feedback__img" src="img/feedback_mobile.png" width="136" height="136" alt="Фото клиента">
+              <picture>
+                <source type="image/webp" srcset="img/feedback_mobile.webp">
+                <img class="feedback__img" src="img/feedback_mobile.png" width="136" height="136" alt="Фото клиента">
+              </picture>
               <div class="feedback__wrap">
                 <p class="feedback__text text">Обратился в компанию АртАктив за визитками. Это мой первый опыт, поэтому немного нервничал, не знал, с чего начать. Остался доволен, потому что мне всё объяснили, показали и сделали по высшему разряду. Советую!</p>
                 <cite class="feedback__cite">Александров Максим, 24 года</cite>
@@ -168,7 +174,10 @@
           </li>
           <li class="slider__item">
             <blockquote class="feedback__item">
-              <img class="feedback__img" src="img/feedback_mobile.png" width="136" height="136" alt="Фото клиента">
+              <picture>
+                <source type="image/webp" srcset="img/feedback_mobile.webp">
+                <img class="feedback__img" src="img/feedback_mobile.png" width="136" height="136" alt="Фото клиента">
+              </picture>
               <div class="feedback__wrap">
                 <p class="feedback__text text">Обратился в компанию АртАктив за визитками. Это мой первый опыт, поэтому немного нервничал, не знал, с чего начать. Остался доволен, потому что мне всё объяснили, показали и сделали по высшему разряду. Советую!</p>
                 <cite class="feedback__cite">Максимов Александр, 34 года</cite>
