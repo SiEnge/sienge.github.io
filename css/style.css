@@ -77,6 +77,8 @@ body {
 .layout__item {
   position: relative;
   padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .layout__item::before {
