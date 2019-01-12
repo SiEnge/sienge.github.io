@@ -2,29 +2,53 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>--------------</title>
+  <title>Портфолио Si.Enge</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Мое портфолио</h1>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Мое портфолио</h1>
+    </div>
   </header>
-  <main>
-    <section>
-      <h2>Обо мне</h2>
-    </section>
-    <section>
-      <h2>Моя верстка сайтов</h2>
-      <ul>
-        <li><a href="build/index.html">Типография ArtActive</a></li>
+  <main class="main container">
+    <section class="about section">
+      <h2 class="title">Обо мне</h2>
+      <p>Доброго времени суток! Меня зовут Сипидина Евгения, и я начинающий верстальщик.</p>
+      <p>Успешно прошла интенсивы <a href="https://htmlacademy.ru/">HTML Academy</a> "HTML и CSS, уровни Базовый и Продвинутый", и
+      теперь готова верстать в соответствии с последними тендециями и правилами.</p>
+      <p>Технологии и методологии, по которым верстаю:</p>
+      <ul class="about__list">
+        <li class="about__item">Семантика HTML5</li>
+        <li class="about__item">Правила и свойства CSS3</li>
+        <li class="about__item">Именование классов по БЭМ</li>
+        <li class="about__item">Верстка по PixelPerfect</li>
+        <li class="about__item">Препроцессор LESS</li>
+        <li class="about__item">Сборщик Gulp</li>
+        <li class="about__item">Работа с Git через консоль</li>
+        <li class="about__item">Редактор кода Atom</li>
+        <li class="about__item">Оптимизация скорости загрузки сайтов</li>
+        <li class="about__item">Доступность сайтов для Скринридеров</li>
+        <!-- <li class="about__item">В процессе освоения JS и JQuery</li> -->
       </ul>
     </section>
-    <section>
-      <h2>Достижения</h2>
+    <section class="layout section">
+      <h2 class="title">Верстка сайтов</h2>
+      <ul class="layout__list">
+        <li class="layout__item"><a href="ArtActive/index.html">Типография ArtActive</a></li>
+      </ul>
     </section>
-    <section>
-      <h2>Контакты</h2>
+    <section class="contacts section">
+      <h2 class="title">Контакты</h2>
+      <ul class="contacts__list">
+        <li class="contacts__item">si.enge@yandex.ru</a></li>
+        <li class="contacts__item">skype: Si.Enge</li>
+        <li class="contacts__item"><a href="https://vk.com/si.enge">ВКонтакте</a></li>
+        <li class="contacts__item"><a href="https://www.fl.ru/users/si_enge/">FL.ru</a></li>
+        <li class="contacts__item"><a href="https://htmlacademy.ru/profile/id245441">HTML Academy</a></li>
+        <li class="contacts__item"><a href="https://github.com/SiEnge">GitHub</a></li>
+      </ul>
     </section>
   </main>
 </body>
