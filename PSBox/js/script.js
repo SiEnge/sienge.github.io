@@ -1,39 +1,39 @@
 //Прилипание шапки при прокрутке
 
-// var cbpAnimatedHeader = (function() {
-//
-//     var docElem = document.documentElement,
-//         header = document.querySelector( '.header' ),
-//         didScroll = false,
-//         changeHeaderOn = 300;
-//
-//     function init() {
-//         window.addEventListener( 'scroll', function( event ) {
-//             if( !didScroll ) {
-//                 didScroll = true;
-//                 setTimeout( scrollPage, 250 );
-//             }
-//         }, false );
-//     }
-//
-//     function scrollPage() {
-//         var sy = scrollY();
-//         if ( sy >= changeHeaderOn ) {
-//             classie.add( header, 'cbp-af-header-shrink' );
-//         }
-//         else {
-//             classie.remove( header, 'cbp-af-header-shrink' );
-//         }
-//         didScroll = false;
-//     }
-//
-//     function scrollY() {
-//         return window.pageYOffset || docElem.scrollTop;
-//     }
-//
-//     init();
-//
-// })();
+var HeaderFixed = (function() {
+
+    var docElem = document.documentElement,
+        header = document.querySelector( '.header' ),
+        didScroll = false,
+        changeHeaderOn = 300;
+
+    function init() {
+        window.addEventListener( 'scroll', function( event ) {
+            if( !didScroll ) {
+                didScroll = true;
+                setTimeout( scrollPage, 250 );
+            }
+        }, false );
+    }
+
+    function scrollPage() {
+        var sy = scrollY();
+        if ( sy >= changeHeaderOn ) {
+            header.classList.add('header--min' );
+        }
+        else {
+            header.classList.remove('header--min' );
+        }
+        didScroll = false;
+    }
+
+    function scrollY() {
+        return window.pageYOffset || docElem.scrollTop;
+    }
+
+    init();
+
+})();
 
 
 //Обработка события клика на "бургер" навигации. При клике разворачивается меню
@@ -55,7 +55,7 @@ navBtn.addEventListener('click', function () {
 
 //Обработка клика для выпадающего подменю
 var navSub = document.querySelector('.nav__item--sub');
-
+var navSubList = document.querySelector('.nav__sublist');
 
 navSub.addEventListener('click', function () {
   if (navSub.classList.contains('nav__item--subclose')) {
@@ -68,16 +68,16 @@ navSub.addEventListener('click', function () {
 });
 
 //Обработка клика для выпадающего подменю в левой колонке
-var navProd = document.querySelector('.product__item--sub');
-
+var navSub = document.querySelector('.product__item--sub');
+var navSubList = document.querySelector('.product__sublist');
 
 navSub.addEventListener('click', function () {
-  if (navProd.classList.contains('product__item--subclose')) {
-    navProd.classList.remove('product__item--subclose');
-    navProd.classList.add('product__item--subopen');
+  if (navSub.classList.contains('product__item--subclose')) {
+    navSub.classList.remove('product__item--subclose');
+    navSub.classList.add('product__item--subopen');
   } else {
-    navProd.classList.remove('product__item--subopen');
-    navProd.classList.add('product__item--subclose');
+    navSub.classList.remove('product__item--subopen');
+    navSub.classList.add('product__item--subclose');
   }
 });
 
