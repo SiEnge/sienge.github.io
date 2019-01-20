@@ -8,32 +8,7 @@
 		<!-- <link rel="stylesheet" href="css/jquery.fancybox.min.css"> -->
 		<link rel="stylesheet" href="css/style.css">
 		<!-- <link rel="stylesheet" href="css/media.css"> -->
-    <!-- Pixel Glass -->
-        <!-- <style>
-          HTML {
-            background-repeat: no-repeat;
-            background-position:  50% 0;
-            /* По умолчанию мобильный макет */
-            background-image: url( "Main_PSBOX_320.jpg" );
-          }
-          /* Планшет */
-          @media ( min-width: 750px ) {
-            HTML {
-              /* Планшетный макет */
-              background-image: url( "Main_PSBOX_720.jpg" );
-            }
-          }
-          /* Десктоп */
-          @media ( min-width: 1170px ) {
-            HTML {      /* Десктопный макет */
-              background-image: url( "PSBOX_1200-Main_v1.jpg" );
-            }
-          }
-          BODY {opacity: .5;}
-        </style>
-        <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
-        <script src="../node_modules/pixel-glass/script.js"></script> -->
-    <!-- // Pixel Glass -->
+  
 
 	</head>
 	<body class="page">
@@ -62,7 +37,7 @@
 	          <img src="img/logo.png" alt="Логотип «PSBOX»">
           </picture>
 	      </a>
-        <div class="header__nav-wrap">
+        <div class="header__nav">
           <nav class="nav nav--closed nav--nojs">
             <button class="nav__button" type="button"><span class="visuallyhidden">Открыть меню</span></button>
               <ul class="nav__list">
@@ -86,6 +61,11 @@
                 <li class="nav__item"><a href="#">Индивидуальный заказ</a></li>
                 <li class="nav__item"><a href="#">Помощь в выборе подарка</a></li>
                 <li class="nav__item"><a href="#">Корпоративным клиентам</a></li>
+                <li class="nav__item nav__item--hidden"><a href="#">О нас</a></li>
+                <li class="nav__item nav__item--hidden"><a href="#">Как сделать заказ</a></li>
+                <li class="nav__item nav__item--hidden"><a href="#">Оплата и доставка</a></li>
+                <li class="nav__item nav__item--hidden"><a href="#">Отзывы</a></li>
+                <li class="nav__item nav__item--hidden"><a href="#">Контакты</a></li>
               </ul>
           </nav>
 
@@ -94,7 +74,8 @@
             <button class="form-search__button" type="submit"></button>
           </form>
 
-          <section class="menu">
+          <!-- Дополнительное меню, которое частично дублирует верхнее -->
+          <section class="header__menu menu">
             <ul class="menu__list">
               <li class="menu__item"><a href="#">О нас</a></li>
               <li class="menu__item"><a href="#">Как сделать заказ</a></li>
@@ -136,6 +117,7 @@
 
         <section class="gift">
           <div class="container">
+
             <div class="gift__slider">
               <h2 class="visuallyhidden">Специальные предложения</h2>
               <button class="gift__arrow gift__arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
@@ -168,6 +150,7 @@
                 </ul>
               </div>
             </div>
+
           </div>
         </section>
 
