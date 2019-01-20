@@ -731,6 +731,9 @@ template {
   .nav__item:hover a {
     color: #214f9c;
   }
+  .nav__item--hidden {
+    display: none;
+  }
   .nav__button {
     display: none;
   }
@@ -770,6 +773,10 @@ template {
 .header {
   background-color: #f3f4f8;
   min-height: 72px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 300;
 }
 .header__wrap {
   display: -webkit-box;
@@ -885,6 +892,28 @@ template {
 }
 .header__form-search {
   display: none;
+}
+#default-theme-menu {
+  display: block;
+  height: 90px;
+}
+.menu-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+  border-bottom: 1px solid #efefef;
+  background: #fff;
+}
+#menu_block {
+  display: table;
+  width: calc(100% - 30px);
+  height: 50px;
+  background: #f84644;
+  border-radius: 6px;
+  margin: 65px auto;
 }
 @media (min-width: 750px) {
   .header__logo {
@@ -1086,7 +1115,7 @@ template {
 }
 .gift__slider {
   position: relative;
-  min-height: 415px;
+  height: 415px;
 }
 .gift__arrow {
   display: none;
@@ -1289,7 +1318,7 @@ template {
   padding-top: 12px;
   padding-bottom: 22px;
   padding-left: 8px;
-  padding-right: 8px;
+  padding-right: 94px;
   border-bottom: 1px solid #dcd7de;
 }
 .offers__slide {
@@ -1720,7 +1749,7 @@ template {
 }
 .feedback__wrap-title {
   position: relative;
-  padding: 12px 8px 22px 14px;
+  padding: 12px 96px 22px 14px;
 }
 .feedback__arrow {
   position: absolute;
@@ -1779,7 +1808,7 @@ template {
   }
   .feedback__wrap-title {
     padding-left: 0;
-    padding-right: 0;
+    padding-right: 85px;
     padding-bottom: 12px;
   }
   .feedback__arrow {
@@ -2323,4 +2352,15 @@ template {
 }
 .breadcrumbs__item:first-child {
   padding-left: 16px;
+}
+.jcarousel {
+  position: relative;
+  overflow: hidden;
+}
+.jcarousel ul {
+  width: 20000em;
+  position: relative;
+}
+.jcarousel ul li {
+  float: left;
 }
