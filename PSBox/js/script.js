@@ -5,7 +5,7 @@ var HeaderFixed = (function() {
     var docElem = document.documentElement,
         header = document.querySelector( '.header' ),
         didScroll = false,
-        changeHeaderOn = 300;
+        changeHeaderOn = 400;
 
     function init() {
         window.addEventListener( 'scroll', function( event ) {
@@ -66,25 +66,6 @@ navSub.addEventListener('click', function () {
     navSub.classList.add('nav__item--subclose');
   }
 });
-
-//Обработка клика для выпадающего подменю в левой колонке
-var navSub = document.querySelector('.product__item--sub');
-var navSubList = document.querySelector('.product__sublist');
-
-navSub.addEventListener('click', function () {
-  if (navSub.classList.contains('product__item--subclose')) {
-    navSub.classList.remove('product__item--subclose');
-    navSub.classList.add('product__item--subopen');
-  } else {
-    navSub.classList.remove('product__item--subopen');
-    navSub.classList.add('product__item--subclose');
-  }
-});
-
-
-
-
-
 
 //Обработка событий клика в блоке "Cпецпредложения":
 //      - меняются слайды
