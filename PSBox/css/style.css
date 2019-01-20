@@ -788,7 +788,7 @@ template {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.header__nav-wrap {
+.header__nav {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -809,6 +809,7 @@ template {
   padding-left: 9px;
   padding-right: 10px;
   background-color: #ffffff;
+  border-radius: 5px;
   margin: 0;
   width: 45px;
   height: 65px;
@@ -927,7 +928,7 @@ template {
     width: 50px;
     height: 71px;
   }
-  .header__nav-wrap {
+  .header__nav {
     padding-left: 22px;
     padding-right: 24px;
   }
@@ -957,7 +958,7 @@ template {
     width: 59px;
     height: 82px;
   }
-  .header__nav-wrap {
+  .header__nav {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     padding-left: 0;
@@ -982,6 +983,30 @@ template {
     padding-right: 48px;
     padding-top: 13px;
     border-left: 1px solid #dcd7de;
+  }
+  .header--min {
+    min-height: 67px;
+  }
+  .header--min .nav {
+    display: none;
+  }
+  .header--min .header__menu {
+    display: none;
+  }
+  .header--min .header__phone {
+    display: inline-block;
+  }
+  .header--min .header__logo {
+    height: 45px;
+    width: auto;
+  }
+  .header--min .header__logo img {
+    width: auto;
+    height: 40px;
+  }
+  .header--min .header__social {
+    display: inline-block;
+    padding-top: 5px;
   }
 }
 .social__list {
