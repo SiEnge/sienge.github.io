@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>PSBox - Главная</title>
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+		<!-- <link rel="stylesheet" href="css/jquery.fancybox.min.css"> -->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- <link rel="stylesheet" href="css/media.css"> -->
+    <!-- Pixel Glass -->
+        <!-- <style>
+          HTML {
+            background-repeat: no-repeat;
+            background-position:  50% 0;
+            /* По умолчанию мобильный макет */
+            background-image: url( "Main_PSBOX_320.jpg" );
+          }
+          /* Планшет */
+          @media ( min-width: 750px ) {
+            HTML {
+              /* Планшетный макет */
+              background-image: url( "Main_PSBOX_720.jpg" );
+            }
+          }
+          /* Десктоп */
+          @media ( min-width: 1170px ) {
+            HTML {      /* Десктопный макет */
+              background-image: url( "PSBOX_1200-Main_v1.jpg" );
+            }
+          }
+          BODY {opacity: .5;}
+        </style>
+        <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+        <script src="../node_modules/pixel-glass/script.js"></script> -->
+    <!-- // Pixel Glass -->
+
+	</head>
+	<body class="page">
+
+		<!-- <span id="main_preload"></span> -->
+
+			<header class="header">
+
+      <!-- Всплывающий поп-ап при нажатии на кнопку "В корзину" -->
+
+        <section class="modal__addtocart">
+          <div class="modal__wrap container">
+            <p class="modal__text modal__text--white" >Товар "Черничные ночи" добавлен в корзину</p>
+            <button class="modal__button modal__button--cancel" type="button" name="button">Отменить добавление</button>
+            <button class="modal__button modal__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+          </div>
+        </section>
+
+        <!-- Шапка -->
+
+        <div class="header__wrap container">
+	      <a class="header__logo">
+          <picture>
+            <source media="(min-width: 1170px)" srcset="img/logo_desktop.png">
+            <source media="(min-width: 750px)" srcset="img/logo_tablet.png">
+	          <img src="img/logo.png" alt="Логотип «PSBOX»">
+          </picture>
+	      </a>
+        <div class="header__nav-wrap">
+          <nav class="nav nav--closed nav--nojs">
+            <button class="nav__button" type="button"><span class="visuallyhidden">Открыть меню</span></button>
+              <ul class="nav__list">
+                <li class="nav__item nav__item--sub nav__item--subclose"><a href="#">Каталог подарков</a>
+                  <ul class="nav__sublist">
+                    <li class="nav__subitem"><a href="#">Любимым</a></li>
+                    <li class="nav__subitem"><a href="#">Друзьям</a></li>
+                    <li class="nav__subitem"><a href="#">Родителям</a></li>
+                    <li class="nav__subitem"><a href="#">Коллегам</a></li>
+                    <li class="nav__subitem"><a href="#">На день рождения</a></li>
+                    <li class="nav__subitem"><a href="#">На свадьбу</a></li>
+                    <li class="nav__subitem"><a href="#">На годовщину</a></li>
+                    <li class="nav__subitem"><a href="#">На выписку</a></li>
+                    <li class="nav__subitem"><a href="#">На новоселье</a></li>
+                    <li class="nav__subitem"><a href="#">Просто так</a></li>
+                    <li class="nav__subitem"><a href="#">День Святого Валентина</a></li>
+                    <li class="nav__subitem"><a href="#">23 февраля</a></li>
+                    <li class="nav__subitem"><a href="#">8 марта</a></li>
+                  </ul>
+                </li>
+                <li class="nav__item"><a href="#">Индивидуальный заказ</a></li>
+                <li class="nav__item"><a href="#">Помощь в выборе подарка</a></li>
+                <li class="nav__item"><a href="#">Корпоративным клиентам</a></li>
+              </ul>
+          </nav>
+
+          <form class="header__form-search form-search" method="get" action="">
+            <input class="form-search__input" type="search" placeholder="Поиск по сайту">
+            <button class="form-search__button" type="submit"></button>
+          </form>
+
+          <section class="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a href="#">О нас</a></li>
+              <li class="menu__item"><a href="#">Как сделать заказ</a></li>
+              <li class="menu__item"><a href="#">Оплата и доставка</a></li>
+              <li class="menu__item"><a href="#">Отзывы</a></li>
+              <li class="menu__item"><a href="#">Контакты</a></li>
+            </ul>
+          </section>
+
+          <div class="header__social header__social--left social">
+            <ul class="social__list ">
+              <li class="social__item social__item--ig"><a href="#"><span class="visuallyhidden">Instagram</span></a></li>
+              <li class="social__item social__item--fb"><a href="#"><span class="visuallyhidden">Facebook</span></a></li>
+              <li class="social__item social__item--vk"><a href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+            </ul>
+          </div>
+
+          <p class="header__phone">+7 (495) 220 09 26</p>
+
+          <div class="header__social header__social--right social">
+            <ul class="social__list">
+              <li class="social__item social__item--tg"><a href="#"><span class="visuallyhidden">Telegram</span></a></li>
+              <li class="social__item social__item--vi"><a href="#"><span class="visuallyhidden">Viber</span></a></li>
+              <li class="social__item social__item--wa"><a href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            </ul>
+          </div>
+
+          <div class="header__user">
+            <a class="header__user-item header__user-item--compare header__user-item--active" href="#"><span class="visuallyhidden">Сравнение</span></a>
+            <a class="header__user-item header__user-item--cart header__user-item--active" href="#"><span class="visuallyhidden">Корзина</span></a>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+      <main>
+        <!-- Слайдер  -->
+
+        <section class="gift">
+          <div class="container">
+            <div class="gift__slider">
+              <h2 class="visuallyhidden">Специальные предложения</h2>
+              <button class="gift__arrow gift__arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
+              <button class="gift__arrow gift__arrow--right gift__arrow--active" type="button" name="button"><span class="visuallyhidden">Вперед</span></button>
+              <ul class="slider">
+                <li class="slider__item slider__item--showing">
+                  <div class="gift__slide">
+                    <p class="gift__slide-text text">Подарочный набор - Ocean</p>
+                    <a class="gift__button button" href="#">Подробнее</a>
+                  </div>
+                </li>
+                <li class="slider__item">
+                  <div class="gift__slide">
+                    <p class="gift__slide-text text">Подарочный набор - Ocean</p>
+                    <a class="gift__button button" href="#">Подробнее</a>
+                  </div>
+                </li>
+                <li class="slider__item">
+                  <div class="gift__slide">
+                    <p class="gift__slide-text text">Подарочный набор - Ocean</p>
+                    <a class="gift__button button" href="#">Подробнее</a>
+                  </div>
+                </li>
+              </ul>
+              <div class="gift__controls controls">
+                <ul class="controls__list">
+                  <li class="controls__radio controls__radio--active"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Первый слайд</span></button></li>
+                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Второй слайд</span></button></li>
+                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Третий слайд</span></button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="page__wrap container">
+
+          <!-- Баннер "Эксклюзивные условия" -->
+
+          <section class="condition container">
+            <h2 class="visuallyhidden">Баннер</h2>
+            <div class="condition__wrap">
+              <p class="condition__title">Эксклюзивные условия для корпоративных заказов!</p>
+              <a class="condition__button button" href="#">Подробнее</a>
+            </div>
+          </section>
+
+          <!-- Блок "Лучшие предложения" -->
+
+          <section class="offers container container">
+            <div class="offers__wrap-title">
+              <h2 class="offers__title title">Лучшие предложения</h2>
+              <div class="offers__arrow">
+                <button class="arrow arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
+                <button class="arrow arrow--right arrow--active" type="button" name="button"><span class="visuallyhidden">Вперед</span></button>
+              </div>
+            </div>
+            <div class="offers__slider">
+              <div class="offers__controls controls">
+                <ul class="controls__list">
+                  <li class="controls__radio controls__radio--active"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Первый слайд</span></button></li>
+                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Второй слайд</span></button></li>
+                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Третий слайд</span></button></li>
+                </ul>
+              </div>
+              <ul class="slider">
+                <li class="slider__item slider__item--showing">
+                  <div class="offers__slide">
+                    <div class="offers__wrap">
+                      <p class="offers__img">
+                        <picture>
+                          <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
+                          <img src="img/best_mobile.jpg" alt="">
+                        </picture>
+                      </p>
+                    </div>
+                    <div class="offers__info">
+                      <h3 class="offers__name">Черничные ночи</h3>
+                      <p class="offers__price">1 450 Руб.</p>
+                      <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+                      <button class="offers__cart" type="button" name="button">В корзину</button>
+                    </div>
+                    <div class="offers__text">
+                      <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
+                      <p>Шоколад:</p>
+                      <ul class="offers__list">
+                        <li>«Ritter sport» черника со сливками,</li>
+                        <li>«Ты моя ягодка» молочный,</li>
+                      </ul>
+                      <p>Алкоголь (по 50 мл.):</p>
+                      <ul class="offers__list">
+                        <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
+                        <li>Виски «McClelland’s Highland».</li>
+                      </ul>
+                    </div>
+                    <div class="offers__nav">
+                      <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
+                      <ul class="offers__navlist">
+                        <li class="offers__navitem"><a href="#">Любимым</a></li>
+                        <li class="offers__navitem"><a href="#">На день рождения</a></li>
+                        <li class="offers__navitem"><a href="#">Просто так</a></li>
+                        <li class="offers__navitem"><a href="#">На годовщину</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="slider__item">
+                  <div class="offers__slide">
+                    <div class="offers__wrap">
+                      <p class="offers__img">
+                        <picture>
+                          <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
+                          <img src="img/best_mobile.jpg" alt="">
+                        </picture>
+                      </p>
+                    </div>
+                    <div class="offers__info">
+                      <h3 class="offers__name">Черничные ночи</h3>
+                      <p class="offers__price">1 450 Руб.</p>
+                      <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+                      <button class="offers__cart" type="button" name="button">В корзину</button>
+                    </div>
+                    <div class="offers__text">
+                      <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
+                      <p>Шоколад:</p>
+                      <ul class="offers__list">
+                        <li>«Ritter sport» черника со сливками,</li>
+                        <li>«Ты моя ягодка» молочный,</li>
+                      </ul>
+                      <p>Алкоголь (по 50 мл.):</p>
+                      <ul class="offers__list">
+                        <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
+                        <li>Виски «McClelland’s Highland».</li>
+                      </ul>
+                    </div>
+                    <div class="offers__nav">
+                      <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
+                      <ul class="offers__navlist">
+                        <li class="offers__navitem"><a href="#">Любимым</a></li>
+                        <li class="offers__navitem"><a href="#">На день рождения</a></li>
+                        <li class="offers__navitem"><a href="#">Просто так</a></li>
+                        <li class="offers__navitem"><a href="#">На годовщину</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="slider__item">
+                  <div class="offers__slide">
+                    <div class="offers__wrap">
+                      <p class="offers__img">
+                        <picture>
+                          <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
+                          <img src="img/best_mobile.jpg" alt="">
+                        </picture>
+                      </p>
+                    </div>
+                    <div class="offers__info">
+                      <h3 class="offers__name">Черничные ночи</h3>
+                      <p class="offers__price">1 450 Руб.</p>
+                      <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+                      <button class="offers__cart" type="button" name="button">В корзину</button>
+                    </div>
+                    <div class="offers__text">
+                      <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
+                      <p>Шоколад:</p>
+                      <ul class="offers__list">
+                        <li>«Ritter sport» черника со сливками,</li>
+                        <li>«Ты моя ягодка» молочный,</li>
+                      </ul>
+                      <p>Алкоголь (по 50 мл.):</p>
+                      <ul class="offers__list">
+                        <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
+                        <li>Виски «McClelland’s Highland».</li>
+                      </ul>
+                    </div>
+                    <div class="offers__nav">
+                      <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
+                      <ul class="offers__navlist">
+                        <li class="offers__navitem"><a href="#">Любимым</a></li>
+                        <li class="offers__navitem"><a href="#">На день рождения</a></li>
+                        <li class="offers__navitem"><a href="#">Просто так</a></li>
+                        <li class="offers__navitem"><a href="#">На годовщину</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="page__wrap page__wrap--tablet container">
+
+          <!-- Левое меню "Каталог подарков" -->
+
+          <section class="product container container--left">
+            <h2 class="product__title">Каталог подарков</h2>
+            <ul class="product__list">
+              <li class="product__item"><a href="#">Любимым</a></li>
+              <li class="product__item"><a href="#">Друзьям</a></li>
+              <li class="product__item"><a href="#">Родителям</a></li>
+              <li class="product__item"><a href="#">Коллегам</a></li>
+              <li class="product__item"><a href="#">На день рождения</a></li>
+              <li class="product__item"><a href="#">На свадьбу</a></li>
+              <li class="product__item"><a href="#">На годовщину</a></li>
+              <li class="product__item"><a href="#">На выписку</a></li>
+              <li class="product__item"><a href="#">На новоселье</a></li>
+              <li class="product__item"><a href="#">Просто так</a></li>
+              <li class="product__item"><a href="#">День Святого Валентина</a></li>
+              <li class="product__item"><a href="#">23 февраля</a></li>
+              <li class="product__item"><a href="#">8 марта</a></li>
+            </ul>
+          </section>
+
+          <div class="page__wrap page__wrap--wrap container--right">
+
+            <!-- Баннер -->
+
+            <section class="banner container container--right">
+              <div class="banner__wrap banner__wrap--nonstandart">
+                <h1 class="banner__title">Есть нестандартные идеи? <br>Поможем воплотить!</h1>
+                <a class="banner__button button" href="#">Подробнее</a>
+              </div>
+            </section>
+
+            <!-- Блок "Чем крут PSBox" -->
+
+            <section class="cool container container--right">
+              <h2 class="cool__title title">Чем крут PSBOX ?</h2>
+              <ul class="cool__list">
+                <li class="cool__item cool__item--ship">Доставка по всему миру</li>
+                <li class="cool__item cool__item--gift">Настоящие подарки</li>
+                <li class="cool__item cool__item--exclusive">Эксклюзивная работа</li>
+                <li class="cool__item cool__item--personal">Персональный подход к каждому клиенту</li>
+              </ul>
+            </section>
+
+            <!-- Баннер -->
+
+            <section class="banner container container--right">
+              <div class="banner__wrap banner__wrap--dontknow">
+                <h1 class="banner__title">Не знаете что выбрать? <br>Мы подскажем!</h1>
+                <a class="banner__button button" href="#">Подробнее</a>
+              </div>
+            </section>
+
+          </div>
+
+        </div>
+
+        <div class="page__wrap page__wrap--tablet container">
+
+          <!-- Блок "Отзывы" -->
+
+          <section class="feedback container container--left">
+            <div class="feedback__wrap-title">
+              <h2 class="feedback__title title">Отзывы</h2>
+              <div class="feedback__arrow">
+                <button class="arrow arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
+                <button class="arrow arrow--right arrow--active" type="button" name="button"><span class="visuallyhidden">Вперед</span></button>
+              </div>
+            </div>
+            <section class="feedback__slider">
+              <ul class="slider">
+                <li class="slider__item slider__item--showing">
+                  <blockquote class="feedback__item">
+                    <div class="feedback__wrap">
+                      <p class="feedback__img">
+                        <img src="img/otz1.jpg" alt="Фото клиента">
+                      </p>
+                      <p class="feedback__text text">Большое спасибо! Очень классная коробочка. Мне и мужу всё очень-очень понравилось. Всё пришло вовремя, всё целое. Очень красиво и нарядно выглядит. Специалист помогла составить именно такой набор, который идеально подошел мужу!</p>
+                      <a class="feedback__button button" href="#">Подробнее</a>
+                    </div>
+                  </blockquote>
+                </li>
+                <li class="slider__item">
+                  <blockquote class="feedback__item">
+                    <div class="feedback__wrap">
+                      <p class="feedback__img">
+                        <img src="img/otz2.jpg" alt="Фото клиента">
+                      </p>
+                      <p class="feedback__text text">Бoльшое спасибо! Очень классная коробочка. Мне и мужу всё очень-очень понравилось. Всё пришло вовремя, всё целое. Очень красиво и нарядно выглядит. Специалист помогла составить именно такой набор, который идеально подошел мужу!</p>
+                      <a class="feedback__button button" href="#">Подробнее</a>
+                    </div>
+                  </blockquote>
+                </li>
+                <li class="slider__item">
+                  <blockquote class="feedback__item">
+                    <div class="feedback__wrap">
+                      <p class="feedback__img">
+                        <img src="img/otz1.jpg" alt="Фото клиента">
+                      </p>
+                      <p class="feedback__text text">Большое спасибо! Очень классная коробочка. Мне и мужу всё очень-очень понравилось. Всё пришло вовремя, всё целое. Очень красиво и нарядно выглядит. Специалист помогла составить именно такой набор, который идеально подошел мужу!</p>
+                      <a class="feedback__button button" href="#">Подробнее</a>
+                    </div>
+                  </blockquote>
+                </li>
+              </ul>
+            </section>
+          </section>
+
+          <!-- Блок "Как сделать заказ" -->
+
+          <section class="how container container--right">
+            <h2 class="how__title title">Как сделать заказ?</h2>
+            <section class="how__wrap">
+              <h3 class="how__name">Вариант 1: На сайте</h3>
+              <ul class="how__list">
+                <li class="how__item how__item--var1-1">
+                  <span class="how__number">1</span>
+                  <p>Если вам понравился конкретный набор — положите его в корзину. Есть собственная идя — положите в корзину товар «Индивидуальный заказ».</p>
+                </li>
+                <li class="how__item how__item--var1-2">
+                  <span class="how__number">2</span>
+                  <p>Есть пожелания? Укажите их в комментариях к заказу Хотите что-то необычное? Расскажите о ваших идеях, покажите примеры, сориентируйте по сумме.</p>
+                </li>
+                <li class="how__item how__item--var1-3">
+                  <span class="how__number">3</span>
+                  <p>Укажите удобный способ связи с вами. Ожидайте звонка или сообщения от менеджера для обсуждения вариантов состава, оформления и стоимости.</p>
+                </li>
+                <li class="how__item how__item--var1-4">
+                  <span class="how__number">4</span>
+                  <p>Получите фото готового набора, подтвердите его готовность или внесите корректировки. Принимайте благодарности от восторженного получателя!</p>
+                </li>
+              </ul>
+            </section>
+            <section class="how__wrap">
+              <h3 class="how__name">Вариант 2: Через соцсети <br>и мессенджеры</h3>
+              <ul class="how__list">
+                <li class="how__item how__item--var2-1">
+                  <span class="how__number">1</span>
+                  <p>Изучите ассортимент, выберерите понравившийся набор или продумайте свои пожелания для составления набора с нуля.</p>
+                </li>
+                <li class="how__item how__item--var2-2">
+                  <span class="how__number">2</span>
+                  <p>Выберите удобный способ связи: Whats'App, Viber, Telegram, сообщения Вконтакте или на Facebook, директ в instagram, звонок.</p>
+                </li>
+                <li class="how__item how__item--var2-3">
+                  <span class="how__number">3</span>
+                  <p>Свяжитесь с нашим менеджером, озвучьте свои пожелания, обсудите вариантов состава, оформления и стоимости.</p>
+                </li>
+                <li class="how__item how__item--var2-4">
+                  <span class="how__number">4</span>
+                  <p>Получите фото готового набора, подтвердите его готовность или внесите корректировки. Принимайте благодарности от восторженного получателя!</p>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </div>
+
+      </main>
+
+      <!-- Футер -->
+
+      <footer class="footer">
+        <div class="footer__wrap container">
+          <div class="footer__info">
+            <p>+7 (495) 220 09 26 <br>
+              г. Москва, <br>
+              ул. Донская, д. 8 стр. 1 <br>
+            </p>
+            <p>Приём заказов: <br>
+              ежедневно <br>
+              с 09.00 до 21.00 <br>
+            </p>
+          </div>
+          <div class="footer__contact">
+            <p class="footer__phone">+7 (495) 220 09 26</p>
+            <div class="footer__social social">
+              <ul class="social__list">
+                <li class="social__item social__item--ig"><a href="#"><span class="visuallyhidden">Instagram</span></a></li>
+                <li class="social__item social__item--fb"><a href="#"><span class="visuallyhidden">Facebook</span></a></li>
+                <li class="social__item social__item--vk"><a href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+                <li class="social__item social__item--tg"><a href="#"><span class="visuallyhidden">Telegram</span></a></li>
+                <li class="social__item social__item--vi"><a href="#"><span class="visuallyhidden">Viber</span></a></li>
+                <li class="social__item social__item--wa"><a href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
+      </footer>
+
+      <!-- Модальное окно "Приглашаем к коллективному заказу" -->
+
+      <section class="modal__invite">
+        <h2 class="modal__title">Вас приглашают присоединиться к коллективному заказу</h2>
+        <p class="modal__text">Формируйте заказ вместе с коллегами или друзьями. Собирайте общую корзину, вместе добавляйте товары в единый список избранного.</p>
+        <button class="modal__button modal__button--cancel" type="button" name="button">Отменить</button>
+        <button type="button" name="button">Принять приглашение</button>
+      </section>
+
+		<script src="js/script.js"></script>
+    <script src="js/picturefill.js"></script>
+	</body>
+</html>
