@@ -392,6 +392,9 @@ template {
   .container {
     width: 1170px;
   }
+  .container--left {
+    width: 280px;
+  }
   .container--right {
     width: 870px;
   }
