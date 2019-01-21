@@ -6,9 +6,11 @@
 		<title>PSBox - Главная</title>
 		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 		<!-- <link rel="stylesheet" href="css/jquery.fancybox.min.css"> -->
-		<link rel="stylesheet" href="css/style.css">
-		<!-- <link rel="stylesheet" href="css/media.css"> -->
-  
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/style.css">
+
+
 
 	</head>
 	<body class="page">
@@ -104,8 +106,164 @@
           </div>
 
           <div class="header__user">
-            <a class="header__user-item header__user-item--compare header__user-item--active" href="#"><span class="visuallyhidden">Сравнение</span></a>
-            <a class="header__user-item header__user-item--cart header__user-item--active" href="#"><span class="visuallyhidden">Корзина</span></a>
+            <div class="">
+
+              <button class="header__user-item header__user-item--compare" href="#"><span class="visuallyhidden">Сравнение</span></button>
+
+              <!-- Всплывайющее окно Избранных товаров -->
+
+              <section class="header__user-pop pop pop--compare">
+                <div class="pop__wrap">
+                  <h2 class="pop__title">Избранные товары</h2>
+                </div>
+
+                <ul class="pop__list">
+                  <li>
+                    <a class="pop__item" href="#">
+                      <div class="pop__item-wrap">
+                        <img src="img/img-ban2.jpg" alt="">
+                        <p class="pop__text">Черничные ночи</p>
+                      </div>
+                      <p class="pop__price">1 450 руб.</p>
+                      <button class="pop__icon pop__icon--compare pop__icon--active" type="button" name="button"></button>
+                      <button class="pop__icon pop__icon--trash pop__icon--active" type="button" name="button"></button>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="pop__item" href="#">
+                      <div class="pop__item-wrap">
+                        <img src="img/img-ban2.jpg" alt="">
+                        <p class="pop__text">Земляничное утро</p>
+                      </div>
+                      <p class="pop__price">2 050 руб.</p>
+                      <button class="pop__icon pop__icon--compare pop__icon--active" type="button" name="button"></button>
+                      <button class="pop__icon pop__icon--trash pop__icon--active" type="button" name="button"></button>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="pop__item" href="#">
+                      <div class="pop__item-wrap">
+                        <img src="img/img-ban2.jpg" alt="">
+                        <p class="pop__text">Индивидуальный заказ</p>
+                      </div>
+                      <p class="pop__price"></p>
+                      <button class="pop__icon pop__icon--compare pop__icon--active" type="button" name="button"></button>
+                      <button class="pop__icon pop__icon--trash pop__icon--active" type="button" name="button"></button>
+                    </a>
+                  </li>
+                </ul>
+                <div class="pop__total-wrap">
+                  <p class="pop__total">2 подарка 3500 Руб.</p>
+                  <p class="pop__add">+ Индивидуальный заказ</p>
+                </div>
+                <form class="pop__form" action="" method="post">
+                  <p class="pop__comment">Чтобы сохранить свой список избранных подарков, отправьте их себе на email</p>
+
+                  <input class="pop__input" type="email" name="email" value="" placeholder="email" required>
+                  <button class="pop__button pop__button--submit" type="submit" name="button">Отправить</button>
+                </form>
+                <div class="overlay"></div>
+              </section>
+            </div>
+            <div class="">
+
+              <button class="header__user-item header__user-item--cart" href="#"><span class="visuallyhidden">Корзина</span></button>
+
+              <!-- Всплывающее окно Корзины -->
+
+              <section class="header__user-pop pop pop--basket">
+                <div class="pop__wrap">
+                  <h2 class="pop__title">Корзина</h2>
+                  <button class="pop__link" type="button" name="button">Создать коллективный заказ</button>
+                </div>
+
+                <ul class="pop__list">
+                  <li>
+                    <a class="pop__item" href="#">
+                      <div class="pop__item-wrap">
+                        <img src="img/img-ban2.jpg" alt="">
+                        <p class="pop__text">Черничные ночи</p>
+                      </div>
+                      <p class="pop__price">1 450 руб.</p>
+                      <button class="pop__icon pop__icon--compare pop__icon--active" type="button" name="button"></button>
+                      <button class="pop__icon pop__icon--trash pop__icon--active" type="button" name="button"></button>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="pop__item" href="#">
+                      <div class="pop__item-wrap">
+                        <img src="img/img-ban2.jpg" alt="">
+                        <p class="pop__text">Земляничное утро</p>
+                      </div>
+                      <p class="pop__price">2 050 руб.</p>
+                      <button class="pop__icon pop__icon--compare pop__icon--active" type="button" name="button"></button>
+                      <button class="pop__icon pop__icon--trash pop__icon--active" type="button" name="button"></button>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="pop__item" href="#">
+                      <div class="pop__item-wrap">
+                        <img src="img/img-ban2.jpg" alt="">
+                        <p class="pop__text">Индивидуальный заказ</p>
+                      </div>
+                      <p class="pop__price"></p>
+                      <button class="pop__icon pop__icon--compare pop__icon--active" type="button" name="button"></button>
+                      <button class="pop__icon pop__icon--trash pop__icon--active" type="button" name="button"></button>
+                    </a>
+                  </li>
+                </ul>
+                <div class="pop__total-wrap">
+                  <p class="pop__total">2 подарка 3500 Руб.</p>
+                  <p class="pop__add">+ Индивидуальный заказ</p>
+                  <button class="pop__button" type="button" name="button">Оформить заказ</button>
+                </div>
+                <!-- <div class="overlay"></div> -->
+              </section>
+
+              <!-- Всплывающее окно Пустой корзины -->
+
+              <section class="header__user-pop pop pop--basket-empty">
+                <div class="pop__wrap">
+                  <h2 class="pop__title">Корзина</h2>
+                  <button class="pop__link" type="button" name="button">Создать коллективный заказ</button>
+                </div>
+                <div class="pop__item">
+                  <p class="pop__info">Здесь пусто :( Скорее сделайте ваш заказ!</p>
+                </div>
+
+                <!-- <div class="overlay"></div> -->
+              </section>
+
+              <!-- Всплывайющее окно Создание коллективного заказа -->
+
+              <section class="header__user-pop pop pop--create">
+                <div class="pop__wrap">
+                  <h2 class="pop__title">Коллективный заказ</h2>
+                  <button class="pop__link" type="button" name="button">Отменить</button>
+                </div>
+
+                <form class="pop__form" action="" method="post">
+                  <p class="pop__text">Отправьте участникам заказа ссылку, указанную ниже и составьте заказ совместно.</p>
+                  <a href="#"></a>
+                  <ul class="pop__list">
+                    <li>
+                      <label for="name1"><span class="visuallyhidden">Имя участника</span></label>
+                      <input class="pop__input" type="text" name="name1" id="name1" value="">
+                    </li>
+                    <li>
+                      <label for="name2"><span class="visuallyhidden">Имя участника</span></label>
+                      <input class="pop__input" type="text" name="name2" id="name2" value="">
+                    </li>
+                  </ul>
+                  <button class="pop__link" type="button" name="button">Добавить участника заказа</button>
+                  <button class="pop__button pop__button--submit" type="submit" name="button">Начать коллективный заказ</button>
+
+                </form>
+                <div class="overlay"></div>
+              </section>
+            </div>
+
+
           </div>
 
         </div>
@@ -117,38 +275,28 @@
 
         <section class="gift">
           <div class="container">
+            <h2 class="visuallyhidden">Специальные предложения</h2>
 
             <div class="gift__slider">
-              <h2 class="visuallyhidden">Специальные предложения</h2>
-              <button class="gift__arrow gift__arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
-              <button class="gift__arrow gift__arrow--right gift__arrow--active" type="button" name="button"><span class="visuallyhidden">Вперед</span></button>
-              <ul class="slider">
-                <li class="slider__item slider__item--showing">
+                <div>
                   <div class="gift__slide">
                     <p class="gift__slide-text text">Подарочный набор - Ocean</p>
                     <a class="gift__button button" href="#">Подробнее</a>
                   </div>
-                </li>
-                <li class="slider__item">
+                </div>
+                <div>
                   <div class="gift__slide">
                     <p class="gift__slide-text text">Подарочный набор - Ocean</p>
                     <a class="gift__button button" href="#">Подробнее</a>
                   </div>
-                </li>
-                <li class="slider__item">
+                </div>
+                <div>
                   <div class="gift__slide">
                     <p class="gift__slide-text text">Подарочный набор - Ocean</p>
                     <a class="gift__button button" href="#">Подробнее</a>
                   </div>
-                </li>
-              </ul>
-              <div class="gift__controls controls">
-                <ul class="controls__list">
-                  <li class="controls__radio controls__radio--active"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Первый слайд</span></button></li>
-                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Второй слайд</span></button></li>
-                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Третий слайд</span></button></li>
-                </ul>
-              </div>
+                </div>
+
             </div>
 
           </div>
@@ -171,21 +319,10 @@
           <section class="offers container container">
             <div class="offers__wrap-title">
               <h2 class="offers__title title">Лучшие предложения</h2>
-              <div class="offers__arrow">
-                <button class="arrow arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
-                <button class="arrow arrow--right arrow--active" type="button" name="button"><span class="visuallyhidden">Вперед</span></button>
-              </div>
             </div>
             <div class="offers__slider">
-              <div class="offers__controls controls">
-                <ul class="controls__list">
-                  <li class="controls__radio controls__radio--active"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Первый слайд</span></button></li>
-                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Второй слайд</span></button></li>
-                  <li class="controls__radio"><button class="controls__button" type="button" name="button"><span class="visuallyhidden">Третий слайд</span></button></li>
-                </ul>
-              </div>
-              <ul class="slider">
-                <li class="slider__item slider__item--showing">
+              <!-- <div class="slider__offers"> -->
+                <div class="slider__item slider__item--showing">
                   <div class="offers__slide">
                     <div class="offers__wrap">
                       <p class="offers__img">
@@ -224,8 +361,8 @@
                       </ul>
                     </div>
                   </div>
-                </li>
-                <li class="slider__item">
+                </div>
+                <div class="slider__item">
                   <div class="offers__slide">
                     <div class="offers__wrap">
                       <p class="offers__img">
@@ -264,8 +401,8 @@
                       </ul>
                     </div>
                   </div>
-                </li>
-                <li class="slider__item">
+                </div>
+                <div class="slider__item">
                   <div class="offers__slide">
                     <div class="offers__wrap">
                       <p class="offers__img">
@@ -304,8 +441,8 @@
                       </ul>
                     </div>
                   </div>
-                </li>
-              </ul>
+                </div>
+              <!-- </div> -->
             </div>
           </section>
 
@@ -377,14 +514,10 @@
           <section class="feedback container container--left">
             <div class="feedback__wrap-title">
               <h2 class="feedback__title title">Отзывы</h2>
-              <div class="feedback__arrow">
-                <button class="arrow arrow--left" type="button" name="button"><span class="visuallyhidden">Назад</span></button>
-                <button class="arrow arrow--right arrow--active" type="button" name="button"><span class="visuallyhidden">Вперед</span></button>
-              </div>
             </div>
-            <section class="feedback__slider">
-              <ul class="slider">
-                <li class="slider__item slider__item--showing">
+            <section class="feedback__wrap-slider">
+              <div class="feedback__slider">
+                <div>
                   <blockquote class="feedback__item">
                     <div class="feedback__wrap">
                       <p class="feedback__img">
@@ -394,8 +527,8 @@
                       <a class="feedback__button button" href="#">Подробнее</a>
                     </div>
                   </blockquote>
-                </li>
-                <li class="slider__item">
+                </div>
+                <div>
                   <blockquote class="feedback__item">
                     <div class="feedback__wrap">
                       <p class="feedback__img">
@@ -405,8 +538,8 @@
                       <a class="feedback__button button" href="#">Подробнее</a>
                     </div>
                   </blockquote>
-                </li>
-                <li class="slider__item">
+                </div>
+                <div>
                   <blockquote class="feedback__item">
                     <div class="feedback__wrap">
                       <p class="feedback__img">
@@ -416,8 +549,8 @@
                       <a class="feedback__button button" href="#">Подробнее</a>
                     </div>
                   </blockquote>
-                </li>
-              </ul>
+                </div>
+              </div>
             </section>
           </section>
 
@@ -503,6 +636,8 @@
         <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
       </footer>
 
+      <!-- <div class="modal__overlay"></div> -->
+
       <!-- Модальное окно "Приглашаем к коллективному заказу" -->
 
       <section class="modal__invite">
@@ -512,6 +647,11 @@
         <button type="button" name="button">Принять приглашение</button>
       </section>
 
+
+
+
+<script src="js/jquery.2.1.3.min.js"></script>
+      <script src="slick/slick.js"></script>
 		<script src="js/script.js"></script>
     <script src="js/picturefill.js"></script>
 	</body>
