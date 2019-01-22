@@ -36,17 +36,17 @@ $('.feedback__slider').slick({
 });
 
 $('.gallery__slider').slick({
-  ccEase: 'ease-in'
+  ccEase: 'ease-in',
   // lazyLoad: 'ondemand',
-  // asNavFor: '.gallery__slider--small'
+  asNavFor: '.gallery__slider--small'
 });
 
-// $('.gallery__slider--small').slick({
-//   slidesToShow: 11,
-//   centerMode: true,
-//   asNavFor: '.gallery__slider',
-//   focusOnSelect: true,
-//   arrows: false
+$('.gallery__slider--small').slick({
+  slidesToShow: 11,
+  centerMode: true,
+  asNavFor: '.gallery__slider',
+  focusOnSelect: true,
+  arrows: false
   // lazyLoad: 'ondemand'
   // responsive: [
   //   {
@@ -56,7 +56,7 @@ $('.gallery__slider').slick({
   //     }
   //   }
   // ]
-// });
+});
 
 //Галерея
 
