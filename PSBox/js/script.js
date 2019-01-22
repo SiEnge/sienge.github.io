@@ -1,4 +1,6 @@
 // Слайдеры
+
+
 $('.gift__slider').slick({
   autoplay: true,
   autoplaySpeed: 3000,
@@ -26,7 +28,6 @@ $('.offers__sliderimg').slick({
   autoplaySpeed: 5000,
   fade: true,
   dots: true,
-  // infinite: false,
   zindex: 100
 });
 
@@ -36,27 +37,35 @@ $('.feedback__slider').slick({
 });
 
 $('.gallery__slider').slick({
-  ccEase: 'ease-in',
-  // lazyLoad: 'ondemand',
-  asNavFor: '.gallery__slider--small'
+  asNavFor: '.gallery__preview',
+  ccsEase: 'ease-in',
+  responsive: [{
+      breakpoint: 1170,
+      settings: {
+        arrows: false
+      }
+    }]
 });
 
-$('.gallery__slider--small').slick({
-  slidesToShow: 11,
-  centerMode: true,
+$('.gallery__preview').slick({
   asNavFor: '.gallery__slider',
+  slidesToShow: 11,
   focusOnSelect: true,
-  arrows: false
-  // lazyLoad: 'ondemand'
-  // responsive: [
-  //   {
-  //     breakpoint: 900,
-  //     settings: {
-  //       slidesToShow: 3
-  //     }
-  //   }
-  // ]
+  arrows: false,
+  responsive: [{
+      breakpoint: 1170,
+      settings: {
+        slidesToShow: 7
+      }
+    },
+    {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 3
+        }
+      }]
 });
+
 
 //Галерея
 
@@ -66,7 +75,6 @@ var overlayMod = document.querySelector('.overlay-modal');
 
 var btnGalleryClose = document.querySelector(".gallery__button--close");
 var modGallery = document.querySelector('.gallery');
-
 
 btnGallery.addEventListener("click", function (event) {
   event.preventDefault();
