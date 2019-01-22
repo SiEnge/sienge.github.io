@@ -11,7 +11,6 @@ $('.gift__slider').slick({
         arrows: false
       }
     }]
-
 });
 
 $('.offers__slider').slick({
@@ -21,16 +20,82 @@ $('.offers__slider').slick({
   zindex: 100
 });
 
+$('.offers__sliderimg').slick({
+  autoplay: true,
+  arrows: false,
+  autoplaySpeed: 5000,
+  fade: true,
+  dots: true,
+  // infinite: false,
+  zindex: 100
+});
+
 $('.feedback__slider').slick({
   infinite: false,
   zindex: 100
 });
 
 $('.gallery__slider').slick({
-  // infinite: false,
-  // zindex: 100
+  ccEase: 'ease-in'
+  // lazyLoad: 'ondemand',
+  // asNavFor: '.gallery__slider--small'
 });
 
+// $('.gallery__slider--small').slick({
+//   slidesToShow: 11,
+//   centerMode: true,
+//   asNavFor: '.gallery__slider',
+//   focusOnSelect: true,
+//   arrows: false
+  // lazyLoad: 'ondemand'
+  // responsive: [
+  //   {
+  //     breakpoint: 900,
+  //     settings: {
+  //       slidesToShow: 3
+  //     }
+  //   }
+  // ]
+// });
+
+//Галерея
+
+var btnGallery = document.querySelector(".offers__button-gallery");
+
+var overlayMod = document.querySelector('.overlay-modal');
+
+var btnGalleryClose = document.querySelector(".gallery__button--close");
+var modGallery = document.querySelector('.gallery');
+
+
+btnGallery.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  modGallery.classList.add("gallery--active");
+  overlayMod.classList.add("overlay--active");
+
+  overlayMod.addEventListener("click", function(event) {
+    event.preventDefault();
+    modGallery.classList.remove("gallery--active");
+    overlayMod.classList.remove("overlay--active");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (modGallery.classList.contains("gallery--active")) {
+        modGallery.classList.remove("gallery--active");
+        overlayMod.classList.remove("overlay--active");
+      }
+    }
+  });
+});
+
+btnGalleryClose.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  modGallery.classList.remove("gallery--active");
+  overlayMod.classList.remove("overlay--active");
+});
 
 
 
@@ -103,28 +168,205 @@ navSub.addEventListener("click", function () {
   }
 });
 
+//Обработка закрытия модального окна "ПРиглашение к коллективному заказу"
+var btnInvite = document.querySelector(".offers__invite-btn");
+var btnInviteClose = document.querySelector(".modal-invite__button--cancel");
+var modInvite = document.querySelector('.modal__invite');
+
+
+btnInvite.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  modInvite.classList.add("modal--active");
+  overlayMod.classList.add("overlay--active");
+
+  overlayMod.addEventListener("click", function(event) {
+    event.preventDefault();
+    modInvite.classList.remove("modal--active");
+    overlayMod.classList.remove("overlay--active");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (modInvite.classList.contains("modal--active")) {
+        modInvite.classList.remove("modal--active");
+        overlayMod.classList.remove("overlay--active");
+      }
+    }
+  });
+});
+
+btnInviteClose.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  modInvite.classList.remove("modal--active");
+  overlayMod.classList.remove("overlay--active");
+});
+
+
+
+// Обработка клика на "В корзину"
+var btnToCard = document.querySelector(".offers__cart-btn");
+var modToCard = document.querySelector(".modal__addtocart");
+var btnToCardClose = document.querySelector(".modal__addtocart-btn--close");
+
+btnToCard.addEventListener("click", function (event) {
+  event.preventDefault();
+  modToCard.classList.add("modal--active");
+});
+
+btnToCardClose.addEventListener("click", function (event) {
+  event.preventDefault();
+  modToCard.classList.remove("modal--active");
+});
+
+
 // Обработка события клика на иконку Сравнения в шапке
 // Обработка события клика на иконку Корзины в шапке
 
-var icCom = document.querySelector(".header__user-item--compare");
-var icPopCom = document.querySelector(".pop--compare");
-var icCart = document.querySelector(".header__user-item--cart");
-var icPopCart = document.querySelector(".pop--basket");
+var overlay = document.querySelector(".overlay");
 
-icCom.addEventListener("click", function () {
-  if (icPopCom.classList.contains("pop--active")) {
-    icPopCom.classList.remove("pop--active");
-  } else {
-    icPopCom.classList.add("pop--active");
-    icPopCart.classList.remove("pop--active");
-  }
+var icCom = document.querySelector(".header__usbtn--compare");
+var icPopCom = document.querySelector(".pop-compare");
+
+var icCart = document.querySelector(".header__usbtn--cart");
+var icPopCart = document.querySelector(".pop--basket");
+var icTeam = document.querySelector(".pop-basket--team");
+var icPopCreate = document.querySelector(".pop-create");
+var icPopCreateCancel = document.querySelector(".pop-create--cancel");
+var icNewName = document.querySelector(".pop-create--newname");
+var icCreateList = document.querySelector(".pop-create__list");
+var icCreateItem = document.querySelector(".pop-create__item");
+
+icNewName.addEventListener("click", function (event) {
+  var cloneLi = icCreateItem.cloneNode(true);
+  icCreateList.appendChild(cloneLi);
 });
 
-icCart.addEventListener("click", function () {
+icPopCreateCancel.addEventListener("click", function (event) {
+  event.preventDefault();
+  icPopCreate.classList.remove("pop--active");
+  icPopCart.classList.add("pop--active");
+
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCreate.classList.remove("pop--active");
+    overlay.classList.remove("overlay--active");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCreate.classList.contains("pop--active")) {
+        icPopCreate.classList.remove("pop--active");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
+});
+
+icTeam.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  if (icPopCreate.classList.contains("pop--active")) {
+    icPopCreate.classList.remove("pop--active");
+    if (overlay.classList.contains("overlay--active")) {
+      overlay.classList.remove("overlay--active");
+    }
+  } else {
+    icPopCreate.classList.add("pop--active");
+    overlay.classList.add("overlay--active");
+    icPopCart.classList.remove("pop--active");
+  }
+
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCreate.classList.remove("pop--active");
+    overlay.classList.remove("overlay--active");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCreate.classList.contains("pop--active")) {
+        icPopCreate.classList.remove("pop--active");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
+
+});
+
+
+
+icCom.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (icPopCom.classList.contains("pop--active")) {
+    icPopCom.classList.remove("pop--active");
+    icCom.classList.remove("header__usbtn-active");
+    icCom.classList.remove("header__usbtn-active--compare");
+    if (overlay.classList.contains("overlay--active")) {
+      overlay.classList.remove("overlay--active");
+    }
+  } else {
+    icPopCom.classList.add("pop--active");
+    icCom.classList.add("header__usbtn-active");
+    icCom.classList.add("header__usbtn-active--compare");
+    overlay.classList.add("overlay--active");
+    icPopCart.classList.remove("pop--active");
+  }
+
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCom.classList.remove("pop--active");
+    icCom.classList.remove("header__usbtn-active");
+    icCom.classList.remove("header__usbtn-active--compare");
+    overlay.classList.remove("overlay--active");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCom.classList.contains("pop--active")) {
+        icPopCom.classList.remove("pop--active");
+        icCom.classList.remove("header__usbtn-active");
+        icCom.classList.remove("header__usbtn-active--compare");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
+});
+
+icCart.addEventListener("click", function (event) {
+  event.preventDefault();
   if (icPopCart.classList.contains("pop--active")) {
     icPopCart.classList.remove("pop--active");
+    icCart.classList.remove("header__usbtn-active");
+    icCart.classList.remove("header__usbtn-active--cart");
+    if (overlay.classList.contains("overlay--active")) {
+      overlay.classList.remove("overlay--active");
+    }
   } else {
     icPopCart.classList.add("pop--active");
+    icCart.classList.add("header__usbtn-active");
+    icCart.classList.add("header__usbtn-active--cart");
+    overlay.classList.add("overlay--active");
     icPopCom.classList.remove("pop--active");
   }
+
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCart.classList.remove("pop--active");
+    icCart.classList.remove("header__usbtn-active");
+    icCart.classList.remove("header__usbtn-active--cart");
+    overlay.classList.remove("overlay--active");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCart.classList.contains("pop--active")) {
+        icPopCart.classList.remove("pop--active");
+        icCart.classList.remove("header__usbtn-active");
+        icCart.classList.remove("header__usbtn-active--cart");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
 });
