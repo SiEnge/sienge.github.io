@@ -2669,6 +2669,7 @@ template {
   padding-right: 40px;
   padding-bottom: 10px;
   padding-top: 46px;
+  text-align: center;
 }
 .feedback__item::before {
   position: absolute;
@@ -2735,7 +2736,6 @@ template {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 22px;
-    text-align: center;
   }
   .feedback__item::before {
     top: 30px;
