@@ -142,6 +142,26 @@ var HeaderFixed = (function() {
 
 })();
 
+//Копирование ссылки в буфер обмена
+
+var btnCopy = document.querySelector('.pop-create__icon--copy');
+btnCopy.addEventListener('click', function () {
+
+  var linkCopy = document.querySelector('.pop-create__link');
+
+  var range = document.createRange();
+  range.selectNode(linkCopy);
+  window.getSelection().addRange(range);
+
+  try {
+    document.execCommand('copy');
+  } catch(err) {
+    console.log('Can`t copy, boss');
+  }
+
+  window.getSelection().removeAllRanges();
+});
+
 
 //Обработка события клика на "бургер" навигации. При клике разворачивается меню
 
