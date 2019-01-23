@@ -70,9 +70,7 @@ $('.gallery__preview').slick({
 //Галерея
 
 var btnGallery = document.querySelector(".offers__button-gallery");
-
 var overlayMod = document.querySelector('.overlay-modal');
-
 var btnGalleryClose = document.querySelector(".gallery__button--close");
 var modGallery = document.querySelector('.gallery');
 
@@ -149,17 +147,40 @@ var HeaderFixed = (function() {
 
 var nav = document.querySelector(".nav");
 var navBtn = document.querySelector(".nav__button");
+var overlay = document.querySelector(".overlay");
 
 nav.classList.remove("nav--nojs");
 
-navBtn.addEventListener("click", function () {
+navBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
   if (nav.classList.contains("nav--closed")) {
     nav.classList.remove("nav--closed");
     nav.classList.add("nav--opened");
+    overlay.classList.add("overlay--active");
   } else {
     nav.classList.remove("nav--opened");
+    overlay.classList.remove("overlay--active");
     nav.classList.add("nav--closed");
   }
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    nav.classList.remove("nav--opened");
+    overlay.classList.remove("overlay--active");
+    nav.classList.add("nav--closed");
+  });
+
+    window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (nav.classList.contains("nav--opened")) {
+        nav.classList.remove("nav--opened");
+        overlay.classList.remove("overlay--active");
+        nav.classList.add("nav--closed");
+      }
+    }
+  });
+
+
 });
 
 //Обработка клика для выпадающего подменю
@@ -232,7 +253,7 @@ btnToCardClose.addEventListener("click", function (event) {
 // Обработка события клика на иконку Сравнения в шапке
 // Обработка события клика на иконку Корзины в шапке
 
-var overlay = document.querySelector(".overlay");
+
 
 var icCom = document.querySelector(".header__usbtn--compare");
 var icPopCom = document.querySelector(".pop-compare");
@@ -242,14 +263,14 @@ var icPopCart = document.querySelector(".pop--basket");
 var icTeam = document.querySelector(".pop-basket--team");
 var icPopCreate = document.querySelector(".pop-create");
 var icPopCreateCancel = document.querySelector(".pop-create--cancel");
-var icNewName = document.querySelector(".pop-create--newname");
+// var icNewName = document.querySelector(".pop-create--newname");
 var icCreateList = document.querySelector(".pop-create__list");
 var icCreateItem = document.querySelector(".pop-create__item");
-
-icNewName.addEventListener("click", function (event) {
-  var cloneLi = icCreateItem.cloneNode(true);
-  icCreateList.appendChild(cloneLi);
-});
+//
+// icNewName.addEventListener("click", function (event) {
+//   var cloneLi = icCreateItem.cloneNode(true);
+//   icCreateList.appendChild(cloneLi);
+// });
 
 icPopCreateCancel.addEventListener("click", function (event) {
   event.preventDefault();

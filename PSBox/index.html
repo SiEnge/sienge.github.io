@@ -3,6 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- <meta name="format-detection" content="telephone=no"> -->
 		<title>PSBox - Главная</title>
 		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 		<!-- <link rel="stylesheet" href="css/jquery.fancybox.min.css"> -->
@@ -10,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/style.css">
 
-  
+    
 
 	</head>
 	<body class="page">
@@ -33,11 +34,11 @@
 
         <div class="header__wrap container">
 	      <a class="header__logo">
-          <picture>
-            <source media="(min-width: 1170px)" srcset="img/logo_desktop.png">
-            <source media="(min-width: 750px)" srcset="img/logo_tablet.png">
-	          <img src="img/logo.png" alt="Логотип «PSBOX»">
-          </picture>
+          <!-- <picture> -->
+            <!-- <source media="(min-width: 1170px)" srcset="img/logo_desktop.png"> -->
+            <!-- <source media="(min-width: 750px)" srcset="img/logo_tablet.png"> -->
+	          <img src="img/logo_PSBox.svg" alt="Логотип «PSBOX»">
+          <!-- </picture> -->
 	      </a>
         <div class="header__nav">
           <nav class="nav nav--closed nav--nojs">
@@ -95,7 +96,8 @@
             </ul>
           </div>
 
-          <p class="header__phone">+7 (495) 220 09 26</p>
+          <!-- <p class="header__phone">+7 (495) 220 09 26</p> -->
+          <a class="header__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
 
           <div class="header__social header__social--right social">
             <ul class="social__list">
@@ -123,7 +125,7 @@
                 <li>
                   <a class="pop__item" href="#">
                     <div class="pop__item-wrap">
-                      <img src="img/img-ban2.jpg" alt="">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
                       <p class="pop__text pop-compare__text">Черничные ночи</p>
                     </div>
                     <p class="pop__price">1 450 руб.</p>
@@ -134,7 +136,7 @@
                 <li>
                   <a class="pop__item" href="#">
                     <div class="pop__item-wrap">
-                      <img src="img/img-ban2.jpg" alt="">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
                       <p class="pop__text pop-compare__text">Земляничное утро</p>
                     </div>
                     <p class="pop__price">2 050 руб.</p>
@@ -145,7 +147,7 @@
                 <li>
                   <a class="pop__item" href="#">
                     <div class="pop__item-wrap">
-                      <img src="img/img-ban2.jpg" alt="">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
                       <p class="pop__text pop-compare__text">Индивидуальный заказ</p>
                     </div>
                     <p class="pop__price"></p>
@@ -171,14 +173,14 @@
               <div class="pop-basket__wrap">
                 <h2 class="pop__title">Корзина</h2>
                 <button class="pop__link pop-basket--team" type="button" name="button">Создать коллективный заказ</button>
-                <button class="pop__icon pop__icon--ques pop-basket__icon--ques" type="button" name="button"><span class="visuallyhidden">Вопросы?</span></button>
+                <a class="pop__icon pop__icon--ques pop-basket__icon--ques" href="#"><span class="visuallyhidden">Вопросы?</span></a>
               </div>
               <div class="pop-basket--full pop-basket--full-active">
                 <ul class="pop__list">
                   <li>
                     <a class="pop__item" href="#">
                       <div class="pop__item-wrap">
-                        <img src="img/img-ban2.jpg" alt="">
+                        <img src="img/img-ban2.jpg" alt="Фото товара">
                         <p class="pop__text pop-basket__text">Черничные ночи</p>
                       </div>
                       <p class="pop__price">1 450 руб.</p>
@@ -189,7 +191,7 @@
                   <li>
                     <a class="pop__item" href="#">
                       <div class="pop__item-wrap">
-                        <img src="img/img-ban2.jpg" alt="">
+                        <img src="img/img-ban2.jpg" alt="Фото товара">
                         <p class="pop__text pop-basket__text">Земляничное утро</p>
                       </div>
                       <p class="pop__price">2 050 руб.</p>
@@ -200,7 +202,7 @@
                   <li>
                     <a class="pop__item" href="#">
                       <div class="pop__item-wrap">
-                        <img src="img/img-ban2.jpg" alt="">
+                        <img src="img/img-ban2.jpg" alt="Фото товара">
                         <p class="pop__text pop-basket__text">Индивидуальный заказ</p>
                       </div>
                       <p class="pop__price"></p>
@@ -226,35 +228,28 @@
 
             <section class="header__user-pop pop pop-create">
               <div class="pop-create__wrap">
-                <h2 class="pop__title pop-create__title">Коллективный заказ</h2>
+                <div class="pop-create__wrap-title">
+
+                  <h2 class="pop__title pop-create__title">Коллективный заказ</h2>
+                  <a class="pop__icon pop__icon--ques pop-create__icon--ques" href="#"><span class="visuallyhidden">Что такое коллективный заказ?</span></a>
+                </div>
                 <button class="pop__link pop-create--cancel" type="button" name="button">Отменить</button>
               </div>
               <p class="pop__text pop-create__text">Отправьте участникам заказа ссылку, указанную ниже и составьте заказ совместно.</p>
               <div class="pop-create__newlink">
                 <button class="pop__icon pop-create__icon--link" type="button" name="button"><span class="visuallyhidden">Скопировать ссылку</span></button>
-                <a href="#">psbox.ru/basket_&id1367djfadfa</a>
+                <p class="pop-create__link" href="#">psbox.ru/basket_&id1367djfadfa</p>
               </div>
-              <form class="pop-create__form" action="" method="post">
-                <ul class="pop__list pop-create__list">
-                  <li class="pop__item pop-create__item">
-                    <label for="name1"><span class="visuallyhidden">Имя участника</span></label>
-                    <input class="pop__input pop-create__input" type="text" name="name1" id="name1" value="">
-                    <button class="pop__icon pop__icon--trash pop-create__icon--trash" type="button" name="button"><span class="visuallyhidden">Удалить участника</span></button>
-                  </li>
-                  <li class="pop__item pop-create__item">
-                    <label for="name1"><span class="visuallyhidden">Имя участника</span></label>
-                    <input class="pop__input pop-create__input" type="text" name="name1" id="name1" value="">
-                    <button class="pop__icon pop__icon--trash pop-create__icon--trash" type="button" name="button"><span class="visuallyhidden">Удалить участника</span></button>
-                  </li>
-                </ul>
-                <div class="pop-create__total-wrap">
-                  <button class="pop__link pop-create--newname" type="button" name="button">Добавить участника заказа</button>
-                  <button class="pop__button pop-create__button--submit" type="submit" name="button">Начать коллективный заказ</button>
-                </div>
-              </form>
+              <!-- <form class="pop-create__form" action="" method="post"> -->
+
+                <!-- <div class="pop-create__total-wrap"> -->
+                  <!-- <button class="pop__link pop-create--newname" type="button" name="button">Добавить участника заказа</button> -->
+                  <!-- <button class="pop__button pop-create__button--submit" type="submit" name="button">Начать коллективный заказ</button> -->
+                <!-- </div> -->
+              <!-- </form> -->
             </section>
-            <div class="overlay"></div>
           </div>
+          <div class="overlay"></div>
         </div>
       </div>
 
@@ -326,7 +321,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -334,7 +329,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -342,7 +337,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -392,7 +387,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -400,7 +395,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -408,7 +403,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -416,7 +411,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -425,7 +420,7 @@
                     <div class="offers__info">
                       <h3 class="offers__name">Черничные ночи</h3>
                       <p class="offers__price">1 450 Руб.</p>
-                      <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+                      <button class="offers__compare offers__compare--active" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
                       <button class="offers__cart" type="button" name="button">В корзину</button>
                     </div>
                     <div class="offers__text">
@@ -458,7 +453,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -466,7 +461,7 @@
                           <p class="offers__img ">
                             <picture>
                               <source media="(min-width: 750px)" srcset="img/best_tablet.jpg">
-                              <img src="img/best_mobile.jpg" alt="">
+                              <img src="img/best_mobile.jpg" alt="Фото товара">
                             </picture>
                           </p>
                         </div>
@@ -678,7 +673,8 @@
             </p>
           </div>
           <div class="footer__contact">
-            <p class="footer__phone">+7 (495) 220 09 26</p>
+            <!-- <p class="footer__phone">+7 (495) 220 09 26</p> -->
+            <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
             <div class="footer__social social">
               <ul class="social__list">
                 <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
@@ -700,12 +696,12 @@
 
       <section class="modal__invite">
         <h2 class="modal__title">Вас приглашают присоединиться к коллективному заказу</h2>
-        <button class="pop__icon pop__icon--ques pop-basket__icon--ques" type="button" name="button"><span class="visuallyhidden">Вопросы?</span></button>
+        <a class="pop__icon pop__icon--ques pop-basket__icon--ques" href="#"><span class="visuallyhidden">Вопросы?</span></a>
         <p class="modal__text">Формируйте заказ вместе с коллегами или друзьями. Собирайте общую корзину, вместе добавляйте товары в единый список избранного.</p>
         <div class="modal__wrap-btn">
 
-          <button class="pop__link modal-invite__button--cancel" type="button" name="button">Отменить</button>
           <button class="pop__button" type="button" name="button">Принять приглашение</button>
+          <button class="pop__link modal-invite__button--cancel" type="button" name="button">Отменить</button>
         </div>
       </section>
 
@@ -715,31 +711,31 @@
         <button class="gallery__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
         <div class="gallery__slider">
           <div class="gallery__slide">
-            <img src="img/gal-0-1_desktop.jpg" alt="">
+            <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
           <div class="gallery__slide">
-            <img src="img/gal-0-2_desktop.jpg" alt="">
+            <img src="img/gal-0-2_desktop.jpg" alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
           <div class="gallery__slide">
-            <img src="img/gal-0-3_desktop.jpg" alt="">
+            <img src="img/gal-0-3_desktop.jpg" alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
           <div class="gallery__slide">
-            <img src="img/gal-1-1_desktop.jpg" alt="">
+            <img src="img/gal-1-1_desktop.jpg" alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
           <div class="gallery__slide">
-            <img src="img/gal-1-2_desktop.jpg"  alt="">
+            <img src="img/gal-1-2_desktop.jpg"  alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
           <div class="gallery__slide">
-            <img src="img/gal-0-1_desktop.jpg" alt="">
+            <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
           <div class="gallery__slide">
-            <img src="img/gal-0-1_desktop.jpg" alt="">
+            <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
             <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
           </div>
 
@@ -748,25 +744,25 @@
 
         <div class="gallery__preview">
           <div class="gallery__slide">
-            <img src="img/slide_mobile.jpg" alt="">
+            <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
           </div>
           <div class="gallery__slide">
-            <img src="img/best_mobile.jpg" alt="">
+            <img src="img/best_mobile.jpg" alt="Превью фото галереи">
           </div>
           <div class="gallery__slide">
-            <img src="img/slide_mobile.jpg" alt="">
+            <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
           </div>
           <div class="gallery__slide">
-            <img src="img/best_mobile.jpg" alt="">
+            <img src="img/best_mobile.jpg" alt="Превью фото галереи">
           </div>
           <div class="gallery__slide">
-            <img src="img/slide_mobile.jpg"  alt="">
+            <img src="img/slide_mobile.jpg"  alt="Превью фото галереи">
           </div>
           <div class="gallery__slide">
-            <img src="img/best_mobile.jpg" alt="">
+            <img src="img/best_mobile.jpg" alt="Превью фото галереи">
           </div>
           <div class="gallery__slide">
-            <img src="img/slide_mobile.jpg" alt="">
+            <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
           </div>
         </div>
 
