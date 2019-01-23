@@ -1608,8 +1608,8 @@ template {
   content: "23";
 }
 .header__usbtn--cart {
-  background-image: url("../img/ic-cart.png");
-  background-size: 23px 24px;
+  background-image: url("../img/cart_violet.svg");
+  background-size: 24px 24px;
 }
 .header__usbtn--cart::after {
   content: "5";
@@ -1627,7 +1627,7 @@ template {
   background-image: url("../img/heart_white.svg");
 }
 .header__usbtn--cart:hover {
-  background-image: url("../img/ic-cart-w.png");
+  background-image: url("../img/cart_white.svg");
 }
 .header__usbtn-active {
   z-index: 260;
@@ -1643,7 +1643,7 @@ template {
   background-image: url("../img/heart_white.svg");
 }
 .header__usbtn-active--cart {
-  background-image: url("../img/ic-cart-w.png");
+  background-image: url("../img/cart_white.svg");
 }
 .header__form-search {
   display: none;
@@ -2297,7 +2297,7 @@ template {
   background-position: center;
   cursor: pointer;
   background-image: url("../img/cart_white.svg");
-  background-size: 17px 18px;
+  background-size: 20px 20px;
   font-family: "Intro", "Arial", sans-serif;
   font-style: normal;
   font-weight: normal;
