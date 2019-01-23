@@ -2877,6 +2877,10 @@ template {
     padding-top: 27px;
     padding-left: 20px;
   }
+  .how__number {
+    height: 22px;
+    padding-top: 3px;
+  }
   .how__name {
     font-size: 24px;
   }
