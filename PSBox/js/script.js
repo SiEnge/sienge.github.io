@@ -58,8 +58,9 @@ $('.about__review-slider').slick({
   mobileFirst: true,
   // autoplay: true,
   // autoplaySpeed: 3000,
-  arrows: false,
+  // arrows: false,
   slidesToShow: 1,
+  infinite: false,
   adaptiveHeight: false,
   adaptiveHeight: true,
   responsive: [{
@@ -184,7 +185,7 @@ $('.gallery__preview').slick({
       }
     },
     {
-        breakpoint: 750,
+        breakpoint: 768,
         settings: {
           slidesToShow: 3
         }
