@@ -4506,10 +4506,52 @@ textarea:required:valid {
         -ms-flex-order: 2;
             order: 2;
   }
+  .pleasure__slider.slick-dotted.slick-slider {
+    margin-bottom: 15px;
+  }
+  .pleasure__slider .slick-next,
+  .pleasure__slider .slick-prev {
+    position: absolute;
+    top: 290px;
+    display: none;
+    width: 50px;
+    height: 420px;
+    content: " ";
+    cursor: pointer;
+  }
+  .pleasure__slider .slick-next {
+    right: -40px;
+  }
+  .pleasure__slider .slick-prev {
+    left: -40px;
+  }
+  .pleasure__slider .slick-next::before,
+  .pleasure__slider .slick-prev::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 420px;
+    content: "";
+    background-image: url("../img/arrow_light-pink.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 48px;
+  }
+  .pleasure__slider .slick-prev::before {
+    right: auto;
+    left: 0;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .pleasure__slider .slick-next:hover::before,
+  .pleasure__slider .slick-prev:hover::before {
+    background-image: url("../img/arrow_rose.svg");
+  }
 }
 @media (min-width: 1200px) {
   .pleasure {
-    width: 870px;
+    width: 840px;
     padding-top: 40px;
   }
   .pleasure__slide {

@@ -55,22 +55,17 @@ if (dropZone) {
 // Слайдеры
 
 $('.about__review-slider').slick({
+  mobileFirst: true,
   // autoplay: true,
   // autoplaySpeed: 3000,
   arrows: false,
-  slidesToShow: 2,
+  slidesToShow: 1,
   adaptiveHeight: false,
+  adaptiveHeight: true,
   responsive: [{
-    //   breakpoint: 1170,
-    //   settings: {
-    //     slidesToShow: 2
-    //   }
-    // },
-    // {
-        breakpoint: 750,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,
-          adaptiveHeight: true
+          slidesToShow: 2
         }
       }]
   });
