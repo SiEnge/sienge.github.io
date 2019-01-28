@@ -4450,6 +4450,7 @@ textarea:required:valid {
 .pleasure__preview {
   height: 0;
   visibility: hidden;
+  position: fixed;
 }
 @media (min-width: 768px) {
   .pleasure {
@@ -4479,6 +4480,7 @@ textarea:required:valid {
     margin: 0 auto;
     margin-top: -35px;
     width: 580px;
+    position: relative;
     height: 80px;
     visibility: visible;
   }
