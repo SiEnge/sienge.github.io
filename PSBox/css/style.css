@@ -5360,7 +5360,8 @@ textarea:required:valid {
   background-size: 48px 47px;
 }
 .collectiveorder__lead {
-  padding-bottom: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .collectiveorder__itemtitle {
   margin: 0;
@@ -5781,4 +5782,11 @@ textarea:required:valid {
   line-height: 20px;
   margin: 0;
   padding-top: 7px;
+}
+.filter__fieldset {
+  border: none;
+  -webkit-box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
+          box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
+  border-radius: 5px;
+  background-color: #ffffff;
 }
