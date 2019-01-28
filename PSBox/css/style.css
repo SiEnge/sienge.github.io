@@ -1191,7 +1191,7 @@ textarea:required:valid {
   background-position: center;
 }
 .modal-review {
-  overflow: hidden;
+  overflow: overlay;
   height: 80vh;
   position: fixed;
   z-index: 300;
