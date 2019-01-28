@@ -5080,11 +5080,9 @@ textarea:required:valid {
             justify-content: space-between;
   }
   .connection__item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 350px;
-            flex: 0 0 350px;
     padding-top: 15px;
     padding-bottom: 15px;
+    width: 345px;
   }
   .connection__item--map {
     -webkit-box-flex: 1;
