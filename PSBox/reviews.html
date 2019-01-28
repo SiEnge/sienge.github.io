@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PSBox - Отзывы</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Pixel Glass -->
+  <!-- <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    background-image: url( "Reviews_PSBOX_320.jpg" );
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "Reviews_PSBOX_720.jpg" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX_1200-Reviews.jpg" );
+    }
+  }
+
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script> -->
+  <!-- // Pixel Glass -->
+
+</head>
+
+<body class="page">
+
+  <header class="header">
+
+    <!-- Всплывающий поп-ап при нажатии на кнопку "В корзину" -->
+
+    <section class="modal__addtocart">
+      <div class="modal__wrap container">
+        <p class="modal__text modal__text--white">Товар "Черничные ночи" добавлен в корзину</p>
+        <button class="modal__button modal__button--cancel" type="button" name="button">Отменить добавление</button>
+        <button class="modal__button modal__button--close  modal__addtocart-btn--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+      </div>
+    </section>
+
+    <!-- Шапка -->
+
+    <div class="header__wrap container">
+      <a class="header__logo header__logo--land" href="index.html">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="img/logo_PSBox_land.svg">
+          <img src="img/logo_PSBox.svg" alt="Логотип «PSBOX»">
+        </picture>
+      </a>
+      <div class="header__nav">
+
+        <!-- Форма поиска -->
+
+        <form class="header__form-search form-search" method="get" action="">
+          <input class="form-search__input" type="search" placeholder="Поиск по сайту">
+          <button class="form-search__button" type="submit"></button>
+        </form>
+
+        <!-- Дополнительное меню, которое частично дублирует нижнее -->
+
+        <section class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item"><a href="about.html">О нас</a></li>
+            <li class="menu__item"><a href="how-to-make-an-order.html">Как сделать заказ</a></li>
+            <li class="menu__item"><a href="payment-and-delivery.html">Оплата и доставка</a></li>
+            <li class="menu__item"><a>Отзывы</a></li>
+            <li class="menu__item"><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </section>
+
+        <!-- Блок соцсетей -->
+
+        <div class="header__social header__social--left social">
+          <ul class="social__list ">
+            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+          </ul>
+        </div>
+
+        <a class="header__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
+
+        <div class="header__social header__social--right social">
+          <ul class="social__list">
+            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Блок избранного и корзины -->
+
+        <div class="header__user">
+          <div class="header__usitem">
+            <button class="header__usbtn header__usbtn--compare " href="#"><span class="visuallyhidden">Сравнение</span></button>
+          </div>
+          <div class="header__usitem">
+            <button class="header__usbtn header__usbtn--cart" href="#"><span class="visuallyhidden">Корзина</span></button>
+          </div>
+
+          <!-- Всплывающее окно "Избранные товары" -->
+
+          <section class="header__user-pop pop pop-compare">
+            <div class="pop__wrap">
+              <h2 class="pop__title">Избранные товары</h2>
+            </div>
+            <ul class="pop__list">
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Черничные ночи</p>
+                  </div>
+                  <p class="pop__price">1 450 руб.</p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare pop__icon--compare-active" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Земляничное утро</p>
+                  </div>
+                  <p class="pop__price">2 050 руб.</p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Индивидуальный заказ</p>
+                  </div>
+                  <p class="pop__price"></p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+            </ul>
+            <div class="pop__total-wrap pop-compare__total-wrap">
+              <p class="pop__total">2 подарка 3500 Руб.</p>
+              <p class="pop__add">+ Индивидуальный заказ</p>
+            </div>
+            <p class="pop__comment">Чтобы сохранить свой список избранных подарков, отправьте их себе на email</p>
+            <form class="pop-compare__form" action="" method="post">
+              <input class="pop__input pop-compare__input" type="email" name="email" value="" placeholder="Ваш email" required>
+              <button class="pop__button pop-compare__button" type="submit" name="button">Отправить</button>
+            </form>
+          </section>
+
+          <!-- Всплывающее окно "Корзина" -->
+
+          <section class="header__user-pop pop pop--basket">
+            <div class="pop-basket__wrap">
+              <h2 class="pop__title">Корзина</h2>
+              <button class="pop__link pop-basket--team" type="button" name="button">Создать коллективный заказ</button>
+              <a class="pop__icon pop__icon--ques pop-basket__icon--ques" href="#"><span class="visuallyhidden">Вопросы?</span></a>
+            </div>
+
+            <!-- Полная корзина -->
+            <div class="pop-basket--full pop-basket--full-active">
+              <ul class="pop__list">
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Черничные ночи</p>
+                    </div>
+                    <p class="pop__price">1 450 руб.</p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare pop__icon--compare-active" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Земляничное утро</p>
+                    </div>
+                    <p class="pop__price">2 050 руб.</p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Индивидуальный заказ</p>
+                    </div>
+                    <p class="pop__price"></p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+              </ul>
+              <div class="pop__total-wrap ">
+                <p class="pop__total">2 подарка 3500 Руб.</p>
+                <p class="pop__add">+ Индивидуальный заказ</p>
+                <button class="pop__button" type="button" name="button">Оформить заказ</button>
+              </div>
+            </div>
+
+            <!-- Пустая корзина -->
+            <div class="pop-basket--empty">
+              <div class="pop__total-wrap pop-basket__total-wrap">
+                <p class="pop-basket-empty__text">Здесь пусто :( Скорее сделайте ваш заказ!</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Всплывающее окно "Создание коллективного заказа" -->
+
+          <section class="header__user-pop pop pop-create">
+            <div class="pop-create__wrap">
+              <div class="pop-create__wrap-title">
+                <h2 class="pop__title pop-create__title">Коллективный заказ</h2>
+                <a class="pop__icon pop__icon--ques pop-create__icon--ques" href="#"><span class="visuallyhidden">Что такое коллективный заказ?</span></a>
+              </div>
+              <button class="pop__link pop-create--cancel" type="button" name="button">Отменить</button>
+            </div>
+            <p class="pop__text pop-create__text">Отправьте участникам заказа ссылку, указанную ниже и составьте заказ совместно.</p>
+            <div class="pop-create__newlink">
+              <button class="pop__icon pop-create__icon--copy" type="button" name="button"><span class="visuallyhidden">Скопировать ссылку</span></button>
+              <p class="pop-create__link" href="#">psbox.ru/basket_&id1367djfadfa</p>
+            </div>
+          </section>
+        </div>
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Основная навигация -->
+      <nav class="nav nav--page nav--closed">
+        <button class="nav__button" type="button"><span class="visuallyhidden">Открыть меню</span></button>
+        <ul class="nav__list">
+          <li class="nav__item nav__item--sub nav__item--subclose nav__item--subfixed"><a href="#">Каталог подарков</a>
+            <ul class="nav__sublist">
+              <li class="nav__subitem"><a href="#">Любимым</a></li>
+              <li class="nav__subitem"><a href="#">Друзьям</a></li>
+              <li class="nav__subitem"><a href="#">Родителям</a></li>
+              <li class="nav__subitem"><a href="#">Коллегам</a></li>
+              <li class="nav__subitem"><a href="#">На день рождения</a></li>
+              <li class="nav__subitem"><a href="#">На свадьбу</a></li>
+              <li class="nav__subitem"><a href="#">На годовщину</a></li>
+              <li class="nav__subitem"><a href="#">На выписку</a></li>
+              <li class="nav__subitem"><a href="#">На новоселье</a></li>
+              <li class="nav__subitem"><a href="#">Просто так</a></li>
+              <li class="nav__subitem"><a href="#">День Святого Валентина</a></li>
+              <li class="nav__subitem"><a href="#">23 февраля</a></li>
+              <li class="nav__subitem"><a href="#">8 марта</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#">Индивидуальный заказ</a></li>
+          <li class="nav__item"><a href="#">Помощь в выборе подарка</a></li>
+          <li class="nav__item"><a href="corp_clients.html">Корпоративным клиентам</a></li>
+          <li class="nav__item nav__item--hidden"><a href="about.html">О нас</a></li>
+          <li class="nav__item nav__item--hidden"><a href="how-to-make-an-order.html">Как сделать заказ</a></li>
+          <li class="nav__item nav__item--hidden"><a href="payment-and-delivery.html">Оплата и доставка</a></li>
+          <li class="nav__item nav__item--hidden"><a>Отзывы</a></li>
+          <li class="nav__item nav__item--hidden"><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+
+    <!-- Хлебные крошки -->
+
+    <section class="breadcrumbs breadcrumbs--backwhite">
+      <div class="container">
+        <div class="container--shrink">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumbs__item">Отзывы</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+
+    <section class="review container">
+      <div class="container--shrink">
+        <h1 class="title title--headline">Отзывы</h1>
+        <section class="review__lead">
+
+          <div class="review__textwrap">
+            <p>Скиннер, однако, настаивал, что действие продолжает однокомпонентный эриксоновский гипноз. Конформизм многопланово выбирает экспериментальный тест, таким образом <span class="review--hidden">сбылась мечта идиота - утверждение
+                полностью доказано. Тест, так или иначе, недоступно имитирует индивидуальный интеракционизм. Гипнотический рифф, как справедливо.</span></p>
+            <p class="review--hidden">Cчитает Ф.Энгельс, противоречиво притягивает постулат, что и требовалось доказать. Высшая арифметика наблюдаема. Асинхронное ритмическое поле создает двойной интеграл. Инсайт представляет собой опасный
+              детерминант. Аномия, конечно, охватывает аккорд, как и предполагалось.</p>
+          </div>
+          <div class="review__banner">
+            <div class="review__bannerwrap">
+              <p class="review__count"><span class="review__count--high">198</span> отзывов</p>
+              <button class="button review__button" type="button" name="button">Оставить отзыв</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- список Отзывов -->
+
+        <section class="review__list">
+          <section class="review__client">
+            <blockquote>
+              <p class="review__product">
+                <img src="img/best_tablet.jpg" alt="Фото товара">
+              </p>
+              <div class="review__block">
+                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
+              </div>
+              <div class="review__wrap">
+                <p class="review__img">
+                  <img src="img/otz1.jpg" alt="Фото клиента">
+                </p>
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <p class="review__comment">Отзыв о товаре</p>
+                  <a class="review__link" href="#">Черничные ночи</a>
+                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+          <section class="review__client">
+            <blockquote>
+              <p class="review__product">
+                <img src="img/best_tablet.jpg" alt="Фото товара">
+              </p>
+              <div class="review__block">
+                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
+              </div>
+              <div class="review__wrap">
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <p class="review__comment">Отзыв о товаре</p>
+                  <a class="review__link" href="#">Черничные ночи</a>
+                  <button class="review__social review__social--fb" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+          <section class="review__client">
+            <blockquote>
+              <div class="review__block">
+                <p class="review__text">Инсайт отчуждает возрастной архетип. Роджерс первым ввел в научный обиход понятие «клиент», так как воспитание отталкивает оппортунический онтогенез речи, что лишний раз подтверждает правоту З.Фрейда. Однако
+                  Э.Дюркгейм утверждал, что импульс недоступно осознаёт коллективный код. Сновидение концептуально отражает кризис. Психосоматика возможна. Комплекс, по определению, одинаково осознаёт понимающий психоз. Душа отталкивает латентный
+                  импульс.</p>
+              </div>
+              <div class="review__wrap">
+                <p class="review__img">
+                  <img src="img/otz1.jpg" alt="Фото клиента">
+                </p>
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <p class="review__comment">Отзыв о товаре</p>
+                  <a class="review__link" href="#">Черничные ночи</a>
+                  <button class="review__social review__social--wa" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+          <section class="review__client">
+            <blockquote>
+              <p class="review__product">
+                <img src="img/best_tablet.jpg" alt="Фото товара">
+              </p>
+              <div class="review__block">
+                <p class="review__text">Однако Э.Дюркгейм утверждал, что агрессия просветляет материалистический генезис. Генезис традиционен. Как мы уже знаем, ассоциация зеркально просветляет понимающий генезис. Коллективное бессознательное, как
+                  бы это ни казалось парадоксальным, притягивает институциональный психоанализ. Душа отталкивает латентный импульс, и это неудивительно, если речь о персонифицированном характере первичной социализации.
+                  Однако Э.Дюркгейм утверждал, что агрессия просветляет материалистический генезис. Генезис традиционен. Как мы уже знаем, ассоциация зеркально просветляет понимающий генезис. Коллективное бессознательное, как бы это ни казалось
+                  парадоксальным, притягивает институциональный психоанализ. Душа отталкивает латентный импульс, и это неудивительно, если речь о персонифицированном характере первичной социализации.</p>
+              </div>
+              <div class="review__wrap">
+                <p class="review__img">
+                  <img src="img/otz1.jpg" alt="Фото клиента">
+                </p>
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <p class="review__comment">Отзыв о товаре</p>
+                  <a class="review__link" href="#">Черничные ночи</a>
+                  <button class="review__social review__social--vi" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+          <section class="review__client">
+            <blockquote>
+              <p class="review__product">
+                <img src="img/best_tablet.jpg" alt="Фото товара">
+              </p>
+              <div class="review__block">
+                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
+              </div>
+              <div class="review__wrap">
+                <p class="review__img">
+                  <img src="img/otz1.jpg" alt="Фото клиента">
+                </p>
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <button class="review__social review__social--tg" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+
+          <!-- ответ Эксперта -->
+
+          <section class="review__expert">
+            <blockquote>
+              <div class="review__wrap">
+                <div class="review__cite">
+                  <cite class="review__name">Сергей Петров</cite>
+                  <p class="review__post">Руководитель отдела качества</p>
+                </div>
+                <p class="review__img">
+                  <img src="img/otz2.jpg" alt="Фото эксперта">
+                </p>
+              </div>
+              <div class="review__block">
+                <p class="review__text">Однако Э.Дюркгейм утверждал, что агрессия просветляет материалистический генезис. Генезис традиционен. Как мы уже знаем, ассоциация зеркально просветляет понимающий генезис. Коллективное бессознательное </p>
+              </div>
+            </blockquote>
+          </section>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- Футер -->
+
+  <footer class="footer">
+    <div class="footer__wrap container">
+      <div class="footer__info">
+        <p><a class="footer__info--phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26 </a> <br>
+          г. Москва, <br>
+          ул. Донская, д. 8 стр. 1 <br>
+        </p>
+        <p>Приём заказов: <br>
+          ежедневно <br>
+          с 09.00 до 21.00 <br>
+        </p>
+      </div>
+      <div class="footer__contact">
+        <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
+        <div class="footer__social social">
+          <ul class="social__list">
+            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
+            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
+  </footer>
+
+  <!-- Модально окно "Оставить отзыв" -->
+
+  <section class="modal-review">
+    <button class="modal-review__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+    <form action="" method="post">
+      <h2 class="form__title">Оставить отзыв</h2>
+      <div class="form__wrap form__wrap--text">
+        <label class="form__label" for="addition">Текст отзыва<span class="form__label--red">*</span></label>
+        <textarea class="form__input form__input--addition" name="name" id="addition" required></textarea>
+      </div>
+      <div class="form__shell">
+        <div class="form__wrap">
+          <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
+          <input class="form__input" type="text" name="" value="" id="name" required>
+        </div>
+        <div class="form__wrap">
+          <label class="form__label" for="tel">Телефон</label>
+          <input class="form__input" type="text" name="" value="" id="phone">
+        </div>
+        <div class="form__wrap">
+          <label class="form__label" for="email">Ваш email</label>
+          <input class="form__input" type="email" name="" value="" id="email">
+        </div>
+      </div>
+      <div class="form__shell">
+        <div class="form__wrap form__wrap--product">
+          <label class="form__label" for="cost">Товар</label>
+          <p class="form__comment">Если вы хотите оставить о товаре, выберите его из списка</p>
+          <select class="form__input " name="cost" id="cost">
+            <option class="option" value="any">Черничные ночи</option>
+            <option class="option" value="high">Цветущая черемуха</option>
+          </select>
+        </div>
+        <div class="form__wrap form__wrap--file">
+          <label class="form__label" for="image">Изображения</label>
+          <p class="form__comment">Прикрепите фото того, что вы хотите реализовать</p>
+          <div class="form__input form__input--file" id="upload">
+            <input id="file-input" type="file" name="file" multiple>
+            <span>Перетащите файл сюда или </span>
+            <label class="form__label--link" for="file-input">выберите из папки</label>
+          </div>
+        </div>
+      </div>
+      <button class="form__button modal-review__button--send" type="submit" name="button">Оформить заказ</button>
+    </form>
+  </section>
+
+  <!-- Модальное окно "Отзыв отправлен" -->
+
+  <section class="modal-reviewadd">
+    <!-- <button class="modal-reviewadd__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button> -->
+    <h2 class="modal__title">Отзыв отправлен</h2>
+    <p class="modal__text">Спасибо за ваш отзыв! Он появится на странице <a class="modal__link" href="#">Отзывы</a> и на странице товара <a class="modal__link" href="#">Черничные ночи</a> сразу после модерации</p>
+    <div class="modal__wrap-btn">
+      <button class="pop__button modal-reviewadd__button--close" type="button" name="button">Закрыть</button>
+    </div>
+  </section>
+
+  <div class="overlay-modal"></div>
+
+  <script src="js/jquery.2.1.3.min.js"></script>
+  <script src="slick/slick.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/picturefill.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,107 @@
+// Поле загрузки файлов drag and drop
+
+var dropZone = $('#upload');
+if (dropZone) {
+  $('#file-input').focus(function() {
+    $('label').addClass('focus');
+  })
+  .focusout(function() {
+    $('label').removeClass('focus');
+  });
+
+  dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function(){
+    return false;
+  });
+
+  dropZone.on('dragover dragenter', function() {
+    dropZone.addClass('dragover');
+  });
+
+  dropZone.on('dragleave', function(e) {
+    dropZone.removeClass('dragover');
+  });
+
+  dropZone.on('dragleave', function(e) {
+    let dx = e.pageX - dropZone.offset().left;
+    let dy = e.pageY - dropZone.offset().top;
+    if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
+      dropZone.removeClass('dragover');
+    };
+  });
+
+  dropZone.on('drop', function(e) {
+    dropZone.removeClass('dragover');
+    let files = e.originalEvent.dataTransfer.files;
+    sendFiles(files);
+  });
+
+  $('#file-input').change(function() {
+    let files = this.files;
+    sendFiles(files);
+  });
+
+  function sendFiles(files) {
+    let maxFileSize = 5242880;
+    let Data = new FormData();
+    $(files).each(function(index, file) {
+      if ((file.size <= maxFileSize) && ((file.type == 'image/png') || (file.type == 'image/jpeg'))) {
+        Data.append('images[]', file);
+      }
+    });
+  };
+}
+
+
 // Слайдеры
 
+$('.about__review-slider').slick({
+  // autoplay: true,
+  // autoplaySpeed: 3000,
+  arrows: false,
+  slidesToShow: 2,
+  adaptiveHeight: false,
+  responsive: [{
+    //   breakpoint: 1170,
+    //   settings: {
+    //     slidesToShow: 2
+    //   }
+    // },
+    // {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 1,
+          adaptiveHeight: true
+        }
+      }]
+  });
+
+$('.example__slider').slick({
+  mobileFirst: true,
+  asNavFor: '.example__preview',
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: false,
+  responsive: [{
+      breakpoint: 1000,
+      settings: {
+        arrows: true
+      }
+    }]
+});
+
+$('.example__preview').slick({
+  mobileFirst: true,
+  asNavFor: '.example__slider',
+  slidesToShow: 5,
+  focusOnSelect: true,
+  arrows: false,
+  responsive: [{
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 7
+        }
+      }]
+});
 
 $('.gift__slider').slick({
   autoplay: true,
@@ -8,7 +110,7 @@ $('.gift__slider').slick({
   pauseOnDotsHover: true,
   zindex: 100,
   responsive: [{
-      breakpoint: 1170,
+      breakpoint: 1048,
       settings: {
         arrows: false
       }
@@ -66,43 +168,118 @@ $('.gallery__preview').slick({
       }]
 });
 
+$('.variant__slider--one').slick({
+  mobileFirst: true,
+  asNavFor: '.variant__preview--one',
+  ccsEase: 'ease-in',
+  arrows: false,
+  responsive: [{
+      breakpoint: 1200,
+      settings: {
+        arrows: true
+      }
+    }]
+});
+
+$('.variant__preview--one').slick({
+  asNavFor: '.variant__slider--one',
+  slidesToShow: 6,
+  // centerMode: true,
+  // centerPadding: '10px',
+  focusOnSelect: true,
+  arrows: false
+  // responsive: [{
+  //     breakpoint: 1170,
+  //     settings: {
+  //       slidesToShow: 7
+  //     }
+  //   },
+  //   {
+  //       breakpoint: 750,
+  //       settings: {
+  //         slidesToShow: 6
+  //       }
+  //     }]
+});
+
+$('.variant__slider--two').slick({
+  mobileFirst: true,
+  asNavFor: '.variant__preview--two',
+  ccsEase: 'ease-in',
+  arrows: false,
+  responsive: [{
+      breakpoint: 1200,
+      settings: {
+        arrows: true
+      }
+    }]
+  });
+
+$('.variant__preview--two').slick({
+  asNavFor: '.variant__slider--two',
+  slidesToShow: 6,
+  // centerMode: true,
+  // centerPadding: '10px',
+  focusOnSelect: true,
+  arrows: false
+  // responsive: [{
+  //     breakpoint: 1170,
+  //     settings: {
+  //       slidesToShow: 7
+  //     }
+  //   },
+  //   {
+  //       breakpoint: 750,
+  //       settings: {
+  //         slidesToShow: 6
+  //       }
+  //     }]
+});
+
+// Наши работы
+
+
+
 
 //Галерея
 
 var btnGallery = document.querySelector(".offers__button-gallery");
 var overlayMod = document.querySelector('.overlay-modal');
-var btnGalleryClose = document.querySelector(".gallery__button--close");
-var modGallery = document.querySelector('.gallery');
 
-btnGallery.addEventListener("click", function (event) {
-  event.preventDefault();
+if (btnGallery) {
+  var btnGalleryClose = document.querySelector(".gallery__button--close");
+  var modGallery = document.querySelector('.gallery');
 
-  modGallery.classList.add("gallery--active");
-  overlayMod.classList.add("overlay--active");
-
-  overlayMod.addEventListener("click", function(event) {
+  btnGallery.addEventListener("click", function (event) {
     event.preventDefault();
+
+    modGallery.classList.add("gallery--active");
+    overlayMod.classList.add("overlay--active");
+
+    overlayMod.addEventListener("click", function(event) {
+      event.preventDefault();
+      modGallery.classList.remove("gallery--active");
+      overlayMod.classList.remove("overlay--active");
+    });
+
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modGallery.classList.contains("gallery--active")) {
+          modGallery.classList.remove("gallery--active");
+          overlayMod.classList.remove("overlay--active");
+        }
+      }
+    });
+  });
+
+  btnGalleryClose.addEventListener("click", function (event) {
+    event.preventDefault();
+
     modGallery.classList.remove("gallery--active");
     overlayMod.classList.remove("overlay--active");
   });
 
-    window.addEventListener("keydown", function(event) {
-    if (event.keyCode === 27) {
-      if (modGallery.classList.contains("gallery--active")) {
-        modGallery.classList.remove("gallery--active");
-        overlayMod.classList.remove("overlay--active");
-      }
-    }
-  });
-});
-
-btnGalleryClose.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  modGallery.classList.remove("gallery--active");
-  overlayMod.classList.remove("overlay--active");
-});
-
+}
 
 
 //Прилипание шапки при прокрутке
@@ -145,22 +322,25 @@ var HeaderFixed = (function() {
 //Копирование ссылки в буфер обмена
 
 var btnCopy = document.querySelector('.pop-create__icon--copy');
-btnCopy.addEventListener('click', function () {
 
-  var linkCopy = document.querySelector('.pop-create__link');
+if (btnCopy) {
+  btnCopy.addEventListener('click', function () {
 
-  var range = document.createRange();
-  range.selectNode(linkCopy);
-  window.getSelection().addRange(range);
+    var linkCopy = document.querySelector('.pop-create__link');
 
-  try {
-    document.execCommand('copy');
-  } catch(err) {
-    console.log('Can`t copy, boss');
-  }
+    var range = document.createRange();
+    range.selectNode(linkCopy);
+    window.getSelection().addRange(range);
 
-  window.getSelection().removeAllRanges();
-});
+    try {
+      document.execCommand('copy');
+    } catch(err) {
+      console.log('Can`t copy, boss');
+    }
+
+    window.getSelection().removeAllRanges();
+  });
+}
 
 
 //Обработка события клика на "бургер" навигации. При клике разворачивается меню
@@ -217,57 +397,141 @@ navSub.addEventListener("click", function () {
   }
 });
 
-//Обработка закрытия модального окна "ПРиглашение к коллективному заказу"
+//Обработка закрытия модального окна "Приглашение к коллективному заказу"
 var btnInvite = document.querySelector(".offers__invite-btn");
-var btnInviteClose = document.querySelector(".modal-invite__button--cancel");
-var modInvite = document.querySelector('.modal__invite');
+
+if (btnInvite) {
+  var btnInviteClose = document.querySelector(".modal-invite__button--cancel");
+  var modInvite = document.querySelector('.modal__invite');
 
 
-btnInvite.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  modInvite.classList.add("modal--active");
-  overlayMod.classList.add("overlay--active");
-
-  overlayMod.addEventListener("click", function(event) {
+  btnInvite.addEventListener("click", function (event) {
     event.preventDefault();
+
+    modInvite.classList.add("modal--active");
+    overlayMod.classList.add("overlay--active");
+
+    overlayMod.addEventListener("click", function(event) {
+      event.preventDefault();
+      modInvite.classList.remove("modal--active");
+      overlayMod.classList.remove("overlay--active");
+    });
+
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modInvite.classList.contains("modal--active")) {
+          modInvite.classList.remove("modal--active");
+          overlayMod.classList.remove("overlay--active");
+        }
+      }
+    });
+  });
+
+  btnInviteClose.addEventListener("click", function (event) {
+    event.preventDefault();
+
     modInvite.classList.remove("modal--active");
     overlayMod.classList.remove("overlay--active");
   });
 
+}
+
+// модальное окно "Оставить отзыв"
+var btnReview = document.querySelector(".review__button");
+
+if (btnReview) {
+  var modReview = document.querySelector('.modal-review');
+  var modReviewAdd = document.querySelector('.modal-reviewadd');
+  var btnReviewSend = document.querySelector(".modal-review__button--send");
+
+  var btnReviewClose = document.querySelector(".modal-review__button--close");
+  var btnReviewAddClose = document.querySelector(".modal-reviewadd__button--close");
+
+
+
+  btnReview.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    modReview.classList.add("modal--active");
+    overlayMod.classList.add("overlay--active");
+
+    overlayMod.addEventListener("click", function(event) {
+      event.preventDefault();
+      modReview.classList.remove("modal--active");
+      overlayMod.classList.remove("overlay--active");
+    });
+
     window.addEventListener("keydown", function(event) {
-    if (event.keyCode === 27) {
-      if (modInvite.classList.contains("modal--active")) {
-        modInvite.classList.remove("modal--active");
-        overlayMod.classList.remove("overlay--active");
+      if (event.keyCode === 27) {
+        if (modReview.classList.contains("modal--active")) {
+          modReview.classList.remove("modal--active");
+          overlayMod.classList.remove("overlay--active");
+        }
       }
-    }
+    });
   });
-});
 
-btnInviteClose.addEventListener("click", function (event) {
-  event.preventDefault();
+  btnReviewClose.addEventListener("click", function (event) {
+    event.preventDefault();
 
-  modInvite.classList.remove("modal--active");
-  overlayMod.classList.remove("overlay--active");
-});
+    modReview.classList.remove("modal--active");
+    overlayMod.classList.remove("overlay--active");
+  });
+
+  btnReviewSend.addEventListener("click", function () {
+    event.preventDefault();
+
+    modReview.classList.remove("modal--active");
+    modReviewAdd.classList.add("modal--active");
+
+
+    btnReviewAddClose.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      modReviewAdd.classList.remove("modal--active");
+      overlayMod.classList.remove("overlay--active");
+    });
+
+    overlayMod.addEventListener("click", function(event) {
+      event.preventDefault();
+      modReviewAdd.classList.remove("modal--active");
+      overlayMod.classList.remove("overlay--active");
+    });
+
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modReviewAdd.classList.contains("modal--active")) {
+          modReviewAdd.classList.remove("modal--active");
+          overlayMod.classList.remove("overlay--active");
+        }
+      }
+    });
+  });
+
+}
+
 
 
 
 // Обработка клика на "В корзину"
 var btnToCard = document.querySelector(".offers__cart-btn");
-var modToCard = document.querySelector(".modal__addtocart");
-var btnToCardClose = document.querySelector(".modal__addtocart-btn--close");
 
-btnToCard.addEventListener("click", function (event) {
-  event.preventDefault();
-  modToCard.classList.add("modal--active");
-});
+if (btnToCard) {
+  var modToCard = document.querySelector(".modal__addtocart");
+  var btnToCardClose = document.querySelector(".modal__addtocart-btn--close");
 
-btnToCardClose.addEventListener("click", function (event) {
-  event.preventDefault();
-  modToCard.classList.remove("modal--active");
-});
+  btnToCard.addEventListener("click", function (event) {
+    event.preventDefault();
+    modToCard.classList.add("modal--active");
+  });
+
+  btnToCardClose.addEventListener("click", function (event) {
+    event.preventDefault();
+    modToCard.classList.remove("modal--active");
+  });
+
+}
+
 
 
 // Обработка события клика на иконку Сравнения в шапке
