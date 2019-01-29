@@ -508,12 +508,23 @@
       </div>
       <div class="form__shell">
         <div class="form__wrap form__wrap--product">
-          <label class="form__label" for="cost">Товар</label>
+          <label class="form__label" for="product">Товар</label>
           <p class="form__comment">Если вы хотите оставить о товаре, выберите его из списка</p>
-          <select class="form__input " name="cost" id="cost">
-            <option class="option" value="any">Черничные ночи</option>
-            <option class="option" value="high">Цветущая черемуха</option>
-          </select>
+
+          <label class="form__select" placeholder="Выберите товар">
+            <input class="form__option-radio" type="radio" name="product" id="product">
+
+            <div class="form__select-wrap">
+              <input class="form__option-radio" type="radio" name="product" value="opt1" id="opt1">
+              <label class="form__option" for="opt1">Черничные ночи</label>
+
+              <input class="form__option-radio" type="radio" name="product" value="opt2" id="opt2">
+              <label class="form__option" for="opt2">Цветущая черемуха</label>
+
+            </div>
+          </label>
+
+
         </div>
         <div class="form__wrap form__wrap--file">
           <label class="form__label" for="image">Изображения</label>
@@ -543,7 +554,9 @@
 
   <div class="overlay-modal"></div>
 
+
   <script src="js/jquery.2.1.3.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
   <script src="slick/slick.js"></script>
   <script src="js/script.js"></script>
   <script src="js/picturefill.js"></script>

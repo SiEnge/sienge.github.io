@@ -1,3 +1,184 @@
+// стилизация выпадающего списка
+
+// $(document).ready(function() {
+//     $('.js-example-basic-single').select2();
+//     // minimumResultsForSearch: -1;
+// });
+
+
+// маска для ввода телефона
+
+$(function(){
+  $("#phone").mask("+7 (999) 999-9999");
+});
+
+// Валидация формы
+
+function showError(container, errorMessage) {
+      container.className = 'error';
+      var msgElem = document.createElement('span');
+      msgElem.className = "error-message";
+      msgElem.innerHTML = errorMessage;
+      container.appendChild(msgElem);
+    }
+
+    function resetError(container) {
+      container.className = '';
+      if (container.lastChild.className == "error-message") {
+        container.removeChild(container.lastChild);
+      }
+    }
+
+    function validate(form) {
+      var elems = form.elements;
+
+      resetError(elems.from.parentNode);
+      if (!elems.from.value) {
+        showError(elems.from.parentNode, ' Укажите от кого.');
+      }
+
+      resetError(elems.password.parentNode);
+      if (!elems.password.value) {
+        showError(elems.password.parentNode, ' Укажите пароль.');
+      } else if (elems.password.value != elems.password2.value) {
+        showError(elems.password.parentNode, ' Пароли не совпадают.');
+      }
+
+      resetError(elems.to.parentNode);
+      if (!elems.to.value) {
+        showError(elems.to.parentNode, ' Укажите, куда.');
+      }
+
+      resetError(elems.message.parentNode);
+      if (!elems.message.value) {
+        showError(elems.message.parentNode, ' Отсутствует текст.');
+      }
+
+    }
+
+
+// Ползунки в диапазоне на форме
+
+// if ("#slider-range") {
+//
+//
+//
+//
+// $( function() {
+//   $( "#slider-range" ).slider({
+//     // step: 1,
+//     range: true,
+//     min: 0,
+//     max: 10000,
+//     values: [ 200, 3000 ],
+//     slide: function( event, ui ) {
+//       $( "#range-min" ).val( ui.values[ 0 ]  );
+//       $( "#range-max" ).val( ui.values[ 1 ]  );
+//     }
+//   });
+//   $( "#range-min" ).val(  $( "#slider-range" ).slider( "values", 0 ) );
+//     $( "#range-max" ).val(  $( "#slider-range" ).slider( "values", 1 ) );
+
+  // $("input#range-min").change(function() {
+  //   var value1=$("input#range-min").val();
+  //   var value2=$("input#range-max").val();
+  //     if(parseInt(value1) > parseInt(value2)) {
+  //       value1 = value2;
+  //       $("input#range-min").val(value1);
+  //     }
+  //     $("#slider-range").slider("values", 0, value1);
+  // });
+  //
+  // $("input#range-max").change(function() {
+  //   var value1=$("input#range-min").val();
+  //   var value2=$("input#range-max").val();
+  //
+  //     if(parseInt(value1) > parseInt(value2)) {
+  //       value2 = value1;
+  //       $("input#range-max").val(value2);
+  //     }
+  //     $("#slider-range").slider("values", 1, value2);
+  // });
+
+// } );
+//
+//
+// $(function() {
+//
+//   (function quantityProducts() {
+//     var $quantityArrowMinus = $(".range-from--minus");
+//     var $quantityArrowPlus = $(".range-from--plus");
+//     var $quantityNum = $(".range-from");
+//     var step = 1;
+//
+//     $quantityArrowMinus.click(quantityMinus);
+//     $quantityArrowPlus.click(quantityPlus);
+//
+//     function quantityMinus() {
+//       if ($quantityNum.val() > 1) {
+//         $quantityNum.val(+$quantityNum.val() - step);
+//       }
+//     }
+//
+//     function quantityPlus() {
+//       $quantityNum.val(+$quantityNum.val() + step);
+//     }
+//   })();
+// });
+//
+// $(function() {
+//
+//   (function quantityProducts() {
+//     var $quantityArrowMinus = $(".range-to--minus");
+//     var $quantityArrowPlus = $(".range-to--plus");
+//     var $quantityNum = $(".range-to");
+//
+//     var step = 1;
+//
+//     $quantityArrowMinus.click(quantityMinus);
+//     $quantityArrowPlus.click(quantityPlus);
+//
+//     function quantityMinus() {
+//       if ($quantityNum.val() > 1) {
+//         $quantityNum.val(+$quantityNum.val() - step);
+//       }
+//     }
+//
+//     function quantityPlus() {
+//       $quantityNum.val(+$quantityNum.val() + step);
+//     }
+//   })();
+// });
+
+// Счетчик количества input number в форме
+
+// var inputAmount = document.querySelector(".amount");
+
+$(function() {
+
+  (function quantityProducts() {
+    var $quantityArrowMinus = $(".amount--minus");
+    var $quantityArrowPlus = $(".amount--plus");
+    var $quantityNum = $(".amount");
+
+    $quantityArrowMinus.click(quantityMinus);
+    $quantityArrowPlus.click(quantityPlus);
+
+    function quantityMinus() {
+      if ($quantityNum.val() > 1) {
+        $quantityNum.val(+$quantityNum.val() - 1);
+      }
+    }
+
+    function quantityPlus() {
+      $quantityNum.val(+$quantityNum.val() + 1);
+    }
+  })();
+});
+
+
+
+
 // Поле загрузки файлов drag and drop
 
 var dropZone = $('#upload');
@@ -460,6 +641,7 @@ if (btnInvite) {
 
 }
 
+
 // модальное окно "Оставить отзыв"
 var btnReview = document.querySelector(".review__button");
 
@@ -472,6 +654,9 @@ if (btnReview) {
   var btnReviewAddClose = document.querySelector(".modal-reviewadd__button--close");
 
 
+  modReview.classList.add("modal--active");
+
+  modReview.classList.remove("modal--active");
 
   btnReview.addEventListener("click", function (event) {
     event.preventDefault();
