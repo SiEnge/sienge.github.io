@@ -501,14 +501,14 @@
           <div class="form__shell form__shell--main">
             <div class="form__wrap form__wrap--recipient">
               <label class="form__label" for="recipient">Получатель <span class="form__label--red">*</span></label>
-              <input class="form__input" type="text" id="recipient" name="recipient" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Укажите, для кого собираем подарок" required>
+              <input class="form__input" onchange="validate(this)" type="text" id="recipient" name="recipient" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Укажите, для кого собираем подарок" value="" required>
             </div>
             <div class="form__wrap form__wrap--amount">
               <label class="form__label" for="amount">Количество <span class="form__label--red">*</span></label>
               <div class="form__inputwrap--amount">
 
                 <button class="form__inputnumber form__inputnumber--minus amount--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                <input class="form__input amount" type="number" name="amount" id="amount" value="1" min="1" max="1000" step="1" required>
+                <input class="form__input amount" oninput="validate(this)" type="number" name="amount" id="amount" value="1" min="1" max="1000" step="1" required>
                 <button class="form__inputnumber form__inputnumber--plus amount--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
               </div>
             </div>
@@ -538,7 +538,7 @@
 
                 <div class="form__inputwrap--range">
                   <button class="form__inputnumber form__inputnumber--minus range-from--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                  <input class="form__input form__input--range range-from" type="number" name="amount" id="range-min" >
+                  <input class="form__input form__input--range range-from" oninput="validate(this)" type="number" name="amount" id="range-min" >
                   <button class="form__inputnumber form__inputnumber--plus range-from--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
                 </div>
 
@@ -661,19 +661,19 @@
           <div class="form__shell form__shell--contacts">
             <div class="form__wrap form__wrap--name">
               <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
-              <input class="form__input" type="text" name="name" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="name" required>
+              <input class="form__input" onchange="validate(this)" type="text" name="name" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="name" value="" required>
             </div>
             <div class="form__wrap form__wrap--company">
               <label class="form__label" for="company">Компания <span class="form__label--red">*</span></label>
-              <input class="form__input" type="text" name="company" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="company" required>
+              <input class="form__input" onchange="validate(this)" type="text" name="company" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="company" value="" required>
             </div>
             <div class="form__wrap form__wrap--phone">
               <label class="form__label" for="tel">Телефон <span class="form__label--red">*</span></label>
-              <input class="form__input" type="text" name="phone" pattern="^[0-9]+$" id="phone" required>
+              <input class="form__input" onchange="validate(this)" type="text" name="phone"  id="phone" value="" required>
             </div>
             <div class="form__wrap form__wrap--email">
               <label class="form__label" for="email">Email <span class="form__label--red">*</span></label>
-              <input class="form__input" type="email" name="email" id="email" required>
+              <input class="form__input" onchange="validate(this)" type="email" name="email" id="email" value="" required>
             </div>
           </div>
           <fieldset class="form__shell form__shell--connection">
@@ -681,23 +681,23 @@
             <div class="form__wrap form__wrap--connection">
               <ul class="form__list" role="none">
                 <li class="form__item">
-                  <input class="form__radio" type="radio" name="connection" value="call" id="coonection-call" required>
+                  <input class="form__radio" type="radio" name="connect" value="call" id="coonection-call" required>
                   <label class="form__radiolabel" for="coonection-call">Звонок</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__radio" type="radio" name="connection" value="email" id="coonection-email" required>
+                  <input class="form__radio" type="radio" name="connect" value="email" id="coonection-email" required>
                   <label class="form__radiolabel" for="coonection-email">Email</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__radio" type="radio" name="connection" value="whatsapp" id="coonection-whatsapp" required>
+                  <input class="form__radio" type="radio" name="connect" value="whatsapp" id="coonection-whatsapp" required>
                   <label class="form__radiolabel" for="coonection-whatsapp">WhatsApp</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__radio" type="radio" name="connection" value="viber" id="coonection-viber" required>
+                  <input class="form__radio" type="radio" name="connect" value="viber" id="coonection-viber" required>
                   <label class="form__radiolabel" for="coonection-viber">Viber</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__radio" type="radio" name="connection" value="telegram" id="coonection-telegram" required>
+                  <input class="form__radio" type="radio" name="connect" value="telegram" id="coonection-telegram" required>
                   <label class="form__radiolabel" for="coonection-telegram">Telegram</label>
                 </li>
               </ul>

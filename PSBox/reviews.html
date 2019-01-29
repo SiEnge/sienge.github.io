@@ -490,12 +490,12 @@
       <h2 class="form__title">Оставить отзыв</h2>
       <div class="form__wrap form__wrap--text">
         <label class="form__label" for="addition">Текст отзыва<span class="form__label--red">*</span></label>
-        <textarea class="form__input form__input--addition" name="name" id="addition" required></textarea>
+        <textarea class="form__input form__input--addition" onchange="validate(this)" name="name" id="addition" required></textarea>
       </div>
       <div class="form__shell">
         <div class="form__wrap">
           <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
-          <input class="form__input" type="text" name="" value="" id="name" required>
+          <input class="form__input" onchange="validate(this)" type="text" name="" value="" id="name" required>
         </div>
         <div class="form__wrap">
           <label class="form__label" for="tel">Телефон</label>
