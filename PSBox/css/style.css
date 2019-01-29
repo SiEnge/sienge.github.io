@@ -668,7 +668,9 @@ template {
 }
 .form__input--range {
   width: 65px;
-  padding-right: 0;
+  padding-right: 20px;
+  padding-left: 3px;
+  text-align: right;
 }
 .form__input--addition {
   resize: none;
@@ -709,13 +711,11 @@ template {
 .form__input--file input[type=file]:focus + label {
   outline: -webkit-focus-ring-color auto 5px;
 }
-input:invalid,
-textarea:invalid {
-  border: 2px solid #cc6666;
-}
-input:required:valid,
-textarea:required:valid {
+.form__input--valid {
   border: 2px solid #66cc66;
+}
+.form__input--invalid {
+  border: 2px solid #cc6666;
 }
 .form__list {
   margin: 0;
