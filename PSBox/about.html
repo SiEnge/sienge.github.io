@@ -81,10 +81,14 @@
 
         <div class="header__user">
           <div class="header__usitem">
-            <button class="header__usbtn header__usbtn--compare " href="#"><span class="visuallyhidden">Сравнение</span></button>
+            <button class="header__usbtn header__usbtn--compare" href="#"><span class="visuallyhidden">Сравнение: </span>
+              <span class="header__usbtn--compare-count">23</span>
+            </button>
           </div>
           <div class="header__usitem">
-            <button class="header__usbtn header__usbtn--cart" href="#"><span class="visuallyhidden">Корзина</span></button>
+            <button class="header__usbtn header__usbtn--cart" href="#"><span class="visuallyhidden">Корзина: </span>
+              <span class="header__usbtn--cart-count">5</span>
+            </button>
           </div>
 
           <!-- Всплывающее окно "Избранные товары" -->
@@ -226,7 +230,7 @@
         <ul class="nav__list">
           <li class="nav__item nav__item--sub nav__item--subclose nav__item--subfixed"><a href="#">Каталог подарков</a>
             <ul class="nav__sublist">
-              <li class="nav__subitem"><a href="#">Любимым</a></li>
+              <li class="nav__subitem"><a href="catalog.html">Любимым</a></li>
               <li class="nav__subitem"><a href="#">Друзьям</a></li>
               <li class="nav__subitem"><a href="#">Родителям</a></li>
               <li class="nav__subitem"><a href="#">Коллегам</a></li>
@@ -272,7 +276,7 @@
     <!-- О нас -->
 
     <section class="about container">
-      <section class="container--shrink">
+      <div class="container--shrink">
         <h1 class="title title--headline">О нас</h1>
         <section class="about__effort">
           <h2 class="title title--subtitle title--nonborder">Стараемся для вас</h2>
@@ -433,7 +437,7 @@
             </div>
           </div>
         </section>
-      </section>
+      </div>
     </section>
   </main>
 
@@ -468,8 +472,9 @@
     <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
   </footer>
 
-  <script src="slick/slick.js"></script>
+  <!-- <script src="js/jquery.2.1.3.min.js"></script> -->
   <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="slick/slick.js"></script>
   <script src="js/script.js"></script>
   <script src="js/picturefill.js"></script>
 </body>

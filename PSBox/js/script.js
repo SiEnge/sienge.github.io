@@ -2,6 +2,8 @@
 
 function validate(input) {
 
+
+
   if (input.validity.patternMismatch) {
     if (input.classList.contains("form__input--valid")) {
       input.classList.remove("form__input--valid");
@@ -29,11 +31,9 @@ function validate(input) {
 
 // маска для ввода телефона
 
-if ("#phone") {
-  $(function() {
-    $("#phone").mask("+7 (999) 999-9999");
-  });
-}
+$(function() {
+  $("#phone").mask("+7 (999) 999-9999");
+});
 
 
 // Ползунки в диапазоне на форме
@@ -48,84 +48,74 @@ if ("#slider-range") {
       max: 10000,
       values: [200, 3000],
       slide: function(event, ui) {
-        $("#range-min").val(ui.values[0]);
-        $("#range-max").val(ui.values[1]);
+        $("#range-from").val(ui.values[0]);
+        $("#range-to").val(ui.values[1]);
       }
     });
-    $("#range-min").val($("#slider-range").slider("values", 0));
-    $("#range-max").val($("#slider-range").slider("values", 1));
+    $("#range-from").val($("#slider-range").slider("values", 0));
+    $("#range-to").val($("#slider-range").slider("values", 1));
 
-    $("input#range-min").change(function() {
-      var value1=$("input#range-min").val();
-      var value2=$("input#range-max").val();
+    var $rangeFromMinus = $("#range-from--minus");
+    var $rangeFromPlus = $("#range-from--plus");
+    var $rangeFrom = $("#range-from");
+    var $rangeToMinus = $("#range-to--minus");
+    var $rangeToPlus = $("#range-to--plus");
+    var $rangeTo = $("#range-to");
+    var step = 100;
+
+    $rangeFromMinus.click(function() {
+      if ($rangeFrom.val() > 1) {
+        $rangeFrom.val(+$rangeFrom.val() - step);
+      }
+      var value1=$rangeFrom.val();
+      var value2=$rangeTo.val();
+      if(parseInt(value1) < 0) {
+        value1 = 0;
+        $rangeFrom.val(value1);
+      }
+      if(parseInt(value1) > parseInt(value2)) {
+        value1 = value2;
+        $rangeFrom.val(value1);
+      }
+      $("#slider-range").slider("values", 0, value1);
+    });
+
+    $rangeFromPlus.click(function() {
+      $rangeFrom.val(+$rangeFrom.val() + step);
+      var value1=$rangeFrom.val();
+      var value2=$rangeTo.val();
         if(parseInt(value1) > parseInt(value2)) {
           value1 = value2;
-          $("input#range-min").val(value1);
+          $rangeFrom.val(value1);
         }
         $("#slider-range").slider("values", 0, value1);
     });
 
-    $("input#range-max").change(function() {
-      var value1=$("input#range-min").val();
-      var value2=$("input#range-max").val();
-
-        if(parseInt(value1) > parseInt(value2)) {
-          value2 = value1;
-          $("input#range-max").val(value2);
-        }
-        $("#slider-range").slider("values", 1, value2);
+    $rangeToMinus.click(function() {
+      if ($rangeTo.val() > 1) {
+        $rangeTo.val(+$rangeTo.val() - step);
+      }
+      var value1=$rangeFromPlus.val();
+      var value2=$rangeTo.val();
+      if(parseInt(value1) > parseInt(value2)) {
+        value2 = value1;
+        $rangeTo.val(value2);
+      }
+      $("#slider-range").slider("values", 1, value2);
     });
 
+    $rangeToPlus.click(function() {
+      $rangeTo.val(+$rangeTo.val() + step);
+      var value1=$rangeFromPlus.val();
+      var value2=$rangeTo.val();
+      if(parseInt(value1) > parseInt(value2)) {
+        value2 = value1;
+        $rangeTo.val(value2);
+      }
+      $("#slider-range").slider("values", 1, value2);
+    });
 
   });
-
-
-  $(function() {
-
-    (function quantityProducts() {
-      var $quantityArrowMinus = $(".range-from--minus");
-      var $quantityArrowPlus = $(".range-from--plus");
-      var $quantityNum = $(".range-from");
-      var step = 1;
-
-      $quantityArrowMinus.click(quantityMinus);
-      $quantityArrowPlus.click(quantityPlus);
-
-      function quantityMinus() {
-        if ($quantityNum.val() > 1) {
-          $quantityNum.val(+$quantityNum.val() - step);
-        }
-      }
-      function quantityPlus() {
-        $quantityNum.val(+$quantityNum.val() + step);
-      }
-    })();
-  });
-
-  $(function() {
-
-    (function quantityProducts() {
-      var $quantityArrowMinus = $(".range-to--minus");
-      var $quantityArrowPlus = $(".range-to--plus");
-      var $quantityNum = $(".range-to");
-
-      var step = 1;
-
-      $quantityArrowMinus.click(quantityMinus);
-      $quantityArrowPlus.click(quantityPlus);
-
-      function quantityMinus() {
-        if ($quantityNum.val() > 1) {
-          $quantityNum.val(+$quantityNum.val() - step);
-        }
-      }
-
-      function quantityPlus() {
-        $quantityNum.val(+$quantityNum.val() + step);
-      }
-    })();
-  });
-
 
 }
 
@@ -213,6 +203,31 @@ if ("#slider-range") {
 
 
   // Слайдеры
+
+  $('.oneitem__slider').slick({
+    mobileFirst: true,
+    asNavFor: '.oneitem__preview',
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+    responsive: [{
+      breakpoint: 1000,
+      settings: {
+        // arrows: true
+      }
+    }]
+  });
+
+  $('.oneitem__preview').slick({
+    mobileFirst: true,
+    asNavFor: '.oneitem__slider',
+    slidesToShow: 4,
+    focusOnSelect: true,
+    arrows: false
+  });
+
+
+
 
   $('.about__review-slider').slick({
     mobileFirst: true,
@@ -369,22 +384,8 @@ if ("#slider-range") {
   $('.variant__preview--one').slick({
     asNavFor: '.variant__slider--one',
     slidesToShow: 6,
-    // centerMode: true,
-    // centerPadding: '10px',
     focusOnSelect: true,
     arrows: false
-    // responsive: [{
-    //     breakpoint: 1170,
-    //     settings: {
-    //       slidesToShow: 7
-    //     }
-    //   },
-    //   {
-    //       breakpoint: 750,
-    //       settings: {
-    //         slidesToShow: 6
-    //       }
-    //     }]
   });
 
   $('.variant__slider--two').slick({
@@ -403,27 +404,9 @@ if ("#slider-range") {
   $('.variant__preview--two').slick({
     asNavFor: '.variant__slider--two',
     slidesToShow: 6,
-    // centerMode: true,
-    // centerPadding: '10px',
     focusOnSelect: true,
     arrows: false
-    // responsive: [{
-    //     breakpoint: 1170,
-    //     settings: {
-    //       slidesToShow: 7
-    //     }
-    //   },
-    //   {
-    //       breakpoint: 750,
-    //       settings: {
-    //         slidesToShow: 6
-    //       }
-    //     }]
   });
-
-  // Наши работы
-
-
 
 
   //Галерея
@@ -503,6 +486,47 @@ if ("#slider-range") {
 
   })();
 
+  //Прилипание фильтра при прокрутке
+
+  var filter = document.querySelector(".filter");
+
+  if (filter) {
+    var FilterFixed = (function() {
+
+      var docElem = document.documentElement,
+      // filter = document.querySelector(".filter"),
+      didScroll = false,
+      changeFilterOn = 205;
+
+      function init() {
+        window.addEventListener("scroll", function(event) {
+          if (!didScroll) {
+            didScroll = true;
+            setTimeout(scrollPage, 250);
+          }
+        }, false);
+      }
+
+      function scrollPage() {
+        var sy = scrollY();
+        if (sy >= changeFilterOn) {
+          filter.classList.add("filter--fixed");
+        } else {
+          filter.classList.remove("filter--fixed");
+        }
+        didScroll = false;
+      }
+
+      function scrollY() {
+        return window.pageYOffset || docElem.scrollTop;
+      }
+
+      init();
+
+    })();
+
+  }
+
   //Копирование ссылки в буфер обмена
 
   var btnCopy = document.querySelector('.pop-create__icon--copy');
@@ -566,6 +590,25 @@ if ("#slider-range") {
 
 
   });
+
+  //Обработка клика для выпадающего фильтра
+
+  var listFilter = document.querySelector(".filter__fieldset--composition .form__wrap--consist");
+
+  if (listFilter) {
+    var btnFilter = document.querySelector(".filter__composition-btn");
+
+    btnFilter.addEventListener("click", function() {
+      if (listFilter.classList.contains("form__wrap--close")) {
+        listFilter.classList.remove("form__wrap--close");
+        // listFilter.classList.add("form__wrap--close");
+      } else {
+        // listFilter.classList.remove("form__wrap--close");
+        listFilter.classList.add("form__wrap--close");
+      }
+    });
+
+  }
 
   //Обработка клика для выпадающего подменю
   var navSub = document.querySelector(".nav__item--sub");
