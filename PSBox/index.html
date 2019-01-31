@@ -12,6 +12,37 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    background-image: url( "Main_PSBOX_320.jpg" );
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "Main_PSBOX_720.jpg" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX_1200-Main_v1.jpg" );
+    }
+  }
+
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+
 </head>
 
 <body class="page">
@@ -22,6 +53,7 @@
 
     <section class="modal__addtocart">
       <div class="modal__wrap container">
+        <span class="modal__icon"></span>
         <p class="modal__text modal__text--white">Товар "Черничные ночи" добавлен в корзину</p>
         <button class="modal__button modal__button--cancel" type="button" name="button">Отменить добавление</button>
         <button class="modal__button modal__button--close  modal__addtocart-btn--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
@@ -89,9 +121,24 @@
 
         <div class="header__social header__social--left social">
           <ul class="social__list ">
-            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -99,9 +146,24 @@
 
         <div class="header__social header__social--right social">
           <ul class="social__list">
-            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -263,20 +325,29 @@
         <div class="gift__slider">
           <div>
             <div class="gift__slide">
-              <p class="gift__slide-text text">Подарочный набор - Ocean</p>
-              <a class="gift__button button" href="#">Подробнее</a>
+              <div class="gift__wrap">
+                <p class="gift__slide-text text">Подарочный набор - Ocean</p>
+                <a class="gift__button button" href="#">Подробнее</a>
+              </div>
+              <img class="gift__img" src="img/slide_desktop.jpg" alt="Подарочный набор">
             </div>
           </div>
           <div>
             <div class="gift__slide">
-              <p class="gift__slide-text text">Подарочный набор - Ocean</p>
-              <a class="gift__button button" href="#">Подробнее</a>
+              <div class="gift__wrap">
+                <p class="gift__slide-text text">Подарочный набор - Ocean</p>
+                <a class="gift__button button" href="#">Подробнее</a>
+              </div>
+              <img class="gift__img" src="img/slide_desktop.jpg" alt="Подарочный набор">
             </div>
           </div>
           <div>
             <div class="gift__slide">
-              <p class="gift__slide-text text">Подарочный набор - Ocean</p>
-              <a class="gift__button button" href="#">Подробнее</a>
+              <div class="gift__wrap">
+                <p class="gift__slide-text text">Подарочный набор - Ocean</p>
+                <a class="gift__button button" href="#">Подробнее</a>
+              </div>
+              <img class="gift__img" src="img/slide_desktop.jpg" alt="Подарочный набор">
             </div>
           </div>
         </div>
@@ -290,8 +361,13 @@
       <section class="condition container">
         <h2 class="visuallyhidden">Баннер</h2>
         <div class="condition__wrap">
-          <p class="condition__title">Эксклюзивные условия для корпоративных заказов!</p>
-          <a class="condition__button button" href="#">Подробнее</a>
+          <div class="condition__wraptext">
+            <p class="condition__title">Эксклюзивные условия для корпоративных заказов!</p>
+            <a class="condition__button button" href="#">Подробнее</a>
+          </div>
+          <p class="condition__img">
+            <img src="img/product_mobile.jpg" alt="Акция">
+          </p>
         </div>
       </section>
 
@@ -499,6 +575,7 @@
           <div class="banner__wrap banner__wrap--nonstandart">
             <h1 class="banner__title">Есть нестандартные идеи? <br>Поможем воплотить!</h1>
             <a class="banner__button button" href="#">Подробнее</a>
+            <img class="banner__picture banner__picture--nonstandart" src="img/ic-nes-id.png" alt="">
           </div>
         </section>
 
@@ -507,10 +584,30 @@
         <section class="cool container container--right">
           <h2 class="cool__title title">Чем крут PSBOX ?</h2>
           <ul class="cool__list">
-            <li class="cool__item cool__item--ship">Доставка по всему миру</li>
-            <li class="cool__item cool__item--gift">Настоящие подарки</li>
-            <li class="cool__item cool__item--exclusive">Эксклюзивная работа</li>
-            <li class="cool__item cool__item--personal">Персональный подход к каждому клиенту</li>
+            <li class="cool__item">
+              <p class="cool__picture">
+                <img src="img/ic-chem-kr1.png" alt="" width="80" height="80">
+              </p>
+              <p class="cool__text">Доставка по всему миру</p>
+            </li>
+            <li class="cool__item">
+              <p class="cool__picture">
+                <img src="img/ic-chem-kr2.png" alt="" width="80" height="79">
+              </p>
+              <p class="cool__text">Настоящие подарки</p>
+            </li>
+            <li class="cool__item">
+              <p class="cool__picture">
+                <img src="img/ic-chem-kr3.png" alt="" width="79" height="80">
+              </p>
+              <p class="cool__text">Эксклюзивная работа</p>
+            </li>
+            <li class="cool__item cool__item--wider">
+              <p class="cool__picture">
+                <img src="img/ic-chem-kr4.png" alt="" width="80" height="68">
+              </p>
+              <p class="cool__text">Персональный подход к каждому клиенту</p>
+            </li>
           </ul>
         </section>
 
@@ -520,6 +617,7 @@
           <div class="banner__wrap banner__wrap--dontknow">
             <h1 class="banner__title">Не знаете что выбрать? <br>Мы подскажем!</h1>
             <a class="banner__button button" href="#">Подробнее</a>
+            <img class="banner__picture banner__picture--nonstandart" src="img/ic-vez-vib.png" alt="">
           </div>
         </section>
       </div>
@@ -579,21 +677,33 @@
         <section class="how__wrap">
           <h3 class="how__name">Вариант 1: На сайте</h3>
           <ul class="how__list">
-            <li class="how__item how__item--var1-1">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-1.png" alt="" width="48" height="48">
+              </p>
               <span class="how__number">1</span>
-              <p>Если вам понравился конкретный набор — положите его в корзину. Есть собственная идя — положите в корзину товар «Индивидуальный заказ».</p>
+              <p class="how__text">Если вам понравился конкретный набор — положите его в корзину. Есть собственная идя — положите в корзину товар «Индивидуальный заказ».</p>
             </li>
-            <li class="how__item how__item--var1-2">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-2.png" alt="" width="38" height="48">
+              </p>
               <span class="how__number">2</span>
-              <p>Есть пожелания? Укажите их в комментариях к заказу Хотите что-то необычное? Расскажите о ваших идеях, покажите примеры, сориентируйте по сумме.</p>
+              <p class="how__text">Есть пожелания? Укажите их в комментариях к заказу Хотите что-то необычное? Расскажите о ваших идеях, покажите примеры, сориентируйте по сумме.</p>
             </li>
-            <li class="how__item how__item--var1-3">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-3.png" alt="" width="48" height="48">
+              </p>
               <span class="how__number">3</span>
-              <p>Укажите удобный способ связи с вами. Ожидайте звонка или сообщения от менеджера для обсуждения вариантов состава, оформления и стоимости.</p>
+              <p class="how__text">Укажите удобный способ связи с вами. Ожидайте звонка или сообщения от менеджера для обсуждения вариантов состава, оформления и стоимости.</p>
             </li>
-            <li class="how__item how__item--var1-4">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-4.png" alt="" width="48" height="40">
+              </p>
               <span class="how__number">4</span>
-              <p>Получите фото готового набора, подтвердите его готовность или внесите корректировки. Принимайте благодарности от восторженного получателя!</p>
+              <p class="how__text">Получите фото готового набора, подтвердите его готовность или внесите корректировки. Принимайте благодарности от восторженного получателя!</p>
             </li>
           </ul>
         </section>
@@ -601,20 +711,32 @@
           <h3 class="how__name">Вариант 2: Через соцсети <br>и мессенджеры</h3>
           <ul class="how__list">
             <li class="how__item how__item--var2-1">
+              <p class="how__picture">
+                <img src="img/ic-var-2.png" alt="" width="38" height="48">
+              </p>
               <span class="how__number">1</span>
-              <p>Изучите ассортимент, выберерите понравившийся набор или продумайте свои пожелания для составления набора с нуля.</p>
+              <p class="how__text">Изучите ассортимент, выберерите понравившийся набор или продумайте свои пожелания для составления набора с нуля.</p>
             </li>
-            <li class="how__item how__item--var2-2">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-6.png" alt="" width="48" height="48">
+              </p>
               <span class="how__number">2</span>
-              <p>Выберите удобный способ связи: Whats'App, Viber, Telegram, сообщения Вконтакте или на Facebook, директ в instagram, звонок.</p>
+              <p class="how__text">Выберите удобный способ связи: Whats'App, Viber, Telegram, сообщения Вконтакте или на Facebook, директ в instagram, звонок.</p>
             </li>
-            <li class="how__item how__item--var2-3">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-3.png" alt="" width="48" height="48">
+              </p>
               <span class="how__number">3</span>
-              <p>Свяжитесь с нашим менеджером, озвучьте свои пожелания, обсудите вариантов состава, оформления и стоимости.</p>
+              <p class="how__text">Свяжитесь с нашим менеджером, озвучьте свои пожелания, обсудите вариантов состава, оформления и стоимости.</p>
             </li>
-            <li class="how__item how__item--var2-4">
+            <li class="how__item">
+              <p class="how__picture">
+                <img src="img/ic-var-4.png" alt="" width="48" height="40">
+              </p>
               <span class="how__number">4</span>
-              <p>Получите фото готового набора, подтвердите его готовность или внесите корректировки. Принимайте благодарности от восторженного получателя!</p>
+              <p class="how__text">Получите фото готового набора, подтвердите его готовность или внесите корректировки. Принимайте благодарности от восторженного получателя!</p>
             </li>
           </ul>
         </section>
@@ -641,12 +763,42 @@
         <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
         <div class="footer__social social">
           <ul class="social__list">
-            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

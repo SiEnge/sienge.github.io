@@ -1,7 +1,8 @@
 // Валидация формы
 
-function validate(input) {
 
+
+function validate(input) {
 
 
   if (input.validity.patternMismatch) {
@@ -9,18 +10,22 @@ function validate(input) {
       input.classList.remove("form__input--valid");
     }
     input.classList.add("form__input--invalid");
+    return ;
   } else {
     if (input.classList.contains("form__input--invalid")) {
       input.classList.remove("form__input--invalid");
     }
     input.classList.add("form__input--valid");
+
   }
+
 
   if (input.validity.typeMismatch) {
     if (input.classList.contains("form__input--valid")) {
       input.classList.remove("form__input--valid");
     }
     input.classList.add("form__input--invalid");
+    return ;
   } else {
     if (input.classList.contains("form__input--invalid")) {
       input.classList.remove("form__input--invalid");
@@ -63,6 +68,22 @@ if ("#slider-range") {
     var $rangeTo = $("#range-to");
     var step = 100;
 
+
+    $rangeFrom.change(function() {
+      var value1=$rangeFrom.val();
+      var value2=$rangeTo.val();
+      if(parseInt(value1) < 0) {
+        value1 = 0;
+        $rangeFrom.val(value1);
+      }
+      if(parseInt(value1) > parseInt(value2)) {
+        value1 = value2;
+        $rangeFrom.val(value1);
+      }
+      $("#slider-range").slider("values", 0, value1);
+    });
+
+
     $rangeFromMinus.click(function() {
       if ($rangeFrom.val() > 1) {
         $rangeFrom.val(+$rangeFrom.val() - step);
@@ -89,6 +110,17 @@ if ("#slider-range") {
           $rangeFrom.val(value1);
         }
         $("#slider-range").slider("values", 0, value1);
+    });
+
+    $rangeTo.change(function() {
+
+      var value1=$rangeFromPlus.val();
+      var value2=$rangeTo.val();
+      if(parseInt(value1) > parseInt(value2)) {
+        value2 = value1;
+        $rangeTo.val(value2);
+      }
+      $("#slider-range").slider("values", 1, value2);
     });
 
     $rangeToMinus.click(function() {
