@@ -5186,35 +5186,11 @@ input[type=number] {
   position: absolute;
   top: 50%;
   right: 0;
+  left: auto;
   width: 30px;
   height: 30px;
   margin-top: -15px;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: bottom center;
   cursor: pointer;
-}
-.review__social--fb {
-  background-image: url("../img/ic-soc-fb.png");
-  background-size: 13px 24px;
-}
-.review__social--vk {
-  background-image: url("../img/ic-soc-vk.png");
-  background-size: 24px 14px;
-}
-.review__social--tg {
-  background-image: url("../img/ic-mes-tel.png");
-  background-size: 20px 18px;
-}
-.review__social--vi {
-  background-image: url("../img/ic-mes-vay.png");
-  background-size: 19px 20px;
-}
-.review__social--wa {
-  background-image: url("../img/ic-mes-wac.png");
-  background-size: 20px 20px;
 }
 .review__expert blockquote {
   margin: 0;
