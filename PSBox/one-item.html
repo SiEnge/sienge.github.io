@@ -11,7 +11,36 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    /* background-image: url( "One_item_PSBOX_320.jpg" ); */
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      /* background-image: url( "One_item_PSBOX_720.jpg" ); */
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX-1200-404.jpg" );
+    }
+  }
+
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
 </head>
 
 <body class="page">
@@ -62,9 +91,24 @@
 
         <div class="header__social header__social--left social">
           <ul class="social__list ">
-            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -72,9 +116,24 @@
 
         <div class="header__social header__social--right social">
           <ul class="social__list">
-            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -261,203 +320,15 @@
 
   <main class="main container">
 
-    <!-- Хлебные крошки -->
+    <span>Ooops</span>
 
-    <section class="breadcrumbs breadcrumbs--backwhite">
-      <!-- <div class="container"> -->
-      <div class="container--shrink">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
-          <li class="breadcrumbs__item"><a>Каталог</a></li>
-        </ul>
-      </div>
-      <!-- </div> -->
-    </section>
-
-    <!-- О нас -->
-
-    <section class="oneitem">
-      <div class="container--shrink">
-        <h1 class="title title--headline">Черничные ночи</h1>
-
-
-        <div class="offers__slide oneitem__offers">
-
-          <div class="offers__wrap">
-            <!-- <button class="offers__button-gallery" type="button" name="button"></button> -->
-            <div class="offers__marklist">
-              <p class="offers__mark offers__mark--active"><span>Эксклюзив!</span></p>
-              <p class="offers__mark"><span>Хит!</span></p>
-              <p class="offers__mark offers__mark--active"><span>Новинка!</span></p>
-              <p class="offers__mark"><span>Скидка!</span></p>
-              <p class="offers__mark offers__mark--active"><span>В наличии</span></p>
-            </div>
-
-            <div class="oneitem__slider">
-              <div>
-                <p class="offers__img ">
-                  <img src="img/best_tablet.jpg" alt="Фото товара">
-                </p>
-              </div>
-              <div>
-                <p class="offers__img ">
-                  <img src="img/slide_mobile.jpg" alt="Фото товара">
-                </p>
-              </div>
-              <div>
-                <p class="offers__img ">
-                  <img src="img/best_mobile.jpg" alt="Фото товара">
-                  </picure>
-                </p>
-              </div>
-              <div>
-                <p class="offers__img ">
-                  <img src="img/slide_mobile.jpg" alt="Фото товара">
-                </p>
-              </div>
-            </div>
-
-            <div class="oneitem__preview">
-              <div>
-                <p>
-                  <img src="img/best_tablet.jpg" alt="Фото товара">
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="img/best_tablet.jpg" alt="Фото товара">
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="img/best_mobile.jpg" alt="Фото товара">
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="img/best_mobile.jpg" alt="Фото товара">
-                </p>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="offers__info">
-            <!-- <h3 class="offers__name">Черничные ночи</h3> -->
-            <p class="offers__price">1 450 Руб.</p>
-            <div class="oneitem__button">
-              <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
-              <button class="offers__cart offers__cart-btn" type="button" name="button">В корзину</button>
-            </div>
-          </div>
-          <div class="offers__text">
-            <p>Вступительное описание товара, возможно, содержащее ключевые слова для продвижения. Привлекательное описание, варианты представления и т.п.</p>
-            <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
-            <p>Шоколад:</p>
-            <ul class="offers__list">
-              <li>«Ritter sport» черника со сливками,</li>
-              <li>«Ты моя ягодка» молочный,</li>
-            </ul>
-            <p>Алкоголь (по 50 мл.):</p>
-            <ul class="offers__list">
-              <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
-              <li>Виски «McClelland’s Highland».</li>
-            </ul>
-          </div>
-          <div class="offers__nav">
-            <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
-            <ul class="offers__navlist">
-              <li class="offers__navitem"><a href="#">Любимым</a></li>
-              <li class="offers__navitem"><a href="#">На день рождения</a></li>
-              <li class="offers__navitem"><a href="#">Просто так</a></li>
-              <li class="offers__navitem"><a href="#">На годовщину</a></li>
-            </ul>
-          </div>
-        </div>
-
-
-        <section class="review__list oneitem__review">
-          <h2 class="title title--subsubtitle">Отзывы о товаре</h2>
-          <button class="oneitem__reviewbtn button" type="button" name="button">Оставить отзыв</button>
-
-          <section class="review__client">
-            <blockquote>
-              <p class="review__product">
-                <img src="img/best_tablet.jpg" alt="Фото товара">
-              </p>
-              <div class="review__block">
-                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
-              </div>
-              <div class="review__wrap">
-                <p class="review__img">
-                  <img src="img/otz1.jpg" alt="Фото клиента">
-                </p>
-                <div class="review__cite">
-                  <cite class="review__name">Мария Иванова</cite>
-                  <p class="review__comment">Отзыв о товаре</p>
-                  <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
-                </div>
-              </div>
-            </blockquote>
-          </section>
-          <section class="review__client">
-            <blockquote>
-              <p class="review__product">
-                <img src="img/best_tablet.jpg" alt="Фото товара">
-              </p>
-              <div class="review__block">
-                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
-              </div>
-              <div class="review__wrap">
-                <p class="review__img">
-                  <img src="img/otz1.jpg" alt="Фото клиента">
-                </p>
-                <div class="review__cite">
-                  <cite class="review__name">Мария Иванова</cite>
-                  <p class="review__comment">Отзыв о товаре</p>
-                  <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
-                </div>
-              </div>
-            </blockquote>
-          </section>
-
-          <!-- ответ Эксперта -->
-
-          <section class="review__expert">
-            <blockquote>
-              <div class="review__wrap">
-                <div class="review__cite">
-                  <cite class="review__name">Сергей Петров</cite>
-                  <p class="review__post">Руководитель отдела качества</p>
-                </div>
-                <p class="review__img">
-                  <img src="img/otz2.jpg" alt="Фото эксперта">
-                </p>
-              </div>
-              <div class="review__block">
-                <p class="review__text">Однако Э.Дюркгейм утверждал, что агрессия просветляет материалистический генезис. Генезис традиционен. Как мы уже знаем, ассоциация зеркально просветляет понимающий генезис. Коллективное бессознательное </p>
-              </div>
-            </blockquote>
-          </section>
-        </section>
+    <p>404 - страница не найдена. К сожалению программист ушел на обед и не может перевести вас на эту страницу, завтра будет лучше.</p>
 
 
 
 
 
-        <section class="catalog__banner">
-          <div class="banner__wrap">
-            <p class="banner__title">Эксклюзивные условия для корпоративных заказов</p>
-            <a class="banner__button button" href="#">Подробнее</a>
-          </div>
-        </section>
 
-
-      </div>
-    </section>
   </main>
 
   <!-- Футер -->
@@ -478,12 +349,42 @@
         <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
         <div class="footer__social social">
           <ul class="social__list">
-            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

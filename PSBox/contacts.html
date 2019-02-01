@@ -11,7 +11,37 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
+  <!-- Pixel Glass -->
+  <!-- <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    background-image: url( "Contacts_PSBOX_320.jpg" );
+  }
+  /* Планшет */
+
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "Contacts_PSBOX_720.jpg" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX_1200-Contacts.jpg" );
+    }
+  }
+
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script> -->
+  <!-- // Pixel Glass -->
 </head>
 
 <body class="page">
@@ -62,9 +92,24 @@
 
         <div class="header__social header__social--left social">
           <ul class="social__list ">
-            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -72,9 +117,24 @@
 
         <div class="header__social header__social--right social">
           <ul class="social__list">
-            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -338,12 +398,42 @@
         <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
         <div class="footer__social social">
           <ul class="social__list">
-            <li class="social__item"><a class="social__icon social__icon--ig" href="#"><span class="visuallyhidden">Instagram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--fb" href="#"><span class="visuallyhidden">Facebook</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vk" href="#"><span class="visuallyhidden">ВКонтакте</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--tg" href="#"><span class="visuallyhidden">Telegram</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--vi" href="#"><span class="visuallyhidden">Viber</span></a></li>
-            <li class="social__item"><a class="social__icon social__icon--wa" href="#"><span class="visuallyhidden">WhatsApp</span></a></li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
