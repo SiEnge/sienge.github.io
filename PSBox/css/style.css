@@ -3594,6 +3594,7 @@ input[type=number] {
   width: 130px;
   height: 80px;
   margin: 0;
+  overflow: hidden;
 }
 .cool__picture img {
   position: absolute;
@@ -3903,6 +3904,7 @@ input[type=number] {
   margin: 0;
   border-radius: 5px;
   background-color: #f3f4f8;
+  overflow: hidden;
 }
 .how__picture img {
   position: absolute;
@@ -4017,7 +4019,7 @@ input[type=number] {
     display: -ms-flexbox;
     display: flex;
     padding-right: 26px;
-    padding-left: 7x;
+    padding-left: 7px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -5520,17 +5522,12 @@ input[type=number] {
   padding-top: 92px;
   padding-bottom: 10px;
 }
-.paydelivery__item::before,
-.paydelivery__item::after {
+.paydelivery__picture {
   position: absolute;
-  content: "";
   width: 136px;
   height: 76px;
   left: 0;
   top: 0;
-  border-radius: 5px;
-}
-.paydelivery__item::before {
   background-color: #ffffff;
   background-image: url("../img/fon-var.png");
   background-size: 12px 12px;
@@ -5539,42 +5536,15 @@ input[type=number] {
   -o-border-image: 1 linear-gradient(45deg, #922299 40%, #1b529b 100%);
      border-image: 1 linear-gradient(45deg, #922299 40%, #1b529b 100%);
   border-radius: 5px;
+  margin: 0;
+  overflow: hidden;
 }
-.paydelivery__item::after {
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.paydelivery__item--cash::after {
-  background-image: url("../img/ic-op-1.png");
-  background-size: 48px 47px;
-}
-.paydelivery__item--card::after {
-  background-image: url("../img/ic-op-2.png");
-  background-size: 48px 36px;
-}
-.paydelivery__item--bank::after {
-  background-image: url("../img/ic-op-3.png");
-  background-size: 39px 48px;
-}
-.paydelivery__item--electronic::after {
-  background-image: url("../img/ic-op-4.png");
-  background-size: 48px 47px;
-}
-.paydelivery__item--pickup::after {
-  background-image: url("../img/ic-dos-1.png");
-  background-size: 27px 48px;
-}
-.paydelivery__item--courier::after {
-  background-image: url("../img/ic-dos-2.png");
-  background-size: 48px 30px;
-}
-.paydelivery__item--transport::after {
-  background-image: url("../img/ic-dos-3.png");
-  background-size: 47px 48px;
-}
-.paydelivery__item--mailing::after {
-  background-image: url("../img/ic-dos-4.png");
-  background-size: 42px 48px;
+.paydelivery__picture img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -24px;
+  margin-left: -24px;
 }
 .paydelivery__lead {
   padding-bottom: 6px;
@@ -5618,11 +5588,7 @@ input[type=number] {
     width: 180px;
     padding-top: 125px;
   }
-  .paydelivery__item::after {
-    width: 180px;
-    height: 103px;
-  }
-  .paydelivery__item::before {
+  .paydelivery__picture {
     width: 176px;
     height: 99px;
   }
@@ -5642,11 +5608,7 @@ input[type=number] {
     width: 200px;
     padding-top: 115px;
   }
-  .paydelivery__item::after {
-    width: 200px;
-    height: 103px;
-  }
-  .paydelivery__item::before {
+  .paydelivery__picture {
     width: 196px;
     height: 99px;
   }
