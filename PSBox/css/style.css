@@ -554,6 +554,10 @@ template {
   padding: 0;
   margin-bottom: 13px;
 }
+.form__shell--consist {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+}
 .form__wrap {
   padding-bottom: 5px;
 }
@@ -587,6 +591,7 @@ template {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-right: 18px;
+  padding-left: 10px;
 }
 .form__wrap--other {
   width: 272px;
@@ -713,8 +718,10 @@ template {
 }
 .form__input--valid {
   border: 2px solid #66cc66;
+  border-radius: 5px;
 }
 .form__input--invalid {
+  border-radius: 5px;
   border: 2px solid #cc6666;
 }
 .form__list {
@@ -846,6 +853,11 @@ template {
   margin-left: auto;
   margin-right: 15px;
   cursor: pointer;
+}
+.form__button--disabled {
+  background-color: #dcd7de;
+  color: #ffffff;
+  cursor: default;
 }
 .form__buttonlink {
   background-color: transparent;
@@ -1063,10 +1075,13 @@ input[type=number] {
 }
 .ui-slider-handle {
   position: absolute;
+}
+.ui-slider-handle::before {
+  position: absolute;
   content: "";
   padding: 0;
   right: -7px;
-  bottom: 5px;
+  bottom: 4px;
   width: 14px;
   height: 12px;
   cursor: pointer;
@@ -4724,31 +4739,23 @@ input[type=number] {
   width: 130px;
   padding-top: 95px;
 }
-.feature__item::before {
+.feature__picture {
   position: absolute;
-  content: "";
+  top: 0;
+  left: 0;
   width: 130px;
   height: 85px;
-  left: 0;
-  top: 0;
-  background-repeat: no-repeat;
-  background-position: left bottom;
+  margin: 0;
+  overflow: hidden;
 }
-.feature__item--ship::before {
-  background-image: url("../img/ic-chem-kr1_63x63.png");
-  background-size: 63px 63px;
-}
-.feature__item--gift::before {
-  background-image: url("../img/ic-chem-kr2_64x62.png");
-  background-size: 64px 62px;
-}
-.feature__item--exclusive::before {
-  background-image: url("../img/ic-chem-kr5_52x64.png");
-  background-size: 52px 64px;
-}
-.feature__item--personal::before {
-  background-image: url("../img/ic-chem-kr6_64x49.png");
-  background-size: 64px 49px;
+.feature__picture img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: auto;
+  margin-top: -24px;
+  margin-left: -24px;
 }
 .feature__itemtitle {
   margin: 0;
@@ -4786,30 +4793,13 @@ input[type=number] {
     padding-top: 140px;
     width: 165px;
   }
-  .feature__item::before {
-    height: 130px;
-    width: 165px;
-    background-position: center;
+  .feature__picture {
+    width: 130px;
+    height: 165px;
   }
-  .feature__item--personal {
-    width: 200px;
-  }
-  .feature__item--ship::before {
-    background-image: url("../img/ic-chem-kr1.png");
-    background-size: 80px 80px;
-  }
-  .feature__item--gift::before {
-    background-image: url("../img/ic-chem-kr2.png");
-    background-size: 80px 79px;
-  }
-  .feature__item--exclusive::before {
-    background-image: url("../img/ic-chem-kr5.png");
-    background-size: 65px 80px;
-  }
-  .feature__item--personal::before {
-    width: 200px;
-    background-image: url("../img/ic-chem-kr6.png");
-    background-size: 80px 61px;
+  .feature__picture img {
+    margin-top: -54px;
+    width: 80px;
   }
   .feature__itemtext {
     margin: 0;

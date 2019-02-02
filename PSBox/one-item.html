@@ -320,15 +320,315 @@
 
   <main class="main container">
 
-    <span>Ooops</span>
+     <!-- Хлебные крошки -->
 
-    <p>404 - страница не найдена. К сожалению программист ушел на обед и не может перевести вас на эту страницу, завтра будет лучше.</p>
+     <section class="breadcrumbs breadcrumbs--backwhite">
+        <div class="container--shrink">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumbs__item">Индивидуальный заказ</li>
+          </ul>
+        </div>
+      <!-- </div> -->
+    </section>
+
+     <!-- О нас -->
+
+     <section class="oneitem-indi">
+      <div class="container--shrink">
+        <h1 class="title title--headline">Индивидуальный заказ</h1>
+        <p class="oneitem-indi__text text">Краткое описание того, что такое индивидуальный заказ. Объяснение, зачем он нужен и т.п. Эластичность спроса вырождена. Бизнес-стратегия последовательно программирует из ряда вон выходящий формат события. Структура рынка, на первый взгляд, трансформирует блок. Инструмент маркетинга, как следует из вышесказанного, ускоряет медийный канал.</p>
+
+         <!-- Форма  -->
+
+         <form class="form__container oneitem-indi__form" action="" method="post">
+
+         <!-- <fieldset class="form__field form__field--wishes"> -->
+          <h2 class="form__title">Ваши пожелания</h2>
+          <div class="form__shell form__shell--main">
+            <div class="form__wrap form__wrap--recipient">
+              <label class="form__label" for="recipient">Получатель <span class="form__label--red">*</span></label>
+              <input class="form__input" onchange="validate(this)" type="text" id="recipient" name="recipient" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Укажите, для кого собираем подарок" value="" required>
+            </div>
+
+             <div class="form__wrap form__wrap--cost">
+              <label class="form__label" for="cost">Стоимость <span class="form__label--red">*</span></label>
+              <label class="form__select" placeholder="Выберите стоимость">
+                <input class="form__option-radio" type="radio" name="cost" id="cost">
+                <div class="form__select-wrap">
+                  <input class="form__option-radio" type="radio" name="cost" value="any" id="any" checked>
+                  <label class="form__option" for="any">Любая</label>
+                  <input class="form__option-radio" type="radio" name="cost" value="high" id="high">
+                  <label class="form__option" for="high">Высокая</label>
+                  <input class="form__option-radio" type="radio" name="cost" value="middle" id="middle">
+                  <label class="form__option" for="middle">Средняя</label>
+                  <input class="form__option-radio" type="radio" name="cost" value="low" id="low">
+                  <label class="form__option" for="low">Низкая</label>
+                </div>
+              </label>
+            </div>
+
+             <div class="form__wrap form__wrap--range">
+              <label class="form__label" for="range">Диапазон цен, в руб.</label>
+
+               <div class="form__wraprange">
+                <div class="form__inputwrap--range">
+                  <button class="form__inputnumber form__inputnumber--minus" id="range-from--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="form__input form__input--range range-from" type="number" name="amount" id="range-from" readonly>
+                  <button class="form__inputnumber form__inputnumber--plus" id="range-from--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+                <div id="slider-range"></div>
+                <div class="form__inputwrap--range">
+                  <button class="form__inputnumber form__inputnumber--minus" id="range-to--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="form__input form__input--range range-to" type="number" name="amount" id="range-to" readonly>
+                  <button class="form__inputnumber form__inputnumber--plus" id="range-to--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+
+           </div>
+          <fieldset class="form__shell form__shell--consist">
+            <legend class="form__label">Состав подарка <span class="form__label--red">*</span></legend>
+            <div class="form__wrap form__wrap--consist">
+              <div class="form__wrap--consist-left">
+                <ul class="form__list" role="none">
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check1">
+                    <label class="form__checkboxlabel" for="check1">Алко, пиво</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check2">
+                    <label class="form__checkboxlabel" for="check2">Пивные напитки</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check3">
+                    <label class="form__checkboxlabel" for="check3">Безалко, напитки</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check4">
+                    <label class="form__checkboxlabel" for="check4">Сиропы</label>
+                  </li>
+                </ul>
+                <ul class="form__list" role="none">
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check5">
+                    <label class="form__checkboxlabel" for="check5">Пряники</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check6">
+                    <label class="form__checkboxlabel" for="check6">Марципаны</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check7">
+                    <label class="form__checkboxlabel" for="check7">Пирожное</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check8">
+                    <label class="form__checkboxlabel" for="check8">Чай</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form__wrap--consist-right">
+                <ul class="form__list" role="none">
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check9" checked>
+                    <label class="form__checkboxlabel" for="check9">Конфеты</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check10">
+                    <label class="form__checkboxlabel" for="check10">Шоколад</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check11">
+                    <label class="form__checkboxlabel" for="check11">Суфле / зефир</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check12">
+                    <label class="form__checkboxlabel" for="check12">Мармелад</label>
+                  </li>
+                </ul>
+                <ul class="form__list" role="none">
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check13">
+                    <label class="form__checkboxlabel" for="check13">Варенье / джем</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check14">
+                    <label class="form__checkboxlabel" for="check14">Мёд - суфле</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check15">
+                    <label class="form__checkboxlabel" for="check15">Орехи</label>
+                  </li>
+                  <li class="form__item">
+                    <input class="form__checkbox visuallyhidden" type="checkbox" name="consist" value="" id="check16">
+                    <label class="form__checkboxlabel" for="check16">Сувениры</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form__shell">
+            <div class="form__wrap form__wrap--addition">
+              <label class="form__label" for="addition">Дополнительные компоненты</label>
+              <p class="form__comment">Укажите, если не увидели нужных компонентов для подарка в списке выше</p>
+              <textarea class="form__input form__input--addition" name="name" id="addition"></textarea>
+            </div>
+            <div class="form__wrap form__wrap--file">
+              <label class="form__label" for="image">Изображения</label>
+              <p class="form__comment">Прикрепите фото того, что вы хотите реализовать</p>
+              <div class="form__input form__input--file" id="upload">
+                <input id="file-input" type="file" name="file" multiple>
+                <span>Перетащите файл сюда или </span>
+                <label class="form__label--link" for="file-input">выберите из папки</label>
+              </div>
+            </div>
+            <div class="form__wrap form__wrap--other">
+              <label class="form__label" for="">Прочие пожелания</label>
+              <textarea class="form__input form__input--other" name="name">Расскажите о своих идеях и особых пожеланиях</textarea>
+            </div>
+          </div>
+          <button class="form__button" type="submit" name="button">В корзину</button>
+
+         <!-- </fieldset> -->
+      </form>
+
+         <!-- Блок "Примеры корпоративных заказов" -->
+
+         <section class="example ">
+          <h2 class="title title--subtitle">Примеры индивидуальных заказов</h2>
+          <div class="example__wrap">
+
+             <div class="example__slider">
+              <div class="example__slide">
+                <img src="img/gal-1-3.jpg" alt="">
+                <p>Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+              </div>
+              <div class="example__slide">
+                <img src="img/gal-0-2.jpg" alt="">
+                <p>Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+              </div>
+              <div class="example__slide">
+                <img src="img/gal-1-3.jpg" alt="">
+                <p>Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+              </div>
+              <div class="example__slide">
+                <img src="img/gal-1-3.jpg" alt="">
+                <p>Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+              </div>
+              <div class="example__slide">
+                <img src="img/gal-0-2.jpg" alt="">
+                <p>Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+              </div>
+              <div class="example__slide">
+                <img src="img/gal-1-3.jpg" alt="">
+                <p>Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+              </div>
+            </div>
+
+             <div class="example__preview">
+              <div class="example__prevslide">
+                <img src="img/gal-1-3.jpg" alt="">
+              </div>
+              <div class="example__prevslide">
+                <img src="img/gal-0-2.jpg" alt="">
+              </div>
+              <div class="example__prevslide">
+                <img src="img/gal-1-3.jpg" alt="">
+              </div>
+              <div class="example__prevslide">
+                <img src="img/gal-1-3.jpg" alt="">
+              </div>
+              <div class="example__prevslide">
+                <img src="img/gal-0-2.jpg" alt="">
+              </div>
+              <div class="example__prevslide">
+                <img src="img/gal-1-3.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
 
 
+         <!-- Отзывы -->
+
+         <section class="review__list oneitem__review">
+          <!-- <h2 class="title title--subsubtitle">Отзывы о товаре</h2> -->
+          <!-- <button class="oneitem__reviewbtn button" type="button" name="button">Оставить отзыв</button> -->
+
+           <section class="review__client">
+            <blockquote>
+              <p class="review__product">
+                <img src="img/best_tablet.jpg" alt="Фото товара">
+              </p>
+              <div class="review__block">
+                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
+              </div>
+              <div class="review__wrap">
+                <p class="review__img">
+                  <img src="img/otz1.jpg" alt="Фото клиента">
+                </p>
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <p class="review__comment">Отзыв о товаре</p>
+                  <a class="review__link" href="#">Черничные ночи</a>
+                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+          <section class="review__client">
+            <blockquote>
+              <p class="review__product">
+                <img src="img/best_tablet.jpg" alt="Фото товара">
+              </p>
+              <div class="review__block">
+                <p class="review__text">Фаза, следовательно, детерменирована. Интеграл Дирихле сложен. Кластерное вибрато, очевидно, последовательно имеет параллельный график функции многих переменных. НЛП позволяет вам точно определить </p>
+              </div>
+              <div class="review__wrap">
+                <p class="review__img">
+                  <img src="img/otz1.jpg" alt="Фото клиента">
+                </p>
+                <div class="review__cite">
+                  <cite class="review__name">Мария Иванова</cite>
+                  <p class="review__comment">Отзыв о товаре</p>
+                  <a class="review__link" href="#">Черничные ночи</a>
+                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                </div>
+              </div>
+            </blockquote>
+          </section>
+
+           <!-- ответ Эксперта -->
+
+           <section class="review__expert">
+            <blockquote>
+              <div class="review__wrap">
+                <div class="review__cite">
+                  <cite class="review__name">Сергей Петров</cite>
+                  <p class="review__post">Руководитель отдела качества</p>
+                </div>
+                <p class="review__img">
+                  <img src="img/otz2.jpg" alt="Фото эксперта">
+                </p>
+              </div>
+              <div class="review__block">
+                <p class="review__text">Однако Э.Дюркгейм утверждал, что агрессия просветляет материалистический генезис. Генезис традиционен. Как мы уже знаем, ассоциация зеркально просветляет понимающий генезис. Коллективное бессознательное </p>
+              </div>
+            </blockquote>
+          </section>
+        </section>
 
 
+         <section class="catalog__banner">
+          <div class="banner__wrap">
+            <p class="banner__title">Есть нестандартные идеи? Поможем воплатить!</p>
+            <a class="banner__button button" href="#">Подробнее</a>
+          </div>
+        </section>
 
-
+       </div>
+    </section>
   </main>
 
   <!-- Футер -->

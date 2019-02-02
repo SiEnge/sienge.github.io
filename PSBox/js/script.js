@@ -1,38 +1,152 @@
 // Валидация формы
 
+// Проверка всей формы при потере к-л обязательного поля фокуса
+function btnValid() {
+  var form = document.querySelector(".form__container");
+  var elementForm = form.querySelectorAll(".form__input");
+  var checkForm = form.querySelectorAll(".form__checkbox");
+  var fieldForm = form.querySelector(".form__shell--consist");
+  var btnForm = form.querySelector(".form__button");
+  var flagValid = true;
+  var flagValidCheck = false;
 
+  for (var i = 0; i < elementForm.length; i++) {
+    if (elementForm[i].hasAttribute('required')) {
+      if (!elementForm[i].validity.valid) {
+        flagValid = false;
+      }
+    }
+  }
 
-function validate(input) {
+  for (var i = 0; i < checkForm.length; i++) {
+    if (checkForm[i].checked) {
+      flagValidCheck = true;
+    }
+  }
 
+  if (flagValid && flagValidCheck) {
+    if (btnForm.classList.contains("form__button--disabled")) {
+      btnForm.classList.remove("form__button--disabled");
+    }
+  } else {
+    if (!btnForm.classList.contains("form__button--disabled")) {
+      btnForm.classList.add("form__button--disabled");
+    }
+  }
+}
 
-  if (input.validity.patternMismatch) {
+// Проверка поля при потере фокуса
+
+function validateText(input) {
+  if (!input.validity.valid) {
     if (input.classList.contains("form__input--valid")) {
       input.classList.remove("form__input--valid");
     }
     input.classList.add("form__input--invalid");
-    return ;
+    btnValid();
   } else {
     if (input.classList.contains("form__input--invalid")) {
       input.classList.remove("form__input--invalid");
     }
     input.classList.add("form__input--valid");
+    btnValid();
+  }
+}
 
+// ПРоверка списка checkbox
+
+function validateCheck(fieldForm) {
+  var form = document.querySelector(".form__container");
+  var checkForm = form.querySelectorAll(".form__checkbox");
+  // var fieldForm = form.querySelector(".form__shell--consist");
+  var flagValidCheck = false;
+
+  for (var i = 0; i < checkForm.length; i++) {
+    if (checkForm[i].checked) {
+      flagValidCheck = true;
+    }
   }
 
-
-  if (input.validity.typeMismatch) {
-    if (input.classList.contains("form__input--valid")) {
-      input.classList.remove("form__input--valid");
+  if (flagValidCheck) {
+    if (fieldForm.classList.contains("form__input--invalid")) {
+      fieldForm.classList.remove("form__input--invalid");
     }
-    input.classList.add("form__input--invalid");
-    return ;
+    fieldForm.classList.add("form__input--valid");
+    btnValid();
   } else {
-    if (input.classList.contains("form__input--invalid")) {
-      input.classList.remove("form__input--invalid");
+    if (fieldForm.classList.contains("form__input--valid")) {
+      fieldForm.classList.remove("form__input--valid");
     }
-    input.classList.add("form__input--valid");
+    fieldForm.classList.add("form__input--invalid");
+    btnValid();
   }
-};
+
+}
+
+// Проверка всей формы по кнопке Отправить
+
+function btnValidSubmit() {
+  var form = document.querySelector(".form__container");
+  var elementForm = form.querySelectorAll(".form__input");
+  var btnForm = form.querySelector(".form__button");
+  var checkForm = form.querySelectorAll(".form__checkbox");
+  var fieldForm = form.querySelector(".form__shell--consist");
+  var flagValid = true;
+  var flagValidCheck = false;
+
+  for (var i = 0; i < elementForm.length; i++) {
+    if (elementForm[i].hasAttribute('required')) {
+      if (!elementForm[i].validity.valid) {
+        flagValid = false;
+        if (elementForm[i].classList.contains("form__input--valid")) {
+          elementForm[i].classList.remove("form__input--valid");
+        }
+        elementForm[i].classList.add("form__input--invalid");
+      } else {
+        if (elementForm[i].classList.contains("form__input--invalid")) {
+          elementForm[i].classList.remove("form__input--invalid");
+        }
+        elementForm[i].classList.add("form__input--valid");
+      }
+    }
+  }
+
+  for (var i = 0; i < checkForm.length; i++) {
+    if (checkForm[i].checked) {
+      flagValidCheck = true;
+    }
+  }
+
+  if (flagValidCheck) {
+    if (fieldForm.classList.contains("form__input--invalid")) {
+      fieldForm.classList.remove("form__input--invalid");
+    }
+    fieldForm.classList.add("form__input--valid");
+  } else {
+    if (fieldForm.classList.contains("form__input--valid")) {
+      fieldForm.classList.remove("form__input--valid");
+    }
+    fieldForm.classList.add("form__input--invalid");
+  }
+
+
+  if (flagValid && flagValidCheck) {
+    if (btnForm.classList.contains("form__button--disabled")) {
+      btnForm.classList.remove("form__button--disabled");
+    }
+  } else {
+    if (!btnForm.classList.contains("form__button--disabled")) {
+      btnForm.classList.add("form__button--disabled");
+      return false;
+    }
+  }
+}
+
+
+
+
+
+
 
 // маска для ввода телефона
 
@@ -70,13 +184,13 @@ if ("#slider-range") {
 
 
     $rangeFrom.change(function() {
-      var value1=$rangeFrom.val();
-      var value2=$rangeTo.val();
-      if(parseInt(value1) < 0) {
+      var value1 = $rangeFrom.val();
+      var value2 = $rangeTo.val();
+      if (parseInt(value1) < 0) {
         value1 = 0;
         $rangeFrom.val(value1);
       }
-      if(parseInt(value1) > parseInt(value2)) {
+      if (parseInt(value1) > parseInt(value2)) {
         value1 = value2;
         $rangeFrom.val(value1);
       }
@@ -88,13 +202,13 @@ if ("#slider-range") {
       if ($rangeFrom.val() > 1) {
         $rangeFrom.val(+$rangeFrom.val() - step);
       }
-      var value1=$rangeFrom.val();
-      var value2=$rangeTo.val();
-      if(parseInt(value1) < 0) {
+      var value1 = $rangeFrom.val();
+      var value2 = $rangeTo.val();
+      if (parseInt(value1) < 0) {
         value1 = 0;
         $rangeFrom.val(value1);
       }
-      if(parseInt(value1) > parseInt(value2)) {
+      if (parseInt(value1) > parseInt(value2)) {
         value1 = value2;
         $rangeFrom.val(value1);
       }
@@ -103,20 +217,20 @@ if ("#slider-range") {
 
     $rangeFromPlus.click(function() {
       $rangeFrom.val(+$rangeFrom.val() + step);
-      var value1=$rangeFrom.val();
-      var value2=$rangeTo.val();
-        if(parseInt(value1) > parseInt(value2)) {
-          value1 = value2;
-          $rangeFrom.val(value1);
-        }
-        $("#slider-range").slider("values", 0, value1);
+      var value1 = $rangeFrom.val();
+      var value2 = $rangeTo.val();
+      if (parseInt(value1) > parseInt(value2)) {
+        value1 = value2;
+        $rangeFrom.val(value1);
+      }
+      $("#slider-range").slider("values", 0, value1);
     });
 
     $rangeTo.change(function() {
 
-      var value1=$rangeFromPlus.val();
-      var value2=$rangeTo.val();
-      if(parseInt(value1) > parseInt(value2)) {
+      var value1 = $rangeFromPlus.val();
+      var value2 = $rangeTo.val();
+      if (parseInt(value1) > parseInt(value2)) {
         value2 = value1;
         $rangeTo.val(value2);
       }
@@ -127,9 +241,9 @@ if ("#slider-range") {
       if ($rangeTo.val() > 1) {
         $rangeTo.val(+$rangeTo.val() - step);
       }
-      var value1=$rangeFromPlus.val();
-      var value2=$rangeTo.val();
-      if(parseInt(value1) > parseInt(value2)) {
+      var value1 = $rangeFromPlus.val();
+      var value2 = $rangeTo.val();
+      if (parseInt(value1) > parseInt(value2)) {
         value2 = value1;
         $rangeTo.val(value2);
       }
@@ -138,9 +252,9 @@ if ("#slider-range") {
 
     $rangeToPlus.click(function() {
       $rangeTo.val(+$rangeTo.val() + step);
-      var value1=$rangeFromPlus.val();
-      var value2=$rangeTo.val();
-      if(parseInt(value1) > parseInt(value2)) {
+      var value1 = $rangeFromPlus.val();
+      var value2 = $rangeTo.val();
+      if (parseInt(value1) > parseInt(value2)) {
         value2 = value1;
         $rangeTo.val(value2);
       }
@@ -151,345 +265,386 @@ if ("#slider-range") {
 
 }
 
-  // Счетчик количества input number в форме
+// Счетчик количества input number в форме
 
-  // var inputAmount = document.querySelector(".amount");
+// var inputAmount = document.querySelector(".amount");
 
-  $(function() {
+$(function() {
 
-    (function quantityProducts() {
-      var $quantityArrowMinus = $(".amount--minus");
-      var $quantityArrowPlus = $(".amount--plus");
-      var $quantityNum = $(".amount");
+  (function quantityProducts() {
+    var $quantityArrowMinus = $(".amount--minus");
+    var $quantityArrowPlus = $(".amount--plus");
+    var $quantityNum = $(".amount");
 
-      $quantityArrowMinus.click(quantityMinus);
-      $quantityArrowPlus.click(quantityPlus);
+    $quantityArrowMinus.click(quantityMinus);
+    $quantityArrowPlus.click(quantityPlus);
 
-      function quantityMinus() {
-        if ($quantityNum.val() > 1) {
-          $quantityNum.val(+$quantityNum.val() - 1);
-        }
+    function quantityMinus() {
+      if ($quantityNum.val() > 1) {
+        $quantityNum.val(+$quantityNum.val() - 1);
       }
+    }
 
-      function quantityPlus() {
-        $quantityNum.val(+$quantityNum.val() + 1);
-      }
-    })();
+    function quantityPlus() {
+      $quantityNum.val(+$quantityNum.val() + 1);
+    }
+
+    // validateText($quantityNum);
+  })();
+});
+
+
+
+
+// Поле загрузки файлов drag and drop
+
+var dropZone = $('#upload');
+if (dropZone) {
+  $('#file-input').focus(function() {
+      $('label').addClass('focus');
+    })
+    .focusout(function() {
+      $('label').removeClass('focus');
+    });
+
+  dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function() {
+    return false;
   });
 
+  dropZone.on('dragover dragenter', function() {
+    dropZone.addClass('dragover');
+  });
 
+  dropZone.on('dragleave', function(e) {
+    dropZone.removeClass('dragover');
+  });
 
-
-  // Поле загрузки файлов drag and drop
-
-  var dropZone = $('#upload');
-  if (dropZone) {
-    $('#file-input').focus(function() {
-        $('label').addClass('focus');
-      })
-      .focusout(function() {
-        $('label').removeClass('focus');
-      });
-
-    dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function() {
-      return false;
-    });
-
-    dropZone.on('dragover dragenter', function() {
-      dropZone.addClass('dragover');
-    });
-
-    dropZone.on('dragleave', function(e) {
+  dropZone.on('dragleave', function(e) {
+    let dx = e.pageX - dropZone.offset().left;
+    let dy = e.pageY - dropZone.offset().top;
+    if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
       dropZone.removeClass('dragover');
-    });
-
-    dropZone.on('dragleave', function(e) {
-      let dx = e.pageX - dropZone.offset().left;
-      let dy = e.pageY - dropZone.offset().top;
-      if ((dx < 0) || (dx > dropZone.width()) || (dy < 0) || (dy > dropZone.height())) {
-        dropZone.removeClass('dragover');
-      };
-    });
-
-    dropZone.on('drop', function(e) {
-      dropZone.removeClass('dragover');
-      let files = e.originalEvent.dataTransfer.files;
-      sendFiles(files);
-    });
-
-    $('#file-input').change(function() {
-      let files = this.files;
-      sendFiles(files);
-    });
-
-    function sendFiles(files) {
-      let maxFileSize = 5242880;
-      let Data = new FormData();
-      $(files).each(function(index, file) {
-        if ((file.size <= maxFileSize) && ((file.type == 'image/png') || (file.type == 'image/jpeg'))) {
-          Data.append('images[]', file);
-        }
-      });
     };
-  }
+  });
 
+  dropZone.on('drop', function(e) {
+    dropZone.removeClass('dragover');
+    let files = e.originalEvent.dataTransfer.files;
+    sendFiles(files);
+  });
 
-  // Слайдеры
+  $('#file-input').change(function() {
+    let files = this.files;
+    sendFiles(files);
+  });
 
-  $('.oneitem__slider').slick({
-    mobileFirst: true,
-    asNavFor: '.oneitem__preview',
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    responsive: [{
-      breakpoint: 1000,
-      settings: {
-        // arrows: true
+  function sendFiles(files) {
+    let maxFileSize = 5242880;
+    let Data = new FormData();
+    $(files).each(function(index, file) {
+      if ((file.size <= maxFileSize) && ((file.type == 'image/png') || (file.type == 'image/jpeg'))) {
+        Data.append('images[]', file);
       }
-    }]
-  });
-
-  $('.oneitem__preview').slick({
-    mobileFirst: true,
-    asNavFor: '.oneitem__slider',
-    slidesToShow: 4,
-    focusOnSelect: true,
-    arrows: false
-  });
+    });
+  };
+}
 
 
+// Слайдеры
+
+$('.oneitem__slider').slick({
+  mobileFirst: true,
+  asNavFor: '.oneitem__preview',
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: false,
+  responsive: [{
+    breakpoint: 1000,
+    settings: {
+      // arrows: true
+    }
+  }]
+});
+
+$('.oneitem__preview').slick({
+  mobileFirst: true,
+  asNavFor: '.oneitem__slider',
+  slidesToShow: 4,
+  focusOnSelect: true,
+  arrows: false
+});
 
 
-  $('.about__review-slider').slick({
-    mobileFirst: true,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
-    // arrows: false,
-    slidesToShow: 1,
-    infinite: false,
-    adaptiveHeight: false,
-    adaptiveHeight: true,
-    responsive: [{
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2
-      }
-    }]
-  });
 
-  $('.example__slider').slick({
-    mobileFirst: true,
-    asNavFor: '.example__preview',
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    responsive: [{
-      breakpoint: 1000,
-      settings: {
-        arrows: true
-      }
-    }]
-  });
 
-  $('.example__preview').slick({
-    mobileFirst: true,
-    asNavFor: '.example__slider',
-    slidesToShow: 5,
-    focusOnSelect: true,
-    arrows: false,
-    responsive: [{
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 7
-      }
-    }]
-  });
+$('.about__review-slider').slick({
+  mobileFirst: true,
+  // autoplay: true,
+  // autoplaySpeed: 3000,
+  // arrows: false,
+  slidesToShow: 1,
+  infinite: false,
+  adaptiveHeight: false,
+  adaptiveHeight: true,
+  responsive: [{
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 2
+    }
+  }]
+});
 
-  $('.pleasure__slider').slick({
-    mobileFirst: true,
-    asNavFor: '.pleasure__preview',
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    responsive: [{
-      breakpoint: 1000,
-      settings: {
-        arrows: true
-      }
-    }]
-  });
+$('.example__slider').slick({
+  mobileFirst: true,
+  asNavFor: '.example__preview',
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: false,
+  responsive: [{
+    breakpoint: 1000,
+    settings: {
+      arrows: true
+    }
+  }]
+});
 
-  $('.pleasure__preview').slick({
-    mobileFirst: true,
-    asNavFor: '.pleasure__slider',
-    slidesToShow: 5,
-    focusOnSelect: true,
-    arrows: false,
-    responsive: [{
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 7
-      }
-    }]
-  });
+$('.example__preview').slick({
+  mobileFirst: true,
+  asNavFor: '.example__slider',
+  slidesToShow: 5,
+  focusOnSelect: true,
+  arrows: false,
+  responsive: [{
+    breakpoint: 1200,
+    settings: {
+      slidesToShow: 7
+    }
+  }]
+});
 
-  $('.gift__slider').slick({
-    autoplay: true,
-    autoplaySpeed: 3000,
-    dots: true,
-    pauseOnDotsHover: true,
-    zindex: 100,
-    responsive: [{
-      breakpoint: 1048,
-      settings: {
-        arrows: false
-      }
-    }]
-  });
+$('.pleasure__slider').slick({
+  mobileFirst: true,
+  asNavFor: '.pleasure__preview',
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: false,
+  responsive: [{
+    breakpoint: 1000,
+    settings: {
+      arrows: true
+    }
+  }]
+});
 
-  $('.offers__slider').slick({
-    // dots: true,
-    fade: true,
-    infinite: false,
-    zindex: 100
-  });
+$('.pleasure__preview').slick({
+  mobileFirst: true,
+  asNavFor: '.pleasure__slider',
+  slidesToShow: 5,
+  focusOnSelect: true,
+  arrows: false,
+  responsive: [{
+    breakpoint: 1200,
+    settings: {
+      slidesToShow: 7
+    }
+  }]
+});
 
-  $('.offers__sliderimg').slick({
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 5000,
-    fade: true,
-    dots: true,
-    zindex: 100
-  });
+$('.gift__slider').slick({
+  autoplay: true,
+  autoplaySpeed: 3000,
+  dots: true,
+  pauseOnDotsHover: true,
+  zindex: 100,
+  responsive: [{
+    breakpoint: 1048,
+    settings: {
+      arrows: false
+    }
+  }]
+});
 
-  $('.feedback__slider').slick({
-    infinite: false,
-    zindex: 100
-  });
+$('.offers__slider').slick({
+  // dots: true,
+  fade: true,
+  infinite: false,
+  zindex: 100
+});
 
-  $('.gallery__slider').slick({
-    asNavFor: '.gallery__preview',
-    ccsEase: 'ease-in',
-    responsive: [{
+$('.offers__sliderimg').slick({
+  autoplay: true,
+  arrows: false,
+  autoplaySpeed: 5000,
+  fade: true,
+  dots: true,
+  zindex: 100
+});
+
+$('.feedback__slider').slick({
+  infinite: false,
+  zindex: 100
+});
+
+$('.gallery__slider').slick({
+  asNavFor: '.gallery__preview',
+  ccsEase: 'ease-in',
+  responsive: [{
+    breakpoint: 1170,
+    settings: {
+      arrows: false
+    }
+  }]
+});
+
+$('.gallery__preview').slick({
+  asNavFor: '.gallery__slider',
+  slidesToShow: 11,
+  focusOnSelect: true,
+  arrows: false,
+  responsive: [{
       breakpoint: 1170,
       settings: {
-        arrows: false
+        slidesToShow: 7
       }
-    }]
-  });
-
-  $('.gallery__preview').slick({
-    asNavFor: '.gallery__slider',
-    slidesToShow: 11,
-    focusOnSelect: true,
-    arrows: false,
-    responsive: [{
-        breakpoint: 1170,
-        settings: {
-          slidesToShow: 7
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3
-        }
-      }
-    ]
-  });
-
-  $('.variant__slider--one').slick({
-    mobileFirst: true,
-    asNavFor: '.variant__preview--one',
-    ccsEase: 'ease-in',
-    arrows: false,
-    responsive: [{
-      breakpoint: 1200,
+    },
+    {
+      breakpoint: 768,
       settings: {
-        arrows: true
+        slidesToShow: 3
       }
-    }]
-  });
+    }
+  ]
+});
 
-  $('.variant__preview--one').slick({
-    asNavFor: '.variant__slider--one',
-    slidesToShow: 6,
-    focusOnSelect: true,
-    arrows: false
-  });
+$('.variant__slider--one').slick({
+  mobileFirst: true,
+  asNavFor: '.variant__preview--one',
+  ccsEase: 'ease-in',
+  arrows: false,
+  responsive: [{
+    breakpoint: 1200,
+    settings: {
+      arrows: true
+    }
+  }]
+});
 
-  $('.variant__slider--two').slick({
-    mobileFirst: true,
-    asNavFor: '.variant__preview--two',
-    ccsEase: 'ease-in',
-    arrows: false,
-    responsive: [{
-      breakpoint: 1200,
-      settings: {
-        arrows: true
-      }
-    }]
-  });
+$('.variant__preview--one').slick({
+  asNavFor: '.variant__slider--one',
+  slidesToShow: 6,
+  focusOnSelect: true,
+  arrows: false
+});
 
-  $('.variant__preview--two').slick({
-    asNavFor: '.variant__slider--two',
-    slidesToShow: 6,
-    focusOnSelect: true,
-    arrows: false
-  });
+$('.variant__slider--two').slick({
+  mobileFirst: true,
+  asNavFor: '.variant__preview--two',
+  ccsEase: 'ease-in',
+  arrows: false,
+  responsive: [{
+    breakpoint: 1200,
+    settings: {
+      arrows: true
+    }
+  }]
+});
+
+$('.variant__preview--two').slick({
+  asNavFor: '.variant__slider--two',
+  slidesToShow: 6,
+  focusOnSelect: true,
+  arrows: false
+});
 
 
-  //Галерея
+//Галерея
 
-  var btnGallery = document.querySelector(".offers__button-gallery");
-  var overlayMod = document.querySelector('.overlay-modal');
+var btnGallery = document.querySelector(".offers__button-gallery");
+var overlayMod = document.querySelector('.overlay-modal');
 
-  if (btnGallery) {
-    var btnGalleryClose = document.querySelector(".gallery__button--close");
-    var modGallery = document.querySelector('.gallery');
+if (btnGallery) {
+  var btnGalleryClose = document.querySelector(".gallery__button--close");
+  var modGallery = document.querySelector('.gallery');
 
-    btnGallery.addEventListener("click", function(event) {
+  btnGallery.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    modGallery.classList.add("gallery--active");
+    overlayMod.classList.add("overlay--active");
+
+    overlayMod.addEventListener("click", function(event) {
       event.preventDefault();
-
-      modGallery.classList.add("gallery--active");
-      overlayMod.classList.add("overlay--active");
-
-      overlayMod.addEventListener("click", function(event) {
-        event.preventDefault();
-        modGallery.classList.remove("gallery--active");
-        overlayMod.classList.remove("overlay--active");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (modGallery.classList.contains("gallery--active")) {
-            modGallery.classList.remove("gallery--active");
-            overlayMod.classList.remove("overlay--active");
-          }
-        }
-      });
-    });
-
-    btnGalleryClose.addEventListener("click", function(event) {
-      event.preventDefault();
-
       modGallery.classList.remove("gallery--active");
       overlayMod.classList.remove("overlay--active");
     });
 
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modGallery.classList.contains("gallery--active")) {
+          modGallery.classList.remove("gallery--active");
+          overlayMod.classList.remove("overlay--active");
+        }
+      }
+    });
+  });
+
+  btnGalleryClose.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    modGallery.classList.remove("gallery--active");
+    overlayMod.classList.remove("overlay--active");
+  });
+
+}
+
+
+//Прилипание шапки при прокрутке
+
+var HeaderFixed = (function() {
+
+  var docElem = document.documentElement,
+    header = document.querySelector(".header"),
+    didScroll = false,
+    changeHeaderOn = 400;
+
+  function init() {
+    window.addEventListener("scroll", function(event) {
+      if (!didScroll) {
+        didScroll = true;
+        setTimeout(scrollPage, 250);
+      }
+    }, false);
   }
 
+  function scrollPage() {
+    var sy = scrollY();
+    if (sy >= changeHeaderOn) {
+      header.classList.add("header--min");
+    } else {
+      header.classList.remove("header--min");
+    }
+    didScroll = false;
+  }
 
-  //Прилипание шапки при прокрутке
+  function scrollY() {
+    return window.pageYOffset || docElem.scrollTop;
+  }
 
-  var HeaderFixed = (function() {
+  init();
+
+})();
+
+//Прилипание фильтра при прокрутке
+
+var filter = document.querySelector(".filter");
+
+if (filter) {
+  var FilterFixed = (function() {
 
     var docElem = document.documentElement,
-      header = document.querySelector(".header"),
+      // filter = document.querySelector(".filter"),
       didScroll = false,
-      changeHeaderOn = 400;
+      changeFilterOn = 205;
 
     function init() {
       window.addEventListener("scroll", function(event) {
@@ -502,10 +657,10 @@ if ("#slider-range") {
 
     function scrollPage() {
       var sy = scrollY();
-      if (sy >= changeHeaderOn) {
-        header.classList.add("header--min");
+      if (sy >= changeFilterOn) {
+        filter.classList.add("filter--fixed");
       } else {
-        header.classList.remove("header--min");
+        filter.classList.remove("filter--fixed");
       }
       didScroll = false;
     }
@@ -518,431 +673,392 @@ if ("#slider-range") {
 
   })();
 
-  //Прилипание фильтра при прокрутке
+}
 
-  var filter = document.querySelector(".filter");
+//Копирование ссылки в буфер обмена
 
-  if (filter) {
-    var FilterFixed = (function() {
+var btnCopy = document.querySelector('.pop-create__icon--copy');
 
-      var docElem = document.documentElement,
-      // filter = document.querySelector(".filter"),
-      didScroll = false,
-      changeFilterOn = 205;
+if (btnCopy) {
+  btnCopy.addEventListener('click', function() {
 
-      function init() {
-        window.addEventListener("scroll", function(event) {
-          if (!didScroll) {
-            didScroll = true;
-            setTimeout(scrollPage, 250);
-          }
-        }, false);
-      }
+    var linkCopy = document.querySelector('.pop-create__link');
 
-      function scrollPage() {
-        var sy = scrollY();
-        if (sy >= changeFilterOn) {
-          filter.classList.add("filter--fixed");
-        } else {
-          filter.classList.remove("filter--fixed");
-        }
-        didScroll = false;
-      }
+    var range = document.createRange();
+    range.selectNode(linkCopy);
+    window.getSelection().addRange(range);
 
-      function scrollY() {
-        return window.pageYOffset || docElem.scrollTop;
-      }
+    try {
+      document.execCommand('copy');
+    } catch (err) {
+      console.log('Can`t copy, boss');
+    }
 
-      init();
+    window.getSelection().removeAllRanges();
+  });
+}
 
-    })();
 
+//Обработка события клика на "бургер" навигации. При клике разворачивается меню
+
+var nav = document.querySelector(".nav");
+var navBtn = document.querySelector(".nav__button");
+var overlay = document.querySelector(".overlay");
+
+nav.classList.remove("nav--nojs");
+
+navBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  if (nav.classList.contains("nav--closed")) {
+    nav.classList.remove("nav--closed");
+    nav.classList.add("nav--opened");
+    overlay.classList.add("overlay--active");
+  } else {
+    nav.classList.remove("nav--opened");
+    overlay.classList.remove("overlay--active");
+    nav.classList.add("nav--closed");
   }
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    nav.classList.remove("nav--opened");
+    overlay.classList.remove("overlay--active");
+    nav.classList.add("nav--closed");
+  });
 
-  //Копирование ссылки в буфер обмена
-
-  var btnCopy = document.querySelector('.pop-create__icon--copy');
-
-  if (btnCopy) {
-    btnCopy.addEventListener('click', function() {
-
-      var linkCopy = document.querySelector('.pop-create__link');
-
-      var range = document.createRange();
-      range.selectNode(linkCopy);
-      window.getSelection().addRange(range);
-
-      try {
-        document.execCommand('copy');
-      } catch (err) {
-        console.log('Can`t copy, boss');
+  window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (nav.classList.contains("nav--opened")) {
+        nav.classList.remove("nav--opened");
+        overlay.classList.remove("overlay--active");
+        nav.classList.add("nav--closed");
       }
+    }
+  });
 
-      window.getSelection().removeAllRanges();
-    });
+
+});
+
+//Обработка клика для выпадающего фильтра
+
+var listFilter = document.querySelector(".filter__fieldset--composition .form__wrap--consist");
+
+if (listFilter) {
+  var btnFilter = document.querySelector(".filter__composition-btn");
+
+  btnFilter.addEventListener("click", function() {
+    if (listFilter.classList.contains("form__wrap--close")) {
+      listFilter.classList.remove("form__wrap--close");
+      // listFilter.classList.add("form__wrap--close");
+    } else {
+      // listFilter.classList.remove("form__wrap--close");
+      listFilter.classList.add("form__wrap--close");
+    }
+  });
+
+}
+
+//Обработка клика для выпадающего подменю
+var navSub = document.querySelector(".nav__item--sub");
+var navSubList = document.querySelector(".nav__sublist");
+
+navSub.addEventListener("click", function() {
+  if (navSub.classList.contains("nav__item--subclose")) {
+    navSub.classList.remove("nav__item--subclose");
+    navSub.classList.add("nav__item--subopen");
+  } else {
+    navSub.classList.remove("nav__item--subopen");
+    navSub.classList.add("nav__item--subclose");
   }
+});
+
+//Обработка закрытия модального окна "Приглашение к коллективному заказу"
+var btnInvite = document.querySelector(".offers__invite-btn");
+
+if (btnInvite) {
+  var btnInviteClose = document.querySelector(".modal-invite__button--cancel");
+  var modInvite = document.querySelector('.modal__invite');
 
 
-  //Обработка события клика на "бургер" навигации. При клике разворачивается меню
-
-  var nav = document.querySelector(".nav");
-  var navBtn = document.querySelector(".nav__button");
-  var overlay = document.querySelector(".overlay");
-
-  nav.classList.remove("nav--nojs");
-
-  navBtn.addEventListener("click", function(event) {
+  btnInvite.addEventListener("click", function(event) {
     event.preventDefault();
 
-    if (nav.classList.contains("nav--closed")) {
-      nav.classList.remove("nav--closed");
-      nav.classList.add("nav--opened");
-      overlay.classList.add("overlay--active");
-    } else {
-      nav.classList.remove("nav--opened");
-      overlay.classList.remove("overlay--active");
-      nav.classList.add("nav--closed");
-    }
-    overlay.addEventListener("click", function(event) {
+    modInvite.classList.add("modal--active");
+    overlayMod.classList.add("overlay--active");
+
+    overlayMod.addEventListener("click", function(event) {
       event.preventDefault();
-      nav.classList.remove("nav--opened");
-      overlay.classList.remove("overlay--active");
-      nav.classList.add("nav--closed");
-    });
-
-    window.addEventListener("keydown", function(event) {
-      if (event.keyCode === 27) {
-        if (nav.classList.contains("nav--opened")) {
-          nav.classList.remove("nav--opened");
-          overlay.classList.remove("overlay--active");
-          nav.classList.add("nav--closed");
-        }
-      }
-    });
-
-
-  });
-
-  //Обработка клика для выпадающего фильтра
-
-  var listFilter = document.querySelector(".filter__fieldset--composition .form__wrap--consist");
-
-  if (listFilter) {
-    var btnFilter = document.querySelector(".filter__composition-btn");
-
-    btnFilter.addEventListener("click", function() {
-      if (listFilter.classList.contains("form__wrap--close")) {
-        listFilter.classList.remove("form__wrap--close");
-        // listFilter.classList.add("form__wrap--close");
-      } else {
-        // listFilter.classList.remove("form__wrap--close");
-        listFilter.classList.add("form__wrap--close");
-      }
-    });
-
-  }
-
-  //Обработка клика для выпадающего подменю
-  var navSub = document.querySelector(".nav__item--sub");
-  var navSubList = document.querySelector(".nav__sublist");
-
-  navSub.addEventListener("click", function() {
-    if (navSub.classList.contains("nav__item--subclose")) {
-      navSub.classList.remove("nav__item--subclose");
-      navSub.classList.add("nav__item--subopen");
-    } else {
-      navSub.classList.remove("nav__item--subopen");
-      navSub.classList.add("nav__item--subclose");
-    }
-  });
-
-  //Обработка закрытия модального окна "Приглашение к коллективному заказу"
-  var btnInvite = document.querySelector(".offers__invite-btn");
-
-  if (btnInvite) {
-    var btnInviteClose = document.querySelector(".modal-invite__button--cancel");
-    var modInvite = document.querySelector('.modal__invite');
-
-
-    btnInvite.addEventListener("click", function(event) {
-      event.preventDefault();
-
-      modInvite.classList.add("modal--active");
-      overlayMod.classList.add("overlay--active");
-
-      overlayMod.addEventListener("click", function(event) {
-        event.preventDefault();
-        modInvite.classList.remove("modal--active");
-        overlayMod.classList.remove("overlay--active");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (modInvite.classList.contains("modal--active")) {
-            modInvite.classList.remove("modal--active");
-            overlayMod.classList.remove("overlay--active");
-          }
-        }
-      });
-    });
-
-    btnInviteClose.addEventListener("click", function(event) {
-      event.preventDefault();
-
       modInvite.classList.remove("modal--active");
       overlayMod.classList.remove("overlay--active");
     });
 
-  }
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modInvite.classList.contains("modal--active")) {
+          modInvite.classList.remove("modal--active");
+          overlayMod.classList.remove("overlay--active");
+        }
+      }
+    });
+  });
+
+  btnInviteClose.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    modInvite.classList.remove("modal--active");
+    overlayMod.classList.remove("overlay--active");
+  });
+
+}
 
 
-  // модальное окно "Оставить отзыв"
-  var btnReview = document.querySelector(".review__button");
+// модальное окно "Оставить отзыв"
+var btnReview = document.querySelector(".review__button");
 
-  if (btnReview) {
-    var modReview = document.querySelector('.modal-review');
-    var modReviewAdd = document.querySelector('.modal-reviewadd');
-    var btnReviewSend = document.querySelector(".modal-review__button--send");
+if (btnReview) {
+  var modReview = document.querySelector('.modal-review');
+  var modReviewAdd = document.querySelector('.modal-reviewadd');
+  var btnReviewSend = document.querySelector(".modal-review__button--send");
 
-    var btnReviewClose = document.querySelector(".modal-review__button--close");
-    var btnReviewAddClose = document.querySelector(".modal-reviewadd__button--close");
+  var btnReviewClose = document.querySelector(".modal-review__button--close");
+  var btnReviewAddClose = document.querySelector(".modal-reviewadd__button--close");
 
+
+  modReview.classList.add("modal--active");
+
+  modReview.classList.remove("modal--active");
+
+  btnReview.addEventListener("click", function(event) {
+    event.preventDefault();
 
     modReview.classList.add("modal--active");
+    overlayMod.classList.add("overlay--active");
 
-    modReview.classList.remove("modal--active");
-
-    btnReview.addEventListener("click", function(event) {
+    overlayMod.addEventListener("click", function(event) {
       event.preventDefault();
-
-      modReview.classList.add("modal--active");
-      overlayMod.classList.add("overlay--active");
-
-      overlayMod.addEventListener("click", function(event) {
-        event.preventDefault();
-        modReview.classList.remove("modal--active");
-        overlayMod.classList.remove("overlay--active");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (modReview.classList.contains("modal--active")) {
-            modReview.classList.remove("modal--active");
-            overlayMod.classList.remove("overlay--active");
-          }
-        }
-      });
-    });
-
-    btnReviewClose.addEventListener("click", function(event) {
-      event.preventDefault();
-
       modReview.classList.remove("modal--active");
       overlayMod.classList.remove("overlay--active");
     });
 
-    btnReviewSend.addEventListener("click", function() {
-      event.preventDefault();
-
-      modReview.classList.remove("modal--active");
-      modReviewAdd.classList.add("modal--active");
-
-
-      btnReviewAddClose.addEventListener("click", function(event) {
-        event.preventDefault();
-
-        modReviewAdd.classList.remove("modal--active");
-        overlayMod.classList.remove("overlay--active");
-      });
-
-      overlayMod.addEventListener("click", function(event) {
-        event.preventDefault();
-        modReviewAdd.classList.remove("modal--active");
-        overlayMod.classList.remove("overlay--active");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (modReviewAdd.classList.contains("modal--active")) {
-            modReviewAdd.classList.remove("modal--active");
-            overlayMod.classList.remove("overlay--active");
-          }
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modReview.classList.contains("modal--active")) {
+          modReview.classList.remove("modal--active");
+          overlayMod.classList.remove("overlay--active");
         }
-      });
+      }
     });
+  });
 
-  }
+  btnReviewClose.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    modReview.classList.remove("modal--active");
+    overlayMod.classList.remove("overlay--active");
+  });
+
+  btnReviewSend.addEventListener("click", function() {
+    event.preventDefault();
+
+    modReview.classList.remove("modal--active");
+    modReviewAdd.classList.add("modal--active");
 
 
-
-
-  // Обработка клика на "В корзину"
-  var btnToCard = document.querySelector(".offers__cart-btn");
-
-  if (btnToCard) {
-    var modToCard = document.querySelector(".modal__addtocart");
-    var btnToCardClose = document.querySelector(".modal__addtocart-btn--close");
-
-    btnToCard.addEventListener("click", function(event) {
+    btnReviewAddClose.addEventListener("click", function(event) {
       event.preventDefault();
-      modToCard.classList.add("modal--active");
+
+      modReviewAdd.classList.remove("modal--active");
+      overlayMod.classList.remove("overlay--active");
     });
 
-    btnToCardClose.addEventListener("click", function(event) {
+    overlayMod.addEventListener("click", function(event) {
       event.preventDefault();
-      modToCard.classList.remove("modal--active");
+      modReviewAdd.classList.remove("modal--active");
+      overlayMod.classList.remove("overlay--active");
     });
 
-  }
+    window.addEventListener("keydown", function(event) {
+      if (event.keyCode === 27) {
+        if (modReviewAdd.classList.contains("modal--active")) {
+          modReviewAdd.classList.remove("modal--active");
+          overlayMod.classList.remove("overlay--active");
+        }
+      }
+    });
+  });
+
+}
 
 
 
-  // Обработка события клика на иконку Сравнения в шапке
-  // Обработка события клика на иконку Корзины в шапке
+
+// Обработка клика на "В корзину"
+var btnToCard = document.querySelector(".offers__cart-btn");
+
+if (btnToCard) {
+  var modToCard = document.querySelector(".modal__addtocart");
+  var btnToCardClose = document.querySelector(".modal__addtocart-btn--close");
+
+  btnToCard.addEventListener("click", function(event) {
+    event.preventDefault();
+    modToCard.classList.add("modal--active");
+  });
+
+  btnToCardClose.addEventListener("click", function(event) {
+    event.preventDefault();
+    modToCard.classList.remove("modal--active");
+  });
+
+}
 
 
 
-  var icCom = document.querySelector(".header__usbtn--compare");
-  var icPopCom = document.querySelector(".pop-compare");
+// Обработка события клика на иконку Сравнения в шапке
+// Обработка события клика на иконку Корзины в шапке
 
-  var icCart = document.querySelector(".header__usbtn--cart");
-  var icPopCart = document.querySelector(".pop--basket");
-  var icTeam = document.querySelector(".pop-basket--team");
-  var icPopCreate = document.querySelector(".pop-create");
-  var icPopCreateCancel = document.querySelector(".pop-create--cancel");
-  // var icNewName = document.querySelector(".pop-create--newname");
-  var icCreateList = document.querySelector(".pop-create__list");
-  var icCreateItem = document.querySelector(".pop-create__item");
-  //
-  // icNewName.addEventListener("click", function (event) {
-  //   var cloneLi = icCreateItem.cloneNode(true);
-  //   icCreateList.appendChild(cloneLi);
-  // });
 
-  icPopCreateCancel.addEventListener("click", function(event) {
+
+var icCom = document.querySelector(".header__usbtn--compare");
+var icPopCom = document.querySelector(".pop-compare");
+
+var icCart = document.querySelector(".header__usbtn--cart");
+var icPopCart = document.querySelector(".pop--basket");
+var icTeam = document.querySelector(".pop-basket--team");
+var icPopCreate = document.querySelector(".pop-create");
+var icPopCreateCancel = document.querySelector(".pop-create--cancel");
+// var icNewName = document.querySelector(".pop-create--newname");
+var icCreateList = document.querySelector(".pop-create__list");
+var icCreateItem = document.querySelector(".pop-create__item");
+//
+// icNewName.addEventListener("click", function (event) {
+//   var cloneLi = icCreateItem.cloneNode(true);
+//   icCreateList.appendChild(cloneLi);
+// });
+
+icPopCreateCancel.addEventListener("click", function(event) {
+  event.preventDefault();
+  icPopCreate.classList.remove("pop--active");
+  icPopCart.classList.add("pop--active");
+
+  overlay.addEventListener("click", function(event) {
     event.preventDefault();
     icPopCreate.classList.remove("pop--active");
+    overlay.classList.remove("overlay--active");
+  });
+
+  window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCreate.classList.contains("pop--active")) {
+        icPopCreate.classList.remove("pop--active");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
+});
+
+icTeam.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  if (icPopCreate.classList.contains("pop--active")) {
+    icPopCreate.classList.remove("pop--active");
+    if (overlay.classList.contains("overlay--active")) {
+      overlay.classList.remove("overlay--active");
+    }
+  } else {
+    icPopCreate.classList.add("pop--active");
+    overlay.classList.add("overlay--active");
+    icPopCart.classList.remove("pop--active");
+  }
+
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCreate.classList.remove("pop--active");
+    overlay.classList.remove("overlay--active");
+  });
+
+  window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCreate.classList.contains("pop--active")) {
+        icPopCreate.classList.remove("pop--active");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
+
+});
+
+
+
+icCom.addEventListener("click", function(event) {
+  event.preventDefault();
+  if (icPopCom.classList.contains("pop--active")) {
+    icPopCom.classList.remove("pop--active");
+    icCom.classList.remove("header__usbtn-active");
+    icCom.classList.remove("header__usbtn-active--compare");
+    if (overlay.classList.contains("overlay--active")) {
+      overlay.classList.remove("overlay--active");
+    }
+  } else {
+    icPopCom.classList.add("pop--active");
+    icCom.classList.add("header__usbtn-active");
+    icCom.classList.add("header__usbtn-active--compare");
+    overlay.classList.add("overlay--active");
+    icPopCart.classList.remove("pop--active");
+  }
+
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCom.classList.remove("pop--active");
+    icCom.classList.remove("header__usbtn-active");
+    icCom.classList.remove("header__usbtn-active--compare");
+    overlay.classList.remove("overlay--active");
+  });
+
+  window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCom.classList.contains("pop--active")) {
+        icPopCom.classList.remove("pop--active");
+        icCom.classList.remove("header__usbtn-active");
+        icCom.classList.remove("header__usbtn-active--compare");
+        overlay.classList.remove("overlay--active");
+      }
+    }
+  });
+});
+
+icCart.addEventListener("click", function(event) {
+  event.preventDefault();
+  if (icPopCart.classList.contains("pop--active")) {
+    icPopCart.classList.remove("pop--active");
+    icCart.classList.remove("header__usbtn-active");
+    icCart.classList.remove("header__usbtn-active--cart");
+    if (overlay.classList.contains("overlay--active")) {
+      overlay.classList.remove("overlay--active");
+    }
+  } else {
     icPopCart.classList.add("pop--active");
+    icCart.classList.add("header__usbtn-active");
+    icCart.classList.add("header__usbtn-active--cart");
+    overlay.classList.add("overlay--active");
+    icPopCom.classList.remove("pop--active");
+  }
 
-    overlay.addEventListener("click", function(event) {
-      event.preventDefault();
-      icPopCreate.classList.remove("pop--active");
-      overlay.classList.remove("overlay--active");
-    });
-
-    window.addEventListener("keydown", function(event) {
-      if (event.keyCode === 27) {
-        if (icPopCreate.classList.contains("pop--active")) {
-          icPopCreate.classList.remove("pop--active");
-          overlay.classList.remove("overlay--active");
-        }
-      }
-    });
+  overlay.addEventListener("click", function(event) {
+    event.preventDefault();
+    icPopCart.classList.remove("pop--active");
+    icCart.classList.remove("header__usbtn-active");
+    icCart.classList.remove("header__usbtn-active--cart");
+    overlay.classList.remove("overlay--active");
   });
 
-  icTeam.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    if (icPopCreate.classList.contains("pop--active")) {
-      icPopCreate.classList.remove("pop--active");
-      if (overlay.classList.contains("overlay--active")) {
+  window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (icPopCart.classList.contains("pop--active")) {
+        icPopCart.classList.remove("pop--active");
+        icCart.classList.remove("header__usbtn-active");
+        icCart.classList.remove("header__usbtn-active--cart");
         overlay.classList.remove("overlay--active");
       }
-    } else {
-      icPopCreate.classList.add("pop--active");
-      overlay.classList.add("overlay--active");
-      icPopCart.classList.remove("pop--active");
     }
-
-    overlay.addEventListener("click", function(event) {
-      event.preventDefault();
-      icPopCreate.classList.remove("pop--active");
-      overlay.classList.remove("overlay--active");
-    });
-
-    window.addEventListener("keydown", function(event) {
-      if (event.keyCode === 27) {
-        if (icPopCreate.classList.contains("pop--active")) {
-          icPopCreate.classList.remove("pop--active");
-          overlay.classList.remove("overlay--active");
-        }
-      }
-    });
-
   });
-
-
-
-  icCom.addEventListener("click", function(event) {
-    event.preventDefault();
-    if (icPopCom.classList.contains("pop--active")) {
-      icPopCom.classList.remove("pop--active");
-      icCom.classList.remove("header__usbtn-active");
-      icCom.classList.remove("header__usbtn-active--compare");
-      if (overlay.classList.contains("overlay--active")) {
-        overlay.classList.remove("overlay--active");
-      }
-    } else {
-      icPopCom.classList.add("pop--active");
-      icCom.classList.add("header__usbtn-active");
-      icCom.classList.add("header__usbtn-active--compare");
-      overlay.classList.add("overlay--active");
-      icPopCart.classList.remove("pop--active");
-    }
-
-    overlay.addEventListener("click", function(event) {
-      event.preventDefault();
-      icPopCom.classList.remove("pop--active");
-      icCom.classList.remove("header__usbtn-active");
-      icCom.classList.remove("header__usbtn-active--compare");
-      overlay.classList.remove("overlay--active");
-    });
-
-    window.addEventListener("keydown", function(event) {
-      if (event.keyCode === 27) {
-        if (icPopCom.classList.contains("pop--active")) {
-          icPopCom.classList.remove("pop--active");
-          icCom.classList.remove("header__usbtn-active");
-          icCom.classList.remove("header__usbtn-active--compare");
-          overlay.classList.remove("overlay--active");
-        }
-      }
-    });
-  });
-
-  icCart.addEventListener("click", function(event) {
-    event.preventDefault();
-    if (icPopCart.classList.contains("pop--active")) {
-      icPopCart.classList.remove("pop--active");
-      icCart.classList.remove("header__usbtn-active");
-      icCart.classList.remove("header__usbtn-active--cart");
-      if (overlay.classList.contains("overlay--active")) {
-        overlay.classList.remove("overlay--active");
-      }
-    } else {
-      icPopCart.classList.add("pop--active");
-      icCart.classList.add("header__usbtn-active");
-      icCart.classList.add("header__usbtn-active--cart");
-      overlay.classList.add("overlay--active");
-      icPopCom.classList.remove("pop--active");
-    }
-
-    overlay.addEventListener("click", function(event) {
-      event.preventDefault();
-      icPopCart.classList.remove("pop--active");
-      icCart.classList.remove("header__usbtn-active");
-      icCart.classList.remove("header__usbtn-active--cart");
-      overlay.classList.remove("overlay--active");
-    });
-
-    window.addEventListener("keydown", function(event) {
-      if (event.keyCode === 27) {
-        if (icPopCart.classList.contains("pop--active")) {
-          icPopCart.classList.remove("pop--active");
-          icCart.classList.remove("header__usbtn-active");
-          icCart.classList.remove("header__usbtn-active--cart");
-          overlay.classList.remove("overlay--active");
-        }
-      }
-    });
-  });
+});
