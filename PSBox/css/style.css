@@ -927,7 +927,8 @@ input[type=number] {
 .form__inputwrap--range {
   position: relative;
 }
-.form__inputnumber {
+.form__inputnumber,
+.form__inputamount {
   position: absolute;
   border: none;
   padding: 0;
@@ -940,38 +941,17 @@ input[type=number] {
   background-position: top 4px center;
   background-repeat: no-repeat;
 }
-.form__inputnumber--plus {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  bottom: 20px;
-  right: 0;
-}
-.form__inputnumber--minus {
-  bottom: 0;
-  right: 0;
-}
-.form__inputamount {
-  position: absolute;
-  border: none;
-  padding: 0;
-  width: 14px;
-  height: 12px;
-  cursor: pointer;
-  background-color: transparent;
-  background-image: url('../img/arrow_blue.svg');
-  background-size: 8px 5px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+.form__inputnumber--plus,
 .form__inputamount--plus {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   bottom: 20px;
-  right: 4px;
+  right: 0;
 }
+.form__inputnumber--minus,
 .form__inputamount--minus {
-  bottom: 8px;
-  right: 4px;
+  bottom: 0;
+  right: 0;
 }
 .select {
   width: 225px;
@@ -6675,10 +6655,12 @@ input[type=number] {
   padding-bottom: 10px;
 }
 .oneitem-indi__form {
-  padding-top: 22px;
+  padding-top: 50px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 .oneitem-indi__form .form__fieldlabel {
   display: block;
@@ -6727,11 +6709,15 @@ input[type=number] {
   .oneitem-indi__form .form__comment {
     min-height: 32px;
   }
+  .oneitem-indi__form .form__fieldlabel {
+    left: 22px;
+  }
 }
 @media (min-width: 1200px) {
   .oneitem-indi__form {
     padding-left: 22px;
     padding-right: 22px;
+    padding-top: 60px;
   }
   .oneitem-indi__form .form__list {
     width: 198px;
