@@ -129,29 +129,29 @@ function sumAmount(act) {
 
   if (act.classList.contains("form__inputamount--plus")) {
     inputAmount.value = String(Number(inputAmount.value) + 1);
-    validate(Number(inputAmount.value) > 0, inputAmount);
-    btnValid(form);
+    // validate(Number(inputAmount.value) > 0, inputAmount);
+    // btnValid(form);
   }
 
   if (act.classList.contains("form__inputamount--minus")) {
     inputAmount.value = String(Number(inputAmount.value) - 1);
-    if (Number(inputAmount.value) == -1) {
-      inputAmount.value = String(0);
-    }
-    if (Number(inputAmount.value) < 0) {
+    // if (Number(inputAmount.value) == -1) {
+    //   inputAmount.value = String(0);
+    // }
+    if (Number(inputAmount.value) <= 0) {
       inputAmount.value = String(1);
     }
-    validate(Number(inputAmount.value) > 0, inputAmount);
-    btnValid(form);
+    // validate(Number(inputAmount.value) > 0, inputAmount);
+    // btnValid(form);
 
   }
 
   if (act.classList.contains("form__input--amount")) {
-    if (Number(inputAmount.value) < 0) {
+    if (Number(inputAmount.value) <= 0) {
       inputAmount.value = String(1);
     }
-    validate(Number(inputAmount.value) > 0, inputAmount);
-    btnValid(form);
+    // validate(Number(inputAmount.value) > 0, inputAmount);
+    // btnValid(form);
   }
 }
 
@@ -163,6 +163,22 @@ function sumAmount(act) {
 
 $(function() {
   $("#phone").mask("+7 (999) 999-9999");
+
+
+  $("#phone").click(function() {
+    // var value1 = $rangeFrom.val();
+    // var value2 = $rangeTo.val();
+    // if (parseInt(value1) < 0) {
+    //   value1 = 0;
+    //   $rangeFrom.val(value1);
+    // }
+    // if (parseInt(value1) > parseInt(value2)) {
+    //   value1 = value2;
+    //   $rangeFrom.val(value1);
+    // }
+    // $("#slider-range").slider("values", 0, value1);
+  });
+
 });
 
 
@@ -179,8 +195,8 @@ if ("#slider-range") {
     $("#slider-range").slider({
       range: true,
       min: 0,
-      max: 10000,
-      values: [200, 3000],
+      max: 50000,
+      values: [0, 50000],
       slide: function(event, ui) {
         $("#range-from").val(ui.values[0]);
         $("#range-to").val(ui.values[1]);
@@ -198,15 +214,47 @@ if ("#slider-range") {
     var $rangeTo = $("#range-to");
     var step = 100;
     var $selectCost = $('input[name=cost]:radio');
-    var $optionCost =  $('input[name=cost]:checked').val();
 
-// $( 'input[name="testGroup"]:radio' ).change(
-    // var $selectCost =  $('input[name=cost]:checked').val();
+    $selectCost.change(function() {
+      var $optionCost =  $('input[name=cost]:checked').val();
 
+      if ($optionCost == "any") {
+        var value1 = 0;
+        var value2 = 50000;
+        $("#slider-range").slider("values", 0, value1);
+        $("#slider-range").slider("values", 1, value2);
+        $rangeFrom.val(value1);
+        $rangeTo.val(value2);
+      }
 
+      if ($optionCost == "low") {
+        var value1 = 0;
+        var value2 = 1500;
+        $("#slider-range").slider("values", 0, value1);
+        $("#slider-range").slider("values", 1, value2);
+        $rangeFrom.val(value1);
+        $rangeTo.val(value2);
+      }
 
+      if ($optionCost == "middle") {
+        var value1 = 1500;
+        var value2 = 5000;
+        $("#slider-range").slider("values", 0, value1);
+        $("#slider-range").slider("values", 1, value2);
+        $rangeFrom.val(value1);
+        $rangeTo.val(value2);
+      }
 
+      if ($optionCost == "high") {
+        var value1 = 5000;
+        var value2 = 50000;
+        $("#slider-range").slider("values", 0, value1);
+        $("#slider-range").slider("values", 1, value2);
+        $rangeFrom.val(value1);
+        $rangeTo.val(value2);
+      }
 
+    });
 
 
 
@@ -288,15 +336,7 @@ if ("#slider-range") {
       $("#slider-range").slider("values", 1, value2);
     });
 
-    $selectCost.change(function() {
-      if ($optionCost = "any") {
-        var value1 = 0;
-        var value2 = 1500;
-        $("#slider-range").slider("values", 0, value1);
-        $("#slider-range").slider("values", 0, value1);
-      }
 
-    });
 
   });
 

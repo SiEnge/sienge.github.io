@@ -562,18 +562,17 @@
 
 
             <div class="form__wrap form__wrap--amount">
-              <label class="form__label" for="amount">Количество <span class="form__label--red">*</span></label>
+              <label class="form__label" for="amount">Количество</label>
               <div class="form__inputwrap--amount">
-
                 <button class="form__inputnumber form__inputamount--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                <input class="form__input form__input--amount" onchange="sumAmount(this)" type="number" name="amount" id="amount" value="0" min="1" max="1000" step="1" required>
+                <input class="form__input form__input--amount" onchange="sumAmount(this)" type="number" name="amount" id="amount" value="1" min="1" max="1000" step="1">
                 <button class="form__inputnumber form__inputamount--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
               </div>
             </div>
 
 
             <div class="form__wrap form__wrap--cost">
-              <label class="form__label" for="cost">Стоимость <span class="form__label--red">*</span></label>
+              <label class="form__label" for="cost">Стоимость</label>
               <label class="form__select" placeholder="Выберите стоимость">
                 <input class="form__option-radio" type="radio" name="cost" id="cost" required>
                 <div class="form__select-wrap ">
@@ -731,7 +730,7 @@
             </div>
           </div>
           <fieldset class="form__shell form__shell--connection">
-            <legend class="form__label">Предпочтительный способ связи <span class="form__label--red">*</span></legend>
+            <legend class="form__label">Предпочтительный способ связи</legend>
             <div class="form__wrap form__wrap--connection">
               <ul class="form__list" role="none">
                 <li class="form__item">
@@ -758,7 +757,7 @@
             </div>
           </fieldset>
         </fieldset>
-        <button class="form__button form__button--disabled" onclick="btnValidSubmit()" type="submit" name="button">Оформить заказ</button>
+        <button class="form__button form__button--disabled" onclick="btnValidSubmit(this)" type="submit" name="button">Оформить заказ</button>
       </form>
     </section>
 
