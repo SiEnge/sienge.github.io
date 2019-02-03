@@ -727,9 +727,6 @@ template {
 .form__input--file input[type=file]:focus + label {
   outline: -webkit-focus-ring-color auto 5px;
 }
-.form__input--textarea {
-  color: #757575;
-}
 .form__input--valid {
   border: 2px solid #66cc66;
   border-radius: 5px;
@@ -889,7 +886,7 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
   padding-left: 30px;
 }
@@ -934,24 +931,24 @@ input[type=number] {
   position: absolute;
   border: none;
   padding: 0;
-  width: 14px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background-color: transparent;
   background-image: url('../img/arrow_blue.svg');
   background-size: 8px 5px;
-  background-position: center;
+  background-position: top 4px center;
   background-repeat: no-repeat;
 }
 .form__inputnumber--plus {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   bottom: 20px;
-  right: 4px;
+  right: 0;
 }
 .form__inputnumber--minus {
-  bottom: 8px;
-  right: 4px;
+  bottom: 0;
+  right: 0;
 }
 .form__inputamount {
   position: absolute;
@@ -1136,7 +1133,6 @@ input[type=number] {
   width: 100%;
   z-index: 10;
   font-size: 14px;
-  color: #757575;
 }
 .form__select::before {
   content: attr(placeholder);
@@ -6132,6 +6128,7 @@ input[type=number] {
 }
 @media (min-width: 768px) {
   .catalog {
+    padding-left: 0;
     padding-right: 0;
   }
   .catalog__text {
@@ -6192,66 +6189,61 @@ input[type=number] {
 }
 .filter--fixed {
   position: fixed;
-  top: 80px;
   z-index: 200;
+  top: 72px;
   width: 304px;
 }
 .filter--fixed .filter__fieldset {
   margin-bottom: 5px;
 }
-.filter--fixed .filter__composition-btn {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: block;
+.filter--fixed .filter__button {
   position: absolute;
+  top: 3px;
+  right: 6px;
+  display: block;
   width: 30px;
   height: 30px;
-  top: 2px;
-  right: 6px;
-  background-image: url("../img/arrow_rose.svg");
-  background-size: 24px 12px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/arrow_small_rose.svg");
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  background-size: 14px 7px;
 }
-.filter--fixed .form__wrap--close {
+.filter--fixed .filter__wrap--close {
   display: none;
 }
-.filter__composition-btn {
+.filter__button {
   display: none;
 }
 .filter__fieldset {
   position: relative;
+  z-index: 2;
+  margin: 0 0 10px;
+  padding: 25px 15px 10px;
+  padding-left: 15px;
   border: none;
-  -webkit-box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
-          box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
   border-radius: 5px;
   background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-  padding-top: 12px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  z-index: 2;
+  -webkit-box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
+          box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
 }
 .filter__fieldset--composition {
-  padding-top: 24px;
   z-index: 1;
 }
-.filter__fieldset--composition .form__label {
+.filter__fieldlabel {
   position: absolute;
   top: 10px;
   left: 12px;
+  color: #91229a;
 }
 .filter__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 7px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: justify;
@@ -6259,59 +6251,58 @@ input[type=number] {
           justify-content: space-between;
 }
 .filter__result {
-  margin-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f3f4f8;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: #f3f4f8;
-  border-radius: 5px;
 }
 .filter__result .form__buttonlink {
-  color: #000000;
   text-decoration: none;
+  color: #000000;
   border-bottom: 1px dashed #000000;
 }
 .filter__title {
-  margin: 0;
-  font-family: "Intro", "Arial", sans-serif;
+  font-family: 'Intro', 'Arial', sans-serif;
   font-size: 24px;
-  line-height: 24px;
   font-weight: normal;
   font-style: normal;
+  line-height: 24px;
+  margin: 0;
   color: #91229a;
 }
 .filter__sort {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 .filter__sortbtn {
-  padding: 0;
-  background-color: transparent;
-  border: none;
   position: absolute;
-  bottom: 13px;
+  bottom: 10px;
   left: 0;
   width: 30px;
   height: 30px;
-  background-image: url("../img/sort_violet.svg");
-  background-size: 11px 15px;
+  margin-bottom: 0;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/sort_violet_up.svg");
   background-repeat: no-repeat;
   background-position: center;
-  padding-left: 0;
-  margin-bottom: 0;
-  cursor: pointer;
+  background-size: 11px 15px;
+}
+.filter__sortbtn--down {
+  background-image: url("../img/sort_violet_down.svg");
 }
 @media (min-width: 768px) {
   .filter .form__wrap {
@@ -6338,35 +6329,35 @@ input[type=number] {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     width: 140px;
+    padding-top: 10px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    padding-top: 10px;
   }
   .filter .form__markerlist {
     width: 130px;
   }
   .filter--fixed {
-    width: 698px;
+    top: 77px;
+    width: 750px;
   }
   .filter--fixed .filter__fieldset {
-    width: 698px;
+    width: 720px;
+  }
+  .form__wrap--filter.filter__wrap--close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .filter__wrap {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
-  .filter__fieldset {
-    padding-top: 8px;
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-bottom: 5px;
-  }
-  .filter__fieldset--composition {
-    padding-top: 24px;
+  .filter__fieldset--filter .filter__button--filter {
+    display: none;
   }
 }
 @media (min-width: 1048px) {
@@ -6379,10 +6370,11 @@ input[type=number] {
     width: 198px;
   }
   .filter--fixed {
-    width: 788px;
+    top: 65px;
+    width: 840px;
   }
   .filter--fixed .filter__fieldset {
-    width: 788px;
+    width: 810px;
   }
 }
 .individual {

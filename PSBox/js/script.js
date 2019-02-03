@@ -132,11 +132,6 @@ function btnValidSubmit(btnForm) {
   }
 }
 //
-// var form = document.querySelector("form");
-//   form.addEventListener("submit", function(event) {
-//     event.preventDefault();
-//     console.log("Saving value", form.elements.value.value);
-//   });
 
 // Счетчик количества input number в форме
 function sumAmount(act) {
@@ -655,7 +650,7 @@ if (filter) {
     var docElem = document.documentElement,
       // filter = document.querySelector(".filter"),
       didScroll = false,
-      changeFilterOn = 205;
+      changeFilterOn = 410;
 
     function init() {
       window.addEventListener("scroll", function(event) {
@@ -752,18 +747,31 @@ navBtn.addEventListener("click", function(event) {
 
 //Обработка клика для выпадающего фильтра
 
-var listFilter = document.querySelector(".filter__fieldset--composition .form__wrap--consist");
+var listFilterCon = document.querySelector(".filter__fieldset--composition .form__wrap--consist");
 
-if (listFilter) {
-  var btnFilter = document.querySelector(".filter__composition-btn");
+if (listFilterCon) {
+  var btnFilterCon = document.querySelector(".filter__button--composition");
 
-  btnFilter.addEventListener("click", function() {
-    if (listFilter.classList.contains("form__wrap--close")) {
-      listFilter.classList.remove("form__wrap--close");
-      // listFilter.classList.add("form__wrap--close");
+  btnFilterCon.addEventListener("click", function() {
+    if (listFilterCon.classList.contains("filter__wrap--close")) {
+      listFilterCon.classList.remove("filter__wrap--close");
     } else {
-      // listFilter.classList.remove("form__wrap--close");
-      listFilter.classList.add("form__wrap--close");
+      listFilterCon.classList.add("filter__wrap--close");
+    }
+  });
+}
+
+var listFilterFil = document.querySelector(".filter__fieldset--filter .form__wrap--filter");
+
+
+if (listFilterFil) {
+  var btnFilterFil = document.querySelector(".filter__button--filter");
+
+  btnFilterFil.addEventListener("click", function() {
+    if (listFilterFil.classList.contains("filter__wrap--close")) {
+      listFilterFil.classList.remove("filter__wrap--close");
+    } else {
+      listFilterFil.classList.add("filter__wrap--close");
     }
   });
 
@@ -1074,3 +1082,23 @@ icCart.addEventListener("click", function(event) {
     }
   });
 });
+
+// кнопка Сортировки
+
+var filterSort = document.querySelector(".filter__sortbtn");
+
+if (filterSort) {
+  filterSort.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      if (filterSort.classList.contains("filter__sortbtn--up")) {
+        filterSort.classList.remove("filter__sortbtn--up");
+        filterSort.classList.add("filter__sortbtn--down");
+      } else {
+        filterSort.classList.remove("filter__sortbtn--down");
+
+        filterSort.classList.add("filter__sortbtn--up");
+      }
+
+  });
+}

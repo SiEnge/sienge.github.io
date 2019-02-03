@@ -334,7 +334,7 @@
       <!-- </div> -->
     </section>
 
-    <!-- О нас -->
+    <!--Каталог -->
 
     <section class="catalog ">
       <div class="container--shrink">
@@ -342,21 +342,22 @@
         <p class="catalog__text text">Рыночная ситуация, на первый взгляд, однообразно ускоряет медиабизнес. Маркетинг, не меняя концепции, изложенной выше, трансформирует ролевой рекламный макет. SWOT-анализ нетривиален. Лидерство в продажах тормозит клиентский спрос. Бизнес-план стабилизирует медиабизнес, используя опыт предыдущих кампаний.</p>
 
         <form class="filter" action="" method="post">
-          <fieldset class="filter__fieldset">
-            <div class="filter__wrap">
-
+          <fieldset class="filter__fieldset filter__fieldset--filter">
+            <button class="filter__button filter__button--filter" type="button" name="button"></button>
+            <legend class="filter__fieldlabel">Фильтр:</legend>
+            <div class="filter__wrap form__wrap--filter filter__wrap--close">
               <div class="form__wrap form__wrap--range">
                 <label class="form__label" for="range">Диапазон цен, в руб.</label>
                 <div class="form__wraprange">
                   <div class="form__inputwrap--range">
                     <button class="form__inputnumber form__inputnumber--minus" id="range-from--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                    <input class="form__input form__input--range range-from" type="number" name="amount" id="range-from" readonly>
+                    <input class="form__input form__input--range range-from" type="number" name="amount" id="range-from">
                     <button class="form__inputnumber form__inputnumber--plus" id="range-from--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
                   </div>
                   <div id="slider-range"></div>
                   <div class="form__inputwrap--range">
                     <button class="form__inputnumber form__inputnumber--minus" id="range-to--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                    <input class="form__input form__input--range range-to" type="number" name="amount" id="range-to" readonly>
+                    <input class="form__input form__input--range range-to" type="number" name="amount" id="range-to">
                     <button class="form__inputnumber form__inputnumber--plus" id="range-to--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
                   </div>
                 </div>
@@ -369,12 +370,12 @@
                   <div class="form__select-wrap">
                     <input class="form__option-radio" type="radio" name="cost" value="any" id="any" checked>
                     <label class="form__option" for="any">Любая</label>
-                    <input class="form__option-radio" type="radio" name="cost" value="high" id="high">
-                    <label class="form__option" for="high">Высокая</label>
+                    <input class="form__option-radio" type="radio" name="cost" value="low" id="low">
+                    <label class="form__option" for="low">Недорогая</label>
                     <input class="form__option-radio" type="radio" name="cost" value="middle" id="middle">
                     <label class="form__option" for="middle">Средняя</label>
-                    <input class="form__option-radio" type="radio" name="cost" value="low" id="low">
-                    <label class="form__option" for="low">Низкая</label>
+                    <input class="form__option-radio" type="radio" name="cost" value="high" id="high">
+                    <label class="form__option" for="high">Премиум</label>
                   </div>
                 </label>
               </div>
@@ -386,8 +387,10 @@
                   <div class="form__select-wrap">
                     <input class="form__option-radio" type="radio" name="recipient" value="nomatter" id="nomatter" checked>
                     <label class="form__option" for="nomatter">Неважно</label>
-                    <input class="form__option-radio" type="radio" name="recipient" value="important" id="important">
-                    <label class="form__option" for="important">Важно</label>
+                    <input class="form__option-radio" type="radio" name="recipient" value="woman" id="woman">
+                    <label class="form__option" for="woman">Женщина</label>
+                    <input class="form__option-radio" type="radio" name="recipient" value="man" id="man">
+                    <label class="form__option" for="man">Мужчина</label>
                   </div>
                 </label>
               </div>
@@ -413,14 +416,16 @@
 
               <div class="filter__sort">
                 <div class="form__wrap form__wrap--sort">
-                  <button class="filter__sortbtn" type="button" name="button"><span class="visuallyhidden">Сортировка</span></button>
+                  <button class="filter__sortbtn filter__sortbtn--up" type="button" name="button"><span class="visuallyhidden">Сортировка</span></button>
                   <label class="form__select" placeholder="Выберите стоимость">
                     <input class="form__option-radio" type="radio" name="sort" id="sort">
                     <div class="form__select-wrap">
-                      <input class="form__option-radio" type="radio" name="sort" value="price" id="price" checked>
-                      <label class="form__option" for="price">По цене</label>
-                      <input class="form__option-radio" type="radio" name="sort" value="action" id="action">
-                      <label class="form__option" for="action">По акции</label>
+                      <input class="form__option-radio" type="radio" name="sort" value="sortPopular" id="sortPopular">
+                      <label class="form__option" for="sortPopular">По популярности</label>
+                      <input class="form__option-radio" type="radio" name="sort" value="sortPrice" id="sortPrice" checked>
+                      <label class="form__option" for="sortPrice">По цене</label>
+                      <input class="form__option-radio" type="radio" name="sort" value="sortName" id="sortName">
+                      <label class="form__option" for="sortName">По названию</label>
                     </div>
                   </label>
                 </div>
@@ -433,9 +438,9 @@
 
 
           <fieldset class="filter__fieldset filter__fieldset--composition">
-            <button class="filter__composition-btn" type="button" name="button"></button>
-            <legend class="form__label">Состав подарка</legend>
-            <div class="form__wrap form__wrap--consist form__wrap--close">
+            <button class="filter__button filter__button--composition" type="button" name="button"></button>
+            <legend class="filter__fieldlabel">Состав подарка:</legend>
+            <div class="form__wrap form__wrap--consist filter__wrap--close">
               <div class="form__wrap--consist-left">
                 <ul class="form__list" role="none">
                   <li class="form__item">
