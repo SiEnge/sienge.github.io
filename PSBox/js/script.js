@@ -274,7 +274,7 @@ if ("#slider-range") {
     });
 
     $rangeTo.change(function() {
-      var value1 = $rangeFromPlus.val();
+      var value1 = $rangeFrom.val();
       var value2 = $rangeTo.val();
       if (parseInt(value1) > parseInt(value2)) {
         value2 = value1;
@@ -287,7 +287,7 @@ if ("#slider-range") {
       if ($rangeTo.val() > 1) {
         $rangeTo.val(+$rangeTo.val() - step);
       }
-      var value1 = $rangeFromPlus.val();
+      var value1 = $rangeFrom.val();
       var value2 = $rangeTo.val();
       if (parseInt(value1) > parseInt(value2)) {
         value2 = value1;
@@ -298,7 +298,7 @@ if ("#slider-range") {
 
     $rangeToPlus.click(function() {
       $rangeTo.val(+$rangeTo.val() + step);
-      var value1 = $rangeFromPlus.val();
+      var value1 = $rangeFrom.val();
       var value2 = $rangeTo.val();
       if (parseInt(value1) > parseInt(value2)) {
         value2 = value1;

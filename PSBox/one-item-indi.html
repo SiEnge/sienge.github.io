@@ -348,22 +348,22 @@
           <div class="form__shell form__shell--main">
             <div class="form__wrap form__wrap--recipient">
               <label class="form__label" for="recipient">Получатель <span class="form__label--red">*</span></label>
-              <input class="form__input" onchange="validate(this)" type="text" id="recipient" name="recipient" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Укажите, для кого собираем подарок" value="" required>
+              <input class="form__input" onchange="validateText(this)" type="text" id="recipient" name="recipient" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Укажите, для кого собираем подарок" value="" required>
             </div>
 
             <div class="form__wrap form__wrap--cost">
-              <label class="form__label" for="cost">Стоимость <span class="form__label--red">*</span></label>
+              <label class="form__label" for="cost">Стоимость</label>
               <label class="form__select" placeholder="Выберите стоимость">
                 <input class="form__option-radio" type="radio" name="cost" id="cost">
                 <div class="form__select-wrap">
                   <input class="form__option-radio" type="radio" name="cost" value="any" id="any" checked>
                   <label class="form__option" for="any">Любая</label>
-                  <input class="form__option-radio" type="radio" name="cost" value="high" id="high">
-                  <label class="form__option" for="high">Высокая</label>
+                  <input class="form__option-radio" type="radio" name="cost" value="low" id="low">
+                  <label class="form__option" for="low">Недорогая</label>
                   <input class="form__option-radio" type="radio" name="cost" value="middle" id="middle">
                   <label class="form__option" for="middle">Средняя</label>
-                  <input class="form__option-radio" type="radio" name="cost" value="low" id="low">
-                  <label class="form__option" for="low">Низкая</label>
+                  <input class="form__option-radio" type="radio" name="cost" value="high" id="high">
+                  <label class="form__option" for="high">Премиум</label>
                 </div>
               </label>
             </div>
@@ -387,7 +387,7 @@
             </div>
 
           </div>
-          <fieldset class="form__shell form__shell--consist">
+          <fieldset class="form__shell form__shell--consist" onclick="validateCheck(this)">
             <legend class="form__label">Состав подарка <span class="form__label--red">*</span></legend>
             <div class="form__wrap form__wrap--consist">
               <div class="form__wrap--consist-left">
@@ -567,7 +567,9 @@
 
           <section class="review__client">
             <blockquote>
+
               <p class="review__product">
+                <button class="review__button-preview" type="button" name="button"></button>
                 <img src="img/best_tablet.jpg" alt="Фото товара">
               </p>
               <div class="review__block">
@@ -581,7 +583,10 @@
                   <cite class="review__name">Мария Иванова</cite>
                   <p class="review__comment">Отзыв о товаре</p>
                   <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-mes-tel.png" alt="ВКонтакте" width="20" height="18">
+                    <span class="visuallyhidden">Telegram</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
@@ -602,7 +607,10 @@
                   <cite class="review__name">Мария Иванова</cite>
                   <p class="review__comment">Отзыв о товаре</p>
                   <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-mes-tel.png" alt="ВКонтакте" width="20" height="18">
+                    <span class="visuallyhidden">Telegram</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
