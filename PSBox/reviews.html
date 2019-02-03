@@ -374,7 +374,10 @@
                   <cite class="review__name">Мария Иванова</cite>
                   <p class="review__comment">Отзыв о товаре</p>
                   <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--vk" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                    <span class="visuallyhidden">ВКонтакте</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
@@ -392,7 +395,10 @@
                   <cite class="review__name">Мария Иванова</cite>
                   <p class="review__comment">Отзыв о товаре</p>
                   <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--fb" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                    <span class="visuallyhidden">Facebook</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
@@ -412,7 +418,10 @@
                   <cite class="review__name">Мария Иванова</cite>
                   <p class="review__comment">Отзыв о товаре</p>
                   <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--wa" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                    <span class="visuallyhidden">WhatsApp</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
@@ -436,7 +445,10 @@
                   <cite class="review__name">Мария Иванова</cite>
                   <p class="review__comment">Отзыв о товаре</p>
                   <a class="review__link" href="#">Черничные ночи</a>
-                  <button class="review__social review__social--vi" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-mes-vay.png" alt="ВКонтакте" width="19" height="20">
+                    <span class="visuallyhidden">Viber</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
@@ -455,7 +467,10 @@
                 </p>
                 <div class="review__cite">
                   <cite class="review__name">Мария Иванова</cite>
-                  <button class="review__social review__social--tg" type="button" name="button"><span class="visuallyhidden">Facebook</span></button>
+                  <a class="review__social social__icon" href="#">
+                    <img src="img/ic-mes-tel.png" alt="ВКонтакте" width="20" height="18">
+                    <span class="visuallyhidden">Telegram</span>
+                  </a>
                 </div>
               </div>
             </blockquote>
@@ -556,12 +571,12 @@
       <h2 class="form__title">Оставить отзыв</h2>
       <div class="form__wrap form__wrap--text">
         <label class="form__label" for="addition">Текст отзыва<span class="form__label--red">*</span></label>
-        <textarea class="form__input form__input--addition" onchange="validate(this)" name="name" id="addition" required></textarea>
+        <textarea class="form__input form__input--addition" onchange="validateText(this)" name="name" id="addition" required></textarea>
       </div>
       <div class="form__shell">
         <div class="form__wrap">
           <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
-          <input class="form__input" onchange="validate(this)" type="text" name="" value="" id="name" required>
+          <input class="form__input" onchange="validateText(this)" type="text" name="" value="" id="name" required>
         </div>
         <div class="form__wrap">
           <label class="form__label" for="tel">Телефон</label>
@@ -602,7 +617,7 @@
           </div>
         </div>
       </div>
-      <button class="form__button modal-review__button--send" type="submit" name="button">Оставить отзыв</button>
+      <button class="form__button modal-review__button--send form__button--disabled" type="submit" name="button">Оставить отзыв</button>
     </form>
     </div>
   </section>
