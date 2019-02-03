@@ -571,12 +571,12 @@
       <h2 class="form__title">Оставить отзыв</h2>
       <div class="form__wrap form__wrap--text">
         <label class="form__label" for="addition">Текст отзыва<span class="form__label--red">*</span></label>
-        <textarea class="form__input form__input--addition" onchange="validateText(this)" name="name" id="addition" required></textarea>
+        <textarea class="form__input form__input--addition form__input--textarea" onchange="validateText(this)" placeholder="Введите хотя бы несколько слов для текста отзыва" name="name" id="addition" required></textarea>
       </div>
       <div class="form__shell">
         <div class="form__wrap">
           <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
-          <input class="form__input" onchange="validateText(this)" type="text" name="" value="" id="name" required>
+          <input class="form__input" onchange="validateText(this)" placeholder="Введите Ваше имя" type="text" name="" value="" id="name" required>
         </div>
         <div class="form__wrap">
           <label class="form__label" for="tel">Телефон</label>
@@ -617,7 +617,8 @@
           </div>
         </div>
       </div>
-      <button class="form__button modal-review__button--send form__button--disabled" type="submit" name="button">Оставить отзыв</button>
+      <button class="form__button modal-review__button--send form__button--disabled"  onclick="btnValidSubmit(this)" type="button" name="button">Оставить отзыв</button>
+      <!-- <button class="form__button modal-review__button--send form__button--disabled" type="button" name="button">Оставить отзыв</button> -->
     </form>
     </div>
   </section>
@@ -625,7 +626,6 @@
   <!-- Модальное окно "Отзыв отправлен" -->
 
   <section class="modal-reviewadd">
-    <!-- <button class="modal-reviewadd__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button> -->
     <h2 class="modal__title">Отзыв отправлен</h2>
     <p class="modal__text">Спасибо за ваш отзыв! Он появится на странице <a class="modal__link" href="#">Отзывы</a> и на странице товара <a class="modal__link" href="#">Черничные ночи</a> сразу после модерации</p>
     <div class="modal__wrap-btn">

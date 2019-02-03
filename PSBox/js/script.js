@@ -1,5 +1,6 @@
 // Валидация формы
 
+// Навешивание соответвующих классов
 function validate(condition, input) {
   if (condition) {
     if (input.classList.contains("form__input--invalid")) {
@@ -54,7 +55,6 @@ function btnValid(form) {
 }
 
 // Проверка поля при потере фокуса
-
 function validateText(input) {
   var form = input.form;
 
@@ -63,7 +63,6 @@ function validateText(input) {
 }
 
 // ПРоверка списка checkbox
-
 function validateCheck(fieldForm) {
   var form = fieldForm.form;
   var checkForm = form.querySelectorAll(".form__checkbox");
@@ -79,10 +78,10 @@ function validateCheck(fieldForm) {
   btnValid(form);
 }
 
+var modReviewAdd = document.querySelector('.modal-reviewadd');
 
 
 // Проверка всей формы по кнопке Отправить
-
 function btnValidSubmit(btnForm) {
   var form = btnForm.form;
   var elementForm = form.querySelectorAll(".form__input");
@@ -90,7 +89,11 @@ function btnValidSubmit(btnForm) {
   var checkForm = form.querySelectorAll(".form__checkbox");
   var fieldForm = form.querySelector(".form__shell--consist");
   var flagValid = true;
-  var flagValidCheck = false;
+  if (fieldForm) {
+    flagValidCheck = false;
+  } else {
+    flagValidCheck = true;
+  }
 
   for (var i = 0; i < elementForm.length; i++) {
     if (elementForm[i].hasAttribute('required')) {
@@ -107,88 +110,65 @@ function btnValidSubmit(btnForm) {
     }
   }
 
-  validate(flagValidCheck, fieldForm);
+  if (fieldForm) {
+    validate(flagValidCheck, fieldForm);
+  }
 
   if (flagValid && flagValidCheck) {
     if (btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.remove("form__button--disabled");
     }
+    // form.submit();
+    // if (btnForm.classList.contains("modal-review__button--send"))  {
+    //   modReviewAdd.classList.add("modal--active");
+    //
+    //
+    // }
+
   } else {
     if (!btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.add("form__button--disabled");
-      return false;
     }
   }
 }
+//
+// var form = document.querySelector("form");
+//   form.addEventListener("submit", function(event) {
+//     event.preventDefault();
+//     console.log("Saving value", form.elements.value.value);
+//   });
 
 // Счетчик количества input number в форме
-
 function sumAmount(act) {
   var form = act.form;
   var inputAmount = form.querySelector(".form__input--amount");
 
   if (act.classList.contains("form__inputamount--plus")) {
     inputAmount.value = String(Number(inputAmount.value) + 1);
-    // validate(Number(inputAmount.value) > 0, inputAmount);
-    // btnValid(form);
   }
 
   if (act.classList.contains("form__inputamount--minus")) {
     inputAmount.value = String(Number(inputAmount.value) - 1);
-    // if (Number(inputAmount.value) == -1) {
-    //   inputAmount.value = String(0);
-    // }
     if (Number(inputAmount.value) <= 0) {
       inputAmount.value = String(1);
     }
-    // validate(Number(inputAmount.value) > 0, inputAmount);
-    // btnValid(form);
-
   }
 
   if (act.classList.contains("form__input--amount")) {
     if (Number(inputAmount.value) <= 0) {
       inputAmount.value = String(1);
     }
-    // validate(Number(inputAmount.value) > 0, inputAmount);
-    // btnValid(form);
   }
 }
 
 
-
-
-
 // маска для ввода телефона
-
 $(function() {
   $("#phone").mask("+7 (999) 999-9999");
-
-
-  $("#phone").click(function() {
-    // var value1 = $rangeFrom.val();
-    // var value2 = $rangeTo.val();
-    // if (parseInt(value1) < 0) {
-    //   value1 = 0;
-    //   $rangeFrom.val(value1);
-    // }
-    // if (parseInt(value1) > parseInt(value2)) {
-    //   value1 = value2;
-    //   $rangeFrom.val(value1);
-    // }
-    // $("#slider-range").slider("values", 0, value1);
-  });
-
 });
 
 
 // Ползунки в диапазоне на форме
-
-// Премиум от 5000 до максимума
-// Средняя от 1500 до 5000
-// Недорогая от минимума до 1500
-
-
 if ("#slider-range") {
 
   $(function() {
@@ -216,7 +196,7 @@ if ("#slider-range") {
     var $selectCost = $('input[name=cost]:radio');
 
     $selectCost.change(function() {
-      var $optionCost =  $('input[name=cost]:checked').val();
+      var $optionCost = $('input[name=cost]:checked').val();
 
       if ($optionCost == "any") {
         var value1 = 0;
@@ -253,10 +233,7 @@ if ("#slider-range") {
         $rangeFrom.val(value1);
         $rangeTo.val(value2);
       }
-
     });
-
-
 
     $rangeFrom.change(function() {
       var value1 = $rangeFrom.val();
@@ -302,7 +279,6 @@ if ("#slider-range") {
     });
 
     $rangeTo.change(function() {
-
       var value1 = $rangeFromPlus.val();
       var value2 = $rangeTo.val();
       if (parseInt(value1) > parseInt(value2)) {
@@ -335,18 +311,10 @@ if ("#slider-range") {
       }
       $("#slider-range").slider("values", 1, value2);
     });
-
-
-
   });
-
 }
 
-
-
-
 // Поле загрузки файлов drag and drop
-
 var dropZone = $('#upload');
 if (dropZone) {
   $('#file-input').focus(function() {
@@ -400,7 +368,6 @@ if (dropZone) {
 
 
 // Слайдеры
-
 $('.oneitem__slider').slick({
   mobileFirst: true,
   asNavFor: '.oneitem__preview',
@@ -409,9 +376,7 @@ $('.oneitem__slider').slick({
   arrows: false,
   responsive: [{
     breakpoint: 1000,
-    settings: {
-      // arrows: true
-    }
+    settings: {}
   }]
 });
 
@@ -422,9 +387,6 @@ $('.oneitem__preview').slick({
   focusOnSelect: true,
   arrows: false
 });
-
-
-
 
 $('.about__review-slider').slick({
   mobileFirst: true,
@@ -865,6 +827,7 @@ if (btnInvite) {
 var btnReview = document.querySelector(".review__button");
 
 if (btnReview) {
+
   var modReview = document.querySelector('.modal-review');
   var modReviewAdd = document.querySelector('.modal-reviewadd');
   var btnReviewSend = document.querySelector(".modal-review__button--send");

@@ -679,8 +679,8 @@ template {
   font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .form__input--range {
   width: 65px;
@@ -726,6 +726,9 @@ template {
 }
 .form__input--file input[type=file]:focus + label {
   outline: -webkit-focus-ring-color auto 5px;
+}
+.form__input--textarea {
+  color: #757575;
 }
 .form__input--valid {
   border: 2px solid #66cc66;
@@ -1132,6 +1135,8 @@ input[type=number] {
           box-sizing: border-box;
   width: 100%;
   z-index: 10;
+  font-size: 14px;
+  color: #757575;
 }
 .form__select::before {
   content: attr(placeholder);
@@ -1412,7 +1417,7 @@ input[type=number] {
     width: 210px;
   }
   .form__comment {
-    min-height: auto;
+    min-height: 32px;
     padding-bottom: 6px;
   }
   .form__button {
