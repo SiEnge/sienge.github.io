@@ -13,40 +13,6 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <!-- <script>
-
-  </script> -->
-
-  <!-- Pixel Glass -->
-  <!-- <style>
-    HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* По умолчанию мобильный макет */
-    background-image: url( "Corporat_PSBOX_320.jpg" );
-  }
-  /* Планшет */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Планшетный макет */
-      background-image: url( "Corp_Client_PSBOX_720.jpg" );
-    }
-  }
-  /* Десктоп */
-  @media ( min-width: 1200px ) {
-    HTML {
-      /* Десктопный макет */
-      background-image: url( "PSBOX_1200-Corp_clients.jpg" );
-    }
-  }
-
-  BODY {
-    opacity: .5;
-  }
-</style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
-  <script src="../node_modules/pixel-glass/script.js"></script> -->
-  <!-- // Pixel Glass -->
 
 </head>
 
@@ -67,7 +33,7 @@
     <!-- Шапка -->
 
     <div class="header__wrap container">
-      <a class="header__logo"  href="index.html">
+      <a class="header__logo" href="index.html">
         <img src="img/logo_PSBox.svg" alt="Логотип «PSBOX»">
       </a>
       <div class="header__nav">
@@ -331,7 +297,6 @@
     </section>
 
     <section class="clients container ">
-      <!-- <h1 class="title title--headline title--nonborder clients__title">Корпоративным клиентам</h1> -->
       <h1 class="visuallyhidden">Корпоративным клиентам</h1>
     </section>
 
@@ -419,7 +384,6 @@
       <!-- Блок "В чем наша особенность?" -->
 
       <section class="feature container ">
-
         <h2 class="title title--subtitle feature__title">В чем наша особенность?</h2>
         <div class="feature__wrap">
           <p class="feature__lead lead">Инсайт отчуждает возрастной архетип. Роджерс первым ввел в научный обиход понятие «клиент», так как воспитание отталкивает оппортунический онтогенез.</p>
@@ -428,7 +392,6 @@
               <p class="feature__picture">
                 <img src="img/ic-chem-kr1.png" alt="" width="80" height="80">
               </p>
-
               <h3 class="feature__itemtitle">Доставка по всему миру</h3>
               <p class="feature__itemtext">Если вам понравился конкретный набор – положите его в корзину. Есть собственная идея – положите в корзину товар «Индивидуальный заказ».</p>
             </li>
@@ -568,8 +531,6 @@
               <label class="form__label" for="recipient">Получатель <span class="form__label--red">*</span></label>
               <input class="form__input" onchange="validateText(this)" type="text" id="recipient" name="recipient" pattern="^[A-Za-zА-Яа-яЁё\s]+$" placeholder="Укажите, для кого собираем подарок" value="" required>
             </div>
-
-
             <div class="form__wrap form__wrap--amount">
               <label class="form__label" for="amount">Количество</label>
               <div class="form__inputwrap--amount">
@@ -578,8 +539,6 @@
                 <button class="form__inputnumber form__inputamount--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
               </div>
             </div>
-
-
             <div class="form__wrap form__wrap--cost">
               <label class="form__label" for="cost">Стоимость</label>
               <label class="form__select" placeholder="Выберите стоимость">
@@ -596,10 +555,8 @@
                 </div>
               </label>
             </div>
-
             <div class="form__wrap form__wrap--range">
               <label class="form__label" for="range">Диапазон цен, в руб.</label>
-
               <div class="form__wraprange">
                 <div class="form__inputwrap--range">
                   <button class="form__inputnumber form__inputnumber--minus" id="range-from--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
@@ -614,7 +571,6 @@
                 </div>
               </div>
             </div>
-
           </div>
           <fieldset class="form__shell form__shell--consist" onclick="validateCheck(this)">
             <legend class="form__label">Состав подарка <span class="form__label--red">*</span></legend>

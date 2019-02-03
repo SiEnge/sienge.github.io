@@ -12,37 +12,6 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <!-- Pixel Glass -->
-  <!-- <style>
-    HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* По умолчанию мобильный макет */
-    background-image: url( "Reviews_PSBOX_320.jpg" );
-  }
-  /* Планшет */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Планшетный макет */
-      background-image: url( "Reviews_PSBOX_720.jpg" );
-    }
-  }
-  /* Десктоп */
-  @media ( min-width: 1200px ) {
-    HTML {
-      /* Десктопный макет */
-      background-image: url( "PSBOX_1200-Reviews.jpg" );
-    }
-  }
-
-  BODY {
-    opacity: .5;
-  }
-</style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
-  <script src="../node_modules/pixel-glass/script.js"></script> -->
-  <!-- // Pixel Glass -->
-
 </head>
 
 <body class="page">
@@ -566,59 +535,59 @@
     <div class="modal-reviewwrap">
 
 
-    <button class="modal-review__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
-    <form action="" method="post">
-      <h2 class="form__title">Оставить отзыв</h2>
-      <div class="form__wrap form__wrap--text">
-        <label class="form__label" for="addition">Текст отзыва<span class="form__label--red">*</span></label>
-        <textarea class="form__input form__input--addition form__input--textarea" onchange="validateText(this)" placeholder="Введите хотя бы несколько слов для текста отзыва" name="name" id="addition" required></textarea>
-      </div>
-      <div class="form__shell">
-        <div class="form__wrap">
-          <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
-          <input class="form__input" onchange="validateText(this)" placeholder="Введите Ваше имя" type="text" name="" value="" id="name" required>
+      <button class="modal-review__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+      <form action="" method="post">
+        <h2 class="form__title">Оставить отзыв</h2>
+        <div class="form__wrap form__wrap--text">
+          <label class="form__label" for="addition">Текст отзыва<span class="form__label--red">*</span></label>
+          <textarea class="form__input form__input--addition form__input--textarea" onchange="validateText(this)" placeholder="Введите хотя бы несколько слов для текста отзыва" name="name" id="addition" required></textarea>
         </div>
-        <div class="form__wrap">
-          <label class="form__label" for="tel">Телефон</label>
-          <input class="form__input" type="text" name="" value="" id="phone">
-        </div>
-        <div class="form__wrap">
-          <label class="form__label" for="email">Ваш email</label>
-          <input class="form__input" type="email" name="" value="" id="email">
-        </div>
-      </div>
-      <div class="form__shell">
-        <div class="form__wrap form__wrap--product">
-          <label class="form__label" for="product">Товар</label>
-          <p class="form__comment">Если вы хотите оставить о товаре, выберите его из списка</p>
-
-          <label class="form__select" placeholder="Выберите товар">
-            <input class="form__option-radio" type="radio" name="product" id="product">
-
-            <div class="form__select-wrap">
-              <input class="form__option-radio" type="radio" name="product" value="opt1" id="opt1">
-              <label class="form__option" for="opt1">Черничные ночи</label>
-
-              <input class="form__option-radio" type="radio" name="product" value="opt2" id="opt2">
-              <label class="form__option" for="opt2">Цветущая черемуха</label>
-
-            </div>
-          </label>
-
-
-        </div>
-        <div class="form__wrap form__wrap--file">
-          <label class="form__label" for="image">Изображения</label>
-          <p class="form__comment">Прикрепите фото того, что вы хотите реализовать</p>
-          <div class="form__input form__input--file" id="upload">
-            <input id="file-input" type="file" name="file" multiple>
-            <span>Перетащите файл сюда или </span>
-            <label class="form__label--link" for="file-input">выберите из папки</label>
+        <div class="form__shell">
+          <div class="form__wrap">
+            <label class="form__label" for="name">Ваше имя <span class="form__label--red">*</span></label>
+            <input class="form__input" onchange="validateText(this)" placeholder="Введите Ваше имя" type="text" name="" value="" id="name" required>
+          </div>
+          <div class="form__wrap">
+            <label class="form__label" for="tel">Телефон</label>
+            <input class="form__input" type="text" name="" value="" id="phone">
+          </div>
+          <div class="form__wrap">
+            <label class="form__label" for="email">Ваш email</label>
+            <input class="form__input" type="email" name="" value="" id="email">
           </div>
         </div>
-      </div>
-      <button class="form__button modal-review__button--send form__button--disabled"  onclick="btnValidSubmit(this)" type="button" name="button">Оставить отзыв</button>
-    </form>
+        <div class="form__shell">
+          <div class="form__wrap form__wrap--product">
+            <label class="form__label" for="product">Товар</label>
+            <p class="form__comment">Если вы хотите оставить о товаре, выберите его из списка</p>
+
+            <label class="form__select" placeholder="Выберите товар">
+              <input class="form__option-radio" type="radio" name="product" id="product">
+
+              <div class="form__select-wrap">
+                <input class="form__option-radio" type="radio" name="product" value="opt1" id="opt1">
+                <label class="form__option" for="opt1">Черничные ночи</label>
+
+                <input class="form__option-radio" type="radio" name="product" value="opt2" id="opt2">
+                <label class="form__option" for="opt2">Цветущая черемуха</label>
+
+              </div>
+            </label>
+
+
+          </div>
+          <div class="form__wrap form__wrap--file">
+            <label class="form__label" for="image">Изображения</label>
+            <p class="form__comment">Прикрепите фото того, что вы хотите реализовать</p>
+            <div class="form__input form__input--file" id="upload">
+              <input id="file-input" type="file" name="file" multiple>
+              <span>Перетащите файл сюда или </span>
+              <label class="form__label--link" for="file-input">выберите из папки</label>
+            </div>
+          </div>
+        </div>
+        <button class="form__button modal-review__button--send form__button--disabled" onclick="btnValidSubmit(this)" type="button" name="button">Оставить отзыв</button>
+      </form>
     </div>
   </section>
 
