@@ -11,7 +11,36 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Pixel Glass -->
+  <!-- <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    background-image: url( "Indi_Case_PSBOX_320.jpg" );
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "Catalog_PSBOX_720.jpg" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX-1200-One-item-individual (2).jpg" );
+    }
+  }
 
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script> -->
+  <!-- // Pixel Glass -->
 </head>
 
 <body class="page">
@@ -345,13 +374,13 @@
               <div class="form__wraprange">
                 <div class="form__inputwrap--range">
                   <button class="form__inputnumber form__inputnumber--minus" id="range-from--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                  <input class="form__input form__input--range range-from" type="number" name="amount" id="range-from" readonly>
+                  <input class="form__input form__input--range range-from" type="number" name="amount" id="range-from">
                   <button class="form__inputnumber form__inputnumber--plus" id="range-from--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
                 </div>
                 <div id="slider-range"></div>
                 <div class="form__inputwrap--range">
                   <button class="form__inputnumber form__inputnumber--minus" id="range-to--minus" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
-                  <input class="form__input form__input--range range-to" type="number" name="amount" id="range-to" readonly>
+                  <input class="form__input form__input--range range-to" type="number" name="amount" id="range-to">
                   <button class="form__inputnumber form__inputnumber--plus" id="range-to--plus" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
                 </div>
               </div>
