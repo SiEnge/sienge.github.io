@@ -6556,8 +6556,16 @@ input[type=number] {
   position: relative;
   padding-top: 20px;
 }
+.oneitem__review .title--subsubtitle {
+  padding-bottom: 10px;
+}
 .oneitem__reviewbtn {
-  display: none;
+  width: 100%;
+  border: 3px solid #ab5e8c;
+}
+.oneitem__reviewbtn:hover {
+  color: #ffffff;
+  background-color: #ab5e8c;
 }
 @media (min-width: 768px) {
   .oneitem__slider {
@@ -6628,17 +6636,6 @@ input[type=number] {
     width: 160px;
     background-position: left 20px center;
   }
-  .oneitem__reviewbtn {
-    position: absolute;
-    top: 24px;
-    right: 8px;
-    display: block;
-    border: 3px solid #ab5e8c;
-  }
-  .oneitem__reviewbtn:hover {
-    color: #ffffff;
-    background-color: #ab5e8c;
-  }
   .oneitem__review {
     margin-top: 35px;
     padding-top: 27px;
@@ -6646,6 +6643,13 @@ input[type=number] {
   }
   .oneitem__review .title--subsubtitle {
     padding-bottom: 30px;
+  }
+  .oneitem__reviewbtn {
+    width: auto;
+    position: absolute;
+    top: 24px;
+    right: 8px;
+    display: block;
   }
 }
 @media (min-width: 1200px) {
