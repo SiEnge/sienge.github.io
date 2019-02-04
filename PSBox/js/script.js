@@ -1,3 +1,89 @@
+// Помощь в выборе
+
+
+function validateHelp(fieldForm) {
+  var radioForm = fieldForm.querySelectorAll(".help__radio");
+  var flagValidCheck = false;
+  var btnForm = fieldForm.querySelector(".help__button");
+
+  for (var i = 0; i < radioForm.length; i++) {
+    if (radioForm[i].checked) {
+      flagValidCheck = true;
+    }
+  }
+
+  if (flagValidCheck) {
+    if (btnForm.classList.contains("help__button--disabled")) {
+      btnForm.classList.remove("help__button--disabled");
+    }
+    if (btnForm.disabled) {
+      btnForm.disabled = false;
+    }
+  }
+}
+
+function helpBtn(btnForm) {
+  var form = btnForm.form;
+  var helpStep1 = form.querySelector(".help__field--step1");
+  var helpStep2 = form.querySelector(".help__field--step2");
+
+  if (!btnForm.classList.contains("help__button--disabled")) {
+    helpStep1.classList.remove("help__field--opened");
+    helpStep1.classList.add("help__field--closed");
+    helpStep2.classList.remove("help__field--closed");
+    helpStep2.classList.add("help__field--opened");
+
+  }
+}
+
+function resetHelp(linkForm) {
+  var form = linkForm.form;
+  var helpStep = linkForm.offsetParent;
+  var helpStep1 = form.querySelector(".help__field--step1");
+  var helpStep2 = form.querySelector(".help__field--step2");
+  var radioForm1 = helpStep1.querySelectorAll(".help__radio");
+  var radioForm2 = helpStep2.querySelectorAll(".help__radio");
+  var btnForm1 = helpStep1.querySelector(".help__button");
+  var btnForm2 = helpStep2.querySelector(".help__button");
+
+  for (var i = 0; i < radioForm1.length; i++) {
+    if (radioForm1[i].checked) {
+      radioForm1[i].checked = false;
+    }
+  }
+
+  for (var i = 0; i < radioForm2.length; i++) {
+    if (radioForm2[i].checked) {
+      radioForm2[i].checked = false;
+    }
+  }
+
+  if (!btnForm1.classList.contains("help__button--disabled")) {
+    btnForm1.classList.add("help__button--disabled");
+  }
+
+  if (btnForm1.disabled) {
+    btnForm1.disabled = false;
+  }
+
+  if (!btnForm2.classList.contains("help__button--disabled")) {
+    btnForm2.classList.add("help__button--disabled");
+  }
+
+  if (btnForm2.disabled) {
+    btnForm2.disabled = false;
+  }
+
+  if (helpStep.classList.contains("help__field--step2")) {
+    helpStep1.classList.remove("help__field--closed");
+    helpStep1.classList.add("help__field--opened");
+    helpStep2.classList.remove("help__field--opened");
+    helpStep2.classList.add("help__field--closed");
+
+  }
+}
+
+
 // Валидация формы
 
 // Навешивание соответвующих классов

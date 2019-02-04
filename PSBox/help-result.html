@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PSBox - Результат</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    background-image: url( "Help2_PSBOX_320.jpg" );
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "Help2PSBOX720.jpg" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX-1200-Catalog.jpg" );
+    }
+  }
+
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+</head>
+
+<body class="page">
+
+  <header class="header">
+
+    <!-- Всплывающий поп-ап при нажатии на кнопку "В корзину" -->
+
+    <section class="modal__addtocart">
+      <div class="modal__wrap container">
+        <p class="modal__text modal__text--white">Товар "Черничные ночи" добавлен в корзину</p>
+        <button class="modal__button modal__button--cancel" type="button" name="button">Отменить добавление</button>
+        <button class="modal__button modal__button--close  modal__addtocart-btn--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+      </div>
+    </section>
+
+    <!-- Шапка -->
+
+    <div class="header__wrap container">
+      <a class="header__logo header__logo--land" href="index.html">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="img/logo_PSBox_land.svg">
+          <img src="img/logo_PSBox.svg" alt="Логотип «PSBOX»">
+        </picture>
+      </a>
+      <div class="header__nav">
+
+        <!-- Форма поиска -->
+
+        <form class="header__form-search form-search" method="get" action="">
+          <input class="form-search__input" type="search" placeholder="Поиск по сайту">
+          <button class="form-search__button" type="submit"></button>
+        </form>
+
+        <!-- Дополнительное меню, которое частично дублирует нижнее -->
+
+        <section class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item"><a>О нас</a></li>
+            <li class="menu__item"><a href="how-to-make-an-order.html">Как сделать заказ</a></li>
+            <li class="menu__item"><a href="payment-and-delivery.html">Оплата и доставка</a></li>
+            <li class="menu__item"><a href="reviews.html">Отзывы</a></li>
+            <li class="menu__item"><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </section>
+
+        <!-- Блок соцсетей -->
+
+        <div class="header__social header__social--left social">
+          <ul class="social__list ">
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="header__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
+
+        <div class="header__social header__social--right social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Блок избранного и корзины -->
+
+        <div class="header__user">
+          <div class="header__usitem">
+            <button class="header__usbtn header__usbtn--compare" href="#"><span class="visuallyhidden">Сравнение: </span>
+              <span class="header__usbtn--compare-count">23</span>
+            </button>
+          </div>
+          <div class="header__usitem">
+            <button class="header__usbtn header__usbtn--cart" href="#"><span class="visuallyhidden">Корзина: </span>
+              <span class="header__usbtn--cart-count">5</span>
+            </button>
+          </div>
+
+          <!-- Всплывающее окно "Избранные товары" -->
+
+          <section class="header__user-pop pop pop-compare">
+            <div class="pop__wrap">
+              <h2 class="pop__title">Избранные товары</h2>
+            </div>
+            <ul class="pop__list">
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Черничные ночи</p>
+                  </div>
+                  <p class="pop__price">1 450 руб.</p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare pop__icon--compare-active" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Земляничное утро</p>
+                  </div>
+                  <p class="pop__price">2 050 руб.</p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Индивидуальный заказ</p>
+                  </div>
+                  <p class="pop__price"></p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+            </ul>
+            <div class="pop__total-wrap pop-compare__total-wrap">
+              <p class="pop__total">2 подарка 3500 Руб.</p>
+              <p class="pop__add">+ Индивидуальный заказ</p>
+            </div>
+            <p class="pop__comment">Чтобы сохранить свой список избранных подарков, отправьте их себе на email</p>
+            <form class="pop-compare__form" action="" method="post">
+              <input class="pop__input pop-compare__input" type="email" name="email" value="" placeholder="Ваш email" required>
+              <button class="pop__button pop-compare__button" type="submit" name="button">Отправить</button>
+            </form>
+          </section>
+
+          <!-- Всплывающее окно "Корзина" -->
+
+          <section class="header__user-pop pop pop--basket">
+            <div class="pop-basket__wrap">
+              <h2 class="pop__title">Корзина</h2>
+              <button class="pop__link pop-basket--team" type="button" name="button">Создать коллективный заказ</button>
+              <a class="pop__icon pop__icon--ques pop-basket__icon--ques" href="#"><span class="visuallyhidden">Вопросы?</span></a>
+            </div>
+
+            <!-- Полная корзина -->
+            <div class="pop-basket--full pop-basket--full-active">
+              <ul class="pop__list">
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Черничные ночи</p>
+                    </div>
+                    <p class="pop__price">1 450 руб.</p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare pop__icon--compare-active" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Земляничное утро</p>
+                    </div>
+                    <p class="pop__price">2 050 руб.</p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Индивидуальный заказ</p>
+                    </div>
+                    <p class="pop__price"></p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+              </ul>
+              <div class="pop__total-wrap ">
+                <p class="pop__total">2 подарка 3500 Руб.</p>
+                <p class="pop__add">+ Индивидуальный заказ</p>
+                <button class="pop__button" type="button" name="button">Оформить заказ</button>
+              </div>
+            </div>
+
+            <!-- Пустая корзина -->
+            <div class="pop-basket--empty">
+              <div class="pop__total-wrap pop-basket__total-wrap">
+                <p class="pop-basket-empty__text">Здесь пусто :( Скорее сделайте ваш заказ!</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Всплывающее окно "Создание коллективного заказа" -->
+
+          <section class="header__user-pop pop pop-create">
+            <div class="pop-create__wrap">
+              <div class="pop-create__wrap-title">
+                <h2 class="pop__title pop-create__title">Коллективный заказ</h2>
+                <a class="pop__icon pop__icon--ques pop-create__icon--ques" href="#"><span class="visuallyhidden">Что такое коллективный заказ?</span></a>
+              </div>
+              <button class="pop__link pop-create--cancel" type="button" name="button">Отменить</button>
+            </div>
+            <p class="pop__text pop-create__text">Отправьте участникам заказа ссылку, указанную ниже и составьте заказ совместно.</p>
+            <div class="pop-create__newlink">
+              <button class="pop__icon pop-create__icon--copy" type="button" name="button"><span class="visuallyhidden">Скопировать ссылку</span></button>
+              <p class="pop-create__link" href="#">psbox.ru/basket_&id1367djfadfa</p>
+            </div>
+          </section>
+        </div>
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Основная навигация -->
+      <nav class="nav nav--page nav--closed">
+        <button class="nav__button" type="button"><span class="visuallyhidden">Открыть меню</span></button>
+        <ul class="nav__list">
+          <li class="nav__item nav__item--sub nav__item--subclose nav__item--subfixed"><a href="#">Каталог подарков</a>
+            <ul class="nav__sublist">
+              <li class="nav__subitem"><a href="catalog.html">Любимым</a></li>
+              <li class="nav__subitem"><a href="#">Друзьям</a></li>
+              <li class="nav__subitem"><a href="#">Родителям</a></li>
+              <li class="nav__subitem"><a href="#">Коллегам</a></li>
+              <li class="nav__subitem"><a href="#">На день рождения</a></li>
+              <li class="nav__subitem"><a href="#">На свадьбу</a></li>
+              <li class="nav__subitem"><a href="#">На годовщину</a></li>
+              <li class="nav__subitem"><a href="#">На выписку</a></li>
+              <li class="nav__subitem"><a href="#">На новоселье</a></li>
+              <li class="nav__subitem"><a href="#">Просто так</a></li>
+              <li class="nav__subitem"><a href="#">День Святого Валентина</a></li>
+              <li class="nav__subitem"><a href="#">23 февраля</a></li>
+              <li class="nav__subitem"><a href="#">8 марта</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#">Индивидуальный заказ</a></li>
+          <li class="nav__item"><a href="#">Помощь в выборе подарка</a></li>
+          <li class="nav__item"><a href="corp_clients.html">Корпоративным клиентам</a></li>
+          <li class="nav__item nav__item--hidden"><a>О нас</a></li>
+          <li class="nav__item nav__item--hidden"><a href="how-to-make-an-order.html">Как сделать заказ</a></li>
+          <li class="nav__item nav__item--hidden"><a href="payment-and-delivery.html">Оплата и доставка</a></li>
+          <li class="nav__item nav__item--hidden"><a href="reviews.html">Отзывы</a></li>
+          <li class="nav__item nav__item--hidden"><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main container">
+
+    <!-- Хлебные крошки -->
+
+    <section class="breadcrumbs breadcrumbs--backwhite">
+      <!-- <div class="container"> -->
+        <div class="container--shrink">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="#">Каталог</a></li>
+            <li class="breadcrumbs__item">Любимым</li>
+          </ul>
+        </div>
+      <!-- </div> -->
+    </section>
+
+    <!--Каталог -->
+
+    <section class="help">
+      <div class="container--shrink">
+        <h1 class="title title--headline">Помощь в выборе подарка</h1>
+        <p class="help__text text">Затрудняетесь с выбором? Ответьте на несколько вопросов нашего онлайн-гида и получите рекомендации со списком подходящих подарков!</p>
+
+        <section class="help__result">
+          <h2 class="help__resulttitle">Результаты</h2>
+          <button class="help__link help__link--reset" type="button" name="button"><span class="help__link--dashed">Сбросить и начать снова</span></button>
+
+        </section>
+
+
+        <div class="offers__slide catalog__offers">
+          <div class="offers__wrap">
+            <button class="offers__button-gallery" type="button" name="button"></button>
+            <div class="offers__marklist">
+              <p class="offers__mark offers__mark--active"><span>Эксклюзив!</span></p>
+              <p class="offers__mark"><span>Хит!</span></p>
+              <p class="offers__mark offers__mark--active"><span>Новинка!</span></p>
+              <p class="offers__mark"><span>Скидка!</span></p>
+              <p class="offers__mark offers__mark--active"><span>В наличии</span></p>
+            </div>
+            <div class="offers__sliderimg">
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="offers__info">
+            <h3 class="offers__name">Черничные ночи</h3>
+            <p class="offers__price">1 450 Руб.</p>
+            <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+            <button class="offers__cart offers__cart-btn" type="button" name="button">В корзину</button>
+          </div>
+          <div class="offers__text">
+            <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
+            <p>Шоколад:</p>
+            <ul class="offers__list">
+              <li>«Ritter sport» черника со сливками,</li>
+              <li>«Ты моя ягодка» молочный,</li>
+            </ul>
+            <p>Алкоголь (по 50 мл.):</p>
+            <ul class="offers__list">
+              <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
+              <li>Виски «McClelland’s Highland».</li>
+            </ul>
+          </div>
+          <div class="offers__nav">
+            <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
+            <ul class="offers__navlist">
+              <li class="offers__navitem"><a href="#">Любимым</a></li>
+              <li class="offers__navitem"><a href="#">На день рождения</a></li>
+              <li class="offers__navitem"><a href="#">Просто так</a></li>
+              <li class="offers__navitem"><a href="#">На годовщину</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="offers__slide  catalog__offers">
+          <div class="offers__wrap ">
+            <div class="offers__marklist">
+              <p class="offers__mark"><span>Эксклюзив!</span></p>
+              <p class="offers__mark offers__mark--active"><span>Хит!</span></p>
+              <p class="offers__mark"><span>Новинка!</span></p>
+              <p class="offers__mark"><span>Скидка!</span></p>
+              <p class="offers__mark offers__mark--active"><span>В наличии</span></p>
+            </div>
+            <div class="offers__sliderimg">
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="offers__info">
+            <h3 class="offers__name">Черничные ночи</h3>
+            <p class="offers__price">1 450 Руб.</p>
+            <button class="offers__compare offers__compare--active" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+            <button class="offers__cart" type="button" name="button">В корзину</button>
+          </div>
+          <div class="offers__text">
+            <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
+            <p>Шоколад:</p>
+            <ul class="offers__list">
+              <li>«Ritter sport» черника со сливками,</li>
+              <li>«Ты моя ягодка» молочный,</li>
+            </ul>
+            <p>Алкоголь (по 50 мл.):</p>
+            <ul class="offers__list">
+              <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
+              <li>Виски «McClelland’s Highland».</li>
+            </ul>
+          </div>
+          <div class="offers__nav">
+            <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
+            <ul class="offers__navlist">
+              <li class="offers__navitem"><a href="#">Любимым</a></li>
+              <li class="offers__navitem"><a href="#">На день рождения</a></li>
+              <li class="offers__navitem"><a href="#">Просто так</a></li>
+              <li class="offers__navitem"><a href="#">На годовщину</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Футер -->
+
+  <footer class="footer">
+    <div class="footer__wrap container">
+      <div class="footer__info">
+        <p><a class="footer__info--phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26 </a> <br>
+          г. Москва, <br>
+          ул. Донская, д. 8 стр. 1 <br>
+        </p>
+        <p>Приём заказов: <br>
+          ежедневно <br>
+          с 09.00 до 21.00 <br>
+        </p>
+      </div>
+      <div class="footer__contact">
+        <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
+        <div class="footer__social social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
+  </footer>
+
+  <!-- Модальное окно "Галерея" -->
+
+  <section class="gallery container  ">
+    <button class="gallery__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+    <div class="gallery__slider">
+      <div class="gallery__slide">
+        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-2_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-3_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-1-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-1-2_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+    </div>
+
+    <!-- "Галерея превью" -->
+    <div class="gallery__preview">
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+    </div>
+  </section>
+
+  <div class="overlay-modal"></div>
+
+  <!-- <script src="js/jquery.2.1.3.min.js"></script> -->
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="slick/slick.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/picturefill.js"></script>
+</body>
+
+</html>

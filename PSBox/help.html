@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PSBox - Помощь в выборе подарка</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+    background-repeat: no-repeat;
+    background-position:  50% 0;
+    /* По умолчанию мобильный макет */
+    background-image: url( "Help_PSBOX_320.jpg" );
+  }
+  /* Планшет */
+  @media ( min-width: 768px ) {
+    HTML {
+      /* Планшетный макет */
+      background-image: url( "Help_PSBOX_720.jpg" );
+    }
+  }
+  /* Десктоп */
+  @media ( min-width: 1200px ) {
+    HTML {
+      /* Десктопный макет */
+      background-image: url( "PSBOX-1200-Help.jpg" );
+    }
+  }
+
+  BODY {
+    opacity: .5;
+  }
+</style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+</head>
+
+<body class="page">
+
+  <header class="header">
+
+    <!-- Всплывающий поп-ап при нажатии на кнопку "В корзину" -->
+
+    <section class="modal__addtocart">
+      <div class="modal__wrap container">
+        <p class="modal__text modal__text--white">Товар "Черничные ночи" добавлен в корзину</p>
+        <button class="modal__button modal__button--cancel" type="button" name="button">Отменить добавление</button>
+        <button class="modal__button modal__button--close  modal__addtocart-btn--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+      </div>
+    </section>
+
+    <!-- Шапка -->
+
+    <div class="header__wrap container">
+      <a class="header__logo header__logo--land" href="index.html">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="img/logo_PSBox_land.svg">
+          <img src="img/logo_PSBox.svg" alt="Логотип «PSBOX»">
+        </picture>
+      </a>
+      <div class="header__nav">
+
+        <!-- Форма поиска -->
+
+        <form class="header__form-search form-search" method="get" action="">
+          <input class="form-search__input" type="search" placeholder="Поиск по сайту">
+          <button class="form-search__button" type="submit"></button>
+        </form>
+
+        <!-- Дополнительное меню, которое частично дублирует нижнее -->
+
+        <section class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item"><a>О нас</a></li>
+            <li class="menu__item"><a href="how-to-make-an-order.html">Как сделать заказ</a></li>
+            <li class="menu__item"><a href="payment-and-delivery.html">Оплата и доставка</a></li>
+            <li class="menu__item"><a href="reviews.html">Отзывы</a></li>
+            <li class="menu__item"><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </section>
+
+        <!-- Блок соцсетей -->
+
+        <div class="header__social header__social--left social">
+          <ul class="social__list ">
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="header__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
+
+        <div class="header__social header__social--right social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Блок избранного и корзины -->
+
+        <div class="header__user">
+          <div class="header__usitem">
+            <button class="header__usbtn header__usbtn--compare" href="#"><span class="visuallyhidden">Сравнение: </span>
+              <span class="header__usbtn--compare-count">23</span>
+            </button>
+          </div>
+          <div class="header__usitem">
+            <button class="header__usbtn header__usbtn--cart" href="#"><span class="visuallyhidden">Корзина: </span>
+              <span class="header__usbtn--cart-count">5</span>
+            </button>
+          </div>
+
+          <!-- Всплывающее окно "Избранные товары" -->
+
+          <section class="header__user-pop pop pop-compare">
+            <div class="pop__wrap">
+              <h2 class="pop__title">Избранные товары</h2>
+            </div>
+            <ul class="pop__list">
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Черничные ночи</p>
+                  </div>
+                  <p class="pop__price">1 450 руб.</p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare pop__icon--compare-active" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Земляничное утро</p>
+                  </div>
+                  <p class="pop__price">2 050 руб.</p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+              <li>
+                <a class="pop__item" href="#">
+                  <div class="pop__item-wrap">
+                    <img src="img/img-ban2.jpg" alt="Фото товара">
+                    <p class="pop__text pop-compare__text">Индивидуальный заказ</p>
+                  </div>
+                  <p class="pop__price"></p>
+                  <button class="pop__icon pop__icon--compare pop-compare__icon--compare" type="button" name="button"></button>
+                  <button class="pop__icon pop__icon--trash pop-compare__icon--trash" type="button" name="button"></button>
+                </a>
+              </li>
+            </ul>
+            <div class="pop__total-wrap pop-compare__total-wrap">
+              <p class="pop__total">2 подарка 3500 Руб.</p>
+              <p class="pop__add">+ Индивидуальный заказ</p>
+            </div>
+            <p class="pop__comment">Чтобы сохранить свой список избранных подарков, отправьте их себе на email</p>
+            <form class="pop-compare__form" action="" method="post">
+              <input class="pop__input pop-compare__input" type="email" name="email" value="" placeholder="Ваш email" required>
+              <button class="pop__button pop-compare__button" type="submit" name="button">Отправить</button>
+            </form>
+          </section>
+
+          <!-- Всплывающее окно "Корзина" -->
+
+          <section class="header__user-pop pop pop--basket">
+            <div class="pop-basket__wrap">
+              <h2 class="pop__title">Корзина</h2>
+              <button class="pop__link pop-basket--team" type="button" name="button">Создать коллективный заказ</button>
+              <a class="pop__icon pop__icon--ques pop-basket__icon--ques" href="#"><span class="visuallyhidden">Вопросы?</span></a>
+            </div>
+
+            <!-- Полная корзина -->
+            <div class="pop-basket--full pop-basket--full-active">
+              <ul class="pop__list">
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Черничные ночи</p>
+                    </div>
+                    <p class="pop__price">1 450 руб.</p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare pop__icon--compare-active" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Земляничное утро</p>
+                    </div>
+                    <p class="pop__price">2 050 руб.</p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+                <li>
+                  <a class="pop__item" href="#">
+                    <div class="pop__item-wrap">
+                      <img src="img/img-ban2.jpg" alt="Фото товара">
+                      <p class="pop__text pop-basket__text">Индивидуальный заказ</p>
+                    </div>
+                    <p class="pop__price"></p>
+                    <button class="pop__icon pop__icon--compare pop-basket__icon--compare" type="button" name="button"></button>
+                    <button class="pop__icon pop__icon--trash pop-basket__icon--trash" type="button" name="button"></button>
+                  </a>
+                </li>
+              </ul>
+              <div class="pop__total-wrap ">
+                <p class="pop__total">2 подарка 3500 Руб.</p>
+                <p class="pop__add">+ Индивидуальный заказ</p>
+                <button class="pop__button" type="button" name="button">Оформить заказ</button>
+              </div>
+            </div>
+
+            <!-- Пустая корзина -->
+            <div class="pop-basket--empty">
+              <div class="pop__total-wrap pop-basket__total-wrap">
+                <p class="pop-basket-empty__text">Здесь пусто :( Скорее сделайте ваш заказ!</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Всплывающее окно "Создание коллективного заказа" -->
+
+          <section class="header__user-pop pop pop-create">
+            <div class="pop-create__wrap">
+              <div class="pop-create__wrap-title">
+                <h2 class="pop__title pop-create__title">Коллективный заказ</h2>
+                <a class="pop__icon pop__icon--ques pop-create__icon--ques" href="#"><span class="visuallyhidden">Что такое коллективный заказ?</span></a>
+              </div>
+              <button class="pop__link pop-create--cancel" type="button" name="button">Отменить</button>
+            </div>
+            <p class="pop__text pop-create__text">Отправьте участникам заказа ссылку, указанную ниже и составьте заказ совместно.</p>
+            <div class="pop-create__newlink">
+              <button class="pop__icon pop-create__icon--copy" type="button" name="button"><span class="visuallyhidden">Скопировать ссылку</span></button>
+              <p class="pop-create__link" href="#">psbox.ru/basket_&id1367djfadfa</p>
+            </div>
+          </section>
+        </div>
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Основная навигация -->
+      <nav class="nav nav--page nav--closed">
+        <button class="nav__button" type="button"><span class="visuallyhidden">Открыть меню</span></button>
+        <ul class="nav__list">
+          <li class="nav__item nav__item--sub nav__item--subclose nav__item--subfixed"><a href="#">Каталог подарков</a>
+            <ul class="nav__sublist">
+              <li class="nav__subitem"><a href="catalog.html">Любимым</a></li>
+              <li class="nav__subitem"><a href="#">Друзьям</a></li>
+              <li class="nav__subitem"><a href="#">Родителям</a></li>
+              <li class="nav__subitem"><a href="#">Коллегам</a></li>
+              <li class="nav__subitem"><a href="#">На день рождения</a></li>
+              <li class="nav__subitem"><a href="#">На свадьбу</a></li>
+              <li class="nav__subitem"><a href="#">На годовщину</a></li>
+              <li class="nav__subitem"><a href="#">На выписку</a></li>
+              <li class="nav__subitem"><a href="#">На новоселье</a></li>
+              <li class="nav__subitem"><a href="#">Просто так</a></li>
+              <li class="nav__subitem"><a href="#">День Святого Валентина</a></li>
+              <li class="nav__subitem"><a href="#">23 февраля</a></li>
+              <li class="nav__subitem"><a href="#">8 марта</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="#">Индивидуальный заказ</a></li>
+          <li class="nav__item"><a href="#">Помощь в выборе подарка</a></li>
+          <li class="nav__item"><a href="corp_clients.html">Корпоративным клиентам</a></li>
+          <li class="nav__item nav__item--hidden"><a>О нас</a></li>
+          <li class="nav__item nav__item--hidden"><a href="how-to-make-an-order.html">Как сделать заказ</a></li>
+          <li class="nav__item nav__item--hidden"><a href="payment-and-delivery.html">Оплата и доставка</a></li>
+          <li class="nav__item nav__item--hidden"><a href="reviews.html">Отзывы</a></li>
+          <li class="nav__item nav__item--hidden"><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="main">
+
+    <!-- Хлебные крошки -->
+
+    <section class="breadcrumbs breadcrumbs--backwhite">
+      <div class="container">
+        <div class="container--shrink">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumbs__item"><a>Помощь</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок №1 вопросов "Чем " -->
+
+    <section class="help">
+      <div class="container">
+        <div class="container--shrink">
+
+
+          <h1 class="title title--headline">Помощь в выборе подарка</h1>
+          <p class="help__text text">Затрудняетесь с выбором? Ответьте на несколько вопросов нашего онлайн-гида и получите рекомендации со списком подходящих подарков!</p>
+
+
+          <form class="help__form" action="" method="post">
+
+            <fieldset class="help__field help__field--step1 help__field--opened" onclick="validateHelp(this)">
+              <legend class="help__fieldlegend">Шаг <span class="help__fieldlegend--checked">1</span> из 2</legend>
+              <button class="help__link help__link--reset" onclick="resetHelp(this)" type="button" name="button"><span class="help__link--dashed">Сбросить</span></button>
+              <p class="help__fieldtext">Кому предназначен ваш подарок?</p>
+              <div class="help__wrap">
+                <ul class="help__list" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom1" id="whom1">
+                    <label class="help__radiolabel" for="whom1">Любимому</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom2" id="whom2">
+                    <label class="help__radiolabel" for="whom2">Маме</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom3" id="whom3">
+                    <label class="help__radiolabel" for="whom3">Сыну</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom4" id="whom4">
+                    <label class="help__radiolabel" for="whom4">Начальнику</label>
+                  </li>
+                </ul>
+                <ul class="help__list" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom5" id="whom5">
+                    <label class="help__radiolabel" for="whom5">Любимой</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom6" id="whom6">
+                    <label class="help__radiolabel" for="whom6">Папе</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom7" id="whom7">
+                    <label class="help__radiolabel" for="whom7">Дочери</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom8" id="whom8">
+                    <label class="help__radiolabel" for="whom8">Коллеге</label>
+                  </li>
+                </ul>
+                <ul class="help__list help__list--none" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom9" id="whom9">
+                    <label class="help__radiolabel" for="whom9">Подруге</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom10" id="whom10">
+                    <label class="help__radiolabel" for="whom10">Бабушке</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom11" id="whom11">
+                    <label class="help__radiolabel" for="whom11">Сестре</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom12" id="whom12">
+                    <label class="help__radiolabel" for="whom12">Бизнес-партнеру</label>
+                  </li>
+                </ul>
+                <ul class="help__list help__list--none" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom13" id="whom13">
+                    <label class="help__radiolabel" for="whom13">Другу</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom14" id="whom14">
+                    <label class="help__radiolabel" for="whom14">Дедушке</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom15" id="whom15">
+                    <label class="help__radiolabel" for="whom15">Брату</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="whom" value="whom16" id="whom16">
+                    <label class="help__radiolabel" for="whom16">Преподавателю</label>
+                  </li>
+                </ul>
+              </div>
+              <button class="help__button help__button--disabled" onclick="helpBtn(this)" type="button" name="button" disabled>Далее к вопросу 2</button>
+            </fieldset>
+
+            <fieldset class="help__field help__field--step2 help__field--closed" onclick="validateHelp(this)">
+              <legend class="help__fieldlegend">Шаг <span class="help__fieldlegend--checked">2</span> из 2</legend>
+              <button class="help__link help__link--reset" onclick="resetHelp(this)" type="button" name="button"><span class="help__link--dashed">Сбросить и начать снова</span></button>
+
+              <p class="help__fieldtext">Каков повод для подарка?</p>
+              <div class="help__wrap">
+                <!-- <div class="help__wrap--left"> -->
+                  <ul class="help__list" role="none">
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what1" id="what1">
+                      <label class="help__radiolabel" for="what1">День рождения</label>
+                    </li>
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what2" id="what2">
+                      <label class="help__radiolabel" for="what2">На свадьбу</label>
+                    </li>
+                  </ul>
+                  <ul class="help__list" role="none">
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what3" id="what3">
+                      <label class="help__radiolabel" for="what3">Юбилей</label>
+                    </li>
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what4" id="what4">
+                      <label class="help__radiolabel" for="what4">Годовщина</label>
+                    </li>
+                  </ul>
+                <!-- </div>
+                <div class="help__wrap--right"> -->
+                  <ul class="help__list" role="none">
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what5" id="what5">
+                      <label class="help__radiolabel" for="what5">Рождение малыша</label>
+                    </li>
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what6" id="what6">
+                      <label class="help__radiolabel" for="what6">14 февраля</label>
+                    </li>
+                  </ul>
+                  <ul class="help__list" role="none">
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what7" id="what7">
+                      <label class="help__radiolabel" for="what7">Помолвка</label>
+                    </li>
+                    <li class="help__item">
+                      <input class="help__radio" type="radio" name="what" value="what8" id="what8">
+                      <label class="help__radiolabel" for="what8">8 марта</label>
+                    </li>
+                  </ul>
+                <!-- </div> -->
+              </div>
+              <button class="help__button help__button--disabled" type="submit" name="button" disabled>Далее к результату</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Футер -->
+
+  <footer class="footer">
+    <div class="footer__wrap container">
+      <div class="footer__info">
+        <p><a class="footer__info--phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26 </a> <br>
+          г. Москва, <br>
+          ул. Донская, д. 8 стр. 1 <br>
+        </p>
+        <p>Приём заказов: <br>
+          ежедневно <br>
+          с 09.00 до 21.00 <br>
+        </p>
+      </div>
+      <div class="footer__contact">
+        <a class="footer__phone" rel="nofollow" href="tel:+74952200926">+7 (495) 220 09 26</a>
+        <div class="footer__social social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-in.png" alt="Instagram" width="24" height="24">
+                <span class="visuallyhidden">Instagram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-fb.png" alt="Facebook" width="13" height="24">
+                <span class="visuallyhidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-soc-vk.png" alt="ВКонтакте" width="24" height="14">
+                <span class="visuallyhidden">ВКонтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-tel.png" alt="Telegram" width="20" height="18">
+                <span class="visuallyhidden">Telegram</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-vay.png" alt="Viber" width="19" height="20">
+                <span class="visuallyhidden">Viber</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__icon" href="#">
+                <img src="img/ic-mes-wac.png" alt="WhatsApp" width="20" height="20">
+                <span class="visuallyhidden">WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
+  </footer>
+
+  <!-- Модальное окно "Галерея" -->
+
+  <section class="gallery container  ">
+    <button class="gallery__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+    <div class="gallery__slider">
+      <div class="gallery__slide">
+        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-2_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-3_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-1-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-1-2_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+      <div class="gallery__slide">
+        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
+        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
+      </div>
+    </div>
+
+    <!-- "Галерея превью" -->
+    <div class="gallery__preview">
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
+      </div>
+      <div class="gallery__slide">
+        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
+      </div>
+    </div>
+  </section>
+
+  <div class="overlay-modal"></div>
+
+  <!-- <script src="js/jquery.2.1.3.min.js"></script> -->
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="slick/slick.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/picturefill.js"></script>
+</body>
+
+</html>

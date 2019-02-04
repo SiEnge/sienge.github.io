@@ -11,36 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- Pixel Glass -->
-  <!-- <style>
-    HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* По умолчанию мобильный макет */
-    background-image: url( "Catalog-PSBOX-320.jpg" );
-  }
-  /* Планшет */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Планшетный макет */
-      background-image: url( "Catalog_PSBOX_720.jpg" );
-    }
-  }
-  /* Десктоп */
-  @media ( min-width: 1200px ) {
-    HTML {
-      /* Десктопный макет */
-      background-image: url( "PSBOX-1200-Catalog.jpg" );
-    }
-  }
 
-  BODY {
-    opacity: .5;
-  }
-</style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
-  <script src="../node_modules/pixel-glass/script.js"></script> -->
-  <!-- // Pixel Glass -->
 </head>
 
 <body class="page">
@@ -323,15 +294,13 @@
     <!-- Хлебные крошки -->
 
     <section class="breadcrumbs breadcrumbs--backwhite">
-      <!-- <div class="container"> -->
-        <div class="container--shrink">
-          <ul class="breadcrumbs__list">
-            <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
-            <li class="breadcrumbs__item"><a href="#">Каталог</a></li>
-            <li class="breadcrumbs__item">Любимым</li>
-          </ul>
-        </div>
-      <!-- </div> -->
+      <div class="container--shrink">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumbs__item"><a href="#">Каталог</a></li>
+          <li class="breadcrumbs__item">Любимым</li>
+        </ul>
+      </div>
     </section>
 
     <!--Каталог -->
@@ -339,7 +308,10 @@
     <section class="catalog ">
       <div class="container--shrink">
         <h1 class="title title--headline">Любимым</h1>
-        <p class="catalog__text text">Рыночная ситуация, на первый взгляд, однообразно ускоряет медиабизнес. Маркетинг, не меняя концепции, изложенной выше, трансформирует ролевой рекламный макет. SWOT-анализ нетривиален. Лидерство в продажах тормозит клиентский спрос. Бизнес-план стабилизирует медиабизнес, используя опыт предыдущих кампаний.</p>
+        <p class="catalog__text text">Рыночная ситуация, на первый взгляд, однообразно ускоряет медиабизнес. Маркетинг, не меняя концепции, изложенной выше, трансформирует ролевой рекламный макет. SWOT-анализ нетривиален. Лидерство в продажах
+          тормозит клиентский спрос. Бизнес-план стабилизирует медиабизнес, используя опыт предыдущих кампаний.</p>
+
+        <!-- Форма -->
 
         <form class="filter" action="" method="post">
           <fieldset class="filter__fieldset filter__fieldset--filter">
@@ -431,11 +403,8 @@
                 </div>
                 <button class="form__buttonlink" type="button" name="button">Сбросить фильтры</button>
               </div>
-
             </div>
-
           </fieldset>
-
 
           <fieldset class="filter__fieldset filter__fieldset--composition">
             <button class="filter__button filter__button--composition" type="button" name="button"></button>
@@ -519,8 +488,9 @@
               </div>
             </div>
           </fieldset>
-
         </form>
+
+        <!-- Индивидуальный заказ -->
 
         <section class="individual">
           <h3 class="individual__title">Индивидуальный заказ</h3>
@@ -532,6 +502,8 @@
           </div>
         </section>
 
+        <!-- Баннер -->
+
         <section class="catalog__banner">
           <div class="banner__wrap">
             <p class="banner__title">Эксклюзивные условия для корпоративных заказов</p>
@@ -539,13 +511,7 @@
           </div>
         </section>
 
-        <!-- <section class="filter__result">
-          <h3 class="filter__title">Результаты:</h3>
-          <button class="form__buttonlink" type="button" name="button">Сбросить</button>
-        </section> -->
-
-
-
+        <!-- Товары -->
 
         <div class="offers__slide catalog__offers">
           <div class="offers__wrap">
@@ -665,7 +631,6 @@
             </ul>
           </div>
         </div>
-
       </div>
     </section>
   </main>
