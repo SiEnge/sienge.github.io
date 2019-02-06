@@ -7047,7 +7047,7 @@ input[type=number] {
   background: transparent;
   background-image: url("../img/ic-search.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top 12px center;
   background-size: 16px 16px;
 }
 .error {
