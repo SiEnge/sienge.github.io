@@ -392,6 +392,94 @@ template {
         flex-wrap: wrap;
   }
 }
+.load {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.load svg {
+  margin: 80px;
+  width: 40px;
+  height: 40px;
+}
+.load__line1,
+.load__line2,
+.load__line3,
+.load__line4,
+.load__line5,
+.load__line6,
+.load__line7,
+.load__line8,
+.load__line9,
+.load__line10,
+.load__line11,
+.load__line12 {
+  opacity: 0;
+  -webkit-animation: show 1s infinite;
+          animation: show 1s infinite;
+}
+.load__line1 {
+  -webkit-animation-delay: 83ms;
+          animation-delay: 83ms;
+}
+.load__line2 {
+  -webkit-animation-delay: 166ms;
+          animation-delay: 166ms;
+}
+.load__line3 {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+.load__line4 {
+  -webkit-animation-delay: 333ms;
+          animation-delay: 333ms;
+}
+.load__line5 {
+  -webkit-animation-delay: 416ms;
+          animation-delay: 416ms;
+}
+.load__line6 {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+.load__line7 {
+  -webkit-animation-delay: 583ms;
+          animation-delay: 583ms;
+}
+.load__line8 {
+  -webkit-animation-delay: 666ms;
+          animation-delay: 666ms;
+}
+.load__line9 {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+}
+.load__line10 {
+  -webkit-animation-delay: 833ms;
+          animation-delay: 833ms;
+}
+.load__line11 {
+  -webkit-animation-delay: 916ms;
+          animation-delay: 916ms;
+}
+.load__line12 {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+@-webkit-keyframes show {
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  50% {
+    opacity: 1;
+  }
+}
 .container {
   width: 320px;
   margin: 0 auto;
@@ -6915,17 +7003,17 @@ input[type=number] {
 }
 .help__result {
   position: relative;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #f3f4f8;
   border-radius: 5px;
-  padding-left: 20px;
+  padding-left: 15px;
   padding-right: 110px;
 }
 .help__resulttitle {
   font-family: "Intro", "Arial", sans-serif;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: normal;
   font-style: normal;
   color: #91229a;
@@ -6989,17 +7077,21 @@ input[type=number] {
     padding-right: 10px;
   }
   .help__result {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 30px;
-    padding-right: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 185px;
   }
   .help__result .help__link {
-    top: 24px;
+    top: 10px;
+    right: 5px;
   }
   .help__resulttitle {
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .help__resulttitle br {
+    display: none;
   }
 }
 .search__text {
