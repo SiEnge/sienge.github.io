@@ -2422,6 +2422,9 @@ input[type=number] {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
+.nav__item--subopen:first-child::before {
+  border-bottom-color: #214f9c;
+}
 .nav__sublist {
   position: absolute;
   z-index: 25;
