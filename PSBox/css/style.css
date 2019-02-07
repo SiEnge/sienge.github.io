@@ -2438,6 +2438,9 @@ input[type=number] {
 .nav__subitem:hover {
   background-color: #214f9c;
 }
+.nav__subitem:hover a {
+  color: #ffffff;
+}
 .nav__subitem:hover::after {
   position: absolute;
   top: 14px;
@@ -2455,9 +2458,6 @@ input[type=number] {
   padding: 12px 45px;
   text-decoration: none;
   color: #000000;
-}
-.nav__subitem a:hover {
-  color: #ffffff;
 }
 .nav__subitem:last-child {
   border: none;
