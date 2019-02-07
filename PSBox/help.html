@@ -11,36 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- Pixel Glass -->
-  <!-- <style>
-    HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* По умолчанию мобильный макет */
-    background-image: url( "Help_PSBOX_320.jpg" );
-  }
-  /* Планшет */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Планшетный макет */
-      background-image: url( "Help_PSBOX_720.jpg" );
-    }
-  }
-  /* Десктоп */
-  @media ( min-width: 1200px ) {
-    HTML {
-      /* Десктопный макет */
-      background-image: url( "PSBOX-1200-Help.jpg" );
-    }
-  }
 
-  BODY {
-    opacity: .5;
-  }
-</style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
-  <script src="../node_modules/pixel-glass/script.js"></script> -->
-  <!-- // Pixel Glass -->
 </head>
 
 <body class="page">
@@ -334,18 +305,16 @@
       </div>
     </section>
 
-    <!-- Блок №1 вопросов "Чем " -->
+    <!-- Блок вопросов -->
 
     <section class="help">
       <div class="container">
         <div class="container--shrink">
-
-
           <h1 class="title title--headline">Помощь в выборе подарка</h1>
           <p class="help__text text">Затрудняетесь с выбором? Ответьте на несколько вопросов нашего онлайн-гида и получите рекомендации со списком подходящих подарков!</p>
-
-
           <form class="help__form" action="" method="post">
+
+            <!-- Блок №1 вопросов "Чем " -->
 
             <fieldset class="help__field help__field--step1 help__field--opened" onclick="validateHelp(this)">
               <legend class="help__fieldlegend">Шаг <span class="help__fieldlegend--checked">1</span> из 2</legend>
@@ -428,56 +397,53 @@
               <button class="help__button help__button--disabled" onclick="helpBtn(this)" type="button" name="button" disabled>Далее к вопросу 2</button>
             </fieldset>
 
+            <!-- Блок №2 вопросов "Каков повод " -->
+
             <fieldset class="help__field help__field--step2 help__field--closed" onclick="validateHelp(this)">
               <legend class="help__fieldlegend">Шаг <span class="help__fieldlegend--checked">2</span> из 2</legend>
               <button class="help__link help__link--reset" onclick="resetHelp(this)" type="button" name="button"><span class="help__link--dashed">Сбросить и начать снова</span></button>
-
               <p class="help__fieldtext">Каков повод для подарка?</p>
               <div class="help__wrap">
-                <!-- <div class="help__wrap--left"> -->
-                  <ul class="help__list" role="none">
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what1" id="what1">
-                      <label class="help__radiolabel" for="what1">День рождения</label>
-                    </li>
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what2" id="what2">
-                      <label class="help__radiolabel" for="what2">На свадьбу</label>
-                    </li>
-                  </ul>
-                  <ul class="help__list" role="none">
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what3" id="what3">
-                      <label class="help__radiolabel" for="what3">Юбилей</label>
-                    </li>
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what4" id="what4">
-                      <label class="help__radiolabel" for="what4">Годовщина</label>
-                    </li>
-                  </ul>
-                <!-- </div>
-                <div class="help__wrap--right"> -->
-                  <ul class="help__list" role="none">
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what5" id="what5">
-                      <label class="help__radiolabel" for="what5">Рождение малыша</label>
-                    </li>
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what6" id="what6">
-                      <label class="help__radiolabel" for="what6">14 февраля</label>
-                    </li>
-                  </ul>
-                  <ul class="help__list" role="none">
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what7" id="what7">
-                      <label class="help__radiolabel" for="what7">Помолвка</label>
-                    </li>
-                    <li class="help__item">
-                      <input class="help__radio" type="radio" name="what" value="what8" id="what8">
-                      <label class="help__radiolabel" for="what8">8 марта</label>
-                    </li>
-                  </ul>
-                <!-- </div> -->
+                <ul class="help__list" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what1" id="what1">
+                    <label class="help__radiolabel" for="what1">День рождения</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what2" id="what2">
+                    <label class="help__radiolabel" for="what2">На свадьбу</label>
+                  </li>
+                </ul>
+                <ul class="help__list" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what3" id="what3">
+                    <label class="help__radiolabel" for="what3">Юбилей</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what4" id="what4">
+                    <label class="help__radiolabel" for="what4">Годовщина</label>
+                  </li>
+                </ul>
+                <ul class="help__list" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what5" id="what5">
+                    <label class="help__radiolabel" for="what5">Рождение малыша</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what6" id="what6">
+                    <label class="help__radiolabel" for="what6">14 февраля</label>
+                  </li>
+                </ul>
+                <ul class="help__list" role="none">
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what7" id="what7">
+                    <label class="help__radiolabel" for="what7">Помолвка</label>
+                  </li>
+                  <li class="help__item">
+                    <input class="help__radio" type="radio" name="what" value="what8" id="what8">
+                    <label class="help__radiolabel" for="what8">8 марта</label>
+                  </li>
+                </ul>
               </div>
               <button class="help__button help__button--disabled" type="submit" name="button" disabled>Далее к результату</button>
             </fieldset>
@@ -548,70 +514,6 @@
     <p class="footer__copyright">PSBOX © 2015-2019 г.</p>
   </footer>
 
-  <!-- Модальное окно "Галерея" -->
-
-  <section class="gallery container  ">
-    <button class="gallery__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
-    <div class="gallery__slider">
-      <div class="gallery__slide">
-        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-      <div class="gallery__slide">
-        <img src="img/gal-0-2_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-      <div class="gallery__slide">
-        <img src="img/gal-0-3_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-      <div class="gallery__slide">
-        <img src="img/gal-1-1_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-      <div class="gallery__slide">
-        <img src="img/gal-1-2_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-      <div class="gallery__slide">
-        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-      <div class="gallery__slide">
-        <img src="img/gal-0-1_desktop.jpg" alt="Фото галереи">
-        <p class="gallery__text">Вот так обычно выглядит наш офис в канун праздников. Но как же мы любим, когда у нас много разнообразных заказов - таких красивых и воодушевляющих, вам на радость!</p>
-      </div>
-    </div>
-
-    <!-- "Галерея превью" -->
-    <div class="gallery__preview">
-      <div class="gallery__slide">
-        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
-      </div>
-      <div class="gallery__slide">
-        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
-      </div>
-      <div class="gallery__slide">
-        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
-      </div>
-      <div class="gallery__slide">
-        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
-      </div>
-      <div class="gallery__slide">
-        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
-      </div>
-      <div class="gallery__slide">
-        <img src="img/best_mobile.jpg" alt="Превью фото галереи">
-      </div>
-      <div class="gallery__slide">
-        <img src="img/slide_mobile.jpg" alt="Превью фото галереи">
-      </div>
-    </div>
-  </section>
-
-  <div class="overlay-modal"></div>
-
-  <!-- <script src="js/jquery.2.1.3.min.js"></script> -->
   <script src="js/jquery.maskedinput.min.js"></script>
   <script src="slick/slick.js"></script>
   <script src="js/script.js"></script>

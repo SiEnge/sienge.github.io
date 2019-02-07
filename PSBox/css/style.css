@@ -2382,15 +2382,21 @@ input[type=number] {
 .nav__item:hover {
   background-color: #214f9c;
 }
+.nav__item:hover a {
+  color: #ffffff;
+}
+.nav__item:hover .nav__subitem a {
+  color: #000000;
+}
+.nav__item:hover .nav__subitem:hover a {
+  color: #ffffff;
+}
 .nav__item a {
   font-size: 13px;
   display: block;
   padding: 15px 45px;
   text-decoration: none;
   color: #000000;
-}
-.nav__item a:hover {
-  color: #ffffff;
 }
 .nav__item--sub::after {
   position: absolute;
