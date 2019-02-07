@@ -2404,6 +2404,7 @@ input[type=number] {
   background-image: url("../img/strl-menu.png");
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 .nav__item--subopen {
   background-color: #214f9c;
@@ -2451,6 +2452,7 @@ input[type=number] {
   background-image: url("../img/strl-menu.png");
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 .nav__subitem a {
   font-size: 13px;
