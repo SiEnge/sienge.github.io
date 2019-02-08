@@ -5423,7 +5423,6 @@ input[type=number] {
   display: -ms-flexbox;
   display: flex;
   padding-top: 16px;
-  padding-bottom: 10px;
   padding-left: 16px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -5543,10 +5542,17 @@ input[type=number] {
   }
   .review__client {
     min-height: 220px;
-    padding: 25px 0 20px;
+    padding-top: 35px;
   }
   .review__anchor {
     top: -77px;
+  }
+  .review__expert {
+    padding-bottom: 10px;
+  }
+  .review__expert .review__wrap {
+    padding-top: 5px;
+    padding-bottom: 10px;
   }
   .review__text {
     font-size: 17px;
