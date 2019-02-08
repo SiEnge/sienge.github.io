@@ -644,6 +644,9 @@ template {
   padding-top: 50px;
   border-top: 1px solid #dcd7de;
 }
+.form__field--total {
+  padding-top: 10px;
+}
 .form__fieldlabel {
   position: absolute;
   top: 12px;
@@ -654,6 +657,36 @@ template {
   line-height: 24px;
   font-weight: normal;
   font-style: normal;
+}
+.form__fieldtitle {
+  color: #91229a;
+  font-family: "Intro", "Arial", sans-serif;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+}
+.form__info {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.form__info p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+.form__info::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 0;
+  background-image: url("../img/ic-inf.png");
+  background-repeat: no-repeat;
 }
 .form__shell {
   display: -webkit-box;
@@ -666,7 +699,9 @@ template {
   padding: 0;
   margin-bottom: 13px;
 }
-.form__shell--consist {
+.form__shell--consist,
+.form__shell--delivery,
+.form__shell--payment {
   border: 2px solid #ffffff;
   border-radius: 5px;
 }
@@ -705,14 +740,12 @@ template {
   padding-right: 18px;
   padding-left: 10px;
 }
-.form__wrap--other {
-  width: 272px;
-}
+.form__wrap--other,
 .form__wrap--name,
 .form__wrap--company,
 .form__wrap--phone,
 .form__wrap--email {
-  width: 272px;
+  width: 100%;
 }
 .form__wrap--connection {
   font-size: 16px;
@@ -733,8 +766,45 @@ template {
   padding-top: 7px;
   padding-bottom: 8px;
 }
+.form__wrap--delivery,
+.form__wrap--payment {
+  font-size: 16px;
+  padding-left: 10px;
+}
+.form__wrap--delivery .form__list,
+.form__wrap--payment .form__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.form__wrap--delivery .form__item,
+.form__wrap--payment .form__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
 .form__wrap--product {
   width: 272px;
+}
+.form__wrap--promocode {
+  padding-bottom: 20px;
+}
+.form__wrap--total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 45px;
+  padding-bottom: 10px;
 }
 .form__title {
   font-family: "Intro", "Arial", sans-serif;
@@ -923,6 +993,7 @@ template {
   position: relative;
   padding-left: 24px;
   cursor: pointer;
+  display: block;
 }
 .form__radiolabel::before {
   position: absolute;
@@ -1306,11 +1377,22 @@ input[type=number] {
   }
   .form__container {
     padding-top: 42px;
+    font-size: 15px;
   }
   .form__field {
-    padding-top: 60px;
+    padding-top: 50px;
     padding-left: 22px;
     padding-right: 22px;
+    padding-bottom: 14px;
+  }
+  .form__field--total {
+    padding-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .form__fieldlabel {
     top: 10px;
@@ -1322,6 +1404,10 @@ input[type=number] {
     font-size: 31px;
     line-height: 36px;
     padding-bottom: 24px;
+  }
+  .form__fieldtitle {
+    font-size: 32px;
+    line-height: 40px;
   }
   .form__shell {
     -webkit-box-pack: justify;
@@ -1342,7 +1428,10 @@ input[type=number] {
     margin-bottom: 30px;
   }
   .form__shell--connection {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+  .form__shell--total {
+    max-width: 450px;
   }
   .form__wrap {
     padding-bottom: 5px;
@@ -1401,6 +1490,32 @@ input[type=number] {
     font-size: 18px;
     width: 600px;
     padding-top: 5px;
+  }
+  .form__wrap--total {
+    padding-bottom: 25px;
+  }
+  .form__wrap--promocode {
+    width: 210px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 210px;
+            flex: 0 0 210px;
+  }
+  .form__wrap--delivery,
+  .form__wrap--payment {
+    font-size: 18px;
+  }
+  .form__wrap--delivery .form__item,
+  .form__wrap--payment .form__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 24%;
+            flex: 0 0 24%;
+  }
+  .form__info {
+    padding-bottom: 0;
+  }
+  .form__info p {
+    font-size: 16px;
+    line-height: 20px;
   }
   .form__input--addition {
     height: 40px;
@@ -1517,6 +1632,12 @@ input[type=number] {
     padding-left: 132px;
     padding-right: 132px;
     padding-top: 70px;
+  }
+  .form__field--total {
+    padding-top: 35px;
+  }
+  .form__shell--total {
+    max-width: 500px;
   }
   .form__fieldlabel {
     top: 17px;
@@ -3416,9 +3537,14 @@ input[type=number] {
   padding-bottom: 15px;
 }
 .offers__price {
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 20px;
+  line-height: 24px;
   margin: 0;
+}
+.offers__price--old {
+  color: #999999;
+  text-decoration: line-through;
+  padding-right: 8px;
 }
 .offers__wrap {
   position: relative;
@@ -3523,6 +3649,28 @@ input[type=number] {
   color: #91229a;
   background-color: #ffffff;
   background-image: url("../img/cart_violet.svg");
+}
+.offers__trash {
+  position: absolute;
+  bottom: 0;
+  left: 46px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/trash_violet.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-size: 17px 23px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.offers__trash:hover {
+  background-image: url("../img/trash_white.svg");
+  background-color: #91229a;
 }
 .offers__text {
   font-size: 15px;
@@ -3634,6 +3782,10 @@ input[type=number] {
     min-height: auto;
     padding-right: 230px;
   }
+  .offers__price {
+    font-size: 24px;
+    display: inline-block;
+  }
   .offers__compare {
     top: 15px;
     right: 175px;
@@ -3650,6 +3802,12 @@ input[type=number] {
     padding-left: 32px;
     color: #ffffff;
     background-position: left 20px center;
+  }
+  .offers__trash {
+    top: 15px;
+    right: 0;
+    bottom: auto;
+    left: auto;
   }
   .offers__text {
     line-height: 23px;
@@ -4225,12 +4383,13 @@ input[type=number] {
     font-style: normal;
     line-height: 12px;
     position: relative;
-    padding: 15px 20px 12px 30px;
     text-transform: uppercase;
     border-bottom: 1px solid #dcd7de;
     background-color: #ffffff;
   }
   .product__item a {
+    display: block;
+    padding: 15px 20px 12px 30px;
     text-decoration: none;
     color: #000000;
   }
@@ -7152,6 +7311,250 @@ input[type=number] {
   background-repeat: no-repeat;
   background-position: top 12px center;
   background-size: 16px 16px;
+}
+.case {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.case__offers {
+  padding-left: 8px;
+  padding-right: 5px;
+  padding-bottom: 34px;
+}
+.case__subtitle {
+  border-top: 1px solid #dcd7de;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.case__lead {
+  font-size: 15px;
+}
+.case__indi {
+  position: relative;
+}
+.case__form {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
+          box-shadow: 0 0 30px rgba(185, 176, 189, 0.5);
+  border: 1px solid #dcd7de;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+.case__total {
+  margin: 0;
+  color: #91229a;
+  padding-bottom: 20px;
+}
+.case__products {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-left: 10px;
+}
+.case__productsitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.case__productsname {
+  margin: 0;
+  color: #91229a;
+  font-size: 16px;
+  line-height: 20px;
+}
+.case__costlist {
+  padding-left: 5px;
+}
+.case__cost {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+.case__cost--old {
+  color: #999999;
+  text-decoration: line-through;
+}
+.case__cost--new {
+  color: #91229a;
+}
+.case__wrapbutton {
+  border-top: 1px solid #dcd7de;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.case__team {
+  margin-top: 20px;
+  background-color: #f3f4f8;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.case__teamlink {
+  position: relative;
+}
+.case__link {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding-top: 15px;
+  padding-left: 35px;
+  text-decoration: underline;
+  color: #214f9c;
+  padding-bottom: 15px;
+}
+.case__buttoncopy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("../img/copy.svg");
+  background-size: 20px 24px;
+}
+.case__teamtext {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 35px;
+}
+.case__teamtext--info {
+  position: relative;
+}
+.case__teamtext--info::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 0;
+  background-image: url("../img/ic-inf.png");
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .case {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .case__offers {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .case__offers .offers__compare {
+    right: 42px;
+  }
+  .case__offers .offers__info {
+    padding-right: 100px;
+    width: 340px;
+  }
+  .case__lead {
+    font-size: 16px;
+  }
+  .case__productsitem {
+    padding-bottom: 5px;
+  }
+  .case__productsitem:last-child {
+    padding-bottom: 0;
+  }
+  .case__products {
+    padding-left: 15px;
+  }
+  .case__productsname {
+    font-size: 20px;
+  }
+  .case__costlist {
+    padding-left: 10px;
+  }
+  .case__cost {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .case__form {
+    font-size: 15px;
+  }
+  .case__form .form__wrap--name,
+  .case__form .form__wrap--phone,
+  .case__form .form__wrap--email {
+    width: 210px;
+  }
+  .case__team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .case__link {
+    padding-left: 0;
+  }
+  .case__teamtext {
+    padding-left: 27px;
+  }
+}
+@media (min-width: 1048px) {
+  .case__form .form__field {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .case__form .form__fieldlabel {
+    left: 22px;
+  }
+  .case__form .form__button {
+    margin-right: 22px;
+  }
+  .case__form .form__wrap--recipient {
+    width: 200px;
+  }
+  .case__form .form__wrap--cost {
+    width: 150px;
+  }
+  .case__form .form__wrap--range {
+    width: 300px;
+  }
+  .case__form .form__wrap--consist .form__list {
+    width: 169px;
+  }
+  .case__form .form__wrap--addition {
+    width: 360px;
+  }
+  .case__form .form__wrap--file {
+    width: 310px;
+  }
+  .case__form .form__wrap--other {
+    width: 100%;
+    padding-top: 6px;
+  }
+  .case__form .form__wrap--name,
+  .case__form .form__wrap--company,
+  .case__form .form__wrap--phone,
+  .case__form .form__wrap--email {
+    width: 210px;
+  }
+}
+@media (min-width: 1200px) {
+  .case__form .form__field {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .case__form .form__fieldlabel {
+    left: 40px;
+  }
+  .case__form .form__button {
+    margin-right: 40px;
+  }
 }
 .error {
   padding-top: 100px;

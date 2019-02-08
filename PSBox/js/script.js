@@ -104,15 +104,31 @@ function validate(condition, input) {
 // Проверка всей формы при потере к-л обязательного поля фокуса
 function btnValid(form) {
   var elementForm = form.querySelectorAll(".form__input");
-  var checkForm = form.querySelectorAll(".form__checkbox");
   var fieldForm = form.querySelector(".form__shell--consist");
+  var checkForm = form.querySelectorAll(".form__checkbox");
+  var fieldFormDeli = form.querySelector(".form__shell--delivery");
+  var radioFormDeli = form.querySelectorAll(".form__shell--delivery .form__radio");
+  var fieldFormPay = form.querySelector(".form__shell--payment");
+  var radioFormPay = form.querySelectorAll(".form__shell--payment .form__radio");
   var btnForm = form.querySelector(".form__button");
   var flagValid = true;
 
   if (fieldForm) {
-    flagValidCheck = false;
+    var flagValidCheck = false;
   } else {
-    flagValidCheck = true;
+    var flagValidCheck = true;
+  }
+
+  if (fieldFormDeli) {
+    var flagValidRadioDeli = false;
+  } else {
+    var flagValidRadioDeli = true;
+  }
+
+  if (fieldFormPay) {
+    var flagValidRadioPay = false;
+  } else {
+    var flagValidRadioPay = true;
   }
 
   for (var i = 0; i < elementForm.length; i++) {
@@ -129,7 +145,19 @@ function btnValid(form) {
     }
   }
 
-  if (flagValid && flagValidCheck) {
+  for (var i = 0; i < radioFormDeli.length; i++) {
+    if (radioFormDeli[i].checked) {
+      flagValidRadioDeli = true;
+    }
+  }
+
+  for (var i = 0; i < radioFormPay.length; i++) {
+    if (radioFormPay[i].checked) {
+      flagValidRadioPay = true;
+    }
+  }
+
+  if (flagValid && flagValidCheck && flagValidRadioDeli && flagValidRadioPay) {
     if (btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.remove("form__button--disabled");
     }
@@ -164,6 +192,24 @@ function validateCheck(fieldForm) {
   btnValid(form);
 }
 
+
+// ПРоверка списка radio
+function validateRadio(fieldForm) {
+  var form = fieldForm.form;
+  var radioForm = form.querySelectorAll(".form__radiolabel");
+  var flagValidRadio = false;
+
+  for (var i = 0; i < radioForm.length; i++) {
+    if (radioForm[i].checked) {
+      flagValidRadio = true;
+    }
+  }
+
+  validate(!flagValidRadio, fieldForm);
+  btnValid(form);
+}
+
+
 var modReviewAdd = document.querySelector('.modal-reviewadd');
 
 
@@ -172,13 +218,30 @@ function btnValidSubmit(btnForm) {
   var form = btnForm.form;
   var elementForm = form.querySelectorAll(".form__input");
   var btnForm = form.querySelector(".form__button");
-  var checkForm = form.querySelectorAll(".form__checkbox");
-  var fieldForm = form.querySelector(".form__shell--consist");
   var flagValid = true;
+  var fieldForm = form.querySelector(".form__shell--consist");
+  var checkForm = form.querySelectorAll(".form__checkbox");
+  var fieldFormDeli = form.querySelector(".form__shell--delivery");
+  var radioFormDeli = form.querySelectorAll(".form__shell--delivery .form__radio");
+  var fieldFormPay = form.querySelector(".form__shell--payment");
+  var radioFormPay = form.querySelectorAll(".form__shell--payment .form__radio");
+
   if (fieldForm) {
     flagValidCheck = false;
   } else {
     flagValidCheck = true;
+  }
+
+  if (fieldFormDeli) {
+    var flagValidRadioDeli = false;
+  } else {
+    var flagValidRadioDeli = true;
+  }
+
+  if (fieldFormPay) {
+    var flagValidRadioPay = false;
+  } else {
+    var flagValidRadioPay = true;
   }
 
   for (var i = 0; i < elementForm.length; i++) {
@@ -200,7 +263,28 @@ function btnValidSubmit(btnForm) {
     validate(flagValidCheck, fieldForm);
   }
 
-  if (flagValid && flagValidCheck) {
+  for (var i = 0; i < radioFormDeli.length; i++) {
+    if (radioFormDeli[i].checked) {
+      flagValidRadioDeli = true;
+    }
+  }
+
+  if (fieldFormDeli) {
+    validate(flagValidRadioDeli, fieldFormDeli);
+  }
+
+  for (var i = 0; i < radioFormPay.length; i++) {
+    if (radioFormPay[i].checked) {
+      flagValidRadioPay = true;
+    }
+  }
+
+  if (fieldFormPay) {
+    validate(flagValidRadioPay, fieldFormPay);
+  }
+
+
+  if (flagValid && flagValidCheck && flagValidRadioDeli && flagValidRadioPay) {
     if (btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.remove("form__button--disabled");
     }
