@@ -5355,6 +5355,7 @@ input[type=number] {
   padding-bottom: 15px;
 }
 .review__client {
+  position: relative;
   padding-top: 18px;
 }
 .review__client blockquote {
