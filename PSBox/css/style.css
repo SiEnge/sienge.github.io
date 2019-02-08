@@ -5270,7 +5270,7 @@ input[type=number] {
     height: 90px;
   }
 }
-рщ .review__textwrap p {
+.review__textwrap p {
   font-size: 16px;
   line-height: 24px;
   margin: 0;
@@ -5359,6 +5359,10 @@ input[type=number] {
 }
 .review__client blockquote {
   margin: 0;
+}
+.review__anchor {
+  top: -72px;
+  position: absolute;
 }
 .review__block {
   font-size: 16px;
@@ -5540,6 +5544,9 @@ input[type=number] {
     min-height: 220px;
     padding: 25px 0 20px;
   }
+  .review__anchor {
+    top: -77px;
+  }
   .review__text {
     font-size: 17px;
   }
@@ -5586,6 +5593,11 @@ input[type=number] {
   }
   .review__social {
     right: 45px;
+  }
+}
+@media (min-width: 1200px) {
+  .review__anchor {
+    top: -117px;
   }
 }
 .howmake__question {
@@ -7331,6 +7343,15 @@ input[type=number] {
 }
 .case__indi {
   position: relative;
+}
+.case__indi .case__subtitle {
+  padding-right: 40px;
+}
+.case__indi .offers__trash {
+  left: auto;
+  right: 0;
+  top: 13px;
+  bottom: auto;
 }
 .case__form {
   border-radius: 5px;
