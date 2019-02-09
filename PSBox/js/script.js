@@ -209,6 +209,22 @@ function validateRadio(fieldForm) {
   btnValid(form);
 }
 
+// комментарии к доставке в зависимости от вида
+
+function checkDelivery(radioDeli) {
+  var form = radioDeli.form;
+  var deliPickup = form.querySelector(".form__delivery--pickup");
+  var deliAddress = form.querySelector(".form__delivery--address");
+  if (radioDeli.id === "delivery-pickup") {
+    deliPickup.classList.add("form__delivery--active");
+    deliAddress.classList.remove("form__delivery--active");
+  } else {
+    deliAddress.classList.add("form__delivery--active");
+    deliPickup.classList.remove("form__delivery--active");
+  }
+
+}
+
 
 var modReviewAdd = document.querySelector('.modal-reviewadd');
 
@@ -288,13 +304,6 @@ function btnValidSubmit(btnForm) {
     if (btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.remove("form__button--disabled");
     }
-    // form.submit();
-    // if (btnForm.classList.contains("modal-review__button--send"))  {
-    //   modReviewAdd.classList.add("modal--active");
-    //
-    //
-    // }
-
   } else {
     if (!btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.add("form__button--disabled");
@@ -859,6 +868,29 @@ if (btnCopy) {
   btnCopy.addEventListener('click', function() {
 
     var linkCopy = document.querySelector('.pop-create__link');
+
+    var range = document.createRange();
+    range.selectNode(linkCopy);
+    window.getSelection().addRange(range);
+
+    try {
+      document.execCommand('copy');
+    } catch (err) {
+      console.log('Can`t copy, boss');
+    }
+
+    window.getSelection().removeAllRanges();
+  });
+}
+
+// копирование ссылки в Коллективной корзине
+
+var btnCopyCase = document.querySelector('.case__buttoncopy');
+
+if (btnCopyCase) {
+  btnCopyCase.addEventListener('click', function() {
+
+    var linkCopy = document.querySelector('.case__link');
 
     var range = document.createRange();
     range.selectNode(linkCopy);

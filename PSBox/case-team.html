@@ -341,15 +341,76 @@
           <div class="case__teamlink">
             <button class="case__buttoncopy" type="button" name="button"><span class="visuallyhidden">Скопировать ссылку</span></button>
             <p class="case__teamtext case__teamtext--link" href="#">Ссылка на эту корзину:</p>
+            <p class="case__link" href="#">psbox.ru/basket_&id1367djfadfa</p>
           </div>
-          <p class="case__link" href="#">psbox.ru/basket_&id1367djfadfa</p>
           <p class="case__teamtext case__teamtext--info" href="#">Вы участник коллективного заказа</p>
-
-
-
         </section>
 
         <div class="offers__slide case__offers">
+          <p class="case__customer">Добавлено покупателем Ирина</p>
+
+          <div class="offers__wrap">
+            <button class="offers__button-gallery" type="button" name="button"></button>
+            <div class="offers__marklist">
+              <p class="offers__mark offers__mark--active"><span>Эксклюзив!</span></p>
+              <p class="offers__mark"><span>Хит!</span></p>
+              <p class="offers__mark offers__mark--active"><span>Новинка!</span></p>
+              <p class="offers__mark"><span>Скидка!</span></p>
+              <p class="offers__mark offers__mark--active"><span>В наличии</span></p>
+            </div>
+            <div class="offers__sliderimg">
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+              <div>
+                <p class="offers__img ">
+                  <img src="img/best_mobile.jpg" alt="Фото товара">
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="offers__info">
+            <h3 class="offers__name">Черничные ночи</h3>
+            <p class="offers__price offers__price--old"><span class="visuallyhidden">Старая цена </span>3 500 Руб.</p>
+            <p class="offers__price"><span class="visuallyhidden">Цена </span>1 450 Руб.</p>
+            <button class="offers__compare" type="button" name="button"><span class="visuallyhidden">В сравнение</span></button>
+            <button class="offers__trash" type="button" name="button"><span class="visuallyhidden">Удалить</span></button>
+          </div>
+          <div class="offers__text">
+            <p>Надпись на заказ из шоколадных конфет со сливочной начинкой;</p>
+            <p>Шоколад:</p>
+            <ul class="offers__list">
+              <li>«Ritter sport» черника со сливками,</li>
+              <li>«Ты моя ягодка» молочный,</li>
+            </ul>
+            <p>Алкоголь (по 50 мл.):</p>
+            <ul class="offers__list">
+              <li>Черничный ликёр «Remedia Blueberry Liqueur Liviko Store»,</li>
+              <li>Виски «McClelland’s Highland».</li>
+            </ul>
+          </div>
+          <div class="offers__nav">
+            <h4 class="offers__subtitle">Товар в разделах каталога:</h4>
+            <ul class="offers__navlist">
+              <li class="offers__navitem"><a href="#">Любимым</a></li>
+              <li class="offers__navitem"><a href="#">На день рождения</a></li>
+              <li class="offers__navitem"><a href="#">Просто так</a></li>
+              <li class="offers__navitem"><a href="#">На годовщину</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="offers__slide case__offers">
+          <p class="case__customer">Добавлено покупателем Гриша</p>
+
           <div class="offers__wrap">
             <button class="offers__button-gallery" type="button" name="button"></button>
             <div class="offers__marklist">
@@ -442,7 +503,7 @@
                 <li class="form__item">
                   <div class="form__wrap form__wrap--other">
                     <label class="form__label" for="">Прочие пожелания</label>
-                    <textarea class="form__input form__input--other" name="name">Расскажите о своих идеях и особых пожеланиях</textarea>
+                    <textarea class="form__input form__input--other" name="name" placeholder="Расскажите о своих идеях и особых пожеланиях"></textarea>
                   </div>
                 </li>
               </ul>
@@ -501,29 +562,66 @@
               <div class="form__wrap form__wrap--delivery">
                 <ul class="form__list" role="none">
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="pickup" id="delivery-pickup" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)" name="delivery" value="pickup" id="delivery-pickup" required>
                     <label class="form__radiolabel" for="delivery-pickup">Самовывоз</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="courier" id="delivery-courier" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="courier" id="delivery-courier" required>
                     <label class="form__radiolabel" for="delivery-courier">Курьером</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="transport" id="delivery-transport" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="transport" id="delivery-transport" required>
                     <label class="form__radiolabel" for="delivery-transport">Транспортной компанией</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="mailing" id="delivery-mailing" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="mailing" id="delivery-mailing" required>
                     <label class="form__radiolabel" for="delivery-mailing">Почтовым отправлением</label>
                   </li>
                 </ul>
               </div>
             </fieldset>
-            <div class="form__info">
-              <p>Адрес самовывоза: 101000, г. Москва, ул. Донская, д.8, стр.1 <br>
-                <a href="contacts.html">посмотреть на карте</a>
-              </p>
-              <p>О сроках готовности вам сообщит менеджер</p>
+            <div class="form__delivery form__delivery--pickup">
+              <div class="form__info">
+                <p>Адрес самовывоза: г. Москва, ул. Донская, д.8, стр.1 <br>
+                  <a href="contacts.html">посмотреть на карте</a>
+                </p>
+                <p>О сроках готовности вам сообщит менеджер</p>
+              </div>
+            </div>
+            <div class="form__delivery form__delivery--address">
+              <div class="form__info">
+                <p>О сроках готовности, вариантах и стоимости доставки вам сообщит менеджер</p>
+              </div>
+              <div class="form__shell form__shell--address">
+                <div class="form__wrap form__wrap--country">
+                  <label class="form__label" for="country">Страна <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="country" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="country" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--locality">
+                  <label class="form__label" for="locality">Населённый пункт <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="locality" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="locality" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--street">
+                  <label class="form__label" for="street">Улица <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="street" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="street" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--house">
+                  <label class="form__label" for="house">Дом <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="house" pattern="[0-9]{0,5}" id="house" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--housing">
+                  <label class="form__label" for="housing">Корпус</label>
+                  <input class="form__input" type="text" name="housing" pattern="[0-9]{0,5}" id="housing" value="">
+                </div>
+                <div class="form__wrap form__wrap--apartment">
+                  <label class="form__label" for="apartment">Квартира</label>
+                  <input class="form__input" type="text" name="apartment" pattern="[0-9]{0,5}" id="apartment" value="">
+                </div>
+                <div class="form__wrap form__wrap--entrance">
+                  <label class="form__label" for="entrance">Подъезд</label>
+                  <input class="form__input" type="text" name="entrance" pattern="[0-9]{0,3}" id="entrance" value="">
+                </div>
+              </div>
             </div>
 
           </fieldset>

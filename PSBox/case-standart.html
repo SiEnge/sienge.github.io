@@ -430,7 +430,7 @@
                 <li class="form__item">
                   <div class="form__wrap form__wrap--other">
                     <label class="form__label" for="">Прочие пожелания</label>
-                    <textarea class="form__input form__input--other" name="name">Расскажите о своих идеях и особых пожеланиях</textarea>
+                    <textarea class="form__input form__input--other" name="name" placeholder="Расскажите о своих идеях и особых пожеланиях"></textarea>
                   </div>
                 </li>
               </ul>
@@ -489,29 +489,66 @@
               <div class="form__wrap form__wrap--delivery">
                 <ul class="form__list" role="none">
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="pickup" id="delivery-pickup" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)" name="delivery" value="pickup" id="delivery-pickup" required>
                     <label class="form__radiolabel" for="delivery-pickup">Самовывоз</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="courier" id="delivery-courier" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="courier" id="delivery-courier" required>
                     <label class="form__radiolabel" for="delivery-courier">Курьером</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="transport" id="delivery-transport" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="transport" id="delivery-transport" required>
                     <label class="form__radiolabel" for="delivery-transport">Транспортной компанией</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" name="delivery" value="mailing" id="delivery-mailing" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="mailing" id="delivery-mailing" required>
                     <label class="form__radiolabel" for="delivery-mailing">Почтовым отправлением</label>
                   </li>
                 </ul>
               </div>
             </fieldset>
-            <div class="form__info">
-              <p>Адрес самовывоза: 101000, г. Москва, ул. Донская, д.8, стр.1 <br>
-                <a href="contacts.html">посмотреть на карте</a>
-              </p>
-              <p>О сроках готовности вам сообщит менеджер</p>
+            <div class="form__delivery form__delivery--pickup">
+              <div class="form__info">
+                <p>Адрес самовывоза: г. Москва, ул. Донская, д.8, стр.1 <br>
+                  <a href="contacts.html">посмотреть на карте</a>
+                </p>
+                <p>О сроках готовности вам сообщит менеджер</p>
+              </div>
+            </div>
+            <div class="form__delivery form__delivery--address">
+              <div class="form__info">
+                <p>О сроках готовности, вариантах и стоимости доставки вам сообщит менеджер</p>
+              </div>
+              <div class="form__shell form__shell--address">
+                <div class="form__wrap form__wrap--country">
+                  <label class="form__label" for="country">Страна <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="country" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="country" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--locality">
+                  <label class="form__label" for="locality">Населённый пункт <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="locality" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="locality" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--street">
+                  <label class="form__label" for="street">Улица <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="street" pattern="^[A-Za-zА-Яа-яЁё\s]+$" id="street" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--house">
+                  <label class="form__label" for="house">Дом <span class="form__label--red">*</span></label>
+                  <input class="form__input" onchange="validateText(this)" type="text" name="house" pattern="[0-9]{0,5}" id="house" value="" required>
+                </div>
+                <div class="form__wrap form__wrap--housing">
+                  <label class="form__label" for="housing">Корпус</label>
+                  <input class="form__input" type="text" name="housing" pattern="[0-9]{0,5}" id="housing" value="">
+                </div>
+                <div class="form__wrap form__wrap--apartment">
+                  <label class="form__label" for="apartment">Квартира</label>
+                  <input class="form__input" type="text" name="apartment" pattern="[0-9]{0,5}" id="apartment" value="">
+                </div>
+                <div class="form__wrap form__wrap--entrance">
+                  <label class="form__label" for="entrance">Подъезд</label>
+                  <input class="form__input" type="text" name="entrance" pattern="[0-9]{0,3}" id="entrance" value="">
+                </div>
+              </div>
             </div>
 
           </fieldset>
