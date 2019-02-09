@@ -864,7 +864,8 @@ template {
   cursor: pointer;
   color: #214f9c;
 }
-.form__input {
+.form__input,
+.form__input-delivery {
   width: 100%;
   display: block;
   -webkit-box-sizing: border-box;
@@ -879,22 +880,26 @@ template {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.form__input--range {
+.form__input--range,
+.form__input-delivery--range {
   width: 65px;
   padding-right: 20px;
   padding-left: 3px;
   text-align: right;
 }
-.form__input--addition {
+.form__input--addition,
+.form__input-delivery--addition {
   resize: none;
   height: 114px;
 }
-.form__input--other {
+.form__input--other,
+.form__input-delivery--other {
   resize: none;
   height: 160px;
   padding-top: 10px;
 }
-.form__input--file {
+.form__input--file,
+.form__input-delivery--file {
   background-color: #ffffff;
   border: 1px dashed #999999;
   border-radius: 5px;
@@ -913,14 +918,16 @@ template {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.form__input--file input[type=file] {
+.form__input--file input[type=file],
+.form__input-delivery--file input[type=file] {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
   position: absolute;
   z-index: -10;
 }
-.form__input--file input[type=file]:focus + label {
+.form__input--file input[type=file]:focus + label,
+.form__input-delivery--file input[type=file]:focus + label {
   outline: -webkit-focus-ring-color auto 5px;
 }
 .form__input--valid {
@@ -1557,10 +1564,12 @@ input[type=number] {
     font-size: 16px;
     line-height: 20px;
   }
-  .form__input--addition {
+  .form__input--addition,
+  .form__input-delivery--addition {
     height: 40px;
   }
-  .form__input--file {
+  .form__input--file,
+  .form__input-delivery--file {
     height: 40px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -7483,7 +7492,7 @@ input[type=number] {
   overflow: hidden;
   margin: 0;
   padding-top: 5px;
-  padding-left: 35px;
+  padding-left: 30px;
   text-decoration: underline;
   color: #214f9c;
   padding-bottom: 15px;
@@ -7507,9 +7516,9 @@ input[type=number] {
   margin: 0;
   font-size: 16px;
   line-height: 24px;
-  padding-left: 35px;
 }
 .case__teamtext--info {
+  padding-left: 35px;
   position: relative;
 }
 .case__teamtext--info::before {
@@ -7604,7 +7613,11 @@ input[type=number] {
     padding-top: 0;
     padding-bottom: 0;
   }
-  .case__teamtext {
+  .case__buttoncopy {
+    top: -4px;
+    left: -20px;
+  }
+  .case__teamtext--info {
     padding-left: 27px;
   }
   .case__customer {
