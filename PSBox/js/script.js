@@ -262,6 +262,8 @@ function btnValidSubmit(btnForm) {
   var checkForm = form.querySelectorAll(".form__checkbox");
   var fieldFormDeli = form.querySelector(".form__shell--delivery");
   var radioFormDeli = form.querySelectorAll(".form__shell--delivery .form__radio");
+  var deliAddress = form.querySelector(".form__delivery--address");
+
   var fieldFormPay = form.querySelector(".form__shell--payment");
   var radioFormPay = form.querySelectorAll(".form__shell--payment .form__radio");
 
@@ -275,6 +277,22 @@ function btnValidSubmit(btnForm) {
     var flagValidRadioDeli = false;
   } else {
     var flagValidRadioDeli = true;
+  }
+
+  if (deliAddress) {
+    var flagValidDeli = true;
+    if (deliAddress.classList.contains("form__delivery--active")) {
+      var elementFormDeli = form.querySelectorAll(".form__input-delivery");
+      for (var i = 0; i < elementFormDeli.length; i++) {
+        if (elementFormDeli[i].hasAttribute('required')) {
+          if (!elementFormDeli[i].validity.valid) {
+            var flagValidDeli = false;
+          }
+        }
+      }
+    }
+  } else {
+    var flagValidDeli = true;
   }
 
   if (fieldFormPay) {
@@ -323,7 +341,7 @@ function btnValidSubmit(btnForm) {
   }
 
 
-  if (flagValid && flagValidCheck && flagValidRadioDeli && flagValidRadioPay) {
+  if (flagValid && flagValidCheck && flagValidRadioDeli && flagValidRadioPay && flagValidDeli) {
     if (btnForm.classList.contains("form__button--disabled")) {
       btnForm.classList.remove("form__button--disabled");
     }
