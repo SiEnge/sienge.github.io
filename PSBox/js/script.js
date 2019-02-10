@@ -724,7 +724,7 @@ $('.gallery__slider').slick({
 
 $('.gallery__preview').slick({
   asNavFor: '.gallery__slider',
-  slidesToShow: 11,
+  slidesToShow: 9,
   focusOnSelect: true,
   arrows: false,
   responsive: [{
@@ -734,7 +734,25 @@ $('.gallery__preview').slick({
       }
     },
     {
-      breakpoint: 768,
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 6
+      }
+    },
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 5
+      }
+    },
+    {
+      breakpoint: 580,
+      settings: {
+        slidesToShow: 4
+      }
+    },
+    {
+      breakpoint: 440,
       settings: {
         slidesToShow: 3
       }

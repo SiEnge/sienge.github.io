@@ -4562,14 +4562,13 @@ input[type=number] {
   z-index: 300;
   top: auto;
   bottom: 0;
-  left: 50%;
   visibility: hidden;
   width: 90%;
-  margin-left: -45%;
   height: 0;
-  max-height: 90vh;
-  border-radius: 5px;
+  left: 50%;
+  margin-left: -45%;
   background-color: #ffffff;
+  border-radius: 5px;
 }
 .gallery--active {
   top: 5vh;
@@ -4578,14 +4577,12 @@ input[type=number] {
   height: auto;
 }
 .gallery__slider {
-  min-width: 300px;
-  width: auto;
-  height: auto;
+  z-index: 1;
 }
 .gallery__slider .slick-next,
 .gallery__slider .slick-prev {
   position: absolute;
-  top: 45vh;
+  top: 40vh;
   display: none;
   width: 50px;
   height: 25vh;
@@ -4622,16 +4619,15 @@ input[type=number] {
   background-image: url("../img/arrow_rose.svg");
 }
 .gallery__slide {
-  width: auto;
-  height: 70vh;
-  margin: 0 auto;
   border-radius: 5px;
 }
 .gallery__slide img {
-  max-width: 90%;
-  max-height: 100%;
-  height: auto;
-  margin: auto;
+  max-width: 100%;
+  max-height: 50vh;
+  min-width: 300px;
+  line-height: 0;
+  display: block;
+  margin: 0 auto;
   border-radius: 5px;
 }
 .gallery__button--close {
@@ -4650,34 +4646,30 @@ input[type=number] {
   cursor: pointer;
 }
 .gallery__text {
-  margin: 0;
+  text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-right: 15px;
-  padding-left: 15px;
-  text-align: center;
-  min-height: 60px;
-  max-height: 100px;
-  height: 10vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  max-width: 70%;
+  min-width: calc(300px - 10%);
+  margin: 0 auto;
 }
 .gallery__preview {
-  bottom: -5vh;
-  width: 100%;
-  margin: 0 auto;
-  height: 10vh;
+  margin-bottom: -10px;
+  max-height: 10vh;
 }
 .gallery__preview .gallery__slide {
   width: 80px;
-  height: 10vh;
-  margin-right: 8px;
-  margin-left: 8px;
+  height: 80px;
+  border-radius: 5px;
 }
 .gallery__preview .gallery__slide img {
   width: 80px;
-  height: 80px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: auto;
   cursor: pointer;
+  border-radius: 5px;
+  min-width: 0;
 }
 @media (min-width: 768px) {
   .gallery {
@@ -4687,13 +4679,16 @@ input[type=number] {
   .gallery__slide {
     width: 700px;
   }
+  .gallery__slide img {
+    max-height: 60vh;
+  }
   .gallery__text {
     padding-right: 20px;
     padding-left: 20px;
     text-align: center;
   }
   .gallery__preview {
-    bottom: -5vh;
+    margin-bottom: -40px;
   }
 }
 @media (min-width: 1200px) {
@@ -4707,7 +4702,7 @@ input[type=number] {
     text-align: center;
   }
   .gallery__preview {
-    bottom: -5vh;
+    margin-bottom: -20px;
   }
 }
 .breadcrumbs {
