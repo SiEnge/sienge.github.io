@@ -4689,7 +4689,7 @@ input[type=number] {
     text-align: center;
   }
   .gallery__preview {
-    margin-bottom: -40px;
+    margin-bottom: -20px;
   }
 }
 @media (min-width: 1200px) {
@@ -4703,7 +4703,7 @@ input[type=number] {
     text-align: center;
   }
   .gallery__preview {
-    margin-bottom: -20px;
+    margin-bottom: -40px;
   }
 }
 .breadcrumbs {
