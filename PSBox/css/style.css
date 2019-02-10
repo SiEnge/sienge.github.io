@@ -4569,6 +4569,7 @@ input[type=number] {
   margin-left: -45%;
   background-color: #ffffff;
   border-radius: 5px;
+  min-width: 300px;
 }
 .gallery--active {
   top: 5vh;
