@@ -714,6 +714,7 @@ $('.feedback__slider').slick({
 $('.gallery__slider').slick({
   asNavFor: '.gallery__preview',
   ccsEase: 'ease-in',
+  adaptiveHeight: true,
   responsive: [{
     breakpoint: 1170,
     settings: {

@@ -7900,6 +7900,28 @@ input[type=number] {
   color: #999999;
   margin: 0;
 }
+.order__info {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.order__info p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+.order__info::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  left: 0;
+  background-image: url("../img/ic-inf.png");
+  background-repeat: no-repeat;
+}
 @media (min-width: 768px) {
   .order__text {
     font-size: 18px;
@@ -7926,6 +7948,10 @@ input[type=number] {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .order__info p {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 @media (min-width: 1200px) {
