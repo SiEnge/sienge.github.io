@@ -610,7 +610,7 @@ $('.about__review-slider').slick({
   // arrows: false,
   slidesToShow: 1,
   infinite: false,
-  adaptiveHeight: false,
+  // adaptiveHeight: false,
   adaptiveHeight: true,
   responsive: [{
     breakpoint: 768,
