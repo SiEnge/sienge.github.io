@@ -5777,6 +5777,9 @@ input[type=number] {
   height: 320px;
   border-radius: 5px;
 }
+.connection__iframe {
+  height: 100%;
+}
 @media (min-width: 768px) {
   .connection {
     padding-bottom: 15px;
