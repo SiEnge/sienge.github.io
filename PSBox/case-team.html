@@ -11,36 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- Pixel Glass -->
-  <!-- <style>
-    HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* По умолчанию мобильный макет */
-    background-image: url( "Case-many-PSBOX-320.jpg" );
-  }
-  /* Планшет */
-  @media ( min-width: 768px ) {
-    HTML {
-      /* Планшетный макет */
-      background-image: url( "Case-standart-PSBOX-720.jpg" );
-    }
-  }
-  /* Десктоп */
-  @media ( min-width: 1200px ) {
-    HTML {
-      /* Десктопный макет */
-      background-image: url( "PSBOX1200-Case-standart.jpg" );
-    }
-  }
 
-  BODY {
-    opacity: .5;
-  }
-</style>
-  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
-  <script src="../node_modules/pixel-glass/script.js"></script> -->
-  <!-- // Pixel Glass -->
 </head>
 
 <body class="page">
@@ -331,11 +302,13 @@
       </div>
     </section>
 
-    <!--Каталог -->
+    <!--Коллективный заказ -->
 
     <section class="case">
       <div class="container--shrink">
         <h1 class="title title--headline">Корзина коллективного заказа</h1>
+
+        <!-- Ссылка на корзину -->
 
         <section class="case__team">
           <p class="case__teamtext case__teamtext--link" href="#">Ссылка на эту корзину:</p>
@@ -346,9 +319,10 @@
           <p class="case__teamtext case__teamtext--info" href="#">Вы участник коллективного заказа</p>
         </section>
 
+        <!-- Товары -->
+
         <div class="offers__slide case__offers">
           <p class="case__customer">Добавлено покупателем Ирина</p>
-
           <div class="offers__wrap">
             <button class="offers__button-gallery" type="button" name="button"></button>
             <div class="offers__marklist">
@@ -375,7 +349,6 @@
                 </p>
               </div>
             </div>
-
           </div>
           <div class="offers__info">
             <h3 class="offers__name">Черничные ночи</h3>
@@ -413,7 +386,6 @@
 
         <div class="offers__slide case__offers">
           <p class="case__customer">Добавлено покупателем Гриша</p>
-
           <div class="offers__wrap">
             <button class="offers__button-gallery" type="button" name="button"></button>
             <div class="offers__marklist">
@@ -475,6 +447,8 @@
           </div>
         </div>
 
+        <!-- Форма -->
+
         <form class="case__form" action="" method="post">
           <div class="form__field form__field--total">
             <div class="form__shell form__shell--total">
@@ -494,13 +468,11 @@
                 <p>Стоимость заказа может быть изменена в случае изменения ингридиентов по вашей инициативе.</p>
               </div>
             </div>
-
             <div class="form__wrap form__wrap--promocode">
               <label class="form__label" for="code">Промокод</label>
               <input class="form__input" type="text" name="code" id="code" value="" placeholder="Введите промокод">
             </div>
           </div>
-
 
           <fieldset class="form__field form__field--wishes">
             <legend class="form__fieldlabel">Ваши пожелания</legend>
@@ -572,15 +544,15 @@
                     <label class="form__radiolabel" for="delivery-pickup">Самовывоз</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="courier" id="delivery-courier" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)" name="delivery" value="courier" id="delivery-courier" required>
                     <label class="form__radiolabel" for="delivery-courier">Курьером</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="transport" id="delivery-transport" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)" name="delivery" value="transport" id="delivery-transport" required>
                     <label class="form__radiolabel" for="delivery-transport">Транспортной компанией</label>
                   </li>
                   <li class="form__item">
-                    <input class="form__radio" type="radio" onclick="checkDelivery(this)"name="delivery" value="mailing" id="delivery-mailing" required>
+                    <input class="form__radio" type="radio" onclick="checkDelivery(this)" name="delivery" value="mailing" id="delivery-mailing" required>
                     <label class="form__radiolabel" for="delivery-mailing">Почтовым отправлением</label>
                   </li>
                 </ul>
@@ -629,7 +601,6 @@
                 </div>
               </div>
             </div>
-
           </fieldset>
 
           <fieldset class="form__field form__field--payment">
@@ -662,16 +633,9 @@
             </div>
           </fieldset>
           <div class="case__wrapbutton">
-
             <button class="form__button form__button--disabled" onclick="btnValidSubmit(this)" type="button" name="button">Оформить заказ</button>
           </div>
-
-
         </form>
-
-
-
-
       </div>
     </section>
   </main>
@@ -800,7 +764,6 @@
 
   <div class="overlay-modal"></div>
 
-  <!-- <script src="js/jquery.2.1.3.min.js"></script> -->
   <script src="js/jquery.maskedinput.min.js"></script>
   <script src="slick/slick.js"></script>
   <script src="js/script.js"></script>
