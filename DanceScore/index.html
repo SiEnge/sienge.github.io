@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DanceScore</title>
+  <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"> -->
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+</head>
+
+<body>
+
+  <header>
+
+
+  </header>
+
+  <main>
+
+    <section class="form container score">
+      <div class="form__main">
+        <div class="main">
+
+
+          <div class="main__wrap">
+            <p class="main__id"># 21 433</p>
+            <p class="main__position">21 400 из 22 250</p>
+          </div>
+
+          <div class="main__wrap category">
+            <button class="category__button category__button--junior button" type="button" name="button">Юниоры</button>
+            <button class="category__button category__button--streetdance button" type="button" name="button">Уличные танцы</button>
+          </div>
+
+          <p class="main__dance">Женская хореография, клубные танцы «Ультрамариновый вечер»</p>
+          <p class="main__team">МАОУ «Гимназия № 19», Детский образцовый коллектив «Фантазия»</p>
+
+          <p class="main__leader">Ирина Михайлова</p>
+        </div>
+        <div class="main__wrap ">
+          <button class="main__button button" type="button" name="button">Оценки других судей</button>
+          <button class="main__button button" type="button" name="button">Вся программа</button>
+        </div>
+
+      </div>
+      <form class="form__add" action="" method="post">
+
+        <div class="form__param" >
+          <div class="param__list">
+            <div onclick="inputActive(this)" class="param__item param__item--active">
+              <div class="param__wrap">
+                <label class="param__name">Костюм</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Идея</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Музыка</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Костюм</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Выразительность</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Креатив</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Костюм</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Креатив</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+            <div onclick="inputActive(this)" class="param__item">
+              <div class="param__wrap">
+                <label class="param__name">Костюм</label>
+                <div class="param__score">
+                  <button class="param__number param__number--minus amount--minus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Уменьшение количества</span></button>
+                  <input class="param__input" onchange="sumAmount(this)" type="number" name="" value="">
+                  <button class="param__number param__number--plus amount--plus" onclick="sumAmount(this)" type="button"><span class="visuallyhidden">Увеличение количества</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__points points form__points--active">
+          <fieldset class="points__item points__item--tens">
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="10">10</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="20">20</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="30">30</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="40">40</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="50">50</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="60">60</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="70">70</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="80">80</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="90">90</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="100">100</button>
+          </fieldset>
+          <fieldset class="points__item points__item--ones">
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="1">1</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="2">2</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="3">3</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="4">4</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="5">5</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="6">6</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="7">7</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="8">8</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="9">9</button>
+          </fieldset>
+          <fieldset class="points__item points__item--tenths">
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.1">0,1</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.2">0,2</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.3">0,3</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.4">0,4</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.5">0,5</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.6">0,6</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.7">0,7</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.8">0,8</button>
+            <button onclick="scoring(this)" class="points__button button" type="button" name="button" value="0.9">0,9</button>
+          </fieldset>
+        </div>
+        <div class="form__comment">
+          <p id="welcome"></p>
+          <input class="form__input" type="text" name="" value="" placeholder="Введите текст заметки">
+        </div>
+      </form>
+
+
+    </section>
+
+
+  </main>
+
+  <!-- Футер -->
+
+  <footer class="footer">
+
+  </footer>
+
+  <!-- <script src="js/jquery.maskedinput.min.js"></script> -->
+  <script src="slick/slick.js"></script>
+  <script src="js/script.js"></script>
+  <!-- <script src="js/picturefill.js"></script> -->
+  <script>
+
+
+  </script>
+</body>
+
+</html>
