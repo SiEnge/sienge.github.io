@@ -4,7 +4,7 @@
 function testajax() {
   var xhr = new XMLHttpRequest();
   var test = "10";
-  xhr.open('POST','http://толькотвори.рф/api_test.php', true);
+  xhr.open('POST','//толькотвори.рф/api_test.php', true);
   // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 
