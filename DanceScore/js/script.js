@@ -1,24 +1,3 @@
-// window.addEventListener("load",function() {
-// var request = new XMLHttpRequest();
-// var test = "test";
-// request.open('POST','test.php',true);
-//
-// request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
-//
-// request.send(test);
-//
-// request.addEventListener('readystatechange', function() {
-//   if ((request.readyState==4) && (request.status==200)) {
-//     var welcome = document.getElementById('welcome');
-//     welcome.innerHTML = request.responseText;
-//   }
-// });
-//
-// });
-
-
-
-
 
 $('.param__list').slick({
   mobileFirst: true,
