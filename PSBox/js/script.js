@@ -570,12 +570,139 @@ if (dropZone) {
     sendFiles(files);
   });
 
+  var wrapFile = document.querySelector(".form__wrap--file");
+  var listFile = wrapFile.querySelector(".form__fileList");
+  var Data = new FormData();
+
+  if (wrapFile) {
+    wrapFile.onclick = function(event) {
+      var target = event.target;
+      if (!target.classList.contains("form__fileRemove")) return;
+      removeFile(target);
+    };
+  }
+
+  function removeFile(btn) {
+    var errorFile = wrapFile.querySelector(".form__fileError");
+    if (errorFile) wrapFile.removeChild(errorFile);
+    let li = btn.parentElement;
+    let name = li.dataset.name;
+    let files = Data.getAll('images[]');
+    var listFile = wrapFile.querySelector(".form__fileList");
+
+    Data.delete('images[]');
+    wrapFile.removeChild(listFile);
+    for (var i = 0; i < files.length; i++) {
+      if (name != files[i].name) {
+        Data.append('images[]', files[i]);
+        infoFiles(files[i]);
+      }
+    }
+  }
+
+  function validateFile(file) {
+    let filesData = Data.getAll('images[]');
+    var errorText = "";
+    var filesSize = 0;
+    var maxFileSize = 15728640; //15 мегабайт
+
+
+    //проверка формата файла, допускается только JPG или PNG
+    if (file.type != 'image/png' && file.type != 'image/jpeg') {
+      errorText = "Файл \"" + file.name + "\" не в формате JPG или PNG.\n";
+    }
+
+    //проверка на повтор файла
+    for (var i = 0; i < filesData.length; i++) {
+      if (file.name == filesData[i].name) {
+        errorText = errorText + "Этот файл " + filesData[i].name + " уже загружен.\n";
+      }
+    }
+
+    //проверка на общий вес файлов, не должно превышать 15Мбайт
+    for (var i = 0; i < filesData.length; i++) {
+      filesSize += filesData[i].size;
+    }
+
+    filesSize += file.size;
+
+    if (filesSize > maxFileSize) {
+      errorText = errorText + "Объем файлов не должен превышать 15 Мбайт.\n";
+    }
+
+    //проверка на количество файлов, не больше 10
+    if (filesData.length == 10) {
+      errorText = errorText + "Можно загрузить не более 10 файлов.\n";
+    }
+
+    return errorText;
+  }
+
+
+
+  function infoFiles(file) {
+    var wrapFile = document.querySelector(".form__wrap--file");
+    var listFile = wrapFile.querySelector(".form__fileList");
+    var errorFile = wrapFile.querySelector(".form__fileError");
+
+    if (listFile) {
+      var listItem = listFile.getElementsByTagName("li");
+      var n = listItem.length;
+    } else {
+      var n = 0;
+    }
+    var flagSend = true;
+    if (!listFile) {
+      var listFile = document.createElement('ul'); //создает элемент List
+      listFile.className = "form__fileList"; //добавить класс
+    }
+
+    let name = file.name;
+    let size = Math.round(file.size / 1024 * 10) / 10;
+    if (size > 1024) {
+      size = (Math.round(size / 1024 * 10) / 10) + " Мбайт";
+    } else {
+      size = size + " Кбайт"
+    }
+    let info = ++n + ". \"" + name + "\", " + size;
+    var li = document.createElement('li'); //создает элемент ListIndex
+    li.setAttribute("data-name", name);
+    li.innerText = info;
+    var btn = document.createElement('button'); //создает элемент Button
+    btn.className = "form__fileRemove"; //добавить класс
+    btn.setAttribute("type", "button");
+    btn.setAttribute("title", "Удалить изображение");
+    btn.innerText = "Удалить";
+    li.appendChild(btn);
+    listFile.appendChild(li);
+
+    if (errorFile) {
+      wrapFile.insertBefore(listFile, errorFile)
+    } else {
+      wrapFile.appendChild(listFile);
+    }
+
+  }
+
   function sendFiles(files) {
-    let maxFileSize = 5242880;
-    let Data = new FormData();
+    var errorFile = wrapFile.querySelector(".form__fileError");
+    if (errorFile) wrapFile.removeChild(errorFile);
+
     $(files).each(function(index, file) {
-      if ((file.size <= maxFileSize) && ((file.type == 'image/png') || (file.type == 'image/jpeg'))) {
+      var errorText = validateFile(file);
+      if (errorText == "") {
         Data.append('images[]', file);
+        infoFiles(file);
+      } else {
+        var errorFile = wrapFile.querySelector(".form__fileError");
+        if (errorFile) {
+          errorFile.innerText = errorFile.innerText + errorText;
+        } else {
+          var errorFile = document.createElement('p'); //создает элемент ListIndex
+          errorFile.className = "form__fileError"; //добавить класс
+          errorFile.innerText = errorText;
+          wrapFile.appendChild(errorFile);
+        }
       }
     });
   };
@@ -887,7 +1014,6 @@ if (filter) {
   var FilterFixed = (function() {
 
     var docElem = document.documentElement,
-      // filter = document.querySelector(".filter"),
       didScroll = false,
       changeFilterOn = 410;
 
@@ -902,6 +1028,12 @@ if (filter) {
 
     function scrollPage() {
       var sy = scrollY();
+      var heightFilter = filter.offsetHeight;
+      var filterFix = document.querySelector(".filter--fixed");
+      if (filterFix) {
+        var heightFilterFix = filterFix.offsetHeight;
+      }
+
       if (sy >= changeFilterOn) {
         filter.classList.add("filter--fixed");
       } else {
@@ -913,6 +1045,8 @@ if (filter) {
     function scrollY() {
       return window.pageYOffset || docElem.scrollTop;
     }
+
+
 
     init();
 
