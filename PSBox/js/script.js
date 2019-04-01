@@ -623,7 +623,7 @@ if (dropZone) {
 
     //проверка на вес файла, не должно превышать 15Мбайт
     if (file.size > maxFileSize) {
-      errorText = "Файл \"" + file.name + "\" больше 15 Мбайт.\n";
+      errorText = errorText + "Файл \"" + file.name + "\" больше 15 Мбайт.\n";
     }
     // for (var i = 0; i < filesData.length; i++) {
     //   filesSize += filesData[i].size;
