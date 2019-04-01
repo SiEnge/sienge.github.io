@@ -611,7 +611,7 @@ if (dropZone) {
 
     //проверка формата файла, допускается только JPG или PNG
     if (file.type != 'image/png' && file.type != 'image/jpeg') {
-      errorText = "Файл \"" + file.name + "\" не в формате JPG или PNG.\n";
+      errorText = "\"" + file.name + "\": неверный формат изображения. Прикрепите фотографию в формате .jpg или .png.\n";
     }
 
     //проверка на повтор файла
@@ -623,17 +623,8 @@ if (dropZone) {
 
     //проверка на вес файла, не должно превышать 15Мбайт
     if (file.size > maxFileSize) {
-      errorText = errorText + "Файл \"" + file.name + "\" больше 15 Мбайт.\n";
+      errorText = errorText + "Файл \"" + file.name + "\" слишком большой. Пожалуйста, загрузите изображение размером менее 15 Мбайт.\n";
     }
-    // for (var i = 0; i < filesData.length; i++) {
-    //   filesSize += filesData[i].size;
-    // }
-    //
-    // filesSize += file.size;
-
-    // if (filesSize > maxFileSize) {
-    //   errorText = errorText + "Объем файлов не должен превышать 15 Мбайт.\n";
-    // }
 
     //проверка на количество файлов, не больше 10
     if (filesData.length == 10) {
