@@ -563,11 +563,13 @@ if (dropZone) {
     dropZone.removeClass('dragover');
     let files = e.originalEvent.dataTransfer.files;
     sendFiles(files);
+    $('#file-input').val(null);
   });
 
   $('#file-input').change(function() {
     let files = this.files;
     sendFiles(files);
+    $('#file-input').val(null);
   });
 
   var wrapFile = document.querySelector(".form__wrap--file");
