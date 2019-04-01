@@ -619,16 +619,19 @@ if (dropZone) {
       }
     }
 
-    //проверка на общий вес файлов, не должно превышать 15Мбайт
-    for (var i = 0; i < filesData.length; i++) {
-      filesSize += filesData[i].size;
+    //проверка на вес файла, не должно превышать 15Мбайт
+    if (file.size > maxFileSize) {
+      errorText = "Файл \"" + file.name + "\" больше 15 Мбайт.\n";
     }
+    // for (var i = 0; i < filesData.length; i++) {
+    //   filesSize += filesData[i].size;
+    // }
+    //
+    // filesSize += file.size;
 
-    filesSize += file.size;
-
-    if (filesSize > maxFileSize) {
-      errorText = errorText + "Объем файлов не должен превышать 15 Мбайт.\n";
-    }
+    // if (filesSize > maxFileSize) {
+    //   errorText = errorText + "Объем файлов не должен превышать 15 Мбайт.\n";
+    // }
 
     //проверка на количество файлов, не больше 10
     if (filesData.length == 10) {
