@@ -95,6 +95,7 @@ body {
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
+  min-width: 290px;
 }
 .header {
   min-height: 48px;
@@ -105,6 +106,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 .header p {
   font-family: "Roboto";
@@ -116,27 +118,134 @@ body {
   margin: 0;
 }
 .header__logo {
-  border-right: 1px solid #FFFFFF;
-  width: 150px;
-  padding: 16px 21px 14px;
+  width: 48px;
+  padding-top: 16px;
+  padding-bottom: 10px;
+  text-align: center;
 }
-.header__filter {
-  border-right: 1px solid #FFFFFF;
-  padding: 16px 21px 14px;
+.header__logo img {
+  width: 24px;
+}
+.header__logo--nomobile {
+  display: none;
 }
 .header__search {
+  display: none;
+}
+.header__filter {
+  width: 26%;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  padding: 16px 21px 14px;
+      -ms-flex: 1 0 26%;
+          flex: 1 0 26%;
+  border-right: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  padding: 16px 10px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.filter {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+.filter[data-mode="open"] {
+  background-color: #FFFFFF;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.filter[data-mode="open"] .filter__wrap {
+  display: block;
+}
+.filter__btnOpen {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+.filter__wrap {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.filter__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.filter__item {
+  border-bottom: 1px solid #E1E4E8;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  color: #42515A;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.filter__sublist {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.filter__sublist li {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.67;
+  text-align: center;
+  color: #42515A;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background-color: rgba(225, 228, 232, 0.5);
+  margin-right: 4.5px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.filter__sublist li[data-check="true"] {
+  color: #FFFFFF;
+  background-color: #C41230;
 }
 .header__collection {
+  width: 43%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 43%;
+          flex: 1 0 43%;
+  padding: 16px 10px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+.header__collection--count {
+  display: none;
+}
+.header__more {
+  width: 48px;
+  margin: 0;
+  background-image: url("../img/sandwich.svg");
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
   border-left: 1px solid #FFFFFF;
-  padding: 16px 21px 14px;
 }
 .header__account {
-  border-left: 1px solid #FFFFFF;
-  padding: 16px 15px 14px;
+  display: none;
 }
 .file__header {
   padding-left: 15px;
@@ -230,6 +339,35 @@ body {
   .main__file {
     width: calc(100% / 3);
     /*Три плитки*/
+  }
+  .header__logo--mobile {
+    display: none;
+  }
+  .header__logo {
+    width: 194px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header__logo--nomobile {
+    display: block;
+  }
+  .header__logo--nomobile img {
+    width: 157px;
+  }
+  .header__search {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    padding: 16px 21px 14px;
+  }
+  .header__more {
+    display: none;
+  }
+  .header__account {
+    display: block;
+    border-left: 1px solid #FFFFFF;
+    padding: 16px 15px 14px;
   }
 }
 @media (min-width: 816px) {

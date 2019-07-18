@@ -6,18 +6,204 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Файловый менеджер</title>
   <link media="all" rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
   <header class="header">
     <div class="header__logo">
-      <p>media.nikamed.ru</p>
+      <a class="header__logo--nomobile" href="#">
+        <img src="img/logo.svg" alt="Логотип media.nikamed.tu">
+      </a>
+      <a class="header__logo--mobile" href="#">
+        <img src="img/logo_mobile.svg" alt="Логотип media.nikamed.tu">
+      </a>
     </div>
-    <p class="header__filter">Фильтр</p>
+    <section class="header__filter filter" data-mode="close">
+      <button class="filter__btnOpen" type="button" name="button">Фильтр</button>
+      <div class="filter__wrap">
+
+        <ul class="filter__list">
+          <li class="filter__item">Тип файла
+            <ul class="filter__sublist">
+              <li>Картинки</li>
+              <li>Видео</li>
+              <li>Документы</li>
+              <li>Аудио</li>
+              <li>Видео</li>
+              <li>Таблицы</li>
+              <li>Презентации</li>
+            </ul>
+          </li>
+          <li class="filter__item">Год
+            <ul class="filter__sublist">
+              <li>2019</li>
+              <li data-check="true">2018</li>
+              <li>2017</li>
+              <li>Архив</li>
+            </ul>
+          </li>
+          <li class="filter__item">Бренд
+            <ul class="filter__sublist">
+              <li>Bronigen</li>
+              <li>Push Bracers</li>
+              <li>Berkeman</li>
+              <li>Никамед</li>
+              <li>Trelax</li>
+              <li>Rehard</li>
+              <li>Opteka</li>
+              <li>Kinerapy</li>
+              <li>Трелакс</li>
+              <li>Ortmann-pro</li>
+              <li>Ортомедика</li>
+              <li>Venoteks</li>
+              <li>Orlet</li>
+              <li>Ortmann</li>
+              <li>Bauerfeind</li>
+              <li>Дельта-терм</li>
+            </ul>
+          </li>
+          <li class="filter__item">Инструменты
+            <ul class="filter__sublist">
+              <li>Диплом</li>
+              <li>Презентация</li>
+              <li>Брендбук</li>
+              <li>Руководство</li>
+              <li>Каталог</li>
+              <li>Буклет</li>
+              <li>Логотип</li>
+              <li>POSm</li>
+              <li>Шаблон</li>
+              <li>Роллап</li>
+              <li>Бланк</li>
+              <li>Благодарность</li>
+              <li>Заставка</li>
+              <li>Программа</li>
+              <li>Приглашение</li>
+            </ul>
+          </li>
+          <li class="filter__item">Событие
+            <ul class="filter__sublist">
+              <li>Цикловое</li>
+              <li>Здравоохранение</li>
+              <li>Университет</li>
+              <li>Лонч</li>
+              <li>Мед. форум</li>
+              <li>Каталог</li>
+              <li>Обувная конф.</li>
+            </ul>
+          </li>
+          <li class="filter__item">Продукт
+            <ul class="filter__sublist">
+              <li>Индивид. стельки</li>
+              <li>Мячи</li>
+              <li>Ортезы</li>
+              <li>Бандажи</li>
+              <li>Компрес. белье</li>
+              <li>Корсеты</li>
+              <li>Массажеры</li>
+              <li>МКТ</li>
+              <li data-check="true">Обувь</li>
+              <li>Косметика</li>
+              <li>Сист п/пролеж</li>
+              <li>Маммология</li>
+              <li>Подушки</li>
+              <li>Матрацы</li>
+              <li>Ср-ва опоры</li>
+              <li data-check="true">Стельки</li>
+            </ul>
+          </li>
+          <li class="filter__item">Стиль
+            <ul class="filter__sublist">
+              <li>Инструкции</li>
+              <li>Фото продукта</li>
+              <li>Лайфстайл</li>
+              <li>Демоформы</li>
+              <li>Макро</li>
+              <li>Анатомия</li>
+              <li>Упаковка</li>
+            </ul>
+          </li>
+          <li class="filter__item">Часть тела
+            <ul class="filter__sublist">
+              <li>Плечо, локоть</li>
+              <li>Ноги, руки</li>
+              <li>Голова, шея</li>
+              <li>Запястье, кисть</li>
+              <li>Живот</li>
+              <li>Бедро, колено</li>
+              <li>Спина, поясница</li>
+              <li>Стопа, голеност</li>
+            </ul>
+          </li>
+          <li class="filter__item">Сезон
+            <ul class="filter__sublist">
+              <li>Зима</li>
+              <li>Весна</li>
+              <li>Лето</li>
+              <li>Осень</li>
+              <li>Демисезон</li>
+            </ul>
+          </li>
+          <li class="filter__item">Тематика
+            <ul class="filter__sublist">
+              <li>Отдых зима</li>
+              <li>Спорт, путешествия</li>
+              <li>Праздник</li>
+              <li>Делегация</li>
+              <li>Праздник</li>
+              <li>Бизнес, офис</li>
+              <li>Беременность </li>
+            </ul>
+          </li>
+          <li class="filter__item">Использование
+            <ul class="filter__sublist">
+              <li>Instore</li>
+              <li>Презентации</li>
+              <li>Интернет</li>
+              <li>Полиграфия </li>
+              <li>Интерьер</li>
+              <li>Outdoor</li>
+            </ul>
+          </li>
+          <li class="filter__item">Формат
+            <ul class="filter__sublist">
+              <li>PPT</li>
+              <li>M4A</li>
+              <li>MOV</li>
+              <li>PDF</li>
+              <li data-check="true">JPG</li>
+              <li>MP4</li>
+              <li>MP3</li>
+              <li>M4V</li>
+              <li data-check="true">PNG</li>
+              <li>TIFF</li>
+              <li>AI</li>
+              <li>EPS</li>
+              <li>XLS</li>
+              <li>DOC</li>
+            </ul>
+          </li>
+          <li class="filter__item">Фон
+            <ul class="filter__sublist">
+              <li>Без фона</li>
+              <li>Нейтральный</li>
+              <li>Естественный</li>
+            </ul>
+          </li>
+          <li class="filter__item">Лицензия
+            <ul class="filter__sublist">
+              <li>Бесплатный</li>
+              <li>Никамед</li>
+              <li>Лицензия</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </section>
     <p class="header__search">Поиск</p>
-    <p class="header__collection">Мои коллекции 14</p>
+    <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
+    <p class="header__more"></p>
     <p class="header__account">АК</p>
   </header>
 
@@ -25,6 +211,7 @@
     <section class="file__header">
       <h1 class="main__title title">Все файлы</h1>
       <!-- <button type="button" name="button">Выбрать</button> -->
+      <!-- <button type="button" name="button"></button> -->
     </section>
 
     <section class="main__allFiles">
@@ -221,189 +408,13 @@
       </ul>
     </section>
 
-    <!-- <section class="filter">
-      <ul>
-        <li>Тип файла
-          <ul>
-            <li>Картинки</li>
-            <li>Видео</li>
-            <li>Документы</li>
-            <li>Аудио</li>
-            <li>Видео</li>
-            <li>Таблицы</li>
-            <li>Презентации</li>
-          </ul>
-        </li>
-        <li>Год
-          <ul>
-            <li>2019</li>
-            <li>2018</li>
-            <li>2017</li>
-            <li>Архив</li>
-          </ul>
-        </li>
-        <li>Бренд
-          <ul>
-            <li>Bronigen</li>
-            <li>Push Bracers</li>
-            <li>Berkeman</li>
-            <li>Никамед</li>
-            <li>Trelax</li>
-            <li>Rehard</li>
-            <li>Opteka</li>
-            <li>Kinerapy</li>
-            <li>Трелакс</li>
-            <li>Ortmann-pro</li>
-            <li>Ортомедика</li>
-            <li>Venoteks</li>
-            <li>Orlet</li>
-            <li>Ortmann</li>
-            <li>Bauerfeind</li>
-            <li>Дельта-терм</li>
-          </ul>
-        </li>
-        <li>Инструменты
-          <ul>
-            <li>Диплом</li>
-            <li>Презентация</li>
-            <li>Брендбук</li>
-            <li>Руководство</li>
-            <li>Каталог</li>
-            <li>Буклет</li>
-            <li>Логотип</li>
-            <li>POSm</li>
-            <li>Шаблон</li>
-            <li>Роллап</li>
-            <li>Бланк</li>
-            <li>Благодарность</li>
-            <li>Заставка</li>
-            <li>Программа</li>
-            <li>Приглашение</li>
-          </ul>
-        </li>
-        <li>Событие
-          <ul>
-            <li>Цикловое</li>
-            <li>Здравоохранение</li>
-            <li>Университет</li>
-            <li>Лонч</li>
-            <li>Мед. форум</li>
-            <li>Каталог</li>
-            <li>Обувная конф.</li>
-          </ul>
-        </li>
-        <li>Продукт
-          <ul>
-            <li>Индивид. стельки</li>
-            <li>Мячи</li>
-            <li>Ортезы</li>
-            <li>Бандажи</li>
-            <li>Компрес. белье</li>
-            <li>Корсеты</li>
-            <li>Массажеры</li>
-            <li>МКТ</li>
-            <li>Обувь</li>
-            <li>Косметика</li>
-            <li>Сист п/пролеж</li>
-            <li>Маммология</li>
-            <li>Подушки</li>
-            <li>Матрацы</li>
-            <li>Ср-ва опоры</li>
-            <li>Стельки</li>
-          </ul>
-        </li>
-        <li>Стиль
-          <ul>
-            <li>Инструкции</li>
-            <li>Фото продукта</li>
-            <li>Лайфстайл</li>
-            <li>Демоформы</li>
-            <li>Макро</li>
-            <li>Анатомия</li>
-            <li>Упаковка</li>
-          </ul>
-        </li>
-        <li>Часть тела
-          <ul>
-            <li>Плечо, локоть</li>
-            <li>Ноги, руки</li>
-            <li>Голова, шея</li>
-            <li>Запястье, кисть</li>
-            <li>Живот</li>
-            <li>Бедро, колено</li>
-            <li>Спина, поясница</li>
-            <li>Стопа, голеност</li>
-          </ul>
-        </li>
-        <li>Сезон
-          <ul>
-            <li>Зима</li>
-            <li>Весна</li>
-            <li>Лето</li>
-            <li>Осень</li>
-            <li>Демисезон</li>
-          </ul>
-        </li>
-        <li>Тематика
-          <ul>
-            <li>Отдых зима</li>
-            <li>Спорт, путешествия</li>
-            <li>Праздник</li>
-            <li>Делегация</li>
-            <li>Праздник</li>
-            <li>Бизнес, офис</li>
-            <li>Беременность </li>
-          </ul>
-        </li>
-        <li>Использование
-          <ul>
-            <li>Instore</li>
-            <li>Презентации</li>
-            <li>Интернет</li>
-            <li>Полиграфия </li>
-            <li>Интерьер</li>
-            <li>Outdoor</li>
-          </ul>
-        </li>
-        <li>Формат
-          <ul>
-            <li>PPT</li>
-            <li>M4A</li>
-            <li>MOV</li>
-            <li>PDF</li>
-            <li>JPG</li>
-            <li>MP4</li>
-            <li>MP3</li>
-            <li>M4V</li>
-            <li>PNG</li>
-            <li>TIFF</li>
-            <li>AI</li>
-            <li>EPS</li>
-            <li>XLS</li>
-            <li>DOC</li>
-          </ul>
-        </li>
-        <li>Фон
-          <ul>
-            <li>Без фона</li>
-            <li>Нейтральный</li>
-            <li>Естественный</li>
-          </ul>
-        </li>
-        <li>Лицензия
-          <ul>
-            <li>Бесплатный</li>
-            <li>Никамед</li>
-            <li>Лицензия</li>
-          </ul>
-        </li>
-      </ul>
-    </section> -->
+
 
   </main>
   <footer>
 
   </footer>
+  <script src="js/script.js"></script>
 
 </body>
 </html>
