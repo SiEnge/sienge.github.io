@@ -237,6 +237,8 @@
   padding-right: 16px;
   padding-top: 16px;
   padding-bottom: 24px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .filter__btnApply {
   border: none;
