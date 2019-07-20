@@ -139,6 +139,8 @@
       -ms-flex-align: start;
           align-items: flex-start;
   min-height: 28px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .filter__itemChoice {
   font-family: "Roboto";
@@ -252,6 +254,7 @@
   font-style: normal;
   font-stretch: normal;
   color: #FFFFFF;
+  margin-bottom: 5px;
 }
 .filter__btnCancel {
   border: none;
@@ -409,6 +412,7 @@ body {
   background-repeat: no-repeat;
   cursor: pointer;
   margin-left: auto;
+  display: none;
 }
 .main__listFiles {
   padding: 0;
@@ -490,6 +494,9 @@ body {
   .main__allFiles[data-mode="sizeM"] .main__fileName {
     font-size: 12px;
   }
+  .main__allFiles[data-mode="sizeM"] .main__btnLayout {
+    display: block;
+  }
 }
 @media (min-width: 612px) {
   .main__allFiles[data-mode="sizeM"] .main__file {
@@ -541,6 +548,9 @@ body {
   }
   .main__allFiles[data-mode="sizeL"] .main__fileName {
     font-size: 12px;
+  }
+  .main__allFiles[data-mode="sizeL"] .main__btnLayout {
+    display: block;
   }
   .header__logo--mobile {
     display: none;
