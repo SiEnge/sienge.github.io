@@ -494,7 +494,7 @@ body {
   .main__allFiles[data-mode="sizeM"] .main__fileName {
     font-size: 12px;
   }
-  .main__allFiles[data-mode="sizeM"] .main__btnLayout {
+  .main__btnLayout {
     display: block;
   }
 }
