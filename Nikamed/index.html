@@ -21,200 +21,223 @@
     <section class="header__filter filter" data-mode="close">
       <button class="filter__btnOpen" type="button" name="button">Фильтр</button>
       <div class="filter__wrap">
-
+        <ul class="filter__choice">
+        </ul>
         <ul class="filter__list">
-          <li class="filter__item">Тип файла
+          <li class="filter__block">
+            <span>Тип файла</span>
             <ul class="filter__sublist">
-              <li>Картинки</li>
-              <li>Видео</li>
-              <li>Документы</li>
-              <li>Аудио</li>
-              <li>Видео</li>
-              <li>Таблицы</li>
-              <li>Презентации</li>
+              <li class="filter__item" data-id="type-pict">Картинки</li>
+              <li class="filter__item" data-id="type-video">Видео</li>
+              <li class="filter__item" data-id="type-doc">Документы</li>
+              <li class="filter__item" data-id="type-audio">Аудио</li>
+              <li class="filter__item" data-id="type-table">Таблицы</li>
+              <li class="filter__item" data-id="type-present">Презентации</li>
             </ul>
           </li>
-          <li class="filter__item">Год
+          <li class="filter__block">
+            <span>Год</span>
             <ul class="filter__sublist">
-              <li>2019</li>
-              <li data-check="true">2018</li>
-              <li>2017</li>
-              <li>Архив</li>
+              <li class="filter__item" data-id="year-2019">2019</li>
+              <li class="filter__item" data-id="year-2018">2018</li>
+              <li class="filter__item" data-id="year-2017">2017</li>
+              <li class="filter__item" data-id="year-archive">Архив</li>
             </ul>
           </li>
-          <li class="filter__item">Бренд
+          <li class="filter__block">
+            <span>Бренд</span>
             <ul class="filter__sublist">
-              <li>Bronigen</li>
-              <li>Push Bracers</li>
-              <li>Berkeman</li>
-              <li>Никамед</li>
-              <li>Trelax</li>
-              <li>Rehard</li>
-              <li>Opteka</li>
-              <li>Kinerapy</li>
-              <li>Трелакс</li>
-              <li>Ortmann-pro</li>
-              <li>Ортомедика</li>
-              <li>Venoteks</li>
-              <li>Orlet</li>
-              <li>Ortmann</li>
-              <li>Bauerfeind</li>
-              <li>Дельта-терм</li>
+              <li class="filter__item" data-id="brand-Bronigen">Bronigen</li>
+              <li class="filter__item" data-id="brand-PushBracers">Push Bracers</li>
+              <li class="filter__item" data-id="brand-Berkeman">Berkeman</li>
+              <li class="filter__item" data-id="brand-Nikamed">Никамед</li>
+              <li class="filter__item" data-id="brand-Trelax">Trelax</li>
+              <li class="filter__item" data-id="brand-Rehard">Rehard</li>
+              <li class="filter__item" data-id="brand-Opteka">Opteka</li>
+              <li class="filter__item" data-id="brand-Kinerapy">Kinerapy</li>
+              <li class="filter__item" data-id="brand-Trelax">Трелакс</li>
+              <li class="filter__item" data-id="brand-OrtmannPro">Ortmann-pro</li>
+              <li class="filter__item" data-id="brand-Ortomedika">Ортомедика</li>
+              <li class="filter__item" data-id="brand-Venoteks">Venoteks</li>
+              <li class="filter__item" data-id="brand-Orlet">Orlet</li>
+              <li class="filter__item" data-id="brand-Ortmann">Ortmann</li>
+              <li class="filter__item" data-id="brand-Bauerfeind">Bauerfeind</li>
+              <li class="filter__item" data-id="brand-DeltaTerm">Дельта-терм</li>
             </ul>
           </li>
-          <li class="filter__item">Инструменты
+          <li class="filter__block">
+            <span>Инструмент</span>
             <ul class="filter__sublist">
-              <li>Диплом</li>
-              <li>Презентация</li>
-              <li>Брендбук</li>
-              <li>Руководство</li>
-              <li>Каталог</li>
-              <li>Буклет</li>
-              <li>Логотип</li>
-              <li>POSm</li>
-              <li>Шаблон</li>
-              <li>Роллап</li>
-              <li>Бланк</li>
-              <li>Благодарность</li>
-              <li>Заставка</li>
-              <li>Программа</li>
-              <li>Приглашение</li>
+              <li class="filter__item" data-id="tool-diploma">Диплом</li>
+              <li class="filter__item" data-id="tool-presentation">Презентация</li>
+              <li class="filter__item" data-id="tool-brandbook">Брендбук</li>
+              <li class="filter__item" data-id="tool-userGuide">Руководство</li>
+              <li class="filter__item" data-id="tool-catalog">Каталог</li>
+              <li class="filter__item" data-id="tool-booklet">Буклет</li>
+              <li class="filter__item" data-id="tool-logo">Логотип</li>
+              <li class="filter__item" data-id="tool-POSm">POSm</li>
+              <li class="filter__item" data-id="tool-template">Шаблон</li>
+              <li class="filter__item" data-id="tool-rollUp">Роллап</li>
+              <li class="filter__item" data-id="tool-black">Бланк</li>
+              <li class="filter__item" data-id="tool-thanks">Благодарность</li>
+              <li class="filter__item" data-id="tool-screenSaver">Заставка</li>
+              <li class="filter__item" data-id="tool-programm">Программа</li>
+              <li class="filter__item" data-id="tool-invite">Приглашение</li>
             </ul>
           </li>
-          <li class="filter__item">Событие
+          <li class="filter__block">
+            <span>Событие</span>
             <ul class="filter__sublist">
-              <li>Цикловое</li>
-              <li>Здравоохранение</li>
-              <li>Университет</li>
-              <li>Лонч</li>
-              <li>Мед. форум</li>
-              <li>Каталог</li>
-              <li>Обувная конф.</li>
+              <li class="filter__item" data-id="event-cicle">Цикловое</li>
+              <li class="filter__item" data-id="event-healthCare">Здравоохранение</li>
+              <li class="filter__item" data-id="event-university">Университет</li>
+              <li class="filter__item" data-id="event-university">Лонч</li>
+              <li class="filter__item" data-id="event-medicalForum">Мед. форум</li>
+              <li class="filter__item" data-id="event-catalog">Каталог</li>
+              <li class="filter__item" data-id="event-shoeConference">Обувная конф.</li>
             </ul>
           </li>
-          <li class="filter__item">Продукт
+          <li class="filter__block">
+            <span>Продукт</span>
             <ul class="filter__sublist">
-              <li>Индивид. стельки</li>
-              <li>Мячи</li>
-              <li>Ортезы</li>
-              <li>Бандажи</li>
-              <li>Компрес. белье</li>
-              <li>Корсеты</li>
-              <li>Массажеры</li>
-              <li>МКТ</li>
-              <li data-check="true">Обувь</li>
-              <li>Косметика</li>
-              <li>Сист п/пролеж</li>
-              <li>Маммология</li>
-              <li>Подушки</li>
-              <li>Матрацы</li>
-              <li>Ср-ва опоры</li>
-              <li data-check="true">Стельки</li>
+              <li class="filter__item" data-id="product-individualInsoles">Индивид. стельки</li>
+              <li class="filter__item" data-id="product-balls">Мячи</li>
+              <li class="filter__item" data-id="product-orthoses">Ортезы</li>
+              <li class="filter__item" data-id="product-bandages">Бандажи</li>
+              <li class="filter__item" data-id="product-compressionUnderwear">Компрес. белье</li>
+              <li class="filter__item" data-id="product-corsets">Корсеты</li>
+              <li class="filter__item" data-id="product-massagers">Массажеры</li>
+              <li class="filter__item" data-id="product-MKT">МКТ</li>
+              <li class="filter__item" data-id="product-shoes">Обувь</li>
+              <li class="filter__item" data-id="product-cosmetics">Косметика</li>
+              <li class="filter__item" data-id="product-antiStayingSystem">Сист п/пролеж</li>
+              <li class="filter__item" data-id="product-mammalogy">Маммология</li>
+              <li class="filter__item" data-id="product-pillows">Подушки</li>
+              <li class="filter__item" data-id="product-mattresses">Матрацы</li>
+              <li class="filter__item" data-id="product-supportMeans">Ср-ва опоры</li>
+              <li class="filter__item" data-id="product-insoles">Стельки</li>
             </ul>
           </li>
-          <li class="filter__item">Стиль
+          <li class="filter__block">
+            <span>Стиль</span>
             <ul class="filter__sublist">
-              <li>Инструкции</li>
-              <li>Фото продукта</li>
-              <li>Лайфстайл</li>
-              <li>Демоформы</li>
-              <li>Макро</li>
-              <li>Анатомия</li>
-              <li>Упаковка</li>
+              <li class="filter__item" data-id="style-instructions">Инструкции</li>
+              <li class="filter__item" data-id="style-photo">Фото продукта</li>
+              <li class="filter__item" data-id="style-lifestyle">Лайфстайл</li>
+              <li class="filter__item" data-id="style-demos">Демоформы</li>
+              <li class="filter__item" data-id="style-macro">Макро</li>
+              <li class="filter__item" data-id="style-aAnatomy">Анатомия</li>
+              <li class="filter__item" data-id="style-packaging">Упаковка</li>
             </ul>
           </li>
-          <li class="filter__item">Часть тела
+          <li class="filter__block">
+            <span>Часть тела</span>
             <ul class="filter__sublist">
-              <li>Плечо, локоть</li>
-              <li>Ноги, руки</li>
-              <li>Голова, шея</li>
-              <li>Запястье, кисть</li>
-              <li>Живот</li>
-              <li>Бедро, колено</li>
-              <li>Спина, поясница</li>
-              <li>Стопа, голеност</li>
+              <li class="filter__item" data-id="partBody-shoulderElbow">Плечо, локоть</li>
+              <li class="filter__item" data-id="partBody-legsHands">Ноги, руки</li>
+              <li class="filter__item" data-id="partBody-headNeck">Голова, шея</li>
+              <li class="filter__item" data-id="partBody-wrist">Запястье, кисть</li>
+              <li class="filter__item" data-id="partBody-stomach">Живот</li>
+              <li class="filter__item" data-id="partBody-thighKnee">Бедро, колено</li>
+              <li class="filter__item" data-id="partBody-backLoin">Спина, поясница</li>
+              <li class="filter__item" data-id="partBody-footAnkle">Стопа, голеностоп</li>
             </ul>
           </li>
-          <li class="filter__item">Сезон
+          <li class="filter__block">
+            <span>Сезон</span>
             <ul class="filter__sublist">
-              <li>Зима</li>
-              <li>Весна</li>
-              <li>Лето</li>
-              <li>Осень</li>
-              <li>Демисезон</li>
+              <li class="filter__item" data-id="season-winter">Зима</li>
+              <li class="filter__item" data-id="season-spring">Весна</li>
+              <li class="filter__item" data-id="season-summer">Лето</li>
+              <li class="filter__item" data-id="season-fall">Осень</li>
+              <li class="filter__item" data-id="season-demi">Демисезон</li>
             </ul>
           </li>
-          <li class="filter__item">Тематика
+          <li class="filter__block">
+            <span>Тематика</span>
             <ul class="filter__sublist">
-              <li>Отдых зима</li>
-              <li>Спорт, путешествия</li>
-              <li>Праздник</li>
-              <li>Делегация</li>
-              <li>Праздник</li>
-              <li>Бизнес, офис</li>
-              <li>Беременность </li>
+              <li class="filter__item" data-id="subject-winterVacation">Отдых зима</li>
+              <li class="filter__item" data-id="subject-sportTravel">Спорт, путешествия</li>
+              <li class="filter__item" data-id="subject-celebration">Праздник</li>
+              <li class="filter__item" data-id="subject-delegation">Делегация</li>
+              <li class="filter__item" data-id="subject-businessOffice">Бизнес, офис</li>
+              <li class="filter__item" data-id="subject-pregnancy">Беременность</li>
             </ul>
           </li>
-          <li class="filter__item">Использование
+          <li class="filter__block">
+            <span>Использование</span>
             <ul class="filter__sublist">
-              <li>Instore</li>
-              <li>Презентации</li>
-              <li>Интернет</li>
-              <li>Полиграфия </li>
-              <li>Интерьер</li>
-              <li>Outdoor</li>
+              <li class="filter__item" data-id="using-instore">Instore</li>
+              <li class="filter__item" data-id="using-presentation">Презентации</li>
+              <li class="filter__item" data-id="using-internet">Интернет</li>
+              <li class="filter__item" data-id="using-poligraphy">Полиграфия </li>
+              <li class="filter__item" data-id="using-interior">Интерьер</li>
+              <li class="filter__item" data-id="using-outdoor">Outdoor</li>
             </ul>
           </li>
-          <li class="filter__item">Формат
+          <li class="filter__block">
+            <span>Формат</span>
             <ul class="filter__sublist">
-              <li>PPT</li>
-              <li>M4A</li>
-              <li>MOV</li>
-              <li>PDF</li>
-              <li data-check="true">JPG</li>
-              <li>MP4</li>
-              <li>MP3</li>
-              <li>M4V</li>
-              <li data-check="true">PNG</li>
-              <li>TIFF</li>
-              <li>AI</li>
-              <li>EPS</li>
-              <li>XLS</li>
-              <li>DOC</li>
+              <li class="filter__item" data-id="format-ppt">PPT</li>
+              <li class="filter__item" data-id="format-m4a">M4A</li>
+              <li class="filter__item" data-id="format-mov">MOV</li>
+              <li class="filter__item" data-id="format-pdf">PDF</li>
+              <li class="filter__item" data-id="format-jpg">JPG</li>
+              <li class="filter__item" data-id="format-mp4">MP4</li>
+              <li class="filter__item" data-id="format-mp3">MP3</li>
+              <li class="filter__item" data-id="format-m4v">M4V</li>
+              <li class="filter__item" data-id="format-png">PNG</li>
+              <li class="filter__item" data-id="format-tiff">TIFF</li>
+              <li class="filter__item" data-id="format-ai">AI</li>
+              <li class="filter__item" data-id="format-eps">EPS</li>
+              <li class="filter__item" data-id="format-xls">XLS</li>
+              <li class="filter__item" data-id="format-doc">DOC</li>
             </ul>
           </li>
-          <li class="filter__item">Фон
+          <li class="filter__block">
+            <span>Фон</span>
             <ul class="filter__sublist">
-              <li>Без фона</li>
-              <li>Нейтральный</li>
-              <li>Естественный</li>
+              <li class="filter__item" data-id="background-none">Без фона</li>
+              <li class="filter__item" data-id="background-neutral">Нейтральный</li>
+              <li class="filter__item" data-id="background-natural">Естественный</li>
             </ul>
           </li>
-          <li class="filter__item">Лицензия
+          <li class="filter__block">
+            <span>Лицензия</span>
             <ul class="filter__sublist">
-              <li>Бесплатный</li>
-              <li>Никамед</li>
-              <li>Лицензия</li>
+              <li class="filter__item" data-id="license-free">Бесплатный</li>
+              <li class="filter__item" data-id="license-Nikamed">Никамед</li>
+              <li class="filter__item" data-id="license-license">Лицензия</li>
             </ul>
           </li>
         </ul>
+        <div class="filter__btnWrap">
+          <button class="filter__btnApply" type="button" name="button">Применить</button>
+          <button class="filter__btnCancel" type="button" name="button">Отмена</button>
+          <button class="filter__btnReset" type="button" name="button">Сбросить все фильтры</button>
+        </div>
       </div>
-
     </section>
-    <p class="header__search">Поиск</p>
+
+    <form class="header__searchWrap" action="" method="get">
+      <input class="header__search" type="text" name="" value="" placeholder="Введите ID">
+      <button class="header__btnSearch" type="button" name="button"><span class="visuallyhidden">начать поиск</span></button>
+    </form>
+    <!-- <p class="header__search">Поиск</p> -->
     <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
     <p class="header__more"></p>
     <p class="header__account">АК</p>
   </header>
 
-  <main>
-    <section class="file__header">
+  <main class="main">
+    <section class="main__header">
       <h1 class="main__title title">Все файлы</h1>
       <!-- <button type="button" name="button">Выбрать</button> -->
-      <!-- <button type="button" name="button"></button> -->
+      <button class="main__btnLayout" type="button" name="button" title="Переключить раскладку"> <span class="visuallyhidden">Переключить раскладку</span></button>
+
     </section>
 
-    <section class="main__allFiles">
+    <section class="main__allFiles" data-mode="sizeM">
       <ul class="main__listFiles">
         <li class="main__file">
           <p class="main__filePreview">
