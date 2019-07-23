@@ -445,10 +445,15 @@ body {
 }
 .main__filePreview {
   width: 64px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 64px;
+          flex: 0 0 64px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   overflow: hidden;
   height: 45px;
-  padding-right: 12px;
+  margin-right: 12px;
 }
 .main__filePreview img {
   width: 64px;
@@ -462,13 +467,24 @@ body {
   line-height: 16px;
   margin-bottom: 4px;
 }
+.main__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  overflow: hidden;
+}
 .main__fileName {
   margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.main__fileName--name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 14px;
-  line-height: 16px;
 }
 @media (min-width: 408px) {
   .main__allFiles[data-mode="sizeM"] .main__file {
@@ -481,7 +497,7 @@ body {
     width: 160px;
     margin: 0 auto;
     height: 120px;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
     padding-right: 0;
   }
   .main__allFiles[data-mode="sizeM"] .main__filePreview img {
@@ -513,7 +529,7 @@ body {
     width: 240px;
     margin: 0 auto;
     height: 180px;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
     padding-right: 0;
   }
   .main__allFiles[data-mode="sizeL"] .main__filePreview img {
@@ -533,6 +549,9 @@ body {
     font-size: 12px;
     padding-right: 5px;
     margin-bottom: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
   }
   .main__allFiles[data-mode="sizeL"] .main__fileDate::after {
     position: absolute;

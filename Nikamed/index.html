@@ -6,6 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Файловый менеджер</title>
   <link media="all" rel="stylesheet" href="css/style.css">
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      background-image: url( "../1920_nikamed.jpg" );
+    }
+    @media ( max-width: 1250px ) {
+      HTML {
+        background-image: url( "../Selectfilter.jpg" );
+      }
+    }
+    @media ( max-width: 767px ) {
+      HTML {
+        background-image: url( "../320_nikamed.jpg" );
+      }
+    }
+
+    BODY {
+      opacity: .5;
+    }
+  </style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
+
 </head>
 
 <body>
@@ -245,7 +271,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -254,7 +280,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -263,7 +289,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -272,7 +298,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">DT-KEYNOTE-MED-FORUM-1-2.</span><span class="main__fileName--extension">DOC</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -281,7 +307,7 @@
           </div>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MOV</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -290,7 +316,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MP4</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -299,7 +325,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">OTM-CATALOGUE-TMA-1-1.</span><span class="main__fileName--extension">PDF</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -308,7 +334,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -317,7 +343,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">NM-ERGOPAD-MED-FORUM-1-4.</span><span class="main__fileName--extension">DOC</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -326,7 +352,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -335,7 +361,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -344,7 +370,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MOV</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -353,7 +379,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -362,7 +388,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
           </div>
         </li>
         <li class="main__file">
@@ -371,7 +397,7 @@
           </p>
           <div class="main__info">
             <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="main__fileName"><span class="main__fileName--name">BFD-BRANDBOOK-WEB-1-1.</span><span class="main__fileName--extension">JPG</span></p>
           </div>
         </li>
         <li class="main__file">
