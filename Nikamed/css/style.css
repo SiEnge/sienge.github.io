@@ -98,7 +98,9 @@
   border-top-right-radius: 12px;
 }
 .filter[data-mode="open"] .filter__wrap {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .filter__btnOpen {
   font-family: "Roboto";
@@ -123,6 +125,11 @@
   left: 0;
   width: 100%;
   background-color: #FFFFFF;
+  height: calc(100vh - 48px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .filter__choice {
   padding: 0;
@@ -138,9 +145,10 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  min-height: 28px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 .filter__itemChoice {
   font-family: "Roboto";
@@ -167,6 +175,7 @@
   margin: 0;
   list-style: none;
   border-top: 1px solid #E1E4E8;
+  overflow-y: auto;
 }
 .filter__block {
   border-bottom: 1px solid #E1E4E8;
@@ -179,22 +188,12 @@
   padding-right: 16px;
   padding-top: 11px;
   padding-bottom: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  display: block;
 }
 .filter__block span {
   display: block;
-  width: 122px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 122px;
-          flex: 0 0 122px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding-right: 10px;
+  margin-bottom: 10px;
 }
 .filter__sublist {
   padding: 0;
@@ -232,60 +231,84 @@
   background-color: #C41230;
 }
 .filter__btnWrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 139px;
+  padding-left: 16px;
   padding-right: 16px;
   padding-top: 16px;
   padding-bottom: 24px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  background-color: #FFFFFF;
+  margin-top: auto;
 }
-.filter__btnApply {
-  border: none;
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 20px;
-  background-color: #0072BC;
-  font-family: "Roboto";
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  color: #FFFFFF;
-  margin-bottom: 5px;
-}
-.filter__btnCancel {
+.filter__btn {
   border: none;
   background-color: transparent;
   padding: 10px 16px;
-  cursor: pointer;
   font-family: "Roboto";
   font-size: 14px;
   font-weight: 500;
   font-style: normal;
-  font-stretch: normal;
-  color: #42515A;
-}
-.filter__btnReset {
-  border: none;
-  padding: 10px 16px;
-  padding-right: 34px;
-  margin-left: auto;
   cursor: pointer;
+  color: #42515A;
   border-radius: 20px;
+  margin-bottom: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  min-width: 220px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.filter__btn--apply {
+  background-color: #0072BC;
+  color: #FFFFFF;
+}
+.filter__btn--reset {
+  padding-right: 34px;
   background-color: #E1E4E8;
-  font-family: "Roboto";
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  color: #42515A;
   background-image: url("../img/reset-filter.svg");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 20px;
+}
+@media (min-width: 480px) {
+  .filter__btnWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .filter__btn {
+    width: auto;
+    margin: 0;
+    min-width: auto;
+  }
+  .filter__btn--apply {
+    margin-right: 10px;
+  }
+  .filter__btn--reset {
+    margin-left: auto;
+  }
+}
+@media (min-width: 720px) {
+  .filter__block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .filter__block span {
+    margin-bottom: 0;
+    width: 122px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 122px;
+            flex: 0 0 122px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .filter__btnWrap {
+    padding-left: 139px;
+  }
 }
 body {
   margin: 0;
@@ -295,6 +318,10 @@ body {
   font-style: normal;
   background-color: #FFFFFF;
   min-width: 290px;
+}
+.overflowHidden {
+  height: 100%;
+  overflow: hidden;
 }
 .header {
   min-height: 48px;
@@ -306,6 +333,9 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 .header p {
   font-family: "Roboto";
@@ -390,6 +420,9 @@ body {
 }
 .header__account {
   display: none;
+}
+.main {
+  padding-top: 48px;
 }
 .main__header {
   padding-left: 15px;

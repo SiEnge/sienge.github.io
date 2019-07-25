@@ -8,8 +8,10 @@ document.addEventListener("click", function(event) {
     if (filter) {
       if (filter.dataset.mode == "open") {
         filter.dataset.mode = "close";
+        document.body.classList.remove("overflowHidden"); 
       } else {
         filter.dataset.mode = "open";
+        document.body.classList.add("overflowHidden"); 
       }
     }
   }
