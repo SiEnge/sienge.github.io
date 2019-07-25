@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Файловый менеджер</title>
   <link media="all" rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
   <header class="header">
     <div class="header__logo">
-      <a class="header__logo--nomobile" href="#">
-        <img src="img/logo.svg" alt="Логотип media.nikamed.tu">
-      </a>
-      <a class="header__logo--mobile" href="#">
-        <img src="img/logo_mobile.svg" alt="Логотип media.nikamed.tu">
+      <a>
+        <picture>
+          <source media="(min-width: 720px)" srcset="img/logo.svg">
+          <img src="img/logo_mobile.svg" width="24" height="18" alt="Логотип media.nikamed.ZZZu">
+        </picture>
       </a>
     </div>
     <section class="header__filter filter" data-mode="close">
