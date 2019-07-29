@@ -59,13 +59,13 @@ document.addEventListener("click", function(event) {
   }
 
   //применить в фильтре
-  if (target.classList.contains("filter__btnApply")) {
+  if (target.classList.contains("filter__btn--apply")) {
     let filter = document.querySelector(".filter");
     filter.dataset.mode = "close";
   }
 
   //отмена в фильтре
-  if (target.classList.contains("filter__btnCancel")) {
+  if (target.classList.contains("filter__btn--cancel")) {
     clearFilter();
     let filter = document.querySelector(".filter");
     filter.dataset.mode = "close";
@@ -73,7 +73,7 @@ document.addEventListener("click", function(event) {
 
 
   //сбросить все фильтры
-  if (target.classList.contains("filter__btnReset")) {
+  if (target.classList.contains("filter__btn--reset")) {
     clearFilter();
   }
 
