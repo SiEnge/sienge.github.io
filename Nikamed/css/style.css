@@ -176,7 +176,7 @@
   list-style: none;
   border-top: 1px solid #E1E4E8;
   overflow-y: auto;
-  padding-bottom: 10px;
+  padding-bottom: 24px;
 }
 .filter__block {
   border-bottom: 1px solid #E1E4E8;
