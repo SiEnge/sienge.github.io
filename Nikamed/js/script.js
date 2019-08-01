@@ -86,13 +86,14 @@ document.addEventListener("click", function(event) {
   if (controlBtn) {
     let wrap = target.closest(".control__wrap");
     let control = document.querySelector(".control");
-    let controlWraps = control.querySelectorAll(".control__wrap");
-    for (var i = 0; i < controlWraps.length; i++) {
-      controlWraps[i].dataset.list = "hide";
-    }
+    
     if (wrap.dataset.list == "show") {
       wrap.dataset.list = "hide";
     } else {
+      let controlWraps = control.querySelectorAll(".control__wrap");
+      for (var i = 0; i < controlWraps.length; i++) {
+        controlWraps[i].dataset.list = "hide";
+      }
       wrap.dataset.list = "show";
     }
     return;
