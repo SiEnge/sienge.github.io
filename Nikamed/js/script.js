@@ -1,3 +1,5 @@
+var arrChoice = [];
+
 document.addEventListener("click", function(event) {
   var target = event.target;
 
@@ -7,11 +9,9 @@ document.addEventListener("click", function(event) {
     let filter = document.querySelector(".filter");
     if (filter) {
       if (filter.dataset.mode == "open") {
-        filter.dataset.mode = "close";
-        document.body.classList.remove("overflowHidden"); 
+        closeFilter();
       } else {
-        filter.dataset.mode = "open";
-        document.body.classList.add("overflowHidden"); 
+        openFilter(); 
       }
     }
   }
@@ -21,9 +21,8 @@ document.addEventListener("click", function(event) {
     if (target.dataset.check != "true") {
       target.dataset.check = "true";
       let filter = document.querySelector(".filter");
-      let main = document.querySelector(".main");
       if (filter) {
-        let filterChoice = main.querySelector(".main__filterChoice");
+        let filterChoice = filter.querySelector(".filter__filterChoice");
         let filterItemClone = target.cloneNode(true);
         filterItemClone.classList.remove("filter__item");
         filterItemClone.classList.add("filter__itemChoice");
@@ -33,9 +32,8 @@ document.addEventListener("click", function(event) {
     } else {
       target.dataset.check = "false";
       let filter = document.querySelector(".filter");
-      let main = document.querySelector(".main");
       if (filter) {
-        let filterChoice = main.querySelector(".main__filterChoice");
+        let filterChoice = filter.querySelector(".filter__filterChoice");
         let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
         for (var i = 0; i < filterItemsChoice.length; i++) {
           if (filterItemsChoice[i].dataset.id == target.dataset.id) {
@@ -49,9 +47,9 @@ document.addEventListener("click", function(event) {
   //удаление выбранных параметров фильтра
   if (target.classList.contains("filter__itemChoice")) {
     let filter = document.querySelector(".filter");
-    let main = document.querySelector(".main");
+    // let main = document.querySelector(".main");
     if (filter) {
-      let filterChoice = main.querySelector(".main__filterChoice");
+      let filterChoice = filter.querySelector(".filter__filterChoice");
       filterChoice.removeChild(target);
       let filterItems = filter.querySelectorAll(".filter__item");
       for (var i = 0; i < filterItems.length; i++) {
@@ -64,15 +62,15 @@ document.addEventListener("click", function(event) {
 
   //применить в фильтре
   if (target.classList.contains("filter__btn--apply")) {
-    let filter = document.querySelector(".filter");
-    filter.dataset.mode = "close";
+
+    closeFilter();
   }
 
-  //отмена в фильтре
+  //отмена в фильтре => из массива arrChoice
   if (target.classList.contains("filter__btn--cancel")) {
     clearFilter();
-    let filter = document.querySelector(".filter");
-    filter.dataset.mode = "close";
+    currentFilter();
+    closeFilter();
   }
 
 
@@ -115,10 +113,51 @@ document.addEventListener("click", function(event) {
   }
 });
 
+function closeFilter() {
+  let filter = document.querySelector(".filter");
+  let button = document.querySelector(".filter__btnOpen");
+  filter.dataset.mode = "close";
+  button.dataset.mode = "close";
+  document.body.classList.remove("overflowHidden");
+  arrChoice = [];
+}
+
+function openFilter() {
+  let filter = document.querySelector(".filter");
+  let button = document.querySelector(".filter__btnOpen");
+  filter.dataset.mode = "open";
+  button.dataset.mode = "open";
+  document.body.classList.add("overflowHidden");
+
+  //копирование текущих выбранных фильтров
+  let filterChoice = filter.querySelector(".filter__filterChoice");
+  let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
+  if (filterItemsChoice.length > 0) {
+    for (var i = 0; i < filterItemsChoice.length; i++) {
+      arrChoice.push([filterItemsChoice[i].dataset.id, filterItemsChoice[i].innerHTML]);
+    }
+  }
+}
+
+function currentFilter() {
+  let filter = document.querySelector(".filter");
+  if (filter) {
+    let filterChoice = filter.querySelector(".filter__filterChoice");
+    for (var i = 0; i < arrChoice.length; i++) {
+      let li = document.createElement('li'); 
+      li.className = "filter__itemChoice"; //добавляет стили к элементу
+      li.setAttribute("data-id", arrChoice[i][0]);
+      li.innerHTML = arrChoice[i][1];
+      filterChoice.appendChild(li);
+    }
+  }
+}
+         
+
 function clearFilter() {
   let filter = document.querySelector(".filter");
   if (filter) {
-    let filterChoice = filter.querySelector(".filter__choice");
+    let filterChoice = filter.querySelector(".filter__filterChoice");
     let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
     for (var i = 0; i < filterItemsChoice.length; i++) {
       filterChoice.removeChild(filterItemsChoice[i]);

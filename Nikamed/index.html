@@ -6,6 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Файловый менеджер</title>
   <link media="all" rel="stylesheet" href="css/style.css">
+  <!-- Pixel Glass -->
+  <!-- <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      background-image: url( "../1920_nikamed.jpg" );
+    }
+    @media ( max-width: 1250px ) {
+      HTML {
+        background-image: url( "../Selectfilter.jpg" );
+      }
+    }
+    @media ( max-width: 767px ) {
+      HTML {
+        background-image: url( "../320_nikamed.jpg" );
+      }
+    }
+
+    BODY {
+      opacity: .5;
+    }
+  </style>
+  <link rel="stylesheet" href="../node_modules/pixel-glass/styles.css">
+  <script src="../node_modules/pixel-glass/script.js"></script> -->
+  <!-- // Pixel Glass -->
+
 </head>
 
 <body>
@@ -20,11 +46,29 @@
           </picture>
         </a>
       </div>
-      <section class="header__filter filter" data-mode="close">
-        <button class="filter__btnOpen" type="button" name="button">Фильтр</button>
-        <div class="filter__wrap">
+      <!-- <section class="header__filter"> -->
+        <button class="header__filter filter__btnOpen" type="button" name="button" data-mode="close">Фильтр</button>
+      <!-- </section> -->
+      <form class="header__searchWrap" action="" method="get">
+        <input class="header__search" type="text" name="" value="" placeholder="Введите ID">
+        <button class="header__btnSearch" type="button" name="button"><span class="visuallyhidden">начать поиск</span></button>
+      </form>
+      <!-- <p class="header__search">Поиск</p> -->
+      <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
+      <p class="header__more"></p>
+      <p class="header__account">АК</p>
+    </div>
+    <div class="header__bottom filter" data-mode="close">
+      <div class="filter__wrap">
+        <div class="filter__total">
+          <h1 class="filter__title title">Все файлы</h1>
+          <ul class="filter__filterChoice">
+            <!-- <li class="filter__itemChoice" data-id="type-video" data-check="true">Видео</li> -->
+          </ul>
+        </div>
+
+        <div class="filter__wrapList">
           <ul class="filter__list">
-            
             <li class="filter__block">
               <span>Тип файла</span>
               <ul class="filter__sublist">
@@ -212,31 +256,18 @@
               </ul>
             </li>
           </ul>
-          <div class="filter__btnWrap">
-            <button class="filter__btn filter__btn--apply" type="button" name="button">Применить</button>
-            <button class="filter__btn filter__btn--cancel" type="button" name="button">Отмена</button>
-            <button class="filter__btn filter__btn--reset" type="button" name="button">Сбросить все фильтры</button>
-          </div>
         </div>
-      </section>
-      <form class="header__searchWrap" action="" method="get">
-        <input class="header__search" type="text" name="" value="" placeholder="Введите ID">
-        <button class="header__btnSearch" type="button" name="button"><span class="visuallyhidden">начать поиск</span></button>
-      </form>
-      <!-- <p class="header__search">Поиск</p> -->
-      <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
-      <p class="header__more"></p>
-      <p class="header__account">АК</p>
+      </div>
+      <div class="filter__btnWrap">
+        <button class="filter__btn filter__btn--apply" type="button" name="button">Применить</button>
+        <button class="filter__btn filter__btn--cancel" type="button" name="button">Отмена</button>
+        <button class="filter__btn filter__btn--reset" type="button" name="button">Сбросить все фильтры</button>
+      </div>
     </div>
   </header>
 
   <main class="main">
 
-    <div class="main__total">
-      <h1 class="main__title title">Все файлы</h1>
-      <ul class="main__filterChoice">
-      </ul>
-    </div>
 
     <div class="main__control control">
 
