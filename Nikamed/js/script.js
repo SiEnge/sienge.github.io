@@ -109,21 +109,9 @@ document.addEventListener("click", function(event) {
     if (wrap.classList.contains("control__wrap--layout")) {
       let allFiles = document.querySelector(".main__allFiles");
       allFiles.dataset.mode = target.dataset.layout;
+      wrap.dataset.mode = target.dataset.layout;
     }
-
-
   }
-
-  
-
-  // //переключение раскладки
-  // if (target.classList.contains("main__btnSwitchLayout")) {
-  //   let allFiles = document.querySelector(".main__allFiles");
-  //   if (allFiles) {
-  //     allFiles.dataset.mode = (allFiles.dataset.mode == "sizeM") ? "sizeL" : "sizeM";
-  //   }
-  // }
-
 });
 
 function clearFilter() {

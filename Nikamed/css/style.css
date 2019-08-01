@@ -467,11 +467,22 @@
 .control__wrap--sort .control__dropDownList {
   width: 155px;
 }
+.control__wrap--layout[data-mode="sizeM"] .control__name {
+  background-image: url("../img/layuot_sizeM_blue.svg");
+}
+.control__wrap--layout[data-mode="sizeL"] .control__name {
+  background-image: url("../img/layuot_sizeL_blue.svg");
+}
+.control__wrap--layout:hover[data-mode="sizeM"] .control__name {
+  background-image: url("../img/layuot_sizeM_black.svg");
+}
+.control__wrap--layout:hover[data-mode="sizeL"] .control__name {
+  background-image: url("../img/layuot_sizeL_black.svg");
+}
 .control__wrap--layout .control__name {
   font-size: 0;
   width: 16px;
   height: 16px;
-  background-image: url("../img/th.svg");
   background-size: 16px;
   background-position: center;
   background-repeat: no-repeat;
@@ -493,7 +504,6 @@
   font-style: normal;
   line-height: 1.29;
   text-align: right;
-  color: #0072BC;
   margin: 0;
   display: block;
 }
@@ -509,6 +519,9 @@
   text-align: right;
   color: #0072BC;
   cursor: pointer;
+}
+.control__button:hover {
+  color: #42515A;
 }
 .control__button--dropDown {
   position: relative;
@@ -526,6 +539,9 @@
   background-size: 8px;
   background-position: center;
   background-repeat: no-repeat;
+}
+.control__button--dropDown:hover::after {
+  background-image: url("../img/drop_down_arrow_black.svg");
 }
 .control__dropDownBtn {
   border: none;
