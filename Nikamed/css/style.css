@@ -100,6 +100,9 @@
   -webkit-transition: all 500ms;
   transition: all 500ms;
 }
+.filter[data-mode="open"] {
+  position: fixed;
+}
 .filter[data-mode="open"] .filter__wrapList {
   display: -webkit-box;
   display: -ms-flexbox;
