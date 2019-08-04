@@ -813,7 +813,7 @@ body {
 }
 .main__control {
   margin-left: auto;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
 }
 .main__allFiles[data-action="true"] .main__filePreview {
   opacity: 0.25;
@@ -823,19 +823,28 @@ body {
 }
 .main__buttonCheck {
   padding: 0;
-  background-color: #E1E4E8;
+  background-color: transparent;
   border: none;
   cursor: pointer;
+  position: absolute;
+  z-index: 15;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.main__buttonCheck::before {
+  position: absolute;
+  content: "";
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  position: absolute;
   top: 16px;
   right: 16px;
-  z-index: 15;
-  display: none;
+  background-color: #E1E4E8;
 }
-.main__buttonCheck[data-check="true"] {
+.main__buttonCheck[data-check="true"]::before {
   background-color: #C41230;
   background-image: url("../img/file_check.svg");
   background-size: 13px;
