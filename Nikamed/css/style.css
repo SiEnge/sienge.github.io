@@ -103,6 +103,7 @@
 .filter[data-mode="open"] {
   position: fixed;
   z-index: 50;
+  width: 100%;
 }
 .filter[data-mode="open"] .filter__wrapList {
   display: -webkit-box;
