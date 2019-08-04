@@ -27,7 +27,7 @@ document.addEventListener("click", function(event) {
         filterItemClone.classList.remove("filter__item");
         filterItemClone.classList.add("filter__itemChoice");
         filterChoice.appendChild(filterItemClone);
-        checkOverflow(filterChoice);
+        // checkOverflow(filterChoice);
       }
     } else {
       target.dataset.check = "false";
@@ -62,7 +62,6 @@ document.addEventListener("click", function(event) {
 
   //применить в фильтре
   if (target.classList.contains("filter__btn--apply")) {
-
     closeFilter();
   }
 
@@ -110,6 +109,35 @@ document.addEventListener("click", function(event) {
       allFiles.dataset.mode = target.dataset.layout;
       wrap.dataset.mode = target.dataset.layout;
     }
+  }
+
+  // Включение режима действия с файлами
+  if (target.classList.contains("control__button--action")) {
+    let wrapFiles = document.querySelector(".main__allFiles");
+    let action = document.querySelector(".action");
+
+    if (wrapFiles.dataset.action == "false") {
+      wrapFiles.dataset.action = "true";
+      target.innerHTML = "Отменить";
+      action.dataset.status = "show";
+
+    } else {
+      wrapFiles.dataset.action = "false";
+      target.innerHTML = "Выбрать";
+      action.dataset.status = "hide";
+      resetAction();
+    }
+    
+  }
+
+  //выбор файла
+  if (target.classList.contains("main__buttonCheck")) {
+    target.dataset.check = (target.dataset.check == "false") ? "true" : "false";
+    let selectedFiles = document.querySelector(".main__countSelectedFiles");
+    let count = countFiles();
+    selectedFiles.innerHTML = count;
+    let actionBtnWrap = document.querySelector(".action__buttonWrap");
+    actionBtnWrap.dataset.disabled = (count == 0) ? "true" : "false"
   }
 });
 
@@ -169,17 +197,41 @@ function clearFilter() {
   }
 }
 
-function checkOverflow(wrap) {
-  let widthWrap = wrap.offsetWidth;
-  let items = wrap.children;
-  let widthItems = 0;
+// function checkOverflow(wrap) {
+//   let widthWrap = wrap.offsetWidth;
+//   let items = wrap.children;
+//   let widthItems = 0;
 
-  for (var i = 0; i < items.length; i++) {
-    widthItems = widthItems + items[i].offsetWidth;
+//   for (var i = 0; i < items.length; i++) {
+//     widthItems = widthItems + items[i].offsetWidth;
+//   }
+
+//   if (widthItems > widthWrap) {
+//     console.log("Переполнение");
+//   }
+
+// }
+
+
+//подсчет количества выделенных файлов
+function countFiles() {
+  let wrapFiles = document.querySelector(".main__allFiles");
+  let filesBtnCheck = wrapFiles.querySelectorAll(".main__buttonCheck");
+  let count = 0;
+  for (var i = 0; i < filesBtnCheck.length; i++) {
+    if (filesBtnCheck[i].dataset.check == "true") {
+      count++;
+    }
   }
+  return count;
+}
 
-  if (widthItems > widthWrap) {
-    console.log("Переполнение");
+function resetAction() {
+  let wrapFiles = document.querySelector(".main__allFiles");
+  let filesBtnCheck = wrapFiles.querySelectorAll(".main__buttonCheck");
+  for (var i = 0; i < filesBtnCheck.length; i++) {
+    filesBtnCheck[i].dataset.check = "false";
   }
-
+  let selectedFiles = document.querySelector(".main__countSelectedFiles");
+  selectedFiles.innerHTML = "0";
 }

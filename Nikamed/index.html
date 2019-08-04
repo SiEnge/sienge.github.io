@@ -268,14 +268,25 @@
 
   <main class="main">
 
-
-    <div class="main__control control">
-
+    <section class="main__option">
       <!-- Действия с файлами -->
+      <section class="main__action action" data-status="hide">
+        <p class="action__title">Выбрано <span class="main__countSelectedFiles">0</span></p>
+        <div class="action__buttonWrap" data-disabled="true">
+          <button class="action__button action__button--open" type="button">Открыть</button>
+          <button class="action__button action__button--inCollection" type="button">В коллекцию</button>
+          <button class="action__button action__button--download" type="button">Скачать</button>
+          <button class="action__button action__button--share" type="button">Поделиться</button>
+        </div>
+      </section>
+    
+
+
+    <section class="main__control control">
 
       <!-- Включение режима действия с файлами -->
-      <div class="control__wrap control__wrap--option" title="Действия с файлами">
-        <button class="control__button control__button--option" type="button">Выбрать</button>
+      <div class="control__wrap control__wrap--action" title="Действия с файлами">
+        <button class="control__button control__button--action" type="button">Выбрать</button>
       </div>
 
       <!-- Выбор сортировки -->
@@ -321,12 +332,13 @@
           </li>
         </ul>
       </div>
-    </div>
+    </section>
+</section>
 
-
-    <section class="main__allFiles" data-mode="sizeM">
+    <section class="main__allFiles" data-mode="sizeM" data-action="false">
       <ul class="main__listFiles">
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file1.jpg" alt="">
           </p>
@@ -336,6 +348,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file2.jpg" alt="">
           </p>
@@ -345,6 +358,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file3.jpg" alt="">
           </p>
@@ -354,6 +368,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file4.jpg" alt="">
           </p>
@@ -363,6 +378,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <div class="main__filePreview">
             <img src="img/video1.jpg" alt="">
           </div>
@@ -372,6 +388,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/video2.jpg" alt="">
           </p>
@@ -381,6 +398,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file6.jpg" alt="">
           </p>
@@ -390,6 +408,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file5.jpg" alt="">
           </p>
@@ -399,6 +418,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/video3.jpg" alt="">
           </p>
@@ -408,6 +428,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file1.jpg" alt="">
           </p>
@@ -417,6 +438,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file3.jpg" alt="">
           </p>
@@ -426,6 +448,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/video4.jpg" alt="">
           </p>
@@ -435,6 +458,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file1.jpg" alt="">
           </p>
@@ -444,6 +468,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file7.jpg" alt="">
           </p>
@@ -453,6 +478,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file9.jpg" alt="">
           </p>
@@ -462,6 +488,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file8.jpg" alt="">
           </p>
@@ -471,6 +498,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/video5.jpg" alt="">
           </p>
@@ -480,6 +508,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/video6.jpg" alt="">
           </p>
@@ -489,6 +518,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file1.jpg" alt="">
           </p>
@@ -498,6 +528,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file2.jpg" alt="">
           </p>
@@ -507,6 +538,7 @@
           </div>
         </li>
         <li class="main__file">
+          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
           <p class="main__filePreview">
             <img src="img/file2.jpg" alt="">
           </p>
