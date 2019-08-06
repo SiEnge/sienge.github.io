@@ -732,6 +732,13 @@
 .action__title {
   margin: 0;
   margin-bottom: 10px;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #42515A;
 }
 .action__buttonWrap[data-disabled="true"] .action__button {
   background-color: #E1E4E8;

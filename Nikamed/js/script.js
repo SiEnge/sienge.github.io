@@ -115,17 +115,18 @@ document.addEventListener("click", function(event) {
   if (target.classList.contains("control__button--action")) {
     let wrapFiles = document.querySelector(".main__allFiles");
     let action = document.querySelector(".action");
+    let actionBtnWrap = document.querySelector(".action__buttonWrap");
 
     if (wrapFiles.dataset.action == "false") {
       wrapFiles.dataset.action = "true";
       target.innerHTML = "Отменить";
       action.dataset.status = "show";
-
     } else {
       wrapFiles.dataset.action = "false";
       target.innerHTML = "Выбрать";
       action.dataset.status = "hide";
       resetAction();
+      actionBtnWrap.dataset.disabled = "true";
     }
     
   }
@@ -235,3 +236,10 @@ function resetAction() {
   let selectedFiles = document.querySelector(".main__countSelectedFiles");
   selectedFiles.innerHTML = "0";
 }
+
+// document.addEventListener("keydown",function(e){
+//   if (e.shiftKey&&flag==0) {
+//     console.log("Продолжаем!");
+//     flag++
+//   }
+// });
