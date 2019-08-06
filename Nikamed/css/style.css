@@ -252,10 +252,18 @@
   color: #42515A;
   padding: 2px 10px;
   border-radius: 20px;
-  background-color: rgba(225, 228, 232, 0.5);
+  background-color: #eff1f3;
+  background-color: #e1e4e880;
   margin-right: 5px;
   margin-bottom: 4px;
   cursor: pointer;
+}
+.filter__item:hover {
+  background-color: #E1E4E8;
+}
+.filter__item:active {
+  background-color: #C41230;
+  color: #FFFFFF;
 }
 .filter__item[data-check="true"] {
   color: #FFFFFF;
@@ -308,9 +316,19 @@
   background-position: right 10px center;
   background-size: 20px;
 }
+.filter__btn--apply:hover,
+.filter__btn--apply:active {
+  background-color: #338ec9;
+  background-color: #0072bccc;
+}
+.filter__btn--cancel:hover,
+.filter__btn--cancel:active {
+  background-color: #E1E4E8;
+}
 .filter__btn--reset {
   padding-right: 34px;
-  background-color: #E1E4E8;
+  background-color: #eff1f3;
+  background-color: #e1e4e880;
   background-image: url("../img/reset-filter.svg");
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -320,6 +338,10 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
+}
+.filter__btn--reset:hover,
+.filter__btn--reset:active {
+  background-color: #E1E4E8;
 }
 @media (min-width: 480px) {
   .filter[data-mode="open"] .filter__wrap {
