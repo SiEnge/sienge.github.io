@@ -38,25 +38,53 @@
   <header class="header">
 
     <div class="header__top">
-      <div class="header__logo">
-        <a>
-          <picture>
-            <source media="(min-width: 720px)" srcset="img/logo.svg">
-            <img src="img/logo_mobile.svg" width="24" height="18" alt="Логотип media.nikamed.ru">
-          </picture>
-        </a>
+      <div class="header__topWrap">
+        <div class="header__logo">
+          <a>
+            <picture>
+              <source media="(min-width: 720px)" srcset="img/logo.svg">
+              <img src="img/logo_mobile.svg" width="24" height="18" alt="Логотип media.nikamed.ru">
+            </picture>
+          </a>
+        </div>
+        <!-- <section class="header__filter"> -->
+          <button class="header__filter filter__btnOpen" type="button" name="button" data-mode="close">Фильтр</button>
+        <!-- </section> -->
+        <form class="header__searchWrap" action="" method="get">
+          <input class="header__search" type="text" name="" value="" placeholder="Введите ID">
+          <button class="header__btnSearch" type="button" name="button"><span class="visuallyhidden">начать поиск</span></button>
+        </form>
+        <!-- <p class="header__search">Поиск</p> -->
+        <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
+        <p class="header__more"></p>
+        <!-- <p class="header__account">АК</p> -->
+
+        <!-- Меню пользователя -->
+        <div class="header__user user" title="Меню" data-list="hide">
+          <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
+          <button class="user__button user__button--dropDown" type="button">
+            <span class="user__name">АК</span>
+            <span class="visuallyhidden">Открыть выпадающий список</span>
+          </button>
+          <ul class="user__dropDownList">
+            <li class="user__dropDownItemWrap--notice">
+              <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
+            </li>
+            <li>
+              <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
+            </li>
+            <li>
+              <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
+            </li>
+            <li>
+              <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
+            </li>
+          </ul>
+        </div>
+    
+
+
       </div>
-      <!-- <section class="header__filter"> -->
-        <button class="header__filter filter__btnOpen" type="button" name="button" data-mode="close">Фильтр</button>
-      <!-- </section> -->
-      <form class="header__searchWrap" action="" method="get">
-        <input class="header__search" type="text" name="" value="" placeholder="Введите ID">
-        <button class="header__btnSearch" type="button" name="button"><span class="visuallyhidden">начать поиск</span></button>
-      </form>
-      <!-- <p class="header__search">Поиск</p> -->
-      <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
-      <p class="header__more"></p>
-      <p class="header__account">АК</p>
     </div>
     <div class="header__bottom filter" data-mode="close">
       <div class="filter__wrap">

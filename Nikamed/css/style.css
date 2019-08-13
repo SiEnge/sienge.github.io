@@ -418,12 +418,16 @@
   width: 100%;
   height: 48px;
   background-color: #E1E4E8;
+}
+.header__topWrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 .header__bottom {
   background-color: #FFFFFF;
@@ -498,9 +502,6 @@
   background-repeat: no-repeat;
   border-left: 1px solid #FFFFFF;
 }
-.header__account {
-  display: none;
-}
 @media (min-width: 720px) {
   .header__logo {
     width: 194px;
@@ -531,15 +532,135 @@
         -ms-flex: 0 0 166px;
             flex: 0 0 166px;
     border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
   }
   .header__more {
     display: none;
   }
-  .header__account {
-    display: block;
-    border-left: 1px solid #FFFFFF;
-    padding: 16px 15px 14px;
-  }
+}
+.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-left: 15px;
+  position: relative;
+  z-index: 10;
+}
+.user[data-list="show"] .user__button--dropDown::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.user[data-list="show"] .user__dropDownList {
+  display: block;
+}
+.user__name {
+  font-family: "Roboto";
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  margin: 0;
+  display: block;
+}
+.user__alert {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #C41230;
+}
+.user__button {
+  border: none;
+  background-color: transparent;
+  padding: 3px;
+  color: #42515A;
+  cursor: pointer;
+}
+.user__button--dropDown {
+  position: relative;
+  padding-right: 15px;
+}
+.user__button--dropDown::after {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  margin-top: -4px;
+  right: 3px;
+  background-image: url("../img/drop_down_arrow_black.svg");
+  background-size: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.user__dropDownList {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+  background-color: #42515A;
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  display: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 140px;
+  margin-top: 8px;
+}
+.user__dropDownItem {
+  border: none;
+  background-color: #42515A;
+  padding: 4px 8px;
+  padding-right: 32px;
+  display: block;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+  color: #FFFFFF;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background-size: 16px;
+  background-position: center right 8px;
+  background-repeat: no-repeat;
+}
+.user__dropDownItem:hover {
+  background-color: #0072BC;
+}
+.user__dropDownItem--notice {
+  background-color: #C41230;
+  background-image: url("../img/user_notice.svg");
+}
+.user__dropDownItem--profile {
+  background-image: url("../img/user_profile.svg");
+}
+.user__dropDownItem--help {
+  background-image: url("../img/user_help.svg");
+}
+.user__dropDownItem--signout {
+  background-image: url("../img/user_signout.svg");
+}
+.user__dropDownItemWrap--notice {
+  padding-bottom: 4px;
+  border-bottom: 2px solid #67737B;
+  border-bottom-color: #ffffff33;
 }
 .control {
   display: -webkit-box;
@@ -644,18 +765,6 @@
 }
 .control__button--dropDown:hover::after {
   background-image: url("../img/drop_down_arrow_black.svg");
-}
-.control__dropDownBtn {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  width: 8px;
-  height: 18px;
-  background-image: url("../img/drop_down_arrow_blue.svg");
-  background-size: 8px;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
 }
 .control__dropDownList {
   position: absolute;
@@ -880,8 +989,8 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  top: 16px;
-  right: 16px;
+  top: 4px;
+  right: 4px;
   background-color: #E1E4E8;
 }
 .main__buttonCheck[data-check="true"]::before {
@@ -911,7 +1020,7 @@ body {
   padding-top: 8px;
   padding-bottom: 7px;
   padding-left: 2.5%;
-  padding-right: 2.5%;
+  padding-right: 10%;
   border-top: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1077,6 +1186,10 @@ body {
   }
   .main__allFiles[data-mode="sizeL"] .main__btnLayout {
     display: block;
+  }
+  .main__buttonCheck::before {
+    top: 16px;
+    right: 16px;
   }
 }
 @media (min-width: 612px) {

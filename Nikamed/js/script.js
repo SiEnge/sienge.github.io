@@ -78,6 +78,17 @@ document.addEventListener("click", function(event) {
     clearFilter();
   }
 
+  // Открытие/закрытие выпадающего окна "Меню пользователя""
+  let userBtn = target.closest(".user__button--dropDown");
+  if (userBtn) {
+    let wrap = target.closest(".user");
+    let user = document.querySelector(".user");
+
+    wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
+
+    return;
+  }
+
   // Открытие/закрытие выпадающего окна
   let controlBtn = target.closest(".control__button--dropDown");
   if (controlBtn) {
