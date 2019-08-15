@@ -79,13 +79,14 @@ document.addEventListener("click", function(event) {
   }
 
   // Открытие/закрытие выпадающего окна "Меню пользователя""
-  let userBtn = target.closest(".user__button--dropDown");
+  let userBtn = target.closest(".user__button");
   if (userBtn) {
     let wrap = target.closest(".user");
+    let header = document.querySelector(".header");
     let user = document.querySelector(".user");
 
     wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
-
+    header.dataset.user = (wrap.dataset.list == "show") ? "open" : "close";
     return;
   }
 
