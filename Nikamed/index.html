@@ -47,17 +47,21 @@
             </picture>
           </a>
         </div>
-        <!-- <section class="header__filter"> -->
-          <button class="header__filter filter__btnOpen" type="button" name="button" data-mode="close">Фильтр</button>
-        <!-- </section> -->
-        <form class="header__searchWrap" action="" method="get">
-          <input class="header__search" type="text" name="" value="" placeholder="Введите ID">
-          <button class="header__btnSearch" type="button" name="button"><span class="visuallyhidden">начать поиск</span></button>
+
+        <!-- Открытие фильтра -->
+        <button class="header__btnFilter filter__btnOpen" type="button" name="button" data-mode="close">Фильтр</button>
+
+        <!-- Поиск -->
+        <form class="header__search search" action="" method="get">
+          <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
+          <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
         </form>
-        <!-- <p class="header__search">Поиск</p> -->
-        <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p>
-        <!-- <p class="header__more"></p> -->
-        <!-- <p class="header__account">АК</p> -->
+
+        <!-- Мои коллекции -->
+        <!-- Открытие коллекции -->
+        <button class="header__btnCollection collection__btnOpen" type="button" name="button" data-mode="close">Мои коллекции</button>
+
+        <!-- <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p> -->
 
         <!-- Меню пользователя -->
         <div class="header__user user" title="Меню" data-list="hide">
@@ -88,17 +92,13 @@
           </div>
         </div>
     
-
-
       </div>
     </div>
-    <div class="header__bottom filter" >
-      <!-- <div class="filter" data-mode="close"></div> -->
+    <div class="header__filter filter">
       <div class="filter__wrap">
         <div class="filter__total">
           <h1 class="filter__title title">Все файлы</h1>
           <ul class="filter__filterChoice">
-            <!-- <li class="filter__itemChoice" data-id="type-video" data-check="true">Видео</li> -->
           </ul>
         </div>
 
@@ -299,6 +299,127 @@
         <button class="filter__btn filter__btn--reset" type="button" name="button">Сбросить все фильтры</button>
       </div>
     </div>
+
+    <div class="header__collection collection">
+      <div class="collection__wrap">
+        <div class="collection__total">
+          <h1 class="collection__title title">Мои коллекции</h1>
+          </ul>
+        </div>
+
+        <section class="tile" data-mode="sizeM" data-action="false">
+          <ul class="tile__list">
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Стельки</p>
+              <div class="collection__info">
+                <p class="collection__count">31 файл</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Документы</p>
+              <div class="collection__info">
+                <p class="collection__count">7 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Ортомедика</p>
+              <div class="collection__info">
+                <p class="collection__count">15 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Евразийский ортопедический форум</p>
+              <div class="collection__info">
+                <p class="collection__count">192 файла</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Фирменный стиль</p>
+              <div class="collection__info">
+                <p class="collection__count">7 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Компрессионное белье</p>
+              <div class="collection__info">
+                <p class="collection__count">15 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Orlet</p>
+              <div class="collection__info">
+                <p class="collection__count">24 файла</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Ormann</p>
+              <div class="collection__info">
+                <p class="collection__count">7 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Все видео</p>
+              <div class="collection__info">
+                <p class="collection__count">7 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Дельта-терм</p>
+              <div class="collection__info">
+                <p class="collection__count">15 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Стельки</p>
+              <div class="collection__info">
+                <p class="collection__count">31 файл</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">EOF 2019 презентации</p>
+              <div class="collection__info">
+                <p class="collection__count">239 файлов</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            <li class="collection__item tile__item">
+              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
+              <p class="collection__name">Фирменный стиль</p>
+              <div class="collection__info">
+                <p class="collection__count">31 файл</p>
+                <p class="collection__date">2019-05-30</p>
+              </div>
+            </li>
+            
+          </ul>
+        </section>
+
+        
+      </div>
+    </div>
   </header>
 
   <main class="main">
@@ -368,240 +489,240 @@
         </ul>
       </div>
     </section>
-</section>
+  </section>
 
-    <section class="main__allFiles" data-mode="sizeM" data-action="false">
-      <ul class="main__listFiles">
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file1.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file2.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file3.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file4.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">DT-KEYNOTE-MED-FORUM-1-2.</span><span class="main__fileName--extension">DOC</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <p class="main__filePreviewVideo">
-              <img src="img/video1.jpg" alt="">
-              <span class="main__videoTime">1:23</span>
-            </p>
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MOV</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <p class="main__filePreviewVideo">
-              <img src="img/video2.jpg" alt="">
-              <span class="main__videoTime">1:23:45</span>
-            </p>
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MP4</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file6.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">OTM-CATALOGUE-TMA-1-1.</span><span class="main__fileName--extension">PDF</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file5.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <p class="main__filePreviewVideo">
-              <img src="img/video3.jpg" alt="">
-              <span class="main__videoTime">1:20</span>
-            </p>
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">NM-ERGOPAD-MED-FORUM-1-4.</span><span class="main__fileName--extension">DOC</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file1.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file3.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <p class="main__filePreviewVideo">
-              <img src="img/video4.jpg" alt="">
-              <span class="main__videoTime">4:10</span>
-            </p>
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MOV</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file1.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file7.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file9.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName"><span class="main__fileName--name">BFD-BRANDBOOK-WEB-1-1.</span><span class="main__fileName--extension">JPG</span></p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file8.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <p class="main__filePreviewVideo">
-              <img src="img/video5.jpg" alt="">
-              <span class="main__videoTime">1:47:20</span>
-            </p>
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <p class="main__filePreviewVideo">
-              <img src="img/video6.jpg" alt="">
-              <span class="main__videoTime">10:23</span>
-            </p>
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <p class="main__filePreview">
-            <img src="img/file1.jpg" alt="">
+  <section class="main__allFiles" data-mode="sizeM" data-action="false">
+    <ul class="main__listFiles">
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file1.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file2.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file3.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file4.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">DT-KEYNOTE-MED-FORUM-1-2.</span><span class="main__fileName--extension">DOC</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <p class="main__filePreviewVideo">
+            <img src="img/video1.jpg" alt="">
+            <span class="main__videoTime">1:23</span>
           </p>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file2.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
-          </div>
-        </li>
-        <li class="main__file">
-          <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
-          <div class="main__filePreview">
-            <img src="img/file2.jpg" alt="">
-          </div>
-          <div class="main__info">
-            <p class="main__fileDate">2019-05-04</p>
-            <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MOV</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <p class="main__filePreviewVideo">
+            <img src="img/video2.jpg" alt="">
+            <span class="main__videoTime">1:23:45</span>
+          </p>
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MP4</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file6.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">OTM-CATALOGUE-TMA-1-1.</span><span class="main__fileName--extension">PDF</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file5.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <p class="main__filePreviewVideo">
+            <img src="img/video3.jpg" alt="">
+            <span class="main__videoTime">1:20</span>
+          </p>
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">NM-ERGOPAD-MED-FORUM-1-4.</span><span class="main__fileName--extension">DOC</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file1.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file3.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <p class="main__filePreviewVideo">
+            <img src="img/video4.jpg" alt="">
+            <span class="main__videoTime">4:10</span>
+          </p>
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="main__fileName--extension">MOV</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file1.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">NM-BRANDBOOK-ZDO.</span><span class="main__fileName--extension">JPG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file7.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="main__fileName--extension">PNG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file9.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName"><span class="main__fileName--name">BFD-BRANDBOOK-WEB-1-1.</span><span class="main__fileName--extension">JPG</span></p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file8.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <p class="main__filePreviewVideo">
+            <img src="img/video5.jpg" alt="">
+            <span class="main__videoTime">1:47:20</span>
+          </p>
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <p class="main__filePreviewVideo">
+            <img src="img/video6.jpg" alt="">
+            <span class="main__videoTime">10:23</span>
+          </p>
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <p class="main__filePreview">
+          <img src="img/file1.jpg" alt="">
+        </p>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file2.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+        </div>
+      </li>
+      <li class="main__file">
+        <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <div class="main__filePreview">
+          <img src="img/file2.jpg" alt="">
+        </div>
+        <div class="main__info">
+          <p class="main__fileDate">2019-05-04</p>
+          <p class="main__fileName">NM-BRANDBOOK-ZDO.JPG</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
 
 

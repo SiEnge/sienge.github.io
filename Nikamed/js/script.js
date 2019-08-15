@@ -6,9 +6,18 @@ document.addEventListener("click", function(event) {
 
   //открытие/закрытие фильтра
   if (target.classList.contains("filter__btnOpen")) {
-    let filter = document.querySelector(".filter");
-    if (filter) {
-      if (filter.dataset.mode == "open") {
+    // let filter = document.querySelector(".filter");
+    // if (filter) {
+    //   if (filter.dataset.mode == "open") {
+    //     closeFilter();
+    //   } else {
+    //     openFilter(); 
+    //   }
+    // }
+
+    // let filter = document.querySelector(".filter");
+    if (document.querySelector(".header")) {
+      if (document.querySelector(".header").dataset.filter == "open") {
         closeFilter();
       } else {
         openFilter(); 
@@ -76,6 +85,18 @@ document.addEventListener("click", function(event) {
   //сбросить все фильтры
   if (target.classList.contains("filter__btn--reset")) {
     clearFilter();
+  }
+
+  //открытие/закрытие Коллекций
+  if (target.classList.contains("collection__btnOpen")) {
+    let header = document.querySelector(".header");
+    if (header) {
+      if (header.dataset.collection == "open") {
+        closeCollection();
+      } else {
+        openCollection(); 
+      }
+    }
   }
 
   // Открытие/закрытие выпадающего окна "Меню пользователя""
@@ -155,19 +176,25 @@ document.addEventListener("click", function(event) {
 });
 
 function closeFilter() {
-  let filter = document.querySelector(".filter");
-  let button = document.querySelector(".filter__btnOpen");
-  filter.dataset.mode = "close";
-  button.dataset.mode = "close";
+  // let filter = document.querySelector(".filter");
+  // let button = document.querySelector(".filter__btnOpen");
+  // filter.dataset.mode = "close";
+  // button.dataset.mode = "close";
+
+
+  // let header = document.querySelector(".header");
+  document.querySelector(".header").dataset.filter = "close";
   document.body.classList.remove("overflowHidden");
   arrChoice = [];
 }
 
 function openFilter() {
   let filter = document.querySelector(".filter");
-  let button = document.querySelector(".filter__btnOpen");
-  filter.dataset.mode = "open";
-  button.dataset.mode = "open";
+  // let button = document.querySelector(".filter__btnOpen");
+  // filter.dataset.mode = "open";
+  // button.dataset.mode = "open";
+
+  document.querySelector(".header").dataset.filter = "open";
   document.body.classList.add("overflowHidden");
 
   //копирование текущих выбранных фильтров
@@ -178,6 +205,40 @@ function openFilter() {
       arrChoice.push([filterItemsChoice[i].dataset.id, filterItemsChoice[i].innerHTML]);
     }
   }
+}
+
+function closeCollection() {
+  // let header = document.querySelector(".header");
+  document.querySelector(".header").dataset.collection = "close";
+  // header.dataset.collection = (header.dataset.collection == "close") ? "open" : "close";
+
+  // let collection = document.querySelector(".collection");
+  // let button = document.querySelector(".collection__btnOpen");
+  // collection.dataset.mode = "close";
+  // button.dataset.mode = "close";
+  document.body.classList.remove("overflowHidden");
+  // arrChoice = [];
+}
+
+function openCollection() {
+  // let collection = document.querySelector(".collection");
+  // let button = document.querySelector(".collection__btnOpen");
+  // collection.dataset.mode = "open";
+  // button.dataset.mode = "open";
+
+  // let header = document.querySelector(".header");
+  document.querySelector(".header").dataset.collection = "open";
+
+  document.body.classList.add("overflowHidden");
+
+  // //копирование текущих выбранных фильтров
+  // let filterChoice = filter.querySelector(".filter__filterChoice");
+  // let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
+  // if (filterItemsChoice.length > 0) {
+  //   for (var i = 0; i < filterItemsChoice.length; i++) {
+  //     arrChoice.push([filterItemsChoice[i].dataset.id, filterItemsChoice[i].innerHTML]);
+  //   }
+  // }
 }
 
 function currentFilter() {
