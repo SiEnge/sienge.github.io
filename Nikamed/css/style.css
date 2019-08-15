@@ -467,10 +467,10 @@
   background-color: #42515A;
   height: 100%;
   padding: 16px;
-  color: #FFFFFF;
 }
 .header__search:focus {
-  background-color: #E1E4E8;
+  background-color: #FFFFFF;
+  color: #42515A;
 }
 .header__btnSearch {
   position: absolute;
@@ -545,6 +545,10 @@
     padding: 16px 21px 14px;
     background-color: #E1E4E8;
   }
+  .header__search:focus {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
   .header__collection {
     width: 166px;
     -webkit-box-flex: 0;
@@ -576,6 +580,9 @@
   display: block;
   width: calc(100vw - 48px);
   height: 100vh;
+}
+.user[data-list="show"] .user__burger {
+  background-image: url("../img/user_close.svg");
 }
 .user__name {
   font-family: "Roboto";
