@@ -572,6 +572,10 @@
   position: relative;
   z-index: 10;
 }
+.user[data-list="show"] {
+  border-left: 1px solid #69757D;
+  border-left-color: #e1e4e840;
+}
 .user[data-list="show"] .user__button--dropDown::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -581,7 +585,7 @@
   width: calc(100vw - 48px);
   height: 100vh;
 }
-.user[data-list="show"] .user__burger {
+.user[data-list="show"] .user__button--burger {
   background-image: url("../img/user_close.svg");
 }
 .user__name {
@@ -643,7 +647,7 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
-  padding: 4px 24px;
+  padding: 1px 24px;
   margin: 0;
   list-style: none;
   background-color: #42515A;
