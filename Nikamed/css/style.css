@@ -42,6 +42,7 @@
 }
 *:focus {
   outline-color: #0072BC;
+  outline-style: dashed;
 }
 .title {
   font-family: "NotoSansSC", "Arial", sans-serif;
