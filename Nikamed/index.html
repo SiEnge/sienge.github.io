@@ -39,8 +39,8 @@
 
     <div class="header__top">
       <div class="header__topWrap">
-        <div class="header__logo">
-          <a>
+        <div class="header__tab header__tab--logo">
+          <a class="header__logo">
             <picture>
               <source media="(min-width: 720px)" srcset="img/logo.svg">
               <img src="img/logo_mobile.svg" width="24" height="18" alt="Логотип media.nikamed.ru">
@@ -49,49 +49,72 @@
         </div>
 
         <!-- Открытие фильтра -->
-        <button class="header__btnFilter filter__btnOpen" type="button" name="button" data-mode="close">Фильтр</button>
+        <div class="header__tab header__tab--filter" data-mode="close">
+          <button class="filter__btnOpen" type="button">Фильтр</button>
+        </div>
+
+        <div class="header__tab header__tab--search" data-mode="close">
+          <form class="header__search search" action="" method="get">
+            <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
+            <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
+          </form>
+        </div>
+
+        <div class="header__tab header__tab--collection" data-mode="close">
+          <a class="collection__link" href="">Мои коллекции <span class="collection__count">14</span></a>
+        </div>
+        
+        <!-- <button class="header__btnFilter filter__btnOpen header__tab" type="button" name="button" data-mode="close">Фильтр</button> -->
 
         <!-- Поиск -->
-        <form class="header__search search" action="" method="get">
+        <!-- <form class="header__search search header__tab" action="" method="get">
           <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
           <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
-        </form>
+        </form> -->
 
         <!-- Мои коллекции -->
         <!-- Открытие коллекции -->
-        <button class="header__btnCollection collection__btnOpen" type="button" name="button" data-mode="close">Мои коллекции</button>
+        <!-- <div class="header__tab header__btnCollection  ">
+          <a href="collection.html" class="collection__btnOpen" data-mode="close">Мои коллекции</button>
+          
+        </div> -->
+        <!-- <button class="header__btnCollection collection__btnOpen " type="button" name="button" data-mode="close">Мои коллекции</button> -->
 
         <!-- <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p> -->
 
         <!-- Меню пользователя -->
-        <div class="header__user user" title="Меню" data-list="hide">
-          <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
-          <button class="user__button user__button--dropDown" type="button">
-            <span class="user__name">АК</span>
-            <span class="visuallyhidden">Открыть меню пользователя</span>
-          </button>
-          <button class="user__button user__button--burger" type="button">
-            <!-- <span class="user__name">АК</span> -->
-            <span class="visuallyhidden">Открыть меню пользователя</span>
-          </button>
-          <div class="user__wrap">
-            <ul class="user__dropDownList">
-              <li class="user__dropDownItemWrap--notice">
-                <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
-              </li>
-              <li>
-                <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
-              </li>
-              <li>
-                <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
-              </li>
-              <li>
-                <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
-              </li>
-            </ul>
-          </div>
+        <div class="header__tab header__tab--user user" title="Меню" data-list="hide">
+          <!-- <div class="user" data-list="hide"> -->
+            <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
+            <button class="user__button user__button--dropDown" type="button">
+              <span class="user__name">АК</span>
+              <span class="visuallyhidden">Открыть меню пользователя</span>
+            </button>
+            <button class="user__button user__button--burger" type="button">
+              <!-- <span class="user__name">АК</span> -->
+              <span class="visuallyhidden">Открыть меню пользователя</span>
+            </button>
+          <!-- </div> -->
+          
         </div>
     
+      </div>
+
+      <div class="user__wrap">
+        <ul class="user__dropDownList">
+          <li class="user__dropDownItemWrap--notice">
+            <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
+          </li>
+          <li>
+            <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
+          </li>
+          <li>
+            <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
+          </li>
+          <li>
+            <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="header__filter filter">
@@ -297,127 +320,6 @@
         <button class="filter__btn filter__btn--apply" type="button" name="button">Применить</button>
         <button class="filter__btn filter__btn--cancel" type="button" name="button">Отмена</button>
         <button class="filter__btn filter__btn--reset" type="button" name="button">Сбросить все фильтры</button>
-      </div>
-    </div>
-
-    <div class="header__collection collection">
-      <div class="collection__wrap">
-        <div class="collection__total">
-          <h1 class="collection__title title">Мои коллекции</h1>
-          </ul>
-        </div>
-
-        <section class="tile" data-mode="sizeM" data-action="false">
-          <ul class="tile__list">
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Стельки</p>
-              <div class="collection__info">
-                <p class="collection__count">31 файл</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Документы</p>
-              <div class="collection__info">
-                <p class="collection__count">7 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Ортомедика</p>
-              <div class="collection__info">
-                <p class="collection__count">15 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Евразийский ортопедический форум</p>
-              <div class="collection__info">
-                <p class="collection__count">192 файла</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Фирменный стиль</p>
-              <div class="collection__info">
-                <p class="collection__count">7 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Компрессионное белье</p>
-              <div class="collection__info">
-                <p class="collection__count">15 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Orlet</p>
-              <div class="collection__info">
-                <p class="collection__count">24 файла</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Ormann</p>
-              <div class="collection__info">
-                <p class="collection__count">7 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Все видео</p>
-              <div class="collection__info">
-                <p class="collection__count">7 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Дельта-терм</p>
-              <div class="collection__info">
-                <p class="collection__count">15 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Стельки</p>
-              <div class="collection__info">
-                <p class="collection__count">31 файл</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">EOF 2019 презентации</p>
-              <div class="collection__info">
-                <p class="collection__count">239 файлов</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            <li class="collection__item tile__item">
-              <!-- <button class="main__buttonCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button> -->
-              <p class="collection__name">Фирменный стиль</p>
-              <div class="collection__info">
-                <p class="collection__count">31 файл</p>
-                <p class="collection__date">2019-05-30</p>
-              </div>
-            </li>
-            
-          </ul>
-        </section>
-
-        
       </div>
     </div>
   </header>
