@@ -10,6 +10,7 @@ document.addEventListener("click", function(event) {
       if (document.querySelector(".header").dataset.filter == "open") {
         closeFilter();
       } else {
+        closeAction();
         openFilter(); 
       }
     }
@@ -77,15 +78,22 @@ document.addEventListener("click", function(event) {
     clearFilter();
   }
 
+  //выбор в меню пользователя
+  if (target.classList.contains("user__dropDownItem")) {
+    closeUser();
+  }
+
+  
+
   // Открытие/закрытие выпадающего окна "Меню пользователя""
   let userBtn = target.closest(".user__button");
   if (userBtn) {
     let wrap = target.closest(".user");
-    let header = document.querySelector(".header");
-    let user = document.querySelector(".user");
-
-    wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
-    header.dataset.user = (wrap.dataset.list == "show") ? "open" : "close";
+    if (wrap.dataset.list == "show") {
+      closeUser();
+    } else {
+      openUser();
+    }
     return;
   }
 
@@ -125,21 +133,12 @@ document.addEventListener("click", function(event) {
   // Включение режима действия с файлами
   if (target.classList.contains("control__button--action")) {
     let wrapFiles = document.querySelector(".main__allFiles");
-    let action = document.querySelector(".action");
-    let actionBtnWrap = document.querySelector(".action__buttonWrap");
 
     if (wrapFiles.dataset.action == "false") {
-      wrapFiles.dataset.action = "true";
-      target.innerHTML = "Отменить";
-      action.dataset.status = "show";
+      openAction();
     } else {
-      wrapFiles.dataset.action = "false";
-      target.innerHTML = "Выбрать";
-      action.dataset.status = "hide";
-      resetAction();
-      actionBtnWrap.dataset.disabled = "true";
+      closeAction();
     }
-    
   }
 
   //выбор файла
@@ -156,6 +155,7 @@ document.addEventListener("click", function(event) {
 document.addEventListener("focus", function(event) {
   var target = event.target;
   if (target.classList.contains("search__input")) {
+    closeFilter();
     document.querySelector(".header__tab--search").dataset.mode = "open";
   }
 }, true);
@@ -166,6 +166,9 @@ document.addEventListener("blur", function(event) {
     document.querySelector(".header__tab--search").dataset.mode = "close";
   }
 }, true);
+
+
+      
 
 function closeFilter() {
   document.querySelector(".header").dataset.filter = "close";
@@ -251,6 +254,43 @@ function countFiles() {
   return count;
 }
 
+//открыть Меню пользователя
+function openUser() {
+  let user = document.querySelector(".user");
+  let header = document.querySelector(".header");
+
+  user.dataset.list = "show";
+  header.dataset.user = "open";
+}
+
+//закрыть Меню пользователя
+function closeUser() {
+  let user = document.querySelector(".user");
+  let header = document.querySelector(".header");
+
+  user.dataset.list = "hide";
+  header.dataset.user = "close";
+}
+
+//включить режим Действия с файлами
+function openAction() {
+  document.querySelector(".main__allFiles").dataset.action = "true";
+  document.querySelector(".file").dataset.action = "true";
+  document.querySelector(".control__button--action").innerHTML = "Отменить";
+  document.querySelector(".action").dataset.status = "show";
+}
+
+//выключить режим Действия с файлами
+function closeAction() {
+  document.querySelector(".main__allFiles").dataset.action = "false";
+  document.querySelector(".file").dataset.action = "false";
+  document.querySelector(".control__button--action").innerHTML = "Выбрать";
+  document.querySelector(".action").dataset.status = "hide";
+  resetAction();
+  document.querySelector(".action__buttonWrap").dataset.disabled = "true";
+}
+
+//сбросить кнопки Действия с файлами
 function resetAction() {
   let wrapFiles = document.querySelector(".main__allFiles");
   let filesBtnCheck = wrapFiles.querySelectorAll(".main__buttonCheck");

@@ -447,10 +447,10 @@
   border-right: none;
 }
 .header__tab--logo {
-  width: auto;
+  width: 48px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+      -ms-flex: 0 0 48px;
+          flex: 0 0 48px;
   padding: 7px 6px;
 }
 .header__tab--filter {
@@ -525,6 +525,10 @@
     width: 157px;
   }
   .header__tab--logo {
+    width: auto;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
     padding: 7px 10px;
   }
   .header__tab--search {
@@ -1325,6 +1329,11 @@ body {
 .overflowHidden {
   height: 100%;
   overflow: hidden;
+}
+.file[data-action="true"] .control__wrap--sort,
+.file[data-action="true"] .control__wrap--layout {
+  opacity: 0.5;
+  pointer-events: none;
 }
 .main__option {
   display: -webkit-box;

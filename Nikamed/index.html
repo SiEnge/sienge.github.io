@@ -39,6 +39,8 @@
 
     <div class="header__top">
       <div class="header__topWrap">
+
+        <!-- Вкладка Логотипа -->
         <div class="header__tab header__tab--logo">
           <a class="header__logo">
             <picture>
@@ -48,11 +50,12 @@
           </a>
         </div>
 
-        <!-- Открытие фильтра -->
+        <!-- Вкладка Фильтра -->
         <div class="header__tab header__tab--filter" data-mode="close">
           <button class="filter__btnOpen" type="button">Фильтр</button>
         </div>
 
+        <!-- Вкладка Поиска -->
         <div class="header__tab header__tab--search" data-mode="close">
           <form class="header__search search" action="" method="get">
             <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
@@ -60,49 +63,27 @@
           </form>
         </div>
 
+        <!-- Вкладка Мои коллекции -->
         <div class="header__tab header__tab--collection" data-mode="close">
           <a class="collection__link" href="">Мои коллекции <span class="collection__count">14</span></a>
         </div>
-        
-        <!-- <button class="header__btnFilter filter__btnOpen header__tab" type="button" name="button" data-mode="close">Фильтр</button> -->
 
-        <!-- Поиск -->
-        <!-- <form class="header__search search header__tab" action="" method="get">
-          <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
-          <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
-        </form> -->
-
-        <!-- Мои коллекции -->
-        <!-- Открытие коллекции -->
-        <!-- <div class="header__tab header__btnCollection  ">
-          <a href="collection.html" class="collection__btnOpen" data-mode="close">Мои коллекции</button>
-          
-        </div> -->
-        <!-- <button class="header__btnCollection collection__btnOpen " type="button" name="button" data-mode="close">Мои коллекции</button> -->
-
-        <!-- <p class="header__collection">Мои коллекции <span class="header__collection--count">14</span></p> -->
-
-        <!-- Меню пользователя -->
+        <!-- Вкладка Меню пользователя -->
         <div class="header__tab header__tab--user user" title="Меню" data-list="hide">
-          <!-- <div class="user" data-list="hide"> -->
             <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
             <button class="user__button user__button--dropDown" type="button">
               <span class="user__name">АК</span>
               <span class="visuallyhidden">Открыть меню пользователя</span>
             </button>
             <button class="user__button user__button--burger" type="button">
-              <!-- <span class="user__name">АК</span> -->
               <span class="visuallyhidden">Открыть меню пользователя</span>
             </button>
-          <!-- </div> -->
-          
         </div>
-    
       </div>
 
       <div class="user__wrap">
         <ul class="user__dropDownList">
-          <li class="user__dropDownItemWrap--notice">
+          <li class="user__dropDownItemWrap--notice" data-notice="new">
             <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
           </li>
           <li>
@@ -324,7 +305,7 @@
     </div>
   </header>
 
-  <main class="main">
+  <main class="main file">
 
     <section class="main__option">
       <!-- Действия с файлами -->
@@ -341,7 +322,6 @@
 
 
     <section class="main__control control">
-
       <!-- Включение режима действия с файлами -->
       <div class="control__wrap control__wrap--action" title="Действия с файлами">
         <button class="control__button control__button--action" type="button">Выбрать</button>
