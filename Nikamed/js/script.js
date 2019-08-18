@@ -124,7 +124,7 @@ document.addEventListener("click", function(event) {
     wrap.dataset.list = "hide";
 
     if (wrap.classList.contains("control__wrap--layout")) {
-      let allFiles = document.querySelector(".main__allFiles");
+      let allFiles = document.querySelector(".file");
       allFiles.dataset.mode = target.dataset.layout;
       wrap.dataset.mode = target.dataset.layout;
     }
@@ -132,7 +132,7 @@ document.addEventListener("click", function(event) {
 
   // Включение режима действия с файлами
   if (target.classList.contains("control__button--action")) {
-    let wrapFiles = document.querySelector(".main__allFiles");
+    let wrapFiles = document.querySelector(".file");
 
     if (wrapFiles.dataset.action == "false") {
       openAction();
@@ -142,7 +142,7 @@ document.addEventListener("click", function(event) {
   }
 
   //выбор файла
-  if (target.classList.contains("main__buttonCheck")) {
+  if (target.classList.contains("tile__btnCheck")) {
     target.dataset.check = (target.dataset.check == "false") ? "true" : "false";
     let selectedFiles = document.querySelector(".main__countSelectedFiles");
     let count = countFiles();
@@ -243,8 +243,8 @@ function clearFilter() {
 
 //подсчет количества выделенных файлов
 function countFiles() {
-  let wrapFiles = document.querySelector(".main__allFiles");
-  let filesBtnCheck = wrapFiles.querySelectorAll(".main__buttonCheck");
+  let wrapFiles = document.querySelector(".file");
+  let filesBtnCheck = wrapFiles.querySelectorAll(".tile__btnCheck");
   let count = 0;
   for (var i = 0; i < filesBtnCheck.length; i++) {
     if (filesBtnCheck[i].dataset.check == "true") {
@@ -274,16 +274,18 @@ function closeUser() {
 
 //включить режим Действия с файлами
 function openAction() {
-  document.querySelector(".main__allFiles").dataset.action = "true";
-  document.querySelector(".file").dataset.action = "true";
+  document.querySelector(".tile").dataset.action = "true";
+  // document.querySelector(".main__allFiles").dataset.action = "true";
+  document.querySelector(".control").dataset.action = "true";
   document.querySelector(".control__button--action").innerHTML = "Отменить";
   document.querySelector(".action").dataset.status = "show";
 }
 
 //выключить режим Действия с файлами
 function closeAction() {
-  document.querySelector(".main__allFiles").dataset.action = "false";
-  document.querySelector(".file").dataset.action = "false";
+  document.querySelector(".tile").dataset.action = "false";
+  // document.querySelector(".main__allFiles").dataset.action = "false";
+  document.querySelector(".control").dataset.action = "false";
   document.querySelector(".control__button--action").innerHTML = "Выбрать";
   document.querySelector(".action").dataset.status = "hide";
   resetAction();
@@ -292,8 +294,8 @@ function closeAction() {
 
 //сбросить кнопки Действия с файлами
 function resetAction() {
-  let wrapFiles = document.querySelector(".main__allFiles");
-  let filesBtnCheck = wrapFiles.querySelectorAll(".main__buttonCheck");
+  let wrapFiles = document.querySelector(".file");
+  let filesBtnCheck = wrapFiles.querySelectorAll(".tile__btnCheck");
   for (var i = 0; i < filesBtnCheck.length; i++) {
     filesBtnCheck[i].dataset.check = "false";
   }
