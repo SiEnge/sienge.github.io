@@ -150,6 +150,43 @@ document.addEventListener("click", function(event) {
     let actionBtnWrap = document.querySelector(".action__buttonWrap");
     actionBtnWrap.dataset.disabled = (count == 0) ? "true" : "false"
   }
+
+  //открытие всплывающего окна "Добавить в коллекцию"
+  if (target.classList.contains("action__button--inCollection")) {
+    popOpen(document.querySelector(".pop--addToCollection"));
+  }
+
+  //открытие всплывающего окна "Скачать"
+  if (target.classList.contains("action__button--download")) {
+    popOpen(document.querySelector(".pop--download"));
+  }
+
+  //открытие всплывающего окна "Поделиться"
+  if (target.classList.contains("action__button--share")) {
+    popOpen(document.querySelector(".pop--share"));
+  }
+
+  //закрытие всплывающего окна по Крестику
+  if (target.classList.contains("pop__buttonClose")) {
+    popClose(target);
+  }
+
+  //закрытие всплывающего окна по кнопке Отмена
+  if (target.classList.contains("pop__button--cancel")) {
+    popClose(target);
+  }
+
+  //закрытие всплывающего окна по Overlay
+  if (target.classList.contains("pop__overlay")) {
+    popClose(target);
+  }
+
+  //Добавление/Удаление из коллекций во всплывающем окне
+  if (target.classList.contains("pop__btnCollection")) {
+    let item = target.closest(".pop__listItem");
+    item.dataset.mode = (item.dataset.mode == "add") ? "remove" : "add";
+  }
+
 });
 
 document.addEventListener("focus", function(event) {
@@ -167,7 +204,16 @@ document.addEventListener("blur", function(event) {
   }
 }, true);
 
+function popOpen(pop) {
+  pop.dataset.mode = "open";
+  document.body.classList.add("overflowHidden");
+}
 
+function popClose(button) {
+  let pop = button.closest(".pop");
+  pop.dataset.mode = "close";
+  document.body.classList.remove("overflowHidden");
+}
       
 
 function closeFilter() {
@@ -275,7 +321,6 @@ function closeUser() {
 //включить режим Действия с файлами
 function openAction() {
   document.querySelector(".tile").dataset.action = "true";
-  // document.querySelector(".main__allFiles").dataset.action = "true";
   document.querySelector(".control").dataset.action = "true";
   document.querySelector(".control__button--action").innerHTML = "Отменить";
   document.querySelector(".action").dataset.status = "show";
@@ -284,7 +329,6 @@ function openAction() {
 //выключить режим Действия с файлами
 function closeAction() {
   document.querySelector(".tile").dataset.action = "false";
-  // document.querySelector(".main__allFiles").dataset.action = "false";
   document.querySelector(".control").dataset.action = "false";
   document.querySelector(".control__button--action").innerHTML = "Выбрать";
   document.querySelector(".action").dataset.status = "hide";
