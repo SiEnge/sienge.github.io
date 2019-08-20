@@ -187,6 +187,12 @@ document.addEventListener("click", function(event) {
     item.dataset.mode = (item.dataset.mode == "add") ? "remove" : "add";
   }
 
+  //открытие тектового поля для ввода названия коллекции
+  if (target.classList.contains("pop__button--createLink")) {
+    let wrap = target.closest(".pop__inputWrap--createCollection");
+    if (wrap) wrap.dataset.create = "true";
+  }
+
 });
 
 document.addEventListener("focus", function(event) {

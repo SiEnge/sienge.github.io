@@ -333,24 +333,27 @@
           <span class="control__name">По имени (A–Z)</span>
           <span class="visuallyhidden">Открыть выпадающий список</span>
         </button>
-        <ul class="control__dropDownList">
-          <li>
-            <input type="radio" id="sortNameZA" name="sort">
-            <label class="control__dropDownItem" for="sortNameZA">По имени (Z–A)</label>
-          </li>
-          <li>
-            <input type="radio" id="sortNameAZ" name="sort" checked>
-            <label class="control__dropDownItem" for="sortNameAZ">По имени (A–Z)</label>
-          </li>
-          <li>
-            <input type="radio" id="sortType" name="sort">
-            <label class="control__dropDownItem" for="sortType">По типу файла</label>
-          </li>
-          <li>
-            <input type="radio" id="sortExtension" name="sort">
-            <label class="control__dropDownItem" for="sortExtension">По расширению</label>
-          </li>
-        </ul>
+        <!-- <div class="control__dropDownWrap"> -->
+        <!-- <div class="control__overlay"></div> -->
+          <ul class="control__dropDownList">
+            <li>
+              <input type="radio" id="sortNameZA" name="sort">
+              <label class="control__dropDownItem" for="sortNameZA">По имени (Z–A)</label>
+            </li>
+            <li>
+              <input type="radio" id="sortNameAZ" name="sort" checked>
+              <label class="control__dropDownItem" for="sortNameAZ">По имени (A–Z)</label>
+            </li>
+            <li>
+              <input type="radio" id="sortType" name="sort">
+              <label class="control__dropDownItem" for="sortType">По типу файла</label>
+            </li>
+            <li>
+              <input type="radio" id="sortExtension" name="sort">
+              <label class="control__dropDownItem" for="sortExtension">По расширению</label>
+            </li>
+          </ul>
+        <!-- </div> -->
       </div>
 
       <!-- Выбор варианта раскладки -->
@@ -784,9 +787,13 @@
           <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
         </li>
       </ul>
-      <div class="">
-        <button class="button button--link" type="button">Создать новую</button>
-      </div>
+      <section class="pop__inputWrap pop__inputWrap--createCollection" data-create="false">
+        <button class="button button--link pop__button pop__button--createLink" type="button">Создать новую</button>
+        <input class="pop__input" type="text">
+        <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button">Создать</button>
+        
+      </section>
+      
       <div class="pop__buttonWrap">
         <button class="pop__button button button--ok" type="button" name="button">Сохранить</button>
         <button class="pop__button pop__button--cancel button button--cancel" type="button" name="button">Отмена</button>
@@ -800,10 +807,45 @@
 
       <button class="pop__buttonClose" type="button" name="button"><span class="visuallyhidden">Закрыть окно</span></button>
       <p class="pop__title">Скачать <span class="pop__title--count">(12)</span></p>
-      <!-- <p class="pop__listText">Файлы с ограниченной лицензией (4)</p> -->
+      <p class="pop__subtitle">Файлы с ограниченной лицензией <span class="pop__title--count">(4)</span></p>
+
+      <ul class="pop__list pop__list--scroll">
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-05-03-ORT-CATALOGUE-EXPO-1-1.PNG</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама, печатная продукция.</p>
+        </li>
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-05-06-RT-INSTRUCTION-ZDO-2-1.MOV</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама.</p>
+        </li>
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-06-24-BFD-BRANDBOOK-WEB-1-4.JPG</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама, печатная продукция.</p>
+        </li>
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-05-03-ORT-CATALOGUE-EXPO-1-1.PNG</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама.</p>
+        </li>
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-05-06-RT-INSTRUCTION-ZDO-2-1.MOV</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама.</p>
+        </li>
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-06-24-BFD-BRANDBOOK-WEB-1-4.JPG</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама, печатная продукция.</p>
+        </li>
+        <li class="pop__listItem">
+          <p class="pop__listText">2019-05-03-ORT-CATALOGUE-EXPO-1-1.PNG</p>
+          <p class="pop__listNote">Ограничение использования: наружная реклама.</p>
+        </li>
+      </ul>
+
+      <p class="pop__text">Нажимая кнопку «Скачать», вы соглашаетесь
+        с&nbsp;<a class="pop__link" href="">правилами использования изображений</a>, 
+        <a class="pop__link" href="">лицензионным соглашением</a> и <a class="pop__link" href="">условиями политики конфиденциальности</a>.</p>
 
       <div class="pop__buttonWrap">
-        <button class="pop__button button button--ok" type="button" name="button">Сохранить</button>
+        <button class="pop__button button button--ok" type="button" name="button">Скачать</button>
         <button class="pop__button pop__button--cancel button button--cancel" type="button" name="button">Отмена</button>
       </div>
     </div>

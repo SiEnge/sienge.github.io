@@ -113,15 +113,15 @@ body {
 .button {
   border: none;
   background-color: transparent;
-  padding: 10px 16px;
+  padding: 10px 20px;
   font-family: "Roboto";
   font-size: 14px;
+  line-height: 16px;
   font-weight: 500;
   font-style: normal;
   cursor: pointer;
   color: #42515A;
   border-radius: 20px;
-  margin-bottom: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
@@ -1402,6 +1402,7 @@ body {
   text-align: right;
   color: #0072BC;
   cursor: pointer;
+  margin-bottom: 4px;
 }
 .control__button:hover {
   color: #42515A;
@@ -1425,6 +1426,14 @@ body {
 }
 .control__button--dropDown:hover::after {
   background-image: url("../img/drop_down_arrow_black.svg");
+}
+.control__dropDownList {
+  display: none;
+}
+.control__overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 .control__dropDownList {
   position: absolute;
@@ -1606,11 +1615,12 @@ body {
 .pop__wrap {
   position: absolute;
   top: 112px;
-  width: 408px;
+  width: calc(100% - 32px);
+  left: 50%;
+  margin-left: calc(-50% + 16px);
+  min-width: 320px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  left: 50%;
-  margin-left: -204px;
   padding: 24px;
   padding-top: 20px;
   background-color: #FFFFFF;
@@ -1655,12 +1665,69 @@ body {
   letter-spacing: normal;
   color: #42515A;
   margin: 0;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
+.pop__subtitle {
+  margin: 0;
+  font-family: "NotoSansSC";
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #42515A;
+  padding-top: 4px;
+  padding-bottom: 12px;
+}
+.pop__text {
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.12px;
+  color: #909194;
+  margin: 0;
+}
+.pop__link {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.12px;
+  color: #0072BC;
+  text-decoration: none;
+}
+.pop__link:hover,
+.pop__link:active {
+  color: #0072BC;
 }
 .pop__list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.pop__list--scroll {
+  border-top: 1px solid #E1E4E8;
+  border-bottom: 1px solid #E1E4E8;
+  max-height: 280px;
+  overflow-y: auto;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 17px;
+}
+.pop__list--scroll .pop__listItem {
+  padding-top: 12px;
+  padding-bottom: 9px;
+  padding-right: 0;
+}
+.pop__list--scroll .pop__listText {
+  padding-bottom: 4px;
 }
 .pop__listItem {
   padding-top: 11px;
@@ -1678,6 +1745,7 @@ body {
 .pop__listText {
   font-family: "Roboto";
   font-size: 14px;
+  line-height: 16px;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -1687,6 +1755,17 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
+}
+.pop__listNote {
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  color: #909194;
   margin: 0;
 }
 .pop__btnCollection {
@@ -1704,11 +1783,58 @@ body {
   background-position: center;
   cursor: pointer;
 }
+.pop__inputWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dotted #E1E4E8;
+}
+.pop__inputWrap--createCollection .pop__button {
+  margin-right: 0;
+}
+.pop__inputWrap--createCollection[data-create="false"] .pop__input,
+.pop__inputWrap--createCollection[data-create="false"] .pop__button--createBtn {
+  display: none;
+}
+.pop__inputWrap--createCollection[data-create="true"] .pop__button--createLink {
+  display: none;
+}
+.pop__input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 9px 10px;
+  margin-right: 8px;
+  border: 1px solid #E1E4E8;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #42515A;
+  line-height: 16px;
+  -webkit-box-shadow: inset 0 1px 3px 0 #E1E4E8;
+          box-shadow: inset 0 1px 3px 0 #E1E4E8;
+}
 .pop__buttonWrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding-top: 24px;
+}
+.pop__button {
+  margin-right: 4px;
+}
+@media (min-width: 456px) {
+  .pop__wrap {
+    top: 112px;
+    width: 408px;
+    left: 50%;
+    margin-left: -204px;
+  }
 }
 .main__option {
   display: -webkit-box;
