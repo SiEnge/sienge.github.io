@@ -132,7 +132,7 @@ document.addEventListener("click", function(event) {
 
   // Включение режима действия с файлами
   if (target.classList.contains("control__button--action")) {
-    let wrapFiles = document.querySelector(".file");
+    let wrapFiles = document.querySelector(".tile");
 
     if (wrapFiles.dataset.action == "false") {
       openAction();
@@ -198,7 +198,7 @@ document.addEventListener("click", function(event) {
 document.addEventListener("focus", function(event) {
   var target = event.target;
   if (target.classList.contains("search__input")) {
-    closeFilter();
+    closeAllTabs();
     document.querySelector(".header__tab--search").dataset.mode = "open";
   }
 }, true);
@@ -209,6 +209,17 @@ document.addEventListener("blur", function(event) {
     document.querySelector(".header__tab--search").dataset.mode = "close";
   }
 }, true);
+
+function closeAllTabs() {
+  let header = document.querySelector(".header");
+  let tabs = header.querySelectorAll(".header__tab");
+  for (var i = 0; i < tabs.length; i++) {
+    if (tabs[i].dataset.mode == "open") {
+      if (tabs[i].classList.contains("header__tab--filter")) closeFilter();
+      if (tabs[i].classList.contains("header__tab--collection")) tabs[i].dataset.mode = "close";;
+    }
+  }
+}
 
 function popOpen(pop) {
   pop.dataset.mode = "open";
@@ -277,25 +288,9 @@ function clearFilter() {
   }
 }
 
-// function checkOverflow(wrap) {
-//   let widthWrap = wrap.offsetWidth;
-//   let items = wrap.children;
-//   let widthItems = 0;
-
-//   for (var i = 0; i < items.length; i++) {
-//     widthItems = widthItems + items[i].offsetWidth;
-//   }
-
-//   if (widthItems > widthWrap) {
-//     console.log("Переполнение");
-//   }
-
-// }
-
-
 //подсчет количества выделенных файлов
 function countFiles() {
-  let wrapFiles = document.querySelector(".file");
+  let wrapFiles = document.querySelector(".tile");
   let filesBtnCheck = wrapFiles.querySelectorAll(".tile__btnCheck");
   let count = 0;
   for (var i = 0; i < filesBtnCheck.length; i++) {
@@ -308,20 +303,14 @@ function countFiles() {
 
 //открыть Меню пользователя
 function openUser() {
-  let user = document.querySelector(".user");
-  let header = document.querySelector(".header");
-
-  user.dataset.list = "show";
-  header.dataset.user = "open";
+  document.querySelector(".user").dataset.list = "show";
+  document.querySelector(".header").dataset.user = "open";
 }
 
 //закрыть Меню пользователя
 function closeUser() {
-  let user = document.querySelector(".user");
-  let header = document.querySelector(".header");
-
-  user.dataset.list = "hide";
-  header.dataset.user = "close";
+  document.querySelector(".user").dataset.list = "hide";
+  document.querySelector(".header").dataset.user = "close";
 }
 
 //включить режим Действия с файлами
@@ -344,7 +333,7 @@ function closeAction() {
 
 //сбросить кнопки Действия с файлами
 function resetAction() {
-  let wrapFiles = document.querySelector(".file");
+  let wrapFiles = document.querySelector(".tile");
   let filesBtnCheck = wrapFiles.querySelectorAll(".tile__btnCheck");
   for (var i = 0; i < filesBtnCheck.length; i++) {
     filesBtnCheck[i].dataset.check = "false";

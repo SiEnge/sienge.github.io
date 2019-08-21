@@ -65,7 +65,7 @@
 
         <!-- Вкладка Мои коллекции -->
         <div class="header__tab header__tab--collection" data-mode="close">
-          <a class="collection__link" href="">Мои коллекции <span class="collection__count">14</span></a>
+          <a class="collection__link" href="mycollection.html">Мои коллекции <span class="collection__count">14</span></a>
         </div>
 
         <!-- Вкладка Меню пользователя -->
@@ -678,6 +678,7 @@
 
   </footer>
 
+  <!-- Всплывающее окно "В коллекцию" -->
   <section class="pop pop--addToCollection" data-mode="close">
     <div class="pop__overlay"></div>
     <div class="pop__wrap">
@@ -791,7 +792,6 @@
         <button class="button button--link pop__button pop__button--createLink" type="button">Создать новую</button>
         <input class="pop__input" type="text">
         <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button">Создать</button>
-        
       </section>
       
       <div class="pop__buttonWrap">
@@ -801,6 +801,7 @@
     </div>
   </section>
 
+  <!-- Всплывающее окно "Скачать" -->
   <section class="pop pop--download" data-mode="close">
     <div class="pop__overlay"></div>
     <div class="pop__wrap">
@@ -851,18 +852,23 @@
     </div>
   </section>
 
+  <!-- Всплывающее окно "Поделиться" -->
   <section class="pop pop--share" data-mode="close">
     <div class="pop__overlay"></div>
     <div class="pop__wrap">
 
       <button class="pop__buttonClose" type="button" name="button"><span class="visuallyhidden">Закрыть окно</span></button>
       <p class="pop__title">Поделиться <span class="pop__title--count">(12)</span></p>
-      <!-- <p class="pop__listText">Файлы с ограниченной лицензией (4)</p> -->
+      <p class="pop__listText">Доступ к файлам:</p>
       
       <div class="pop__buttonWrap">
-        <button class="pop__button button button--ok" type="button" name="button">Отправить</button>
-        <!-- <button class="pop__button pop__button--cancel button button--cancel" type="button" name="button">Отмена</button> -->
+        <button class="pop__button pop__button--copyLink button button--okIcon" type="button" name="button">Скопировать ссылку</button>
       </div>
+      <p class="pop__listNote">Отправить на Email</p>
+      <section class="pop__inputWrap pop__inputWrap--shareEmail" data-create="false">
+        <input class="pop__input" type="email">
+        <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button" disabled>Отправить</button>
+      </section>
     </div>
   </section>
 
