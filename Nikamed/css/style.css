@@ -1169,6 +1169,7 @@ body {
     font-size: 12px;
   }
   .file[data-mode="sizeL"] .file__item {
+    display: block;
     padding: 16px;
   }
   .file[data-mode="sizeL"] .file__preview {
@@ -1359,6 +1360,17 @@ body {
   opacity: 0.5;
   z-index: 100;
   cursor: pointer;
+}
+.collection__empty {
+  opacity: 0.5;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #909194;
 }
 @media (min-width: 408px) {
   .collection__item {
@@ -1670,17 +1682,18 @@ body {
   width: 100%;
   z-index: 200;
   left: 0;
+  background-color: #42515a40;
 }
 .pop[data-mode="close"] {
   display: none;
 }
 .pop__wrap {
   position: absolute;
-  top: 112px;
+  top: 56px;
   width: calc(100% - 32px);
   left: 50%;
   margin-left: calc(-50% + 16px);
-  min-width: 320px;
+  min-width: 250px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 24px;
@@ -1689,17 +1702,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   z-index: 250;
-  margin-bottom: 132px;
-}
-.pop__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #42515A;
-  opacity: 0.25;
-  z-index: 200;
+  margin-bottom: 8px;
 }
 .pop__buttonClose {
   position: absolute;
@@ -1814,9 +1817,6 @@ body {
   line-height: normal;
   letter-spacing: 0.12px;
   color: #42515A;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin: 0;
 }
 .pop__listNote {
@@ -1901,6 +1901,7 @@ body {
     width: 408px;
     left: 50%;
     margin-left: -204px;
+    margin-bottom: 132px;
   }
 }
 .main__option {

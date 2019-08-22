@@ -151,19 +151,26 @@ document.addEventListener("click", function(event) {
     actionBtnWrap.dataset.disabled = (count == 0) ? "true" : "false"
   }
 
+  // if (document.querySelector(".header").dataset.popCollection == "open") {
+  //   let pop = target.closest(".pop--addToCollection");
+  //   if (!pop) popClose2(document.querySelector(".pop--addToCollection"));
+  // }
+
   //открытие всплывающего окна "Добавить в коллекцию"
   if (target.classList.contains("action__button--inCollection")) {
-    popOpen(document.querySelector(".pop--addToCollection"));
+    popOpen(document.querySelector(".pop--addToCollection"), "action");
   }
+
+  
 
   //открытие всплывающего окна "Скачать"
   if (target.classList.contains("action__button--download")) {
-    popOpen(document.querySelector(".pop--download"));
+    popOpen(document.querySelector(".pop--download"), "action");
   }
 
   //открытие всплывающего окна "Поделиться"
   if (target.classList.contains("action__button--share")) {
-    popOpen(document.querySelector(".pop--share"));
+    popOpen(document.querySelector(".pop--share"), "action");
   }
 
   //закрытие всплывающего окна по Крестику
@@ -177,9 +184,15 @@ document.addEventListener("click", function(event) {
   }
 
   //закрытие всплывающего окна по Overlay
-  if (target.classList.contains("pop__overlay")) {
-    popClose(target);
+  if (target.classList.contains("pop")) {
+    popClose2(target);
   }
+
+  //закрытие всплывающего окна по Overlay
+  // if (target.classList.contains("pop__overlay")) {
+  //   popClose(target);
+  // }
+
 
   //Добавление/Удаление из коллекций во всплывающем окне
   if (target.classList.contains("pop__btnCollection")) {
@@ -221,13 +234,21 @@ function closeAllTabs() {
   }
 }
 
-function popOpen(pop) {
+function popOpen(pop, mode) {
+  // document.querySelector(".pop__overlay--" + mode).dataset.status = "show";
   pop.dataset.mode = "open";
   document.body.classList.add("overflowHidden");
 }
 
 function popClose(button) {
+  // document.querySelector(".pop__overlay").dataset.status = "hide";
   let pop = button.closest(".pop");
+  pop.dataset.mode = "close";
+  document.body.classList.remove("overflowHidden");
+}
+
+function popClose2(pop) {
+  // let pop = button.closest(".pop");
   pop.dataset.mode = "close";
   document.body.classList.remove("overflowHidden");
 }
