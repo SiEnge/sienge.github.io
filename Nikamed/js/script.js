@@ -340,6 +340,11 @@ function openAction() {
   document.querySelector(".control").dataset.action = "true";
   document.querySelector(".control__button--action").innerHTML = "Отменить";
   document.querySelector(".action").dataset.status = "show";
+  let control = document.querySelector(".control");
+  let wrap = control.querySelectorAll(".control__wrap");
+  for (var i = 0; i < wrap.length; i++) {
+    wrap[i].dataset.list = "hide;"
+  }
 }
 
 //выключить режим Действия с файлами

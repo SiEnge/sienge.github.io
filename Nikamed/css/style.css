@@ -1084,11 +1084,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  position: relative;
 }
 .file__videoPreview {
   margin: 0;
   font-size: 0;
   position: relative;
+}
+.file__videoPreview img {
+  width: 100%;
 }
 .file__videoTime {
   position: absolute;
