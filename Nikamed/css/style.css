@@ -836,19 +836,19 @@ body {
   }
   .search__input::-webkit-input-placeholder {
     color: #98A1A6;
-    color: #42515a80;
+    color: rgba(66, 81, 90, 0.5);
   }
   .search__input::-moz-placeholder {
     color: #98A1A6;
-    color: #42515a80;
+    color: rgba(66, 81, 90, 0.5);
   }
   .search__input:-moz-placeholder {
     color: #98A1A6;
-    color: #42515a80;
+    color: rgba(66, 81, 90, 0.5);
   }
   .search__input:-ms-input-placeholder {
     color: #98A1A6;
-    color: #42515a80;
+    color: rgba(66, 81, 90, 0.5);
   }
 }
 .user {
@@ -1686,7 +1686,7 @@ body {
   width: 100%;
   z-index: 200;
   left: 0;
-  background-color: #42515a40;
+  background-color: rgba(66, 81, 90, 0.25);
 }
 .pop[data-mode="close"] {
   display: none;
