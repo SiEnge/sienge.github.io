@@ -102,15 +102,18 @@ document.addEventListener("click", function(event) {
   if (controlBtn) {
     let wrap = target.closest(".control__wrap");
     let control = document.querySelector(".control");
+    let overlay = control.querySelector(".control__overlay");
     
     if (wrap.dataset.list == "show") {
       wrap.dataset.list = "hide";
+      overlay.dataset.status = "hide";
     } else {
       let controlWraps = control.querySelectorAll(".control__wrap");
       for (var i = 0; i < controlWraps.length; i++) {
         controlWraps[i].dataset.list = "hide";
       }
       wrap.dataset.list = "show";
+      overlay.dataset.status = "show";
     }
     return;
   }
@@ -119,9 +122,12 @@ document.addEventListener("click", function(event) {
   if (target.classList.contains("control__dropDownItem")) {
     let wrap = target.closest(".control__wrap");
     let text = target.innerHTML;
-
+    let control = document.querySelector(".control");
+    let overlay = control.querySelector(".control__overlay");
+    
     wrap.querySelector(".control__name").innerHTML = text;
     wrap.dataset.list = "hide";
+    overlay.dataset.status = "hide";
 
     if (wrap.classList.contains("control__wrap--layout")) {
       let allFiles = document.querySelector(".file");
@@ -141,10 +147,21 @@ document.addEventListener("click", function(event) {
     }
   }
 
+  //закрытие выпадающего списка по клику на overlay
+  if (target.classList.contains("control__overlay")) {
+    let control = document.querySelector(".control");
+    let overlay = control.querySelector(".control__overlay");
+    let wrap = control.querySelectorAll(".control__wrap");
+    for (var i = 0; i < wrap.length; i++) {
+      wrap[i].dataset.list = "hide;"
+    }
+    overlay.dataset.status = "hide";
+  }
+
   //выбор файла
   if (target.classList.contains("tile__btnCheck")) {
     target.dataset.check = (target.dataset.check == "false") ? "true" : "false";
-    let selectedFiles = document.querySelector(".main__countSelectedFiles");
+    let selectedFiles = document.querySelector(".action__selected");
     let count = countFiles();
     selectedFiles.innerHTML = count;
     let actionBtnWrap = document.querySelector(".action__buttonWrap");
@@ -170,7 +187,7 @@ document.addEventListener("click", function(event) {
 
   //открытие всплывающего окна "Поделиться"
   if (target.classList.contains("action__button--share")) {
-    popOpen(document.querySelector(".pop--share"), "action");
+    // popOpen(document.querySelector(".pop--share"), "action");
   }
 
   //закрытие всплывающего окна по Крестику
@@ -341,10 +358,13 @@ function openAction() {
   document.querySelector(".control__button--action").innerHTML = "Отменить";
   document.querySelector(".action").dataset.status = "show";
   let control = document.querySelector(".control");
+  let overlay = control.querySelector(".control__overlay");
   let wrap = control.querySelectorAll(".control__wrap");
   for (var i = 0; i < wrap.length; i++) {
     wrap[i].dataset.list = "hide;"
   }
+  overlay.dataset.status = "hide";
+
 }
 
 //выключить режим Действия с файлами
@@ -364,7 +384,7 @@ function resetAction() {
   for (var i = 0; i < filesBtnCheck.length; i++) {
     filesBtnCheck[i].dataset.check = "false";
   }
-  let selectedFiles = document.querySelector(".main__countSelectedFiles");
+  let selectedFiles = document.querySelector(".action__selected");
   selectedFiles.innerHTML = "0";
 }
 
