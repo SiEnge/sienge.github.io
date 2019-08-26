@@ -1765,6 +1765,7 @@ body {
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
 }
 .collection__link {
   color: #42515A;
