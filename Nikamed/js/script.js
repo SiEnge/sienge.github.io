@@ -97,6 +97,11 @@ document.addEventListener("click", function(event) {
     return;
   }
 
+  // закрытие выпадающего окна "Меню пользователя" по overlay
+  if (target.classList.contains("user__overlay")) {
+    closeUser();
+  }
+
   // Открытие/закрытие выпадающего окна
   let controlBtn = target.closest(".control__button--dropDown");
   if (controlBtn) {
@@ -124,7 +129,7 @@ document.addEventListener("click", function(event) {
     let text = target.innerHTML;
     let control = document.querySelector(".control");
     let overlay = control.querySelector(".control__overlay");
-    
+
     wrap.querySelector(".control__name").innerHTML = text;
     wrap.dataset.list = "hide";
     overlay.dataset.status = "hide";
@@ -135,6 +140,49 @@ document.addEventListener("click", function(event) {
       wrap.dataset.mode = target.dataset.layout;
     }
   }
+
+
+
+  // Открытие/закрытие выпадающего окна
+  let dropDownBtn = target.closest(".dropDown__button");
+  if (dropDownBtn) {
+    let wrap = target.closest(".dropDown");
+    // let control = document.querySelector(".control");
+    // let overlay = control.querySelector(".control__overlay");
+    
+    if (wrap.dataset.list == "show") {
+      wrap.dataset.list = "hide";
+      // overlay.dataset.status = "hide";
+    } else {
+      // let controlWraps = control.querySelectorAll(".control__wrap");
+      // for (var i = 0; i < controlWraps.length; i++) {
+      //   controlWraps[i].dataset.list = "hide";
+      // }
+      wrap.dataset.list = "show";
+      // overlay.dataset.status = "show";
+    }
+    return;
+  }
+
+  // Выбор из выпадающего списка
+  if (target.classList.contains("dropDown__item")) {
+    let wrap = target.closest(".dropDown");
+    // let text = target.innerHTML;
+    // let control = document.querySelector(".control");
+    // let overlay = control.querySelector(".control__overlay");
+
+    wrap.querySelector(".dropDown__name").innerHTML = target.innerHTML;
+    wrap.dataset.list = "hide";
+    // overlay.dataset.status = "hide";
+
+    // if (wrap.classList.contains("control__wrap--layout")) {
+    //   let allFiles = document.querySelector(".file");
+    //   allFiles.dataset.mode = target.dataset.layout;
+    //   wrap.dataset.mode = target.dataset.layout;
+    // }
+  }
+
+
 
   // Включение режима действия с файлами
   if (target.classList.contains("control__button--action")) {
@@ -187,8 +235,20 @@ document.addEventListener("click", function(event) {
 
   //открытие всплывающего окна "Поделиться"
   if (target.classList.contains("action__button--share")) {
-    // popOpen(document.querySelector(".pop--share"), "action");
+    popOpen(document.querySelector(".pop--share"), "action");
   }
+
+  //открытие всплывающего окна "Создать коллекцию"
+  if (target.classList.contains("collection__btn--newCollection")) {
+    popOpen(document.querySelector(".pop--createCollection"), "action");
+  }
+
+  //открытие всплывающего окна "Настройки коллекции"
+  if (target.classList.contains("collection__btn--setting")) {
+    popOpen(document.querySelector(".pop--settingCollection"), "action");
+  }
+
+  
 
   //закрытие всплывающего окна по Крестику
   if (target.classList.contains("pop__buttonClose")) {
@@ -217,10 +277,19 @@ document.addEventListener("click", function(event) {
     item.dataset.mode = (item.dataset.mode == "add") ? "remove" : "add";
   }
 
-  //открытие тектового поля для ввода названия коллекции
+  //открытие текстового поля для ввода названия коллекции
   if (target.classList.contains("pop__button--createLink")) {
     let wrap = target.closest(".pop__inputWrap--createCollection");
     if (wrap) wrap.dataset.create = "true";
+  }
+
+  //закрытие текстового поля для ввода названия коллекции
+  if (target.classList.contains("pop__button--cancelNewCollection")) {
+    let wrap = target.closest(".pop__inputWrap--createCollection");
+    if (wrap) {
+      wrap.dataset.create = "false";
+      wrap.querySelector(".pop__input").value = "";
+    }
   }
 
 });

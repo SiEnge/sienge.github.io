@@ -82,6 +82,7 @@
       </div>
 
       <div class="user__wrap">
+        <div class="user__overlay" data-status="hide"></div>
         <ul class="user__dropDownList">
           <li class="user__dropDownItemWrap--notice" data-notice="new">
             <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
@@ -312,17 +313,17 @@
       <section class="main__action action" data-status="hide">
         <p class="action__title">Выбрано <span class="action__selected">0</span></p>
         <div class="action__buttonWrap" data-disabled="true">
-          <button class="action__button action__button--open" type="button">Открыть</button>
-          <button class="action__button action__button--inCollection" type="button">В коллекцию</button>
-          <button class="action__button action__button--download" type="button">Скачать</button>
-          <button class="action__button action__button--share" type="button">Поделиться</button>
+          <button class="action__button action__button--open button button--smallOkIcon" type="button">Открыть</button>
+          <button class="action__button action__button--inCollection button button--smallOkIcon" type="button">В коллекцию</button>
+          <button class="action__button action__button--download button button--smallOkIcon" type="button">Скачать</button>
+          <button class="action__button action__button--share button button--smallOkIcon" type="button">Поделиться</button>
         </div>
       </section>
     
 
 
     <section class="main__control control">
-      <div class="control__overlay"></div>
+      <div class="control__overlay" data-status="hide"></div>
 
       <!-- <div class="control__wrap control__wrap--action2" title="Действия с файлами">
         <button class="control__button control__button--action2" type="button">Выбрать все</button>
@@ -791,10 +792,12 @@
           <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
         </li>
       </ul>
+
       <section class="pop__inputWrap pop__inputWrap--createCollection" data-create="false">
-        <button class="button button--link pop__button pop__button--createLink" type="button">Создать новую</button>
+        <button class="button button--link pop__button pop__button--createLink" type="button" title="Создать новую коллекцию">Создать новую</button>
         <input class="pop__input" type="text">
-        <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button">Создать</button>
+        <button class="pop__button pop__button--newCollection button button--okIcon" type="button" name="button" title="Создать коллекцию"><span class="visuallyhidden">Создать</span></button>
+        <button class="pop__button pop__button--cancelNewCollection button button--resetIcon" type="button" name="button" title="Отмена"><span class="visuallyhidden">Отмена</span></button>
       </section>
       
       <div class="pop__buttonWrap">
@@ -860,36 +863,41 @@
 
       <button class="pop__buttonClose" type="button" name="button"><span class="visuallyhidden">Закрыть окно</span></button>
       <p class="pop__title">Поделиться <span class="pop__title--count">(12)</span></p>
+
+      <div class="pop__dropDown">
+        <p class="pop__listText">Доступ к файлам:</p>
+
+        <div class="dropDown" data-list="hide">
+          <button class="dropDown__button" type="button">
+            <span class="dropDown__name">На неделю</span>
+            <span class="visuallyhidden">Открыть выпадающий список</span>
+          </button>
+          <ul class="dropDown__list">
+            <li>
+              <input type="radio" id="accessDay" name="access">
+              <label class="dropDown__item" for="accessDay" data-access="day">На день</label>
+            </li>
+            <li>
+              <input type="radio" id="accessWeek" name="access" checked>
+              <label class="dropDown__item" for="accessWeek" data-access="week">На неделю</label>
+            </li>
+            <li>
+              <input type="radio" id="accessMonth" name="access">
+              <label class="dropDown__item" for="accessMonth" data-access="month">На месяц</label>
+            </li>
+            <li>
+              <input type="radio" id="accessYear" name="access">
+              <label class="dropDown__item" for="accessYear" data-access="year">На год</label>
+            </li>
+            <li>
+              <input type="radio" id="accessPeriod" name="access">
+              <label class="dropDown__item" for="accessPeriod" data-access="period">На определенный период</label>
+            </li>
+          </ul>
+        </div>
+      </div>
       
-      <!-- Доступ к файлам -->
-<!--       <div class="control__wrap control__wrap--sort" title="Выбрать сортировку" data-list="hide">
-        <button class="control__button control__button--dropDown" type="button">
-          <span class="control__name">По имени (A–Z)</span>
-          <span class="visuallyhidden">Открыть выпадающий список</span>
-        </button>
-        <ul class="control__dropDownList">
-          <li>
-            <input type="radio" id="sortNameZA" name="sort">
-            <label class="control__dropDownItem" for="sortNameZA">По имени (Z–A)</label>
-          </li>
-          <li>
-            <input type="radio" id="sortNameAZ" name="sort" checked>
-            <label class="control__dropDownItem" for="sortNameAZ">По имени (A–Z)</label>
-          </li>
-          <li>
-            <input type="radio" id="sortType" name="sort">
-            <label class="control__dropDownItem" for="sortType">По типу файла</label>
-          </li>
-          <li>
-            <input type="radio" id="sortExtension" name="sort">
-            <label class="control__dropDownItem" for="sortExtension">По расширению</label>
-          </li>
-        </ul>
-      </div> -->
-
-
-
-      <p class="pop__listText">Доступ к файлам:</p>
+      
       
       <div class="pop__buttonWrap">
         <button class="pop__button pop__button--copyLink button button--okIcon" type="button" name="button">Скопировать ссылку</button>
@@ -902,10 +910,6 @@
     </div>
   </section>
 
-  
-
-
-  
   <script src="js/script.js"></script>
   <script src="js/picturefill.js"></script>
 </body>
