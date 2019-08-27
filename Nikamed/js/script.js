@@ -147,39 +147,41 @@ document.addEventListener("click", function(event) {
   let dropDownBtn = target.closest(".dropDown__button");
   if (dropDownBtn) {
     let wrap = target.closest(".dropDown");
-    // let control = document.querySelector(".control");
-    // let overlay = control.querySelector(".control__overlay");
     
     if (wrap.dataset.list == "show") {
       wrap.dataset.list = "hide";
-      // overlay.dataset.status = "hide";
     } else {
-      // let controlWraps = control.querySelectorAll(".control__wrap");
-      // for (var i = 0; i < controlWraps.length; i++) {
-      //   controlWraps[i].dataset.list = "hide";
-      // }
       wrap.dataset.list = "show";
-      // overlay.dataset.status = "show";
     }
     return;
+  }
+
+  //закрытие выпадающего списка по клику на overlay
+  if (target.classList.contains("dropDown__overlay")) {
+    let wrap = target.closest(".dropDown");
+    // for (var i = 0; i < wrap.length; i++) {
+    //   wrap[i].dataset.list = "hide;"
+    // }
+      wrap.dataset.list = "hide";
+    // overlay.dataset.status = "hide";
   }
 
   // Выбор из выпадающего списка
   if (target.classList.contains("dropDown__item")) {
     let wrap = target.closest(".dropDown");
-    // let text = target.innerHTML;
-    // let control = document.querySelector(".control");
-    // let overlay = control.querySelector(".control__overlay");
 
     wrap.querySelector(".dropDown__name").innerHTML = target.innerHTML;
     wrap.dataset.list = "hide";
-    // overlay.dataset.status = "hide";
 
-    // if (wrap.classList.contains("control__wrap--layout")) {
-    //   let allFiles = document.querySelector(".file");
-    //   allFiles.dataset.mode = target.dataset.layout;
-    //   wrap.dataset.mode = target.dataset.layout;
-    // }
+
+    if (wrap.closest(".pop__dropDown--accessShare")) {
+      if (target.dataset.access == "period") {
+        wrap.closest(".pop--share").dataset.accessPeriod = "show";
+      } else {
+        wrap.closest(".pop--share").dataset.accessPeriod = "hide";
+      }
+    }
+
   }
 
 

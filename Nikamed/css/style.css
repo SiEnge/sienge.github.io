@@ -282,10 +282,36 @@ body {
 }
 .dropDown {
   position: relative;
-  z-index: 30;
+}
+.dropDown[data-style="greyButton"] .dropDown__button {
+  background-color: rgba(225, 228, 232, 0.5);
+  border-radius: 20px;
+  padding: 10px 16px;
+  padding-right: 34px;
+  min-width: 107px;
+}
+.dropDown[data-style="greyButton"] .dropDown__name {
+  color: #42515A;
+  text-align: left;
+}
+.dropDown[data-style="greyButton"] .dropDown__button::after {
+  background-image: url("../img/drop_down_arrow_black.svg");
+  right: 16px;
 }
 .dropDown[data-list="show"] .dropDown__list {
   display: block;
+}
+.dropDown[data-list="show"] .dropDown__overlay {
+  display: block;
+}
+.dropDown__overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: none;
 }
 .dropDown__list {
   position: absolute;
@@ -303,6 +329,7 @@ body {
   display: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 15;
 }
 .dropDown__list input[type="radio"] {
   display: none;
@@ -357,7 +384,6 @@ body {
   font-weight: normal;
   font-style: normal;
   line-height: 1.29;
-  text-align: right;
   color: #0072BC;
   cursor: pointer;
   margin-bottom: 4px;
@@ -2015,6 +2041,9 @@ body {
 .pop[data-mode="close"] {
   display: none;
 }
+.pop--share[data-access-period="hide"] .pop__dropDown--periodShare {
+  display: none;
+}
 .pop__wrap {
   position: absolute;
   top: 56px;
@@ -2194,11 +2223,27 @@ body {
 .pop__inputWrap--createCollection[data-create="true"] .pop__button--createLink {
   display: none;
 }
+.pop__inputWrap--shareEmail {
+  padding-top: 24px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pop__inputWrap--shareEmail .pop__listNote {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  margin-bottom: 4px;
+}
+.pop__inputWrap--shareEmail .pop__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
 .pop__input {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px 12px;
+  padding: 8px 12px;
   margin-right: 8px;
   border: 2px solid #E1E4E8;
   border-radius: 4px;
@@ -2255,6 +2300,16 @@ body {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+}
+.pop__dropDown--periodShare .pop__input {
+  width: 36px;
+}
+.pop__dropDown--periodShare input[type='number'] {
+  -moz-appearance: textfield;
+}
+.pop__dropDown--periodShare input::-webkit-outer-spin-button,
+.pop__dropDown--periodShare input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 @media (min-width: 456px) {
   .pop__wrap {

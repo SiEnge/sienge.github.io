@@ -858,52 +858,84 @@
   </section>
 
   <!-- Всплывающее окно "Поделиться" -->
-  <section class="pop pop--share" data-mode="close">
+  <section class="pop pop--share" data-mode="close" data-access-period="hide">
     <div class="pop__wrap">
 
       <button class="pop__buttonClose" type="button" name="button"><span class="visuallyhidden">Закрыть окно</span></button>
       <p class="pop__title">Поделиться <span class="pop__title--count">(12)</span></p>
 
-      <div class="pop__dropDown">
+      <div class="pop__dropDown pop__dropDown--accessShare">
         <p class="pop__listText">Доступ к файлам:</p>
 
         <div class="dropDown" data-list="hide">
+          <div class="dropDown__overlay" data-status="hide"></div>
           <button class="dropDown__button" type="button">
             <span class="dropDown__name">На неделю</span>
             <span class="visuallyhidden">Открыть выпадающий список</span>
           </button>
           <ul class="dropDown__list">
             <li>
-              <input type="radio" id="accessDay" name="access">
+              <input type="radio" id="accessDay" name="accessShare">
               <label class="dropDown__item" for="accessDay" data-access="day">На день</label>
             </li>
             <li>
-              <input type="radio" id="accessWeek" name="access" checked>
+              <input type="radio" id="accessWeek" name="accessShare" checked>
               <label class="dropDown__item" for="accessWeek" data-access="week">На неделю</label>
             </li>
             <li>
-              <input type="radio" id="accessMonth" name="access">
+              <input type="radio" id="accessMonth" name="accessShare">
               <label class="dropDown__item" for="accessMonth" data-access="month">На месяц</label>
             </li>
             <li>
-              <input type="radio" id="accessYear" name="access">
+              <input type="radio" id="accessYear" name="accessShare">
               <label class="dropDown__item" for="accessYear" data-access="year">На год</label>
             </li>
             <li>
-              <input type="radio" id="accessPeriod" name="access">
+              <input type="radio" id="accessPeriod" name="accessShare">
               <label class="dropDown__item" for="accessPeriod" data-access="period">На определенный период</label>
             </li>
           </ul>
         </div>
       </div>
-      
-      
+
+      <div class="pop__dropDown pop__dropDown--periodShare">
+        <input class="pop__input" type="number" min="1">
+
+        <div class="dropDown" data-list="hide" data-style="greyButton">
+          <div class="dropDown__overlay" data-status="hide"></div>
+          <button class="dropDown__button" type="button">
+            <span class="dropDown__name">День</span>
+            <span class="visuallyhidden">Открыть выпадающий список</span>
+          </button>
+          <ul class="dropDown__list">
+            <li>
+              <input type="radio" id="periodDay" name="periodShare" checked>
+              <label class="dropDown__item" for="periodDay" data-period="day">День</label>
+            </li>
+            <li>
+              <input type="radio" id="periodWeek" name="periodShare">
+              <label class="dropDown__item" for="periodWeek" data-period="week">Неделя</label>
+            </li>
+            <li>
+              <input type="radio" id="periodMonth" name="periodShare">
+              <label class="dropDown__item" for="periodMonth" data-period="month">Месяц</label>
+            </li>
+            <li>
+              <input type="radio" id="periodYear" name="periodShare">
+              <label class="dropDown__item" for="periodYear" data-period="year">Год</label>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
       
       <div class="pop__buttonWrap">
         <button class="pop__button pop__button--copyLink button button--okIcon" type="button" name="button">Скопировать ссылку</button>
       </div>
-      <p class="pop__listNote">Отправить на Email</p>
       <section class="pop__inputWrap pop__inputWrap--shareEmail" data-create="false">
+        <p class="pop__listNote">Отправить на Email</p>
         <input class="pop__input" type="email">
         <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button" disabled>Отправить</button>
       </section>
