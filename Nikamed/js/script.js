@@ -208,27 +208,23 @@ document.addEventListener("click", function(event) {
     overlay.dataset.status = "hide";
   }
 
+  //выделение всех файлов по кнопке Выбрать все
+  if (target.classList.contains("control__button--selectAll")) {
+    document.querySelector(".action__selected").innerHTML = selectAllFiles();
+  }
+
   //выбор файла
   if (target.classList.contains("tile__btnCheck")) {
     target.dataset.check = (target.dataset.check == "false") ? "true" : "false";
-    let selectedFiles = document.querySelector(".action__selected");
-    let count = countFiles();
-    selectedFiles.innerHTML = count;
+    document.querySelector(".action__selected").innerHTML = countFiles();
     let actionBtnWrap = document.querySelector(".action__buttonWrap");
     actionBtnWrap.dataset.disabled = (count == 0) ? "true" : "false"
   }
-
-  // if (document.querySelector(".header").dataset.popCollection == "open") {
-  //   let pop = target.closest(".pop--addToCollection");
-  //   if (!pop) popClose2(document.querySelector(".pop--addToCollection"));
-  // }
 
   //открытие всплывающего окна "Добавить в коллекцию"
   if (target.classList.contains("action__button--inCollection")) {
     popOpen(document.querySelector(".pop--addToCollection"), "action");
   }
-
-  
 
   //открытие всплывающего окна "Скачать"
   if (target.classList.contains("action__button--download")) {
@@ -410,6 +406,18 @@ function countFiles() {
   return count;
 }
 
+//выделение и подсчет количества выделенных файлов
+function selectAllFiles() {
+  let wrapFiles = document.querySelector(".tile");
+  let filesBtnCheck = wrapFiles.querySelectorAll(".tile__btnCheck");
+  let count = 0;
+  for (var i = 0; i < filesBtnCheck.length; i++) {
+    filesBtnCheck[i].dataset.check = "true";
+    count++;
+  }
+  return count;
+}
+
 //открыть Меню пользователя
 function openUser() {
   document.querySelector(".user").dataset.list = "show";
@@ -427,6 +435,7 @@ function openAction() {
   document.querySelector(".tile").dataset.action = "true";
   document.querySelector(".control").dataset.action = "true";
   document.querySelector(".control__button--action").innerHTML = "Отменить";
+  // document.querySelector(".control__wrap--selectAll").dataset.status = "show";
   document.querySelector(".action").dataset.status = "show";
   let control = document.querySelector(".control");
   let overlay = control.querySelector(".control__overlay");
@@ -443,6 +452,7 @@ function closeAction() {
   document.querySelector(".tile").dataset.action = "false";
   document.querySelector(".control").dataset.action = "false";
   document.querySelector(".control__button--action").innerHTML = "Выбрать";
+  // document.querySelector(".control__wrap--selectAll").dataset.status = "hide";
   document.querySelector(".action").dataset.status = "hide";
   resetAction();
   document.querySelector(".action__buttonWrap").dataset.disabled = "true";
