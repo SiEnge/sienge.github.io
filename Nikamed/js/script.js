@@ -340,6 +340,7 @@ function popClose2(pop) {
 
 function closeFilter() {
   document.querySelector(".header").dataset.filter = "close";
+  document.querySelector(".main").dataset.filter = "close";
   document.querySelector(".header__tab--filter").dataset.mode = "close";
   document.body.classList.remove("overflowHidden");
   arrChoice = [];
@@ -349,6 +350,7 @@ function openFilter() {
   let filter = document.querySelector(".filter");
 
   document.querySelector(".header").dataset.filter = "open";
+  document.querySelector(".main").dataset.filter = "open";
   document.querySelector(".header__tab--filter").dataset.mode = "open";
   document.body.classList.add("overflowHidden");
 
