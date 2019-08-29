@@ -440,7 +440,6 @@ body {
   padding-top: 12px;
   padding-bottom: 8px;
   display: block;
-  min-height: 48px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -612,6 +611,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    min-height: 48px;
   }
   .filter__title {
     margin-bottom: 0;
@@ -998,11 +998,6 @@ body {
   opacity: 0.5;
   pointer-events: none;
 }
-.control[data-action="true"] .control__wrap--sort {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 100%;
-          flex: 1 0 100%;
-}
 .control[data-action="true"] .control__wrap--selectAll {
   display: block;
 }
@@ -1033,6 +1028,18 @@ body {
 }
 .control__wrap--sort .control__dropDownList {
   width: 155px;
+}
+.control__wrap--sort .control__name {
+  font-size: 0;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/sorting_blue.svg");
+}
+.control__wrap--sort .control__name:hover {
+  background-image: url("../img/sorting_black.svg");
 }
 .control__wrap--layout {
   display: none;
@@ -1215,6 +1222,15 @@ body {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
   }
+  .control__wrap--sort .control__name {
+    background-image: none;
+    font-size: inherit;
+    width: auto;
+    height: auto;
+  }
+  .control__wrap--sort .control__name:hover {
+    background-image: none;
+  }
   .control__wrap--layout {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1257,21 +1273,8 @@ body {
 .action__button {
   margin-bottom: 4px;
   margin-right: 4px;
-}
-.action__button--open {
-  background-image: url("../img/action_open.svg");
-}
-.action__button--inCollection {
-  background-image: url("../img/action_inCollection.svg");
-}
-.action__button--download {
-  background-image: url("../img/action_download.svg");
-}
-.action__button--share {
-  background-image: url("../img/action_share.svg");
-}
-.action__button--delete {
-  background-image: url("../img/action_delete.svg");
+  background-image: none;
+  padding-right: 10px;
 }
 @media (min-width: 720px) {
   .action {
@@ -1294,6 +1297,24 @@ body {
         -ms-flex: 0 0 122px;
             flex: 0 0 122px;
     width: 122px;
+  }
+  .action__button {
+    padding-right: 24px;
+  }
+  .action__button--open {
+    background-image: url("../img/action_open.svg");
+  }
+  .action__button--inCollection {
+    background-image: url("../img/action_inCollection.svg");
+  }
+  .action__button--download {
+    background-image: url("../img/action_download.svg");
+  }
+  .action__button--share {
+    background-image: url("../img/action_share.svg");
+  }
+  .action__button--delete {
+    background-image: url("../img/action_delete.svg");
   }
 }
 .search {
@@ -2397,10 +2418,12 @@ body {
 }
 .main__control {
   margin-left: auto;
-  padding-bottom: 14px;
 }
 @media (min-width: 480px) {
   .main[data-filter="open"] .main__filter .filter__wrap {
     height: calc(100vh - 108px);
+  }
+  .main__control {
+    padding-bottom: 14px;
   }
 }
