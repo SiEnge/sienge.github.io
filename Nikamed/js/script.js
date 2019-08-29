@@ -6,8 +6,8 @@ document.addEventListener("click", function(event) {
 
   //открытие/закрытие фильтра
   if (target.classList.contains("filter__btnOpen")) {
-    if (document.querySelector(".header")) {
-      if (document.querySelector(".header").dataset.filter == "open") {
+    if (document.querySelector(".main")) {
+      if (document.querySelector(".main").dataset.filter == "open") {
         closeFilter();
       } else {
         closeAction();
@@ -27,7 +27,6 @@ document.addEventListener("click", function(event) {
         filterItemClone.classList.remove("filter__item");
         filterItemClone.classList.add("filter__itemChoice");
         filterChoice.appendChild(filterItemClone);
-        // checkOverflow(filterChoice);
       }
     } else {
       target.dataset.check = "false";
@@ -47,7 +46,6 @@ document.addEventListener("click", function(event) {
   //удаление выбранных параметров фильтра
   if (target.classList.contains("filter__itemChoice")) {
     let filter = document.querySelector(".filter");
-    // let main = document.querySelector(".main");
     if (filter) {
       let filterChoice = filter.querySelector(".filter__filterChoice");
       filterChoice.removeChild(target);
@@ -305,6 +303,9 @@ document.addEventListener("blur", function(event) {
   if (target.classList.contains("search__input")) {
     document.querySelector(".header__tab--search").dataset.mode = "close";
   }
+  if (document.querySelector(".header").dataset.placement == "collection") {
+    document.querySelector(".header__tab--collection").dataset.mode = "open";
+  }
 }, true);
 
 function closeAllTabs() {
@@ -339,7 +340,6 @@ function popClose2(pop) {
       
 
 function closeFilter() {
-  document.querySelector(".header").dataset.filter = "close";
   document.querySelector(".main").dataset.filter = "close";
   document.querySelector(".header__tab--filter").dataset.mode = "close";
   document.body.classList.remove("overflowHidden");
@@ -348,8 +348,6 @@ function closeFilter() {
 
 function openFilter() {
   let filter = document.querySelector(".filter");
-
-  document.querySelector(".header").dataset.filter = "open";
   document.querySelector(".main").dataset.filter = "open";
   document.querySelector(".header__tab--filter").dataset.mode = "open";
   document.body.classList.add("overflowHidden");
@@ -423,7 +421,17 @@ function selectAllFiles() {
 //открыть Меню пользователя
 function openUser() {
   document.querySelector(".user").dataset.list = "show";
+  setTimeout(offNotice, 200);
+  // document.querySelector(".user").dataset.notice = "hide";
   document.querySelector(".header").dataset.user = "open";
+}
+
+function offNotice() {
+  document.querySelector(".user").dataset.notice = "hide";
+}
+
+function onNotice() {
+  document.querySelector(".user").dataset.notice = "show";
 }
 
 //закрыть Меню пользователя
