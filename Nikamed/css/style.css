@@ -2403,7 +2403,7 @@ body {
           align-items: baseline;
 }
 .pop__dropDown--periodShare .pop__input {
-  width: 36px;
+  width: 54px;
 }
 .pop__dropDown--periodShare input[type='number'] {
   -moz-appearance: textfield;
@@ -2411,6 +2411,10 @@ body {
 .pop__dropDown--periodShare input::-webkit-outer-spin-button,
 .pop__dropDown--periodShare input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+.pop__dropDown--accessShare {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 @media (min-width: 456px) {
   .pop__wrap {
