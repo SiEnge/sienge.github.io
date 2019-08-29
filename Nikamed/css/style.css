@@ -1276,6 +1276,26 @@ body {
   background-image: none;
   padding-right: 10px;
 }
+@media (min-width: 408px) {
+  .action__button {
+    padding-right: 24px;
+  }
+  .action__button--open {
+    background-image: url("../img/action_open.svg");
+  }
+  .action__button--inCollection {
+    background-image: url("../img/action_inCollection.svg");
+  }
+  .action__button--download {
+    background-image: url("../img/action_download.svg");
+  }
+  .action__button--share {
+    background-image: url("../img/action_share.svg");
+  }
+  .action__button--delete {
+    background-image: url("../img/action_delete.svg");
+  }
+}
 @media (min-width: 720px) {
   .action {
     -webkit-box-align: baseline;
@@ -1297,24 +1317,6 @@ body {
         -ms-flex: 0 0 122px;
             flex: 0 0 122px;
     width: 122px;
-  }
-  .action__button {
-    padding-right: 24px;
-  }
-  .action__button--open {
-    background-image: url("../img/action_open.svg");
-  }
-  .action__button--inCollection {
-    background-image: url("../img/action_inCollection.svg");
-  }
-  .action__button--download {
-    background-image: url("../img/action_download.svg");
-  }
-  .action__button--share {
-    background-image: url("../img/action_share.svg");
-  }
-  .action__button--delete {
-    background-image: url("../img/action_delete.svg");
   }
 }
 .search {
@@ -1612,6 +1614,36 @@ body {
 .file[data-action="true"] .file__preview {
   opacity: 0.25;
 }
+.file__wrap[data-disabled="true"]::before {
+  position: absolute;
+  content: attr(data-disabled-text);
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: 64px;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: #909194;
+  text-align: center;
+}
+.file__wrap[data-disabled="true"] .file__item {
+  background-color: rgba(225, 228, 232, 0.5);
+  pointer-events: none;
+}
+.file__wrap[data-disabled="true"] .file__preview {
+  visibility: hidden;
+}
+.file__wrap[data-disabled="true"] .file__date,
+.file__wrap[data-disabled="true"] .file__name {
+  color: #909194;
+}
+.file__wrap[data-disabled="true"] .tile__btnCheck {
+  display: none;
+}
 .file__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1786,6 +1818,10 @@ body {
   .file[data-mode="sizeL"] .file__name {
     font-size: 12px;
     overflow: hidden;
+  }
+  .file__wrap[data-disabled="true"]::before {
+    width: 100%;
+    text-align: left;
   }
 }
 @media (min-width: 612px) {

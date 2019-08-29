@@ -416,6 +416,7 @@ function selectAllFiles() {
   let filesBtnCheck = wrapFiles.querySelectorAll(".tile__btnCheck");
   let count = 0;
   for (var i = 0; i < filesBtnCheck.length; i++) {
+    if (filesBtnCheck[i].closest(".tile__item").dataset.disabled == "true") continue;
     filesBtnCheck[i].dataset.check = "true";
     count++;
   }
@@ -481,6 +482,11 @@ function resetAction() {
   }
   let selectedFiles = document.querySelector(".action__selected");
   selectedFiles.innerHTML = "0";
+}
+
+//перевод числа (больше 100) в "99+"
+function checkCollectionCount(number) {
+  if (+number > 0) return "99+";
 }
 
 // document.addEventListener("keydown",function(e){
