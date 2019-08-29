@@ -9,48 +9,42 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" data-placement="collection">
+    <!-- Вкладка Логотипа -->
+    <div class="header__tab header__tab--logo">
+      <a class="header__logo" href="index.html">
+        <picture>
+          <source media="(min-width: 720px)" srcset="img/logo.svg">
+          <img src="img/logo_mobile.svg" width="24" height="18" alt="Логотип media.nikamed.ru">
+        </picture>
+      </a>
+    </div>
 
-    <div class="header__top">
-      <div class="header__topWrap">
+    <!-- Вкладка Поиска -->
+    <div class="header__tab header__tab--search" data-mode="close">
+      <form class="header__search search" action="" method="get">
+        <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
+        <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
+      </form>
+    </div>
 
-        <!-- Вкладка Логотипа -->
-        <div class="header__tab header__tab--logo">
-          <a href="index.html" class="header__logo">
-            <picture>
-              <source media="(min-width: 720px)" srcset="img/logo.svg">
-              <img src="img/logo_mobile.svg" width="24" height="18" alt="Логотип media.nikamed.ru">
-            </picture>
-          </a>
-        </div>
+    <!-- Вкладка Мои коллекции -->
+    <div class="header__tab header__tab--collection" data-mode="open">
+      <a class="collection__link collection__link--blue" href="mycollection.html">Мои коллекции <span class="collection__count">14</span></a>
+    </div>
 
-        <!-- Вкладка Поиска -->
-        <div class="header__tab header__tab--search" data-mode="close">
-          <form class="header__search search" action="" method="get">
-            <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
-            <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
-          </form>
-        </div>
+    <!-- Вкладка Меню пользователя -->
+    <div class="header__tab header__tab--user user" title="Меню" data-list="hide" data-notice="show">
+      <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
+      <button class="user__button user__button--dropDown" type="button">
+        <span class="user__name">АК</span>
+        <span class="visuallyhidden">Открыть меню пользователя</span>
+      </button>
+      <button class="user__button user__button--burger" type="button">
+        <span class="visuallyhidden">Открыть меню пользователя</span>
+      </button>
 
-        <!-- Вкладка Мои коллекции -->
-        <div class="header__tab header__tab--collection" data-mode="open">
-          <a class="collection__link">Мои коллекции <span class="collection__countFile">14</span></a>
-        </div>
-
-        <!-- Вкладка Меню пользователя -->
-        <div class="header__tab header__tab--user user" title="Меню" data-list="hide">
-            <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
-            <button class="user__button user__button--dropDown" type="button">
-              <span class="user__name">АК</span>
-              <span class="visuallyhidden">Открыть меню пользователя</span>
-            </button>
-            <button class="user__button user__button--burger" type="button">
-              <span class="visuallyhidden">Открыть меню пользователя</span>
-            </button>
-        </div>
-      </div>
-
-      <!-- Выпадающее Меню пользователя -->
+      <!-- выпадающее Меню пользователя -->
       <div class="user__wrap">
         <div class="user__overlay" data-status="hide"></div>
         <ul class="user__dropDownList">
@@ -78,9 +72,9 @@
       <button class="collection__btn collection__btn--setting button button--smallOk" type="button" name="button">Настройки</button>
     </section>
 
-    <section class="collection__option option">
+    <section class="main__option option">
       <!-- Действия с файлами -->
-      <section class="collection__action action" data-status="hide">
+      <section class="main__action action" data-status="hide">
         <p class="action__title">Выбрано <span class="action__selected">0</span></p>
         <div class="action__buttonWrap" data-disabled="true">
           <button class="action__button action__button--open button button--smallOkIcon" type="button">Открыть</button>
@@ -90,8 +84,13 @@
         </div>
       </section>
 
-      <section class="collection__control control">
+      <section class="main__control control">
         <div class="control__overlay" data-status="hide"></div>
+
+        <!-- Выделить все файлы -->
+        <div class="control__wrap control__wrap--selectAll" title="Выбрать все">
+          <button class="control__button control__button--selectAll" type="button">Выбрать все</button>
+        </div>
 
         <!-- Включение режима действия с файлами -->
         <div class="control__wrap control__wrap--action" title="Действия с файлами">
@@ -149,12 +148,15 @@
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video2.jpg');">
+            <span class="file__videoTime">1:23:45</span>
+          </div>
+          <!-- <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video2.jpg" alt="">
               <span class="file__videoTime">1:23:45</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name"><span class="file__name--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="file__name--extension">MP4</span></p>
@@ -165,15 +167,15 @@
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <!-- <div class="file__preview file__preview--video" style="background-image: url('img/video1.jpg');">
-              <span class="file__videoTime">1:23</span>
-          </div> -->
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video1.jpg');">
+            <span class="file__videoTime">1:23</span>
+          </div>
+          <!-- <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video1.jpg" alt="">
               <span class="file__videoTime">1:23</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name"><span class="file__name--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="file__name--extension">MOV</span></p>
@@ -185,12 +187,15 @@
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video3.jpg');">
+            <span class="file__videoTime">1:20</span>
+          </div>
+          <!-- <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video3.jpg" alt="">
               <span class="file__videoTime">1:20</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name"><span class="file__name--name">NM-ERGOPAD-MED-FORUM-1-4.</span><span class="file__name--extension">DOC</span></p>
@@ -201,12 +206,15 @@
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video4.jpg');">
+            <span class="file__videoTime">4:10</span>
+          </div>
+          <!-- <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video4.jpg" alt="">
               <span class="file__videoTime">4:10</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name"><span class="file__name--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="file__name--extension">MOV</span></p>
@@ -217,12 +225,15 @@
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video6.jpg');">
+            <span class="file__videoTime">10:23</span>
+          </div>
+          <!-- <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video6.jpg" alt="">
               <span class="file__videoTime">10:23</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name">NM-BRANDBOOK-ZDO.JPG</p>
@@ -232,28 +243,33 @@
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video3.jpg');">
+            <span class="file__videoTime">1:20</span>
+          </div>
+         <!--  <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video3.jpg" alt="">
               <span class="file__videoTime">1:20</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name"><span class="file__name--name">NM-ERGOPAD-MED-FORUM-1-4.</span><span class="file__name--extension">DOC</span></p>
           </div>
         </a>
       </li>
-
-            <li class="file__wrap tile__item">
+      <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video2.jpg');">
+            <span class="file__videoTime">1:23:45</span>
+          </div>
+          <!-- <div class="file__preview">
             <p class="file__videoPreview">
               <img src="img/video2.jpg" alt="">
               <span class="file__videoTime">1:23:45</span>
             </p>
-          </div>
+          </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
             <p class="file__name"><span class="file__name--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="file__name--extension">MP4</span></p>

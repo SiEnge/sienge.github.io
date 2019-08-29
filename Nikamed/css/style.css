@@ -1774,16 +1774,6 @@ body {
             justify-content: flex-start;
   }
 }
-.collection[data-collection="none"] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
-}
 .collection[data-collection="none"] .main__option {
   display: none;
 }
@@ -1791,7 +1781,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  height: calc(100% - 50px);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1802,6 +1792,18 @@ body {
 }
 .collection[data-collection="none"] .collection__container {
   display: none;
+}
+.collection[data-collection="none"] .collection__btn--newCollection {
+  background-color: #0072BC;
+  color: #FFFFFF;
+}
+.collection[data-collection="none"] .collection__btn--newCollection:hover,
+.collection[data-collection="none"] .collection__btn--newCollection:active {
+  background-color: #338ec9;
+  background-color: #0072bccc;
+}
+.collection[data-collection="none"] .collection__btn--newCollection:disabled {
+  background-color: #E1E4E8;
 }
 .collection__title {
   padding-top: 30px;
@@ -1858,6 +1860,9 @@ body {
   display: block;
   text-align: center;
 }
+.collection__link--blue {
+  color: #0072BC;
+}
 .collection__count {
   display: none;
   opacity: 0.5;
@@ -1895,7 +1900,11 @@ body {
   line-height: 16px;
   color: #0072BC;
   margin: 0;
+  display: inline-block;
+}
+.collection__nameWrap {
   padding-right: 52px;
+  min-height: 26px;
 }
 .collection__info {
   -webkit-box-flex: 0;
@@ -1954,6 +1963,22 @@ body {
   opacity: 0.5;
   z-index: 100;
   cursor: pointer;
+}
+.collection__icon {
+  width: 20px;
+  height: 20px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  opacity: 0.5;
+  display: inline-block;
+  margin-bottom: -2px;
+}
+.collection__icon--edit {
+  background-image: url("../img/collection_edit.svg");
+}
+.collection__icon--view {
+  background-image: url("../img/collection_view.svg");
 }
 .collection__btnView {
   border: none;
@@ -2035,7 +2060,7 @@ body {
   .collection__wrap {
     min-height: 122px;
   }
-  .collection__name {
+  .collection__nameWrap {
     min-height: 65px;
   }
   .collection__count {
