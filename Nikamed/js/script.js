@@ -208,13 +208,17 @@ document.addEventListener("click", function(event) {
 
   //выделение всех файлов по кнопке Выбрать все
   if (target.classList.contains("control__button--selectAll")) {
+    // let count = selectAllFiles();
     document.querySelector(".action__selected").innerHTML = selectAllFiles();
+    document.querySelector(".action__buttonWrap").dataset.disabled = "false";
+
   }
 
   //выбор файла
   if (target.classList.contains("tile__btnCheck")) {
     target.dataset.check = (target.dataset.check == "false") ? "true" : "false";
-    document.querySelector(".action__selected").innerHTML = countFiles();
+    let count = countFiles();
+    document.querySelector(".action__selected").innerHTML = count;
     let actionBtnWrap = document.querySelector(".action__buttonWrap");
     actionBtnWrap.dataset.disabled = (count == 0) ? "true" : "false"
   }

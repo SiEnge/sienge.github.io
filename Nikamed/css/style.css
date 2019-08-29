@@ -544,6 +544,7 @@ body {
   margin-right: 5px;
   margin-bottom: 4px;
   cursor: pointer;
+  white-space: nowrap;
 }
 .filter__item:hover {
   background-color: #E1E4E8;
