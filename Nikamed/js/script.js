@@ -425,7 +425,7 @@ function selectAllFiles() {
 //открыть Меню пользователя
 function openUser() {
   document.querySelector(".user").dataset.list = "show";
-  setTimeout(offNotice, 200);
+  setTimeout(offNotice, 1500);
   // document.querySelector(".user").dataset.notice = "hide";
   document.querySelector(".header").dataset.user = "open";
 }
