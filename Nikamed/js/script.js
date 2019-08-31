@@ -11,6 +11,7 @@ document.addEventListener("click", function(event) {
         closeFilter();
       } else {
         closeAction();
+        closeNotice();
         openFilter(); 
       }
     }
@@ -91,9 +92,20 @@ document.addEventListener("click", function(event) {
       closeUser();
     } else {
       openUser();
+      closeNotice();
     }
     return;
   }
+
+  // Открытие Уведомлений
+  if (target.classList.contains("user__dropDownItem--notice")) {
+    closeUser();
+    closeFilter();
+    openNotice();
+    setTimeout(offNotice, 2000);
+    return;
+  }
+  
 
   // закрытие выпадающего окна "Меню пользователя" по overlay
   if (target.classList.contains("user__overlay")) {
@@ -426,13 +438,16 @@ function selectAllFiles() {
 //открыть Меню пользователя
 function openUser() {
   document.querySelector(".user").dataset.list = "show";
-  setTimeout(offNotice, 1500);
-  // document.querySelector(".user").dataset.notice = "hide";
   document.querySelector(".header").dataset.user = "open";
 }
 
 function offNotice() {
   document.querySelector(".user").dataset.notice = "hide";
+  let notice = document.querySelector(".notice");
+  let noticeItem = notice.querySelectorAll(".notice__item");
+  for (var i = 0; i < noticeItem.length; i++) {
+    noticeItem[i].dataset.notice = "old";
+  }
 }
 
 function onNotice() {
@@ -443,6 +458,22 @@ function onNotice() {
 function closeUser() {
   document.querySelector(".user").dataset.list = "hide";
   document.querySelector(".header").dataset.user = "close";
+}
+
+//закрыть Меню пользователя
+function openNotice() {
+  document.querySelector(".main").dataset.notice = "open";
+
+  // document.querySelector(".user").dataset.list = "hide";
+  // document.querySelector(".header").dataset.user = "close";
+}
+
+//закрыть Меню пользователя
+function closeNotice() {
+  document.querySelector(".main").dataset.notice = "close";
+
+  // document.querySelector(".user").dataset.list = "hide";
+  // document.querySelector(".header").dataset.user = "close";
 }
 
 //включить режим Действия с файлами
