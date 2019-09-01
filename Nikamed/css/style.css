@@ -2634,8 +2634,6 @@ body {
 .pop__list--scroll {
   border-top: 1px solid #E1E4E8;
   border-bottom: 1px solid #E1E4E8;
-  max-height: 280px;
-  overflow-y: auto;
   margin-left: -24px;
   margin-right: -24px;
   padding-left: 24px;
@@ -2830,6 +2828,12 @@ body {
     left: 50%;
     margin-left: -204px;
     margin-bottom: 132px;
+  }
+}
+@media (min-width: 720px) {
+  .pop__list--scroll {
+    max-height: 280px;
+    overflow-y: auto;
   }
 }
 .main {
