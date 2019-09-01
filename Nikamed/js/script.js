@@ -250,6 +250,25 @@ document.addEventListener("click", function(event) {
     popOpen(document.querySelector(".pop--share"), "action");
   }
 
+  //открытие Уведомления "Удаление Коллекций
+  if (target.classList.contains("action__button--deleteCollection")) {
+    notificationOpen(document.querySelector(".notification--deleteCollection"));
+    // setTimeout(notificationClose, 5000, document.querySelector(".notification--deleteCollection"));
+    closeAction();
+  }
+
+  //закрытие Уведомлений по overlay
+  if (target.classList.contains("notification__overlay")) {
+    let wrap = target.closest(".notification");
+    notificationClose(wrap);
+  }
+
+  //закрытие Уведомлений по кнопке Закрыть
+  if (target.classList.contains("notification__button--close")) {
+    let wrap = target.closest(".notification");
+    notificationClose(wrap);
+  }
+
   //открытие всплывающего окна "Создать коллекцию"
   if (target.classList.contains("collection__btn--newCollection")) {
     popOpen(document.querySelector(".pop--createCollection"), "action");
@@ -333,6 +352,15 @@ function closeAllTabs() {
       if (tabs[i].classList.contains("header__tab--collection")) tabs[i].dataset.mode = "close";;
     }
   }
+}
+
+
+function notificationOpen(notification) {
+  notification.dataset.mode = "open";
+}
+
+function notificationClose(notification) {
+  notification.dataset.mode = "close";
 }
 
 function popOpen(pop, mode) {
@@ -526,3 +554,38 @@ function checkCollectionCount(number) {
 //     flag++
 //   }
 // });
+
+
+var updownBtn = document.querySelector(".updown");
+
+if (updownBtn) {
+  let main = document.querySelector(".main");
+  let pageYLabel = 0;
+  updownBtn.addEventListener("click", function(event) {
+    main.scrollTo(0, 0);
+    // updownBtn.dataset.mode = "";
+  });
+
+
+  main.addEventListener("scroll", function(event) {
+    let pageY = main.scrollHeight || document.documentElement.scrollTop;
+    let innerHeight = document.documentElement.clientHeight;
+
+    switch (updownBtn.dataset.mode) {
+      case "":
+      if (pageY > innerHeight) {
+        updownBtn.dataset.mode = "up";
+      }
+      break;
+
+      case "up":
+      if (pageY < innerHeight) {
+        updownBtn.dataset.mode = "";
+      }
+      break;
+    }
+  });
+
+
+}
+

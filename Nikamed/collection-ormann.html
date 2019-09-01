@@ -185,7 +185,7 @@
         <!-- Выбор сортировки -->
         <div class="control__wrap control__wrap--sort" title="Выбрать сортировку" data-list="hide">
           <button class="control__button control__button--dropDown" type="button">
-            <span class="control__name">По дате изменения</span>
+            <span class="control__name">По имени (A–Z)</span>
             <span class="visuallyhidden">Открыть выпадающий список</span>
           </button>
             <ul class="control__dropDownList">
@@ -199,7 +199,11 @@
               </li>
               <li>
                 <input type="radio" id="sortType" name="sort">
-                <label class="control__dropDownItem" for="sortType">По дате изменения</label>
+                <label class="control__dropDownItem" for="sortType">По типу файла</label>
+              </li>
+              <li>
+                <input type="radio" id="sortExtension" name="sort">
+                <label class="control__dropDownItem" for="sortExtension">По расширению</label>
               </li>
             </ul>
         </div>

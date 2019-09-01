@@ -21,31 +21,31 @@
     </div>
 
     <!-- Вкладка Поиска -->
-    <div class="header__tab header__tab--search" data-mode="close">
+    <!-- <div class="header__tab header__tab--search" data-mode="close">
       <form class="header__search search" action="" method="get">
         <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
         <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
       </form>
-    </div>
+    </div> -->
 
     <!-- Вкладка Мои коллекции -->
-    <div class="header__tab header__tab--collection" data-mode="open">
+    <!-- <div class="header__tab header__tab--collection" data-mode="open">
       <a class="collection__link collection__link--blue" href="mycollection.html">Мои коллекции <span class="collection__count">14</span></a>
-    </div>
+    </div> -->
 
     <!-- Вкладка Меню пользователя -->
-    <div class="header__tab header__tab--user user" title="Меню" data-list="hide" data-notice="show">
-      <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
+    <!-- <div class="header__tab header__tab--user user" title="Меню" data-list="hide" data-notice="show"> -->
+      <!-- <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
       <button class="user__button user__button--dropDown" type="button">
         <span class="user__name">АК</span>
         <span class="visuallyhidden">Открыть меню пользователя</span>
       </button>
       <button class="user__button user__button--burger" type="button">
         <span class="visuallyhidden">Открыть меню пользователя</span>
-      </button>
+      </button> -->
 
       <!-- выпадающее Меню пользователя -->
-      <div class="user__wrap">
+      <!-- <div class="user__wrap">
         <div class="user__overlay" data-status="hide"></div>
         <ul class="user__dropDownList">
           <li class="user__dropDownItemWrap--notice" data-notice="new">
@@ -61,13 +61,12 @@
             <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
           </li>
         </ul>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
   </header>
 
-
-  <main class="main collection">
-    <div class="main__notice notice">
+  <main class="main shared">
+    <!-- <div class="main__notice notice">
       <div class="notice__header">
         <h2 class="notice__title title">4 непрочитанных уведомления</h2>
         <div class="notice__checkboxWrap">
@@ -150,12 +149,12 @@
           <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
         </li>
       </ul>
-    </div>
+    </div> -->
     
-    <section class="collection__header">
-      <h1 class="collection__title title">Евразийский ортопедический форум</h1>
-      <p class="collection__status">Только просмотр</p>
-      <button class="collection__btn collection__btn--setting button button--smallOk" type="button" name="button">Настройки</button>
+    <section class="shared__header">
+      <h1 class="shared__title title">Пользователь Андрей К. предоставил вам доступ</h1>
+      <p class="shared__status">Доступно с 2019-03-20 до 2020-03-20</p>
+      <!-- <button class="collection__btn collection__btn--setting button button--smallOk" type="button" name="button">Настройки</button> -->
     </section>
 
     <section class="main__option option">
@@ -164,9 +163,9 @@
         <p class="action__title">Выбрано <span class="action__selected">0</span></p>
         <div class="action__buttonWrap" data-disabled="true">
           <button class="action__button action__button--open button button--smallOkIcon" type="button">Открыть</button>
-          <button class="action__button action__button--inCollection button button--smallOkIcon" type="button">В коллекцию</button>
+          <!-- <button class="action__button action__button--inCollection button button--smallOkIcon" type="button">В коллекцию</button> -->
           <button class="action__button action__button--download button button--smallOkIcon" type="button">Скачать</button>
-          <button class="action__button action__button--share button button--smallOkIcon" type="button">Поделиться</button>
+          <!-- <button class="action__button action__button--share button button--smallOkIcon" type="button">Поделиться</button> -->
         </div>
       </section>
 
@@ -229,179 +228,207 @@
       </section>
     </section>
 
-    <section class="collection__empty">
+   <!--  <section class="collection__empty">
       <p class="collection__emptyMsg">У вас пока нет созданных коллекций</p>
-    </section>
+    </section> -->
 
     <section class="file tile" data-mode="sizeM" data-action="false">
     <ul class="tile__list">
+
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview file__preview--video" style="background-image: url('img/video5.jpg');">
-            <span class="file__videoTime">1:47:20</span>
-          </div>
+          <div class="file__preview" style="background-image: url('img/file1.jpg');"></div>
           <!-- <div class="file__preview">
-            <p class="file__videoPreview">
-              <img src="img/video5.jpg" alt="">
-              <span class="file__videoTime">1:47:20</span>
-            </p>
+            <img src="img/file1.jpg" alt="">
           </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
-            <p class="file__name">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="file__name"><span class="file__name--name">NM-BRANDBOOK-ZDO.</span><span class="file__name--extension">JPG</span></p>
+          </div>
+        </a>
+      </li>
+
+
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file2.jpg');"></div>
+          <!-- <div class="file__preview">
+            <img src="img/file2.jpg" alt="">
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="file__name--extension">PNG</span></p>
           </div>
         </a>
       </li>
       <li class="file__wrap tile__item">
         <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
         <a class="file__item" href="">
-          <div class="file__preview file__preview--video" style="background-image: url('img/video6.jpg');">
-            <span class="file__videoTime">10:23</span>
-          </div>
+          <div class="file__preview" style="background-image: url('img/file3.jpg');"></div>
           <!-- <div class="file__preview">
-            <p class="file__videoPreview">
-              <img src="img/video6.jpg" alt="">
-              <span class="file__videoTime">10:23</span>
-            </p>
+            <img src="img/file3.jpg" alt="">
           </div> -->
           <div class="file__info">
             <p class="file__date">2019-05-04</p>
-            <p class="file__name">NM-BRANDBOOK-ZDO.JPG</p>
+            <p class="file__name"><span class="file__name--name">NM-BRANDBOOK-ZDO.</span><span class="file__name--extension">JPG</span></p>
           </div>
         </a>
       </li>
       
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video2.jpg');">
+            <span class="file__videoTime">1:23:45</span>
+          </div>
+          <!-- <div class="file__preview">
+            <p class="file__videoPreview">
+              <img src="img/video2.jpg" alt="">
+              <span class="file__videoTime">1:23:45</span>
+            </p>
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">RT-INSTRUCTION-ZDO-1-1.</span><span class="file__name--extension">MP4</span></p>
+          </div>
+        </a>
+      </li>
+      
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file5.jpg');"></div>
+          <!-- <div class="file__preview">
+            <img src="img/file5.jpg" alt="">
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="file__name--extension">PNG</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview file__preview--video" style="background-image: url('img/video3.jpg');">
+            <span class="file__videoTime">1:20</span>
+          </div>
+          <!-- <div class="file__preview">
+            <p class="file__videoPreview">
+              <img src="img/video3.jpg" alt="">
+              <span class="file__videoTime">1:20</span>
+            </p>
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">NM-ERGOPAD-MED-FORUM-1-4.</span><span class="file__name--extension">DOC</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file3.jpg');"></div>
+          <!-- <div class="file__preview">
+            <img src="img/file3.jpg" alt="">
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">NM-BRANDBOOK-ZDO.</span><span class="file__name--extension">JPG</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file1.jpg');"></div>
+          <!-- <div class="file__preview">
+            <img src="img/file1.jpg" alt="">
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="file__name--extension">PNG</span></p>
+          </div>
+        </a>
+      </li>
+      
+
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file7.jpg');"></div>
+          <!-- <div class="file__preview">
+            <img src="img/file7.jpg" alt="">
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name"><span class="file__name--name">ORT-CATALOGUE-EXPO-1-1.</span><span class="file__name--extension">PNG</span></p>
+          </div>
+        </a>
+      </li>
+
+      
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file1.jpg');"></div>
+          <!-- <p class="file__preview">
+            <img src="img/file1.jpg" alt="">
+          </p> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name">NM-BRANDBOOK-ZDO.JPG</p>
+          </div>
+        </a>
+      </li>
+      <li class="file__wrap tile__item">
+        <button class="tile__btnCheck" type="button" data-check="false"><span class="visuallyhidden">Выбрать</span></button>
+        <a class="file__item" href="">
+          <div class="file__preview" style="background-image: url('img/file2.jpg');"></div>
+          <!-- <div class="file__preview">
+            <img src="img/file2.jpg" alt="">
+          </div> -->
+          <div class="file__info">
+            <p class="file__date">2019-05-04</p>
+            <p class="file__name">NM-BRANDBOOK-ZDO.JPG</p>
+          </div>
+        </a>
+      </li>
     </ul>
   </section>
+
+    
+
+    
 
   </main>
   <footer>
 
   </footer>
 
-    <!-- Всплывающее окно "В коллекцию" -->
-  <section class="pop pop--addToCollection" data-mode="close">
+
+  <!-- Всплывающее окно "Настройки коллекции" -->
+  <section class="pop pop--settingCollection" data-mode="close">
     <div class="pop__wrap">
       <button class="pop__buttonClose" type="button" name="button"><span class="visuallyhidden">Закрыть окно</span></button>
-      <p class="pop__title">Добавить в коллекцию <span class="pop__title--count">(12)</span></p>
-
-      <ul class="pop__list">
-        <li class="pop__listItem" data-mode="remove">
-          <p class="pop__listText">Документы</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Удалить из коллекций</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="remove">
-          <p class="pop__listText">Евразийский ортопедический форум</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Удалить из коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Фирменный стиль</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Компрессорное белье</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Orlet</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Brandbooks</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Документы</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Евразийский ортопедический форум</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Фирменный стиль</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Компрессорное белье</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Orlet</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Brandbooks</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Документы</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Евразийский ортопедический форум</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Фирменный стиль</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Компрессорное белье</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Orlet</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Brandbooks</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Документы</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Евразийский ортопедический форум</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Фирменный стиль</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Компрессорное белье</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Orlet</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-        <li class="pop__listItem" data-mode="add">
-          <p class="pop__listText">Brandbooks</p>
-          <button class="pop__btnCollection" type="button"><span class="visuallyhidden">Добавить в коллекцию</span></button>
-        </li>
-      </ul>
-
-      <section class="pop__inputWrap pop__inputWrap--createCollection" data-create="false">
-        <button class="button button--link pop__button pop__button--createLink" type="button" title="Создать новую коллекцию">Создать новую</button>
-        <input class="pop__input" type="text">
-        <button class="pop__button pop__button--newCollection button button--okIcon" type="button" name="button" title="Создать коллекцию"><span class="visuallyhidden">Создать</span></button>
-        <button class="pop__button pop__button--cancelNewCollection button button--resetIcon" type="button" name="button" title="Отмена"><span class="visuallyhidden">Отмена</span></button>
-      </section>
       
+      <p class="pop__title">Настройки коллекции <span class="pop_title--collection">«Стельки»</span></p>
+      <p class="pop__text">Название</p>
+
+      <!-- <section class="pop__inputWrap pop__inputWrap--newCollection"> -->
+        <input class="pop__input" type="text" value="Стельки">
+        <!-- <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button">Создать</button> -->
+      <!-- </section> -->
+
       <div class="pop__buttonWrap">
         <button class="pop__button button button--ok" type="button" name="button">Сохранить</button>
         <button class="pop__button pop__button--cancel button button--cancel" type="button" name="button">Отмена</button>
       </div>
     </div>
   </section>
+
 
   <!-- Всплывающее окно "Скачать" -->
   <section class="pop pop--download" data-mode="close">
@@ -453,92 +480,12 @@
     </div>
   </section>
 
-  <!-- Всплывающее окно "Поделиться" -->
-  <section class="pop pop--share" data-mode="close" data-access-period="hide">
-    <div class="pop__wrap">
-
-      <button class="pop__buttonClose" type="button" name="button"><span class="visuallyhidden">Закрыть окно</span></button>
-      <p class="pop__title">Поделиться <span class="pop__title--count">(12)</span></p>
-
-      <div class="pop__dropDown pop__dropDown--accessShare">
-        <p class="pop__listText">Доступ к файлам:</p>
-
-        <div class="dropDown" data-list="hide">
-          <div class="dropDown__overlay" data-status="hide"></div>
-          <button class="dropDown__button" type="button">
-            <span class="dropDown__name">На неделю</span>
-            <span class="visuallyhidden">Открыть выпадающий список</span>
-          </button>
-          <ul class="dropDown__list">
-            <li>
-              <input type="radio" id="accessDay" name="accessShare">
-              <label class="dropDown__item" for="accessDay" data-access="day">На день</label>
-            </li>
-            <li>
-              <input type="radio" id="accessWeek" name="accessShare" checked>
-              <label class="dropDown__item" for="accessWeek" data-access="week">На неделю</label>
-            </li>
-            <li>
-              <input type="radio" id="accessMonth" name="accessShare">
-              <label class="dropDown__item" for="accessMonth" data-access="month">На месяц</label>
-            </li>
-            <li>
-              <input type="radio" id="accessYear" name="accessShare">
-              <label class="dropDown__item" for="accessYear" data-access="year">На год</label>
-            </li>
-            <li>
-              <input type="radio" id="accessPeriod" name="accessShare">
-              <label class="dropDown__item" for="accessPeriod" data-access="period">На определенный период</label>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pop__dropDown pop__dropDown--periodShare">
-        <input class="pop__input" type="number" min="1">
-
-        <div class="dropDown" data-list="hide" data-style="greyButton">
-          <div class="dropDown__overlay" data-status="hide"></div>
-          <button class="dropDown__button" type="button">
-            <span class="dropDown__name">День</span>
-            <span class="visuallyhidden">Открыть выпадающий список</span>
-          </button>
-          <ul class="dropDown__list">
-            <li>
-              <input type="radio" id="periodDay" name="periodShare" checked>
-              <label class="dropDown__item" for="periodDay" data-period="day">День</label>
-            </li>
-            <li>
-              <input type="radio" id="periodWeek" name="periodShare">
-              <label class="dropDown__item" for="periodWeek" data-period="week">Неделя</label>
-            </li>
-            <li>
-              <input type="radio" id="periodMonth" name="periodShare">
-              <label class="dropDown__item" for="periodMonth" data-period="month">Месяц</label>
-            </li>
-            <li>
-              <input type="radio" id="periodYear" name="periodShare">
-              <label class="dropDown__item" for="periodYear" data-period="year">Год</label>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-
-      
-      <div class="pop__buttonWrap">
-        <button class="pop__button pop__button--copyLink button button--okIcon" type="button" name="button">Скопировать ссылку</button>
-      </div>
-      <section class="pop__inputWrap pop__inputWrap--shareEmail" data-create="false">
-        <p class="pop__listNote">Отправить на Email</p>
-        <input class="pop__input" type="email">
-        <button class="pop__button button button--ok pop__button pop__button--createBtn" type="button" name="button" disabled>Отправить</button>
-      </section>
-    </div>
+  <!-- Всплывающее уведомление "Вам доступна коллекция" -->
+  <section class="notification notification--available" data-mode="open">
+    <p class="notification__text">Вам доступна коллекция «Ormann»</p>
+    <button class="notification__button notification__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
   </section>
 
-  
   <script src="js/script.js"></script>
   <script src="js/picturefill.js"></script>
 </body>
