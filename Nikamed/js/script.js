@@ -296,16 +296,21 @@ document.addEventListener("click", function(event) {
     popClose2(target);
   }
 
-  //закрытие всплывающего окна по Overlay
-  // if (target.classList.contains("pop__overlay")) {
-  //   popClose(target);
-  // }
-
-
   //Добавление/Удаление из коллекций во всплывающем окне
   if (target.classList.contains("pop__btnCollection")) {
     let item = target.closest(".pop__listItem");
-    item.dataset.mode = (item.dataset.mode == "add") ? "remove" : "add";
+
+    if (item.dataset.mode == "plus" || item.dataset.mode == "minus") {
+      item.dataset.mode = "check";
+      checkBtnCollection(target, item.dataset.mode);
+      return;
+    }
+
+    if (item.dataset.mode == "check" ) {
+      item.dataset.mode = "plus";
+      checkBtnCollection(target, item.dataset.mode);
+      return;
+    }
   }
 
   //открытие текстового поля для ввода названия коллекции
@@ -554,6 +559,21 @@ function checkCollectionCount(number) {
 //     flag++
 //   }
 // });
+
+function checkBtnCollection(button, mode) {
+  if (mode == "check") {
+    button.getElementsByTagName("span").innerHTML = "Убрать из коллекции";
+    button.title = "Удалить из коллекции";
+  }
+  if (mode == "plus") {
+    button.getElementsByTagName("span").innerHTML = "Добавить в коллекцию";
+    button.title = "Добавить в коллекцию";
+  }
+  if (mode == "minus") {
+    button.getElementsByTagName("span").innerHTML = "Добавить все в коллекцию";
+    button.title = "Добавить все в коллекцию";
+  }
+}
 
 
 var updownBtn = document.querySelector(".updown");

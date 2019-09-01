@@ -2657,11 +2657,20 @@ body {
   border-bottom: 1px dotted #E1E4E8;
   position: relative;
 }
-.pop__listItem[data-mode="remove"] .pop__btnCollection {
+.pop__listItem[data-mode="check"] .pop__btnCollection {
   background-image: url("../img/pop_removeFromCollection.svg");
 }
-.pop__listItem[data-mode="add"] .pop__btnCollection {
+.pop__listItem[data-mode="check"] .pop__btnCollection:disabled {
+  background-image: url("../img/pop_removeFromCollection_grey.svg");
+}
+.pop__listItem[data-mode="plus"] .pop__btnCollection {
   background-image: url("../img/pop_addToCollection.svg");
+}
+.pop__listItem[data-mode="plus"] .pop__btnCollection:disabled {
+  background-image: url("../img/pop_addToCollection_grey.svg");
+}
+.pop__listItem[data-mode="minus"] .pop__btnCollection {
+  background-image: url("../img/pop_minusCollection.svg");
 }
 .pop__listText {
   font-family: "Roboto";
