@@ -1641,10 +1641,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.onefile__property {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
 .onefile__main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1672,6 +1668,8 @@ body {
         -ms-flex: 1 0 50%;
             flex: 1 0 50%;
     overflow-y: hidden;
+    padding-left: 0;
+    padding-right: 0;
   }
   .onefile__image {
     -webkit-box-flex: 1;
@@ -1697,8 +1695,6 @@ body {
         -ms-flex: 0 0 220px;
             flex: 0 0 220px;
     overflow-y: auto;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
     padding-right: 48px;
   }
 }
