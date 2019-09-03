@@ -568,7 +568,6 @@ body {
   margin-right: 5px;
   margin-bottom: 4px;
   cursor: pointer;
-  white-space: nowrap;
 }
 .filter__item:hover {
   background-color: #E1E4E8;
@@ -1950,7 +1949,7 @@ body {
   margin-top: 0;
   position: relative;
   z-index: 20;
-  width: calc(100vw - 48px);
+  width: calc(100vw - 47px);
   height: 100vh;
 }
 .user__dropDownItem {
