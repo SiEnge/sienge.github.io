@@ -788,6 +788,10 @@ body {
   .header[data-user="open"] .header__tab--collection {
     display: block;
   }
+  .header[data-user="open"] .header__tab--search {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
   .header[data-user="open"] .header__user {
     background-color: #E1E4E8;
   }
@@ -2366,6 +2370,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  height: 100%;
 }
 .collection__link {
   color: #42515A;
