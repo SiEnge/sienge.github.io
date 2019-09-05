@@ -343,7 +343,7 @@ document.addEventListener("blur", function(event) {
   if (target.classList.contains("search__input")) {
     document.querySelector(".header__tab--search").dataset.mode = "close";
   }
-  if (document.querySelector(".header").dataset.placement == "collection") {
+  if (document.querySelector(".header") && document.querySelector(".header").dataset.placement == "collection") {
     document.querySelector(".header__tab--collection").dataset.mode = "open";
   }
 }, true);
