@@ -307,21 +307,8 @@ body {
 }
 .dropDown {
   position: relative;
-}
-.dropDown[data-style="greyButton"] .dropDown__button {
-  background-color: rgba(225, 228, 232, 0.5);
-  border-radius: 20px;
-  padding: 10px 16px;
-  padding-right: 34px;
-  min-width: 107px;
-}
-.dropDown[data-style="greyButton"] .dropDown__name {
-  color: #42515A;
-  text-align: left;
-}
-.dropDown[data-style="greyButton"] .dropDown__button::after {
-  background-image: url("../img/drop_down_arrow_black.svg");
-  right: 16px;
+  cursor: pointer;
+  padding: 4px;
 }
 .dropDown[data-list="show"] .dropDown__list {
   display: block;
@@ -399,7 +386,6 @@ body {
   text-align: right;
   color: #0072BC;
   margin: 0;
-  display: block;
 }
 .dropDown__button {
   border: none;
@@ -412,26 +398,17 @@ body {
   line-height: 1.29;
   color: #0072BC;
   cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/drop_down_arrow_blue.svg");
+  background-size: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   padding-right: 15px;
 }
 .dropDown__button:hover {
   color: #42515A;
-}
-.dropDown__button::after {
-  position: absolute;
-  content: "";
-  width: 8px;
-  height: 8px;
-  top: 50%;
-  margin-top: -4px;
-  right: 3px;
-  background-image: url("../img/drop_down_arrow_blue.svg");
-  background-size: 8px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.dropDown__button:hover::after {
   background-image: url("../img/drop_down_arrow_black.svg");
 }
 .filter {
@@ -2781,6 +2758,24 @@ body {
 .pop--share[data-access-period="hide"] .pop__dropDown--periodShare {
   display: none;
 }
+.pop--share .pop__button--copyLink {
+  margin-top: 24px;
+}
+.pop--settingCollection .pop__listItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.pop--settingCollection .pop__list--scroll .pop__listItem {
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
 .pop__wrap {
   position: absolute;
   top: 56px;
@@ -2845,10 +2840,12 @@ body {
   line-height: 16px;
   font-weight: normal;
   font-style: normal;
-  line-height: normal;
   letter-spacing: 0.12px;
   color: #909194;
   margin: 0;
+}
+.pop__text--black {
+  color: black;
 }
 .pop__link {
   font-family: "Roboto";
@@ -2931,6 +2928,18 @@ body {
   color: #909194;
   margin: 0;
 }
+.pop__label {
+  opacity: 0.5;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  color: #42515A;
+  margin: 0;
+  margin-bottom: 4px;
+}
 .pop__btnCollection {
   position: absolute;
   border: none;
@@ -2968,20 +2977,14 @@ body {
   display: none;
 }
 .pop__inputWrap--shareEmail {
+  display: block;
   padding-top: 24px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 .pop__inputWrap--shareEmail .pop__listNote {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 100%;
-          flex: 1 0 100%;
   margin-bottom: 4px;
 }
 .pop__inputWrap--shareEmail .pop__input {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+  margin-bottom: 12px;
 }
 .pop__input {
   width: 100%;
@@ -3049,6 +3052,9 @@ body {
       -ms-flex-align: baseline;
           align-items: baseline;
 }
+.pop__dropDown--periodShare {
+  padding-top: 4px;
+}
 .pop__dropDown--periodShare .pop__input {
   width: 54px;
 }
@@ -3070,6 +3076,24 @@ body {
     left: 50%;
     margin-left: -204px;
     margin-bottom: 132px;
+  }
+  .pop__inputWrap--shareEmail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .pop__inputWrap--shareEmail .pop__input {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    margin-bottom: 0;
+  }
+  .pop__inputWrap--shareEmail .pop__listNote {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
   }
 }
 @media (min-width: 720px) {

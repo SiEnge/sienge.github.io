@@ -154,16 +154,26 @@ document.addEventListener("click", function(event) {
 
 
   // Открытие/закрытие выпадающего окна
-  let dropDownBtn = target.closest(".dropDown__button");
-  if (dropDownBtn) {
-    let wrap = target.closest(".dropDown");
+  // let dropDown = target.closest(".dropDown__button");
+  // if (dropDownBtn) {
+  //   let wrap = target.closest(".dropDown");
     
-    if (wrap.dataset.list == "show") {
-      wrap.dataset.list = "hide";
-    } else {
-      wrap.dataset.list = "show";
-    }
-    return;
+  //   if (wrap.dataset.list == "show") {
+  //     wrap.dataset.list = "hide";
+  //   } else {
+  //     wrap.dataset.list = "show";
+  //   }
+  //   return;
+  // }
+
+  if (target.classList.contains("dropDown__name")) {
+    let wrap = target.closest(".dropDown");
+    wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
+  }
+
+  if (target.classList.contains("dropDown__button")) {
+    let wrap = target.closest(".dropDown");
+    wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
   }
 
   //закрытие выпадающего списка по клику на overlay
