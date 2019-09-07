@@ -154,18 +154,6 @@ document.addEventListener("click", function(event) {
 
 
   // Открытие/закрытие выпадающего окна
-  // let dropDown = target.closest(".dropDown__button");
-  // if (dropDownBtn) {
-  //   let wrap = target.closest(".dropDown");
-    
-  //   if (wrap.dataset.list == "show") {
-  //     wrap.dataset.list = "hide";
-  //   } else {
-  //     wrap.dataset.list = "show";
-  //   }
-  //   return;
-  // }
-
   if (target.classList.contains("dropDown__name")) {
     let wrap = target.closest(".dropDown");
     wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
@@ -179,11 +167,7 @@ document.addEventListener("click", function(event) {
   //закрытие выпадающего списка по клику на overlay
   if (target.classList.contains("dropDown__overlay")) {
     let wrap = target.closest(".dropDown");
-    // for (var i = 0; i < wrap.length; i++) {
-    //   wrap[i].dataset.list = "hide;"
-    // }
-      wrap.dataset.list = "hide";
-    // overlay.dataset.status = "hide";
+    wrap.dataset.list = "hide";
   }
 
   // Выбор из выпадающего списка
@@ -286,6 +270,7 @@ document.addEventListener("click", function(event) {
 
   //открытие всплывающего окна "Настройки коллекции"
   if (target.classList.contains("collection__btn--setting")) {
+    closeAction();
     popOpen(document.querySelector(".pop--settingCollection"), "action");
   }
 
