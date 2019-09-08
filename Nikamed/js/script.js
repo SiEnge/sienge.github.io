@@ -85,7 +85,7 @@ document.addEventListener("click", function(event) {
   
 
   // Открытие/закрытие выпадающего окна "Меню пользователя""
-  let userBtn = target.closest(".user__button");
+  let userBtn = target.closest(".user__buttonOpen");
   if (userBtn) {
     let wrap = target.closest(".user");
     if (wrap.dataset.list == "show") {
@@ -469,6 +469,12 @@ function openUser() {
   document.querySelector(".header").dataset.user = "open";
 }
 
+//закрыть Меню пользователя
+function closeUser() {
+  document.querySelector(".user").dataset.list = "hide";
+  document.querySelector(".header").dataset.user = "close";
+}
+
 function offNotice() {
   document.querySelector(".user").dataset.notice = "hide";
   let notice = document.querySelector(".notice");
@@ -482,11 +488,7 @@ function onNotice() {
   document.querySelector(".user").dataset.notice = "show";
 }
 
-//закрыть Меню пользователя
-function closeUser() {
-  document.querySelector(".user").dataset.list = "hide";
-  document.querySelector(".header").dataset.user = "close";
-}
+
 
 //закрыть Меню пользователя
 function openNotice() {
@@ -573,34 +575,46 @@ function checkBtnCollection(button, mode) {
 
 var updownBtn = document.querySelector(".updown");
 
+// if (updownBtn) {
+//   let main = document.querySelector(".main");
+//   let pageYLabel = 0;
+//   updownBtn.addEventListener("click", function(event) {
+//     main.scrollTo(0, 0);
+//     // updownBtn.dataset.mode = "";
+//   });
+
+
+//   main.addEventListener("scroll", function(event) {
+//     let pageY = main.scrollHeight || document.documentElement.scrollTop;
+//     let innerHeight = document.documentElement.clientHeight;
+
+//     switch (updownBtn.dataset.mode) {
+//       case "":
+//       if (pageY > innerHeight) {
+//         updownBtn.dataset.mode = "up";
+//       }
+//       break;
+
+//       case "up":
+//       if (pageY < innerHeight) {
+//         updownBtn.dataset.mode = "";
+//       }
+//       break;
+//     }
+//   });
+
+
+// }
+
 if (updownBtn) {
-  let main = document.querySelector(".main");
-  let pageYLabel = 0;
-  updownBtn.addEventListener("click", function(event) {
-    main.scrollTo(0, 0);
-    // updownBtn.dataset.mode = "";
-  });
+  updownBtn.onclick = function() {
+  window.scrollTo(pageXOffset, 0);
+  // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
+};
 
-
-  main.addEventListener("scroll", function(event) {
-    let pageY = main.scrollHeight || document.documentElement.scrollTop;
-    let innerHeight = document.documentElement.clientHeight;
-
-    switch (updownBtn.dataset.mode) {
-      case "":
-      if (pageY > innerHeight) {
-        updownBtn.dataset.mode = "up";
-      }
-      break;
-
-      case "up":
-      if (pageY < innerHeight) {
-        updownBtn.dataset.mode = "";
-      }
-      break;
-    }
-  });
-
-
+window.addEventListener('scroll', function() {
+  updownBtn.hidden = (pageYOffset < document.documentElement.clientHeight);
+});
 }
+
 

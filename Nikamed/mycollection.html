@@ -35,121 +35,125 @@
 
     <!-- Вкладка Меню пользователя -->
     <div class="header__tab header__tab--user user" title="Меню" data-list="hide" data-notice="show">
-      <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
-      <button class="user__button user__button--dropDown" type="button">
-        <span class="user__name">АК</span>
-        <span class="visuallyhidden">Открыть меню пользователя</span>
-      </button>
-      <button class="user__button user__button--burger" type="button">
-        <span class="visuallyhidden">Открыть меню пользователя</span>
-      </button>
+  <span class="user__alert"></span>
 
-      <!-- выпадающее Меню пользователя -->
-      <div class="user__wrap">
-        <div class="user__overlay"></div>
-        <ul class="user__dropDownList">
-          <li class="user__dropDownItemWrap--notice" data-notice="new">
-            <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
-          </li>
-          <li>
-            <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
-          </li>
-          <li>
-            <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
-          </li>
-          <li>
-            <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <button class="user__buttonOpen" type="button">
+    <span class="user__name">АК</span>
+    <span class="visuallyhidden">Открыть меню пользователя</span>
+  </button>
+
+  <button class="user__buttonLogin" type="button">Войти</button>
+
+
+
+  <!-- выпадающее Меню пользователя -->
+  <div class="user__wrap">
+    <div class="user__overlay"></div>
+    <ul class="user__dropDownList">
+      <li class="user__dropDownItemWrap--notice" data-notice="new">
+        <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
+      </li>
+      <li>
+        <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
+      </li>
+      <li>
+        <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
+      </li>
+      <li>
+        <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
+      </li>
+    </ul>
+  </div>
+
+</div>
   </header>
   
   <main class="main collection">
+    <!-- список Уведомлений -->
     <div class="main__notice notice">
-      <div class="notice__header">
-        <h2 class="notice__title title">4 непрочитанных уведомления</h2>
-        <div class="notice__checkboxWrap">
-          <input class="notice__checkbox" type="checkbox" id="noticeMail" checked="">
-          <label class="notice__checkboxLabel" for="noticeMail">Получать уведомления на почту</label>
-        </div>
-      </div>
-        
-      <ul class="notice__list">
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-08-03</p>
-          <p class="notice__message">Вам доступна коллекция «<a href="">Видео Ormann»</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-08-02</p>
-          <p class="notice__message">Пользователь Максимов Евгений отменил ваш доступ на просмотр своей коллекции «<a href="">Achilles tendon types</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-07-30</p>
-          <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a>из вашей коллекции «<a href="">Евразийский ортопедический форум» ограничен</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-07-27</p>
-          <p class="notice__message">Файл 2019-05-01-BAUERFEIND-PROMO-1-2.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2019-07-24</p>
-          <p class="notice__message">Файл 2019-05-26-BAUERFEIND-BRANDBOOK-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2019-07-24</p>
-          <p class="notice__message">Файл 2019-02-11-NM-BAUERFEIND-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2019-07-16</p>
-          <p class="notice__message">Пользователь Кирилличенко Алексей предоставил вам доступ на редактирование коллекции «<a href="">Евразийский ортопедический форум</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-08-02</p>
-          <p class="notice__message">Пользователь По Григорий отменил ваш доступ на просмотр своей коллекции «<a href="">Metatarsal Bones</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-30</p>
-          <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a> из вашей коллекции «<a href="">Евразийский ортопедический форум</a>» ограничен</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-27</p>
-          <p class="notice__message">Файл 2019-05-04-INVITATION-FORUM-2.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-24</p>
-          <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-24</p>
-          <p class="notice__message">Файл 2019-05-26-BAUERFEIND-BRANDBOOK-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-24</p>
-          <p class="notice__message">Файл 2019-02-11-NM-BAUERFEIND-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-16</p>
-          <p class="notice__message">Пользователь Родословнов Константин предоставил вам доступ на редактирование коллекции «<a href="">EOF 2017, 2018, 2019 презентации</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-08-02</p>
-          <p class="notice__message">Пользователь По Григорий отменил ваш доступ на просмотр своей коллекции «<a href="">Metatarsal Bones</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-07-30</p>
-          <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a> из вашей коллекции «<a href="">Евразийский ортопедический форум</a>» ограничен</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-07-27</p>
-          <p class="notice__message">Файл 2019-05-04-INVITATION-FORUM-2.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-07-24</p>
-          <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-      </ul>
+  <div class="notice__header">
+    <h2 class="notice__title title">4 непрочитанных уведомления</h2>
+    <div class="notice__checkboxWrap">
+      <input class="notice__checkbox" type="checkbox" id="noticeMail" checked="">
+      <label class="notice__checkboxLabel" for="noticeMail">Получать уведомления на почту</label>
     </div>
+  </div>
+    
+  <ul class="notice__list">
+    <li class="notice__item" data-notice="new">
+      <p class="notice__date">2019-08-03</p>
+      <p class="notice__message">Вам доступна коллекция «<a href="">Видео Ormann»</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="new">
+      <p class="notice__date">2019-08-02</p>
+      <p class="notice__message">Пользователь Максимов Евгений отменил ваш доступ на просмотр своей коллекции «<a href="">Achilles tendon types</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="new">
+      <p class="notice__date">2019-07-30</p>
+      <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a>из вашей коллекции «<a href="">Евразийский ортопедический форум» ограничен</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="new">
+      <p class="notice__date">2019-07-27</p>
+      <p class="notice__message">Файл 2019-05-01-BAUERFEIND-PROMO-1-2.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2019-07-24</p>
+      <p class="notice__message">Файл 2019-05-26-BAUERFEIND-BRANDBOOK-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2019-07-24</p>
+      <p class="notice__message">Файл 2019-02-11-NM-BAUERFEIND-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2019-07-16</p>
+      <p class="notice__message">Пользователь Кирилличенко Алексей предоставил вам доступ на редактирование коллекции «<a href="">Евразийский ортопедический форум</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-08-02</p>
+      <p class="notice__message">Пользователь По Григорий отменил ваш доступ на просмотр своей коллекции «<a href="">Metatarsal Bones</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-07-30</p>
+      <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a> из вашей коллекции «<a href="">Евразийский ортопедический форум</a>» ограничен</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-07-27</p>
+      <p class="notice__message">Файл 2019-05-04-INVITATION-FORUM-2.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-07-24</p>
+      <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-07-24</p>
+      <p class="notice__message">Файл 2019-05-26-BAUERFEIND-BRANDBOOK-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-07-24</p>
+      <p class="notice__message">Файл 2019-02-11-NM-BAUERFEIND-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2018-07-16</p>
+      <p class="notice__message">Пользователь Родословнов Константин предоставил вам доступ на редактирование коллекции «<a href="">EOF 2017, 2018, 2019 презентации</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2017-08-02</p>
+      <p class="notice__message">Пользователь По Григорий отменил ваш доступ на просмотр своей коллекции «<a href="">Metatarsal Bones</a>»</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2017-07-30</p>
+      <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a> из вашей коллекции «<a href="">Евразийский ортопедический форум</a>» ограничен</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2017-07-27</p>
+      <p class="notice__message">Файл 2019-05-04-INVITATION-FORUM-2.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
+    </li>
+    <li class="notice__item" data-notice="old">
+      <p class="notice__date">2017-07-24</p>
+      <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
+    </li>
+  </ul>
+</div>
     
     <section class="collection__header collection__header--mycollection">
       <h1 class="collection__title title">Мои коллекции</h1>

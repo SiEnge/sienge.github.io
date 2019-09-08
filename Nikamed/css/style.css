@@ -678,6 +678,18 @@ body {
 .header[data-user="open"] .user__overlay {
   display: block;
 }
+.header[data-user="login"] .user__buttonLogin {
+  display: none;
+}
+.header[data-user="logout"] .user {
+  border-left: none;
+}
+.header[data-user="logout"] .user .user__buttonOpen {
+  display: none;
+}
+.header[data-user="logout"] .user .user__alert {
+  display: none;
+}
 .header__tab {
   font-family: "NotoSansSC";
   font-size: 13px;
@@ -2053,29 +2065,24 @@ body {
   position: relative;
   z-index: 10;
 }
-.user[data-list="show"] {
-  border-left: 1px solid #69757D;
-  border-left-color: rgba(225, 228, 232, 0.25);
-  background-color: #42515A;
-}
-.user[data-list="show"] .user__button--dropDown::after {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-.user[data-list="show"] .user__dropDownList {
-  display: block;
-}
-.user[data-list="show"] .user__button--burger {
-  background-image: url("../img/user_close.svg");
-}
-.user[data-list="show"] .user__alert {
-  display: none;
-}
 .user[data-notice="show"] .user__alert {
   display: block;
 }
 .user[data-notice="show"] .user__dropDownItem--notice {
   background-color: #C41230;
+}
+.user[data-list="show"] {
+  border-left: 1px solid rgba(225, 228, 232, 0.25);
+  background-color: #42515A;
+}
+.user[data-list="show"] .user__dropDownList {
+  display: block;
+}
+.user[data-list="show"] .user__buttonOpen {
+  background-image: url("../img/user_close.svg");
+}
+.user[data-list="show"] .user__alert {
+  display: none;
 }
 .user__overlay {
   width: 100%;
@@ -2088,14 +2095,7 @@ body {
   display: none;
 }
 .user__name {
-  font-family: "Roboto";
-  font-size: 13px;
-  font-weight: bold;
-  font-style: normal;
-  line-height: normal;
-  text-align: center;
-  margin: 0;
-  display: block;
+  display: none;
 }
 .user__alert {
   position: absolute;
@@ -2107,38 +2107,37 @@ body {
   background-color: #C41230;
   display: none;
 }
-.user__button {
+.user__buttonOpen {
   border: none;
   background-color: transparent;
   padding: 3px;
   color: #42515A;
   cursor: pointer;
-}
-.user__button--dropDown {
-  display: none;
-  position: relative;
-  padding-right: 15px;
-}
-.user__button--dropDown::after {
-  position: absolute;
-  content: "";
-  width: 8px;
-  height: 8px;
-  top: 50%;
-  margin-top: -4px;
-  right: 3px;
-  background-image: url("../img/drop_down_arrow_black.svg");
-  background-size: 8px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.user__button--burger {
   width: 24px;
   height: 24px;
   background-image: url("../img/sandwich.svg");
   background-size: 24px;
   background-position: center;
   background-repeat: no-repeat;
+}
+.user__buttonLogin {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  background-image: url("../img/user_login.svg");
+  background-size: 16px;
+  font-family: "NotoSansSC";
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #0072BC;
+  padding-left: 24px;
+  background-position: center left 2px;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 .user__wrap {
   display: none;
@@ -2214,7 +2213,7 @@ body {
     background-color: #E1E4E8;
     border-left-color: #FFFFFF;
   }
-  .user[data-list="show"] .user__button--dropDown::after {
+  .user[data-list="show"] .user__buttonOpen::after {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
   }
@@ -2222,6 +2221,36 @@ body {
     left: 0;
     position: fixed;
     top: 48px;
+  }
+  .user__name {
+    font-family: "Roboto";
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+    display: block;
+  }
+  .user__buttonOpen {
+    position: relative;
+    padding-right: 15px;
+    background-image: none;
+    width: auto;
+    height: auto;
+  }
+  .user__buttonOpen::after {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    margin-top: -4px;
+    right: 3px;
+    background-image: url("../img/drop_down_arrow_black.svg");
+    background-size: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .user__dropDownList {
     padding: 4px 0;
@@ -2250,12 +2279,6 @@ body {
   }
   .user__dropDownItem--notice {
     background-position: center right 8px;
-  }
-  .user__button--dropDown {
-    display: block;
-  }
-  .user__button--burger {
-    display: none;
   }
   .user__alert {
     left: 8px;

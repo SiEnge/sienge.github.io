@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <header class="header" data-placement="collection">
+  <header class="header" data-placement="collection" data-user="logout">
     <!-- Вкладка Логотипа -->
     <div class="header__tab header__tab--logo">
       <a class="header__logo" href="index.html">
@@ -20,141 +20,46 @@
       </a>
     </div>
 
-    <!-- Вкладка Поиска -->
-    <!-- <div class="header__tab header__tab--search" data-mode="close">
-      <form class="header__search search" action="" method="get">
-        <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
-        <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
-      </form>
-    </div> -->
-
-    <!-- Вкладка Мои коллекции -->
-    <!-- <div class="header__tab header__tab--collection" data-mode="open">
-      <a class="collection__link collection__link--blue" href="mycollection.html">Мои коллекции <span class="collection__count">14</span></a>
-    </div> -->
-
     <!-- Вкладка Меню пользователя -->
-    <!-- <div class="header__tab header__tab--user user" title="Меню" data-list="hide" data-notice="show"> -->
-      <!-- <span class="user__alert"><span class="visuallyhidden">Оповещение</span></span>
-      <button class="user__button user__button--dropDown" type="button">
-        <span class="user__name">АК</span>
-        <span class="visuallyhidden">Открыть меню пользователя</span>
-      </button>
-      <button class="user__button user__button--burger" type="button">
-        <span class="visuallyhidden">Открыть меню пользователя</span>
-      </button> -->
+    <div class="header__tab header__tab--user user" title="Меню" data-list="hide" data-notice="show">
+  <span class="user__alert"></span>
 
-      <!-- выпадающее Меню пользователя -->
-      <!-- <div class="user__wrap">
-        <div class="user__overlay" data-status="hide"></div>
-        <ul class="user__dropDownList">
-          <li class="user__dropDownItemWrap--notice" data-notice="new">
-            <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
-          </li>
-          <li>
-            <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
-          </li>
-          <li>
-            <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
-          </li>
-          <li>
-            <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
-          </li>
-        </ul>
-      </div> -->
-    <!-- </div> -->
+  <button class="user__buttonOpen" type="button">
+    <span class="user__name">АК</span>
+    <span class="visuallyhidden">Открыть меню пользователя</span>
+  </button>
+
+  <button class="user__buttonLogin" type="button">Войти</button>
+
+
+
+  <!-- выпадающее Меню пользователя -->
+  <div class="user__wrap">
+    <div class="user__overlay"></div>
+    <ul class="user__dropDownList">
+      <li class="user__dropDownItemWrap--notice" data-notice="new">
+        <button class="user__dropDownItem user__dropDownItem--notice" type="button">3 уведомления</button>
+      </li>
+      <li>
+        <button class="user__dropDownItem user__dropDownItem--profile" type="button">Александр К.</button>
+      </li>
+      <li>
+        <button class="user__dropDownItem user__dropDownItem--help" type="button">Помощь</button>
+      </li>
+      <li>
+        <button class="user__dropDownItem user__dropDownItem--signout" type="button">Выйти</button>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
   </header>
 
   <main class="main shared">
-    <!-- <div class="main__notice notice">
-      <div class="notice__header">
-        <h2 class="notice__title title">4 непрочитанных уведомления</h2>
-        <div class="notice__checkboxWrap">
-          <input class="notice__checkbox" type="checkbox" id="noticeMail" checked>
-          <label class="notice__checkboxLabel" for="noticeMail">Получать уведомления на почту</label>
-        </div>
-      </div>
-        
-      <ul class="notice__list">
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-08-03</p>
-          <p class="notice__message">Вам доступна коллекция «<a href="">Видео Ormann»</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-08-02</p>
-          <p class="notice__message">Пользователь Максимов Евгений отменил ваш доступ на просмотр своей коллекции «<a href="">Achilles tendon types</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-07-30</p>
-          <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a>из вашей коллекции «<a href="">Евразийский ортопедический форум» ограничен</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="new">
-          <p class="notice__date">2019-07-27</p>
-          <p class="notice__message">Файл 2019-05-01-BAUERFEIND-PROMO-1-2.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2019-07-24</p>
-          <p class="notice__message">Файл 2019-05-26-BAUERFEIND-BRANDBOOK-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2019-07-24</p>
-          <p class="notice__message">Файл 2019-02-11-NM-BAUERFEIND-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2019-07-16</p>
-          <p class="notice__message">Пользователь Кирилличенко Алексей предоставил вам доступ на редактирование коллекции «<a href="">Евразийский ортопедический форум</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-08-02</p>
-          <p class="notice__message">Пользователь По Григорий отменил ваш доступ на просмотр своей коллекции «<a href="">Metatarsal Bones</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-30</p>
-          <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a> из вашей коллекции «<a href="">Евразийский ортопедический форум</a>» ограничен</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-27</p>
-          <p class="notice__message">Файл 2019-05-04-INVITATION-FORUM-2.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-24</p>
-          <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-24</p>
-          <p class="notice__message">Файл 2019-05-26-BAUERFEIND-BRANDBOOK-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-24</p>
-          <p class="notice__message">Файл 2019-02-11-NM-BAUERFEIND-ZDO-1.PDF из вашей коллекции «<a href="">Bauerfeind</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2018-07-16</p>
-          <p class="notice__message">Пользователь Родословнов Константин предоставил вам доступ на редактирование коллекции «<a href="">EOF 2017, 2018, 2019 презентации</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-08-02</p>
-          <p class="notice__message">Пользователь По Григорий отменил ваш доступ на просмотр своей коллекции «<a href="">Metatarsal Bones</a>»</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-07-30</p>
-          <p class="notice__message">Доступ к файлу <a href="">2018-02-04-ORTHO-DEC.PNG</a> из вашей коллекции «<a href="">Евразийский ортопедический форум</a>» ограничен</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-07-27</p>
-          <p class="notice__message">Файл 2019-05-04-INVITATION-FORUM-2.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-        <li class="notice__item" data-notice="old">
-          <p class="notice__date">2017-07-24</p>
-          <p class="notice__message">Файл 2019-05-11-INVITATION-ZDO-1-4.PDF из вашей коллекции «<a href="">Invitation</a>» удалён</p>
-        </li>
-      </ul>
-    </div> -->
-    
     <section class="shared__header">
       <h1 class="shared__title title">Пользователь Андрей К. предоставил вам доступ</h1>
       <p class="shared__status">Доступно с 2019-03-20 до 2020-03-20</p>
-      <!-- <button class="collection__btn collection__btn--setting button button--smallOk" type="button" name="button">Настройки</button> -->
     </section>
 
     <section class="main__option option">
@@ -169,63 +74,65 @@
         </div>
       </section>
 
+      <!-- Работа с файлами -->
       <section class="main__control control">
-        <div class="control__overlay" data-status="hide"></div>
+  <div class="control__overlay" data-status="hide"></div>
 
-        <!-- Выделить все файлы -->
-        <div class="control__wrap control__wrap--selectAll" title="Выбрать все">
-          <button class="control__button control__button--selectAll" type="button">Выбрать все</button>
-        </div>
+  <!-- Выделить все файлы -->
+  <div class="control__wrap control__wrap--selectAll" title="Выбрать все">
+    <button class="control__button control__button--selectAll" type="button">Выбрать все</button>
+  </div>
 
-        <!-- Включение режима действия с файлами -->
-        <div class="control__wrap control__wrap--action" title="Действия с файлами">
-          <button class="control__button control__button--action" type="button">Выбрать</button>
-        </div>
+  <!-- Включение режима действия с файлами -->
+  <div class="control__wrap control__wrap--action" title="Действия с файлами">
+    <button class="control__button control__button--action" type="button">Выбрать</button>
+  </div>
 
-        <!-- Выбор сортировки -->
-        <div class="control__wrap control__wrap--sort" title="Выбрать сортировку" data-list="hide">
-          <button class="control__button control__button--dropDown" type="button">
-            <span class="control__name">По имени (A–Z)</span>
-            <span class="visuallyhidden">Открыть выпадающий список</span>
-          </button>
-            <ul class="control__dropDownList">
-              <li>
-                <input type="radio" id="sortNameZA" name="sort">
-                <label class="control__dropDownItem" for="sortNameZA">По имени (Z–A)</label>
-              </li>
-              <li>
-                <input type="radio" id="sortNameAZ" name="sort" checked="">
-                <label class="control__dropDownItem" for="sortNameAZ">По имени (A–Z)</label>
-              </li>
-              <li>
-                <input type="radio" id="sortType" name="sort">
-                <label class="control__dropDownItem" for="sortType">По типу файла</label>
-              </li>
-              <li>
-                <input type="radio" id="sortExtension" name="sort">
-                <label class="control__dropDownItem" for="sortExtension">По расширению</label>
-              </li>
-            </ul>
-        </div>
+  <!-- Выбор сортировки -->
+  <div class="control__wrap control__wrap--sort" title="Выбрать сортировку" data-list="hide">
+    <button class="control__button control__button--dropDown" type="button">
+      <span class="control__name">По имени (A–Z)</span>
+      <span class="visuallyhidden">Открыть выпадающий список</span>
+    </button>
+    <ul class="control__dropDownList">
+      <li>
+        <input type="radio" id="sortNameZA" name="sort">
+        <label class="control__dropDownItem" for="sortNameZA">По имени (Z–A)</label>
+      </li>
+      <li>
+        <input type="radio" id="sortNameAZ" name="sort" checked="">
+        <label class="control__dropDownItem" for="sortNameAZ">По имени (A–Z)</label>
+      </li>
+      <li>
+        <input type="radio" id="sortType" name="sort">
+        <label class="control__dropDownItem" for="sortType">По типу файла</label>
+      </li>
+      <li>
+        <input type="radio" id="sortExtension" name="sort">
+        <label class="control__dropDownItem" for="sortExtension">По расширению</label>
+      </li>
+    </ul>
+  </div>
 
-        <!-- Выбор варианта раскладки -->
-        <div class="control__wrap control__wrap--layout" title="Переключить раскладку" data-list="hide" data-mode="sizeM">
-          <button class="control__button control__button--dropDown" type="button">
-            <span class="control__name">Обычной плиткой</span>
-            <span class="visuallyhidden">Открыть выпадающий список</span>
-          </button>
-          <ul class="control__dropDownList">
-            <li>
-              <input type="radio" id="layoutSizeM" name="layout" checked="">
-              <label class="control__dropDownItem" for="layoutSizeM" data-layout="sizeM">Обычной плиткой</label>
-            </li>
-            <li>
-              <input type="radio" id="layoutSizeL" name="layout">
-              <label class="control__dropDownItem" for="layoutSizeL" data-layout="sizeL">Крупной плиткой</label>
-            </li>
-          </ul>
-        </div>
-      </section>
+  <!-- Выбор варианта раскладки -->
+  <div class="control__wrap control__wrap--layout" title="Переключить раскладку" data-list="hide" data-mode="sizeM">
+    <button class="control__button control__button--dropDown" type="button">
+      <span class="control__name">Обычной плиткой</span>
+      <span class="visuallyhidden">Открыть выпадающий список</span>
+    </button>
+    <ul class="control__dropDownList">
+      <li>
+        <input type="radio" id="layoutSizeM" name="layout" checked="">
+        <label class="control__dropDownItem" for="layoutSizeM" data-layout="sizeM">Обычной плиткой</label>
+      </li>
+      <li>
+        <input type="radio" id="layoutSizeL" name="layout">
+        <label class="control__dropDownItem" for="layoutSizeL" data-layout="sizeL">Крупной плиткой</label>
+      </li>
+    </ul>
+  </div>
+</section>
+
     </section>
 
    <!--  <section class="collection__empty">
