@@ -2137,7 +2137,6 @@ body {
   padding-left: 24px;
   background-position: center left 2px;
   background-repeat: no-repeat;
-  cursor: pointer;
 }
 .user__wrap {
   display: none;
@@ -2986,6 +2985,95 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 120px;
             flex: 0 0 120px;
+  }
+}
+.rules__header {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.rules__wrap {
+  border-top: 1px solid #E1E4E8;
+}
+.rules__content ol {
+  margin: 0;
+  padding: 0;
+  /* убираем стандартную нумерацию */
+  list-style: none;
+  /* Идентифицируем счетчик и даем ему имя li. Значение счетчика не указано - по умолчанию оно равно 0 */
+  counter-reset: li;
+}
+.rules__content li:before {
+  /* Определяем элемент, который будет нумероваться — li. Псевдоэлемент before указывает, что содержимое, вставляемое при помощи свойства content, будет располагаться перед пунктами списка. Здесь же устанавливается значение приращения счетчика (по умолчанию равно 1). */
+  counter-increment: li;
+  /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
+  content: counters(li, ".") ". ";
+}
+.rules__text {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: normal;
+  color: #42515A;
+}
+.rules__text--bold {
+  font-weight: bold;
+}
+.rules__anchor {
+  display: none;
+}
+.rules__anchorList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.rules__anchorItem {
+  border-bottom: 1px dotted #E1E4E8;
+}
+.rules__anchorItem:last-child {
+  border-bottom: none;
+}
+.rules__anchorItem a {
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-family: "NotoSansSC";
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 18px;
+  letter-spacing: normal;
+  color: #0072BC;
+  text-decoration: none;
+}
+.rules__anchorItem a:hover {
+  color: #0072BC;
+}
+@media (min-width: 760px) {
+  .rules__anchor {
+    display: block;
+    width: 220px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 220px;
+            flex: 0 0 220px;
+    margin-left: 48px;
+  }
+  .rules__wrap {
+    padding-top: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .rules__item {
+    margin-bottom: 32px;
+  }
+  .rules__item .rules__title {
+    margin-bottom: 24px;
   }
 }
 .pop {
