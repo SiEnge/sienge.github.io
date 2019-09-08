@@ -2545,7 +2545,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100% - 50px);
+  height: calc(100% - 100px);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2555,6 +2555,9 @@ body {
   margin-bottom: auto;
 }
 .collection[data-collection="none"] .collection__container {
+  display: none;
+}
+.collection[data-collection="none"] .collection__file {
   display: none;
 }
 .collection[data-collection="none"] .collection__btn--newCollection {
@@ -2842,6 +2845,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 56px;
+  max-width: 150px;
 }
 @media (min-width: 408px) {
   .collection__wrap {
