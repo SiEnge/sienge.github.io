@@ -68,6 +68,41 @@ body {
   color: #42515A;
   margin: 0;
 }
+.input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 12px;
+  margin-right: 8px;
+  border: 2px solid #E1E4E8;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #42515A;
+  line-height: 16px;
+}
+.input::-webkit-input-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input::-moz-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input:-moz-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input:-ms-input-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input:focus {
+  outline: none;
+  border-color: rgba(144, 145, 148, 0.5);
+}
+.input :disabled {
+  border: 1px solid rgba(225, 228, 232, 0.5);
+}
 @media (min-width: 720px) {
   .title {
     font-size: 18px;
@@ -3075,6 +3110,104 @@ body {
   .rules__item .rules__title {
     margin-bottom: 24px;
   }
+}
+.password__header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E1E4E8;
+}
+.password__content {
+  padding-top: 40px;
+}
+.password__recovery {
+  display: none;
+  width: 220px;
+  margin: 0 auto;
+}
+.password__recovery .button {
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.password__recovery .password__text {
+  margin-bottom: 24px;
+}
+.password__text {
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 18px;
+  letter-spacing: normal;
+  text-align: center;
+  color: #42515A;
+  margin: 0;
+}
+.password__send {
+  padding-top: 72px;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 360px;
+  margin: 0 auto;
+  background-image: url("../img/password-send.svg");
+  background-repeat: no-repeat;
+  background-size: 48px;
+  background-position: center top;
+}
+.password__send .button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.password__send .password__text {
+  margin-bottom: 16px;
+}
+.password__new {
+  width: 220px;
+  margin: 0 auto;
+}
+.password__new .button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+}
+.password__btnShowHide {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 8px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/password_show.svg");
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.password__inputWrap {
+  padding-bottom: 12px;
+}
+.password__inputCont {
+  position: relative;
+  margin-top: 4px;
+}
+.password__inputCont .input {
+  padding-right: 32px;
+  margin-right: 0;
+}
+.password__inputCont[data-password="show"] .password__btnShowHide {
+  background-image: url("../img/password_hide.svg");
+}
+.password__label {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  color: #909194;
 }
 .pop {
   height: 100%;
