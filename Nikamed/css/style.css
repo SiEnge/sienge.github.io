@@ -24,6 +24,12 @@
 }
 @font-face {
   font-family: 'Roboto';
+  src: url('../fonts/Robotothin.woff2') format('woff2'), url('../fonts/Robotothin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
   src: url('../fonts/Robotolight.woff2') format('woff2'), url('../fonts/Robotolight.woff') format('woff');
   font-weight: 300;
   font-style: normal;
@@ -3688,4 +3694,107 @@ body {
   max-width: 300px;
   margin-top: auto;
   padding-bottom: 40px;
+}
+.nikamed__header {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.nikamed__title {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 36px;
+  letter-spacing: normal;
+  color: #42515A;
+  margin: 0;
+  max-width: 600px;
+}
+.nikamed__logo {
+  width: 60px;
+  height: auto;
+}
+.nikamed__login {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../img/nikamed__background.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 470px;
+  height: 100vh;
+  padding-top: 48px;
+}
+.nikamed__slogan {
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "Roboto";
+  font-weight: 100;
+  font-style: normal;
+  color: #42515A;
+  margin: 0;
+  text-align: center;
+  padding-bottom: 32px;
+}
+.nikamed__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 48px;
+}
+.nikamed__inputWrap {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32%;
+          flex: 0 0 32%;
+  width: 32%;
+}
+.nikamed__inputWrap .button {
+  width: 100%;
+  background-color: #C41230;
+}
+.nikamed__menuList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.nikamed__menuItem {
+  border-right: 1px solid #909194;
+}
+.nikamed__menuItem:last-child {
+  border-right: none;
+}
+.nikamed__menuItem a {
+  font-size: 16px;
+  line-height: 16px;
+  font-family: "Roboto";
+  font-weight: 100;
+  font-style: normal;
+  color: #42515A;
+  text-decoration: none;
+  display: block;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.nikamed__menuItem a:hover {
+  color: #42515A;
 }
