@@ -323,7 +323,41 @@ document.addEventListener("click", function(event) {
     }
   }
 
+  //показать/скрыть пароль
+  if (target.classList.contains("input__btnPassword")) {
+    let wrap = target.closest(".input--password");
+    if (wrap.dataset.password == "hide") {
+      wrap.dataset.password = "show";
+      wrap.getElementsByTagName("input")[0].type = "text";
+      target.title = "Скрыть пароль";
+    } else {
+      wrap.dataset.password = "hide";
+      wrap.getElementsByTagName("input")[0].type = "password";
+      target.title = "Показать пароль";
+    }
+  }
+
 });
+
+document.addEventListener("input", function(event) {
+  var target = event.target;
+  let wrap = target.closest(".input");
+  if (wrap) {
+    if (wrap.classList.contains("login__input")) {
+      checkFormLogin(target.form);
+    }
+  }
+});
+
+// document.addEventListener("change", function(event) {
+//   var target = event.target;
+//   let wrap = target.closest(".input");
+//   if (wrap) {
+//     if (wrap.classList.contains("login__input")) {
+//       checkFormLogin(target.form);
+//     }
+//   }
+// });
 
 document.addEventListener("focus", function(event) {
   var target = event.target;
@@ -352,6 +386,16 @@ function closeAllTabs() {
       if (tabs[i].classList.contains("header__tab--collection")) tabs[i].dataset.mode = "close";;
     }
   }
+}
+
+function checkFormLogin(form) {
+  let input = form.getElementsByTagName("input");
+  let flag = true;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].value == "") flag = false;
+  }
+
+  form.querySelector(".login__button").disabled = (flag) ? false : true;
 }
 
 

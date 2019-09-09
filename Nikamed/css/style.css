@@ -74,41 +74,6 @@ body {
   color: #42515A;
   margin: 0;
 }
-.input {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 8px 12px;
-  margin-right: 8px;
-  border: 2px solid #E1E4E8;
-  border-radius: 4px;
-  font-family: "Roboto";
-  font-size: 14px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: normal;
-  color: #42515A;
-  line-height: 16px;
-}
-.input::-webkit-input-placeholder {
-  color: rgba(66, 81, 90, 0.5);
-}
-.input::-moz-placeholder {
-  color: rgba(66, 81, 90, 0.5);
-}
-.input:-moz-placeholder {
-  color: rgba(66, 81, 90, 0.5);
-}
-.input:-ms-input-placeholder {
-  color: rgba(66, 81, 90, 0.5);
-}
-.input:focus {
-  outline: none;
-  border-color: rgba(144, 145, 148, 0.5);
-}
-.input :disabled {
-  border: 1px solid rgba(225, 228, 232, 0.5);
-}
 @media (min-width: 720px) {
   .title {
     font-size: 18px;
@@ -207,10 +172,10 @@ body {
 }
 .button--okIcon:hover,
 .button--okIcon:active {
-  background-color: #338ec9;
-  background-color: #0072bccc;
+  background-color: rgba(0, 114, 188, 0.8);
 }
 .button--okIcon:disabled {
+  cursor: default;
   background-color: #E1E4E8;
 }
 .button--ok {
@@ -219,10 +184,10 @@ body {
 }
 .button--ok:hover,
 .button--ok:active {
-  background-color: #338ec9;
-  background-color: #0072bccc;
+  background-color: rgba(0, 114, 188, 0.8);
 }
 .button--ok:disabled {
+  cursor: default;
   background-color: #E1E4E8;
 }
 .button--smallOkIcon {
@@ -240,10 +205,10 @@ body {
 }
 .button--smallOkIcon:hover,
 .button--smallOkIcon:active {
-  background-color: #338ec9;
-  background-color: #0072bccc;
+  background-color: rgba(0, 114, 188, 0.8);
 }
 .button--smallOkIcon:disabled {
+  cursor: default;
   background-color: #E1E4E8;
 }
 .button--smallOk {
@@ -256,10 +221,10 @@ body {
 }
 .button--smallOk:hover,
 .button--smallOk:active {
-  background-color: #338ec9;
-  background-color: #0072bccc;
+  background-color: rgba(0, 114, 188, 0.8);
 }
 .button--smallOk:disabled {
+  cursor: default;
   background-color: #E1E4E8;
 }
 .button--cancel:hover,
@@ -280,6 +245,7 @@ body {
   background-color: #E1E4E8;
 }
 .button--resetIcon:disabled {
+  cursor: default;
   opacity: 0.5;
   color: #909194;
   background-color: #E1E4E8;
@@ -293,6 +259,7 @@ body {
   background-color: #E1E4E8;
 }
 .button--reset:disabled {
+  cursor: default;
   opacity: 0.5;
   color: #909194;
   background-color: #E1E4E8;
@@ -315,6 +282,7 @@ body {
   background-color: #E1E4E8;
 }
 .button--smallResetIcon:disabled {
+  cursor: default;
   opacity: 0.5;
   color: #909194;
   background-color: #E1E4E8;
@@ -332,6 +300,7 @@ body {
   background-color: #E1E4E8;
 }
 .button--smallReset:disabled {
+  cursor: default;
   opacity: 0.5;
   color: #909194;
   background-color: #E1E4E8;
@@ -343,6 +312,7 @@ body {
   margin-left: -16px;
 }
 .button--link:disabled {
+  cursor: default;
   opacity: 0.5;
   color: #909194;
 }
@@ -2325,6 +2295,72 @@ body {
     left: 8px;
   }
 }
+.input {
+  position: relative;
+}
+.input--password[data-password="show"] .input__btnPassword {
+  background-image: url("../img/password_hide.svg");
+}
+.input input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 12px;
+  margin-right: 8px;
+  border: 2px solid #E1E4E8;
+  border-radius: 4px;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #42515A;
+  line-height: 16px;
+}
+.input input::-webkit-input-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input input::-moz-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input input:-moz-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input input:-ms-input-placeholder {
+  color: rgba(66, 81, 90, 0.5);
+}
+.input input:focus {
+  outline: none;
+  border-color: rgba(144, 145, 148, 0.5);
+}
+.input input :disabled {
+  border: 1px solid rgba(225, 228, 232, 0.5);
+}
+.input label {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  color: #909194;
+}
+.input__btnPassword {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 8px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/password_show.svg");
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .file[data-action="true"] .file__preview {
   opacity: 0.25;
 }
@@ -2574,7 +2610,7 @@ body {
 .collection[data-collection="none"] .collection__btn--newCollection:hover,
 .collection[data-collection="none"] .collection__btn--newCollection:active {
   background-color: #338ec9;
-  background-color: #0072bccc;
+  background-color: rgba(0, 114, 188, 0.8);
 }
 .collection[data-collection="none"] .collection__btn--newCollection:disabled {
   background-color: #E1E4E8;
@@ -3181,22 +3217,6 @@ body {
   margin-right: auto;
   margin-top: 4px;
 }
-.password__btnShowHide {
-  position: absolute;
-  top: 50%;
-  margin-top: -8px;
-  right: 8px;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-  background-image: url("../img/password_show.svg");
-  background-size: 16px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .password__inputWrap {
   padding-bottom: 12px;
 }
@@ -3207,18 +3227,6 @@ body {
 .password__inputCont .input {
   padding-right: 32px;
   margin-right: 0;
-}
-.password__inputCont[data-password="show"] .password__btnShowHide {
-  background-image: url("../img/password_hide.svg");
-}
-.password__label {
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.1px;
-  color: #909194;
 }
 .pop {
   height: 100%;
@@ -3695,7 +3703,7 @@ body {
   margin-top: auto;
   padding-bottom: 40px;
 }
-.nikamed {
+.login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3705,7 +3713,7 @@ body {
           flex-direction: column;
   height: 100vh;
 }
-.nikamed__header {
+.login__header {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -3723,7 +3731,7 @@ body {
   padding-left: 16px;
   padding-right: 16px;
 }
-.nikamed__title {
+.login__title {
   font-family: "Roboto";
   font-size: 20px;
   font-weight: 100;
@@ -3736,11 +3744,11 @@ body {
   max-width: 600px;
   padding-right: 20px;
 }
-.nikamed__logo {
+.login__logo {
   width: 60px;
   height: auto;
 }
-.nikamed__login {
+.login__login {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -3757,7 +3765,7 @@ body {
   padding-left: 16px;
   padding-right: 16px;
 }
-.nikamed__slogan {
+.login__slogan {
   font-size: 16px;
   line-height: 20px;
   font-family: "Roboto";
@@ -3768,18 +3776,26 @@ body {
   text-align: center;
   padding-bottom: 24px;
 }
-.nikamed__form {
+.login__form {
   padding-bottom: 48px;
 }
-.nikamed__inputWrap {
+.login__input {
   position: relative;
   margin-bottom: 12px;
 }
-.nikamed__inputWrap .button {
+.login__button {
   width: 100%;
   background-color: #C41230;
 }
-.nikamed__menuList {
+.login__button:hover,
+.login__button:active {
+  background-color: rgba(196, 18, 48, 0.8);
+}
+.login__button:disabled {
+  cursor: default;
+  background-color: #E1E4E8;
+}
+.login__menuList {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -3792,14 +3808,14 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.nikamed__menuItem {
+.login__menuItem {
   border-right: 1px solid #909194;
   margin-bottom: 8px;
 }
-.nikamed__menuItem:last-child {
+.login__menuItem:last-child {
   border-right: none;
 }
-.nikamed__menuItem a {
+.login__menuItem a {
   font-size: 16px;
   line-height: 16px;
   font-family: "Roboto";
@@ -3811,18 +3827,18 @@ body {
   padding-left: 4px;
   padding-right: 4px;
 }
-.nikamed__menuItem a:hover {
+.login__menuItem a:hover {
   color: #42515A;
 }
 @media (min-width: 720px) {
-  .nikamed__header {
+  .login__header {
     padding-top: 48px;
   }
-  .nikamed__title {
+  .login__title {
     font-size: 32px;
     line-height: 36px;
   }
-  .nikamed__login {
+  .login__login {
     padding-top: 48px;
     background-size: 470px;
     background-position: top center;
@@ -3830,12 +3846,12 @@ body {
         -ms-flex: 0 0 520px;
             flex: 0 0 520px;
   }
-  .nikamed__slogan {
+  .login__slogan {
     font-size: 20px;
     line-height: 24px;
     padding-bottom: 32px;
   }
-  .nikamed__form {
+  .login__form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3844,17 +3860,13 @@ body {
             justify-content: space-between;
     padding-bottom: 48px;
   }
-  .nikamed__inputWrap {
+  .login__input {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 32%;
             flex: 0 0 32%;
     width: 32%;
   }
-  .nikamed__inputWrap .button {
-    width: 100%;
-    background-color: #C41230;
-  }
-  .nikamed__menuList {
+  .login__menuList {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3862,7 +3874,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .nikamed__menuItem a {
+  .login__menuItem a {
     font-size: 16px;
     line-height: 16px;
   }
