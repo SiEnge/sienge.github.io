@@ -3695,11 +3695,21 @@ body {
   margin-top: auto;
   padding-bottom: 40px;
 }
+.nikamed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
 .nikamed__header {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 48px;
+  padding-top: 24px;
   padding-bottom: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3707,18 +3717,24 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .nikamed__title {
   font-family: "Roboto";
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 100;
   font-style: normal;
   font-stretch: normal;
-  line-height: 36px;
+  line-height: 26px;
   letter-spacing: normal;
   color: #42515A;
   margin: 0;
   max-width: 600px;
+  padding-right: 20px;
 }
 .nikamed__logo {
   width: 60px;
@@ -3729,38 +3745,35 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-image: url("../img/nikamed__background.svg");
-  background-position: top center;
+  background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 470px;
-  height: 100vh;
-  padding-top: 48px;
+  background-size: contain;
+  padding-top: 24px;
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .nikamed__slogan {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 20px;
   font-family: "Roboto";
   font-weight: 100;
   font-style: normal;
   color: #42515A;
   margin: 0;
   text-align: center;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
 }
 .nikamed__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   padding-bottom: 48px;
 }
 .nikamed__inputWrap {
   position: relative;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 32%;
-          flex: 0 0 32%;
-  width: 32%;
+  margin-bottom: 12px;
 }
 .nikamed__inputWrap .button {
   width: 100%;
@@ -3776,9 +3789,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .nikamed__menuItem {
   border-right: 1px solid #909194;
+  margin-bottom: 8px;
 }
 .nikamed__menuItem:last-child {
   border-right: none;
@@ -3797,4 +3813,57 @@ body {
 }
 .nikamed__menuItem a:hover {
   color: #42515A;
+}
+@media (min-width: 720px) {
+  .nikamed__header {
+    padding-top: 48px;
+  }
+  .nikamed__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .nikamed__login {
+    padding-top: 48px;
+    background-size: 470px;
+    background-position: top center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 520px;
+            flex: 0 0 520px;
+  }
+  .nikamed__slogan {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 32px;
+  }
+  .nikamed__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 48px;
+  }
+  .nikamed__inputWrap {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 32%;
+            flex: 0 0 32%;
+    width: 32%;
+  }
+  .nikamed__inputWrap .button {
+    width: 100%;
+    background-color: #C41230;
+  }
+  .nikamed__menuList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .nikamed__menuItem a {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
