@@ -754,6 +754,10 @@ body {
   background-color: #42515A;
   border-radius: 0;
 }
+.header__tab--search[data-mode="open"] .search__input {
+  background-color: #FFFFFF;
+  color: #42515A;
+}
 .header__tab--collection {
   width: auto;
   -webkit-box-flex: 1;
@@ -2016,9 +2020,12 @@ body {
   background-color: #42515A;
   height: 100%;
   padding: 9px 6px;
-}
-.search__input:focus {
-  background-color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
   color: #42515A;
 }
 .search__input::-webkit-input-placeholder {
