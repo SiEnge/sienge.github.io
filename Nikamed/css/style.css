@@ -3165,17 +3165,16 @@ body {
 .password__content {
   padding-top: 40px;
 }
-.password__recovery {
-  display: none;
+.password__step1 {
   width: 220px;
   margin: 0 auto;
 }
-.password__recovery .button {
+.password__step1 .button {
   margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
 }
-.password__recovery .password__text {
+.password__step1 .password__text {
   margin-bottom: 24px;
 }
 .password__text {
@@ -3190,7 +3189,7 @@ body {
   color: #42515A;
   margin: 0;
 }
-.password__send {
+.password__step2 {
   padding-top: 72px;
   padding-left: 16px;
   padding-right: 16px;
@@ -3201,11 +3200,11 @@ body {
   background-size: 48px;
   background-position: center top;
 }
-.password__send .button {
+.password__step2 .button {
   margin-left: auto;
   margin-right: auto;
 }
-.password__send .password__text {
+.password__step2 .password__text {
   margin-bottom: 16px;
 }
 .password__new {

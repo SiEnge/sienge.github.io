@@ -337,6 +337,8 @@ document.addEventListener("click", function(event) {
     }
   }
 
+  password__btnSend
+
 });
 
 document.addEventListener("input", function(event) {
