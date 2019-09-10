@@ -337,7 +337,6 @@ document.addEventListener("click", function(event) {
     }
   }
 
-  password__btnSend
 
 });
 
