@@ -25,9 +25,17 @@ document.addEventListener("click", function(event) {
       if (filter) {
         let filterChoice = filter.querySelector(".filter__filterChoice");
         let filterItemClone = target.cloneNode(true);
+
+        let btn = document.createElement("button"); 
+        btn.type = "button";
+        btn.classList.add("filter__btnRemove");
+        filterItemClone.appendChild(btn);
+
         filterItemClone.classList.remove("filter__item");
         filterItemClone.classList.add("filter__itemChoice");
         filterChoice.appendChild(filterItemClone);
+        filter.querySelector(".filter__btn--reset").disabled = false;
+        filter.querySelector(".filter__btn--apply").disabled = false;
       }
     } else {
       target.dataset.check = "false";
@@ -40,22 +48,33 @@ document.addEventListener("click", function(event) {
             filterChoice.removeChild(filterItemsChoice[i]);
           }
         }
+        if (filterItemsChoice.length == 1) {
+          filter.querySelector(".filter__btn--reset").disabled = true;
+          filter.querySelector(".filter__btn--apply").disabled = true;
+        }
       }
     }
   }
 
   //удаление выбранных параметров фильтра
-  if (target.classList.contains("filter__itemChoice")) {
+  if (target.classList.contains("filter__btnRemove")) {
+    let wrap = target.closest(".filter__itemChoice");
     let filter = document.querySelector(".filter");
     if (filter) {
       let filterChoice = filter.querySelector(".filter__filterChoice");
-      filterChoice.removeChild(target);
+      filterChoice.removeChild(wrap);
       let filterItems = filter.querySelectorAll(".filter__item");
       for (var i = 0; i < filterItems.length; i++) {
-        if (filterItems[i].dataset.id == target.dataset.id) {
+        if (filterItems[i].dataset.id == wrap.dataset.id) {
           filterItems[i].dataset.check = "false";
         }
       }
+      let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
+      if (filterItemsChoice.length == 0) {
+        filter.querySelector(".filter__btn--reset").disabled = true;
+        filter.querySelector(".filter__btn--apply").disabled = true;
+      }
+
     }
   }
 
