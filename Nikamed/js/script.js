@@ -395,6 +395,9 @@ document.addEventListener("blur", function(event) {
   if (document.querySelector(".header") && document.querySelector(".header").dataset.placement == "collection") {
     document.querySelector(".header__tab--collection").dataset.mode = "open";
   }
+  if (document.querySelector(".header") && document.querySelector(".header").dataset.placement == "search") {
+    document.querySelector(".header__tab--search").dataset.mode = "open";
+  }
 }, true);
 
 function closeAllTabs() {
