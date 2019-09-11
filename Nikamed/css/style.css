@@ -1476,6 +1476,9 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
   }
   .notice__checkboxWrap {
     margin-left: auto;
@@ -1600,7 +1603,7 @@ body {
   text-align: right;
   color: #909194;
   margin: 0;
-  margin-right: 8px;
+  margin-top: 8px;
 }
 @media (min-width: 720px) {
   .shared__header {
@@ -1613,6 +1616,9 @@ body {
   }
   .shared__title {
     margin-bottom: 0;
+  }
+  .shared__status {
+    margin-right: 8px;
   }
 }
 .onefile__main[data-type="file"] .property__item--type {
