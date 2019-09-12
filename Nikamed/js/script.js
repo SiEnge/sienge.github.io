@@ -626,15 +626,15 @@ function checkCollectionCount(number) {
 
 function checkBtnCollection(button, mode) {
   if (mode == "check") {
-    button.getElementsByTagName("span").innerHTML = "Убрать из коллекции";
+    button.getElementsByTagName("SPAN")[0].innerHTML = "Убрать из коллекции";
     button.title = "Удалить из коллекции";
   }
   if (mode == "plus") {
-    button.getElementsByTagName("span").innerHTML = "Добавить в коллекцию";
+    button.getElementsByTagName("SPAN")[0].innerHTML = "Добавить в коллекцию";
     button.title = "Добавить в коллекцию";
   }
   if (mode == "minus") {
-    button.getElementsByTagName("span").innerHTML = "Добавить все в коллекцию";
+    button.getElementsByTagName("SPAN")[0].innerHTML = "Добавить все в коллекцию";
     button.title = "Добавить все в коллекцию";
   }
 }
