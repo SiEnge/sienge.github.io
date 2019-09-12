@@ -74,6 +74,22 @@ body {
   color: #42515A;
   margin: 0;
 }
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media (min-width: 720px) {
   .title {
     font-size: 18px;
@@ -1516,6 +1532,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 150;
+  -webkit-animation: appear 0.5s;
+          animation: appear 0.5s;
 }
 .notification--deleteCollection {
   background-color: #C41230;
