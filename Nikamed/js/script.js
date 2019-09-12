@@ -321,7 +321,7 @@ document.addEventListener("click", function(event) {
     }
 
     if (item.dataset.mode == "check" ) {
-      item.dataset.mode = "plus";
+      item.dataset.mode = "minus";
       checkBtnCollection(target, item.dataset.mode);
       return;
     }

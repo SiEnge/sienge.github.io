@@ -3411,6 +3411,9 @@ body {
   background-image: url("../img/pop_addToCollection_grey.svg");
 }
 .pop__listItem[data-mode="minus"] .pop__btnCollection {
+  background-image: url("../img/pop_minusCollection_blue.svg");
+}
+.pop__listItem[data-mode="minus"] .pop__btnCollection:disabled {
   background-image: url("../img/pop_minusCollection.svg");
 }
 .pop__listText {
