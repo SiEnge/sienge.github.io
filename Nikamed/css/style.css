@@ -1185,18 +1185,6 @@ body {
 .control__button--dropDown:hover::after {
   background-image: url("../img/drop_down_arrow_black.svg");
 }
-.control__dropDownBtn {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  width: 8px;
-  height: 18px;
-  background-image: url("../img/drop_down_arrow_blue.svg");
-  background-size: 8px;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
 .control__dropDownList {
   display: none;
 }
