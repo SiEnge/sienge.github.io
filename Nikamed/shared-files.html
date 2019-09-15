@@ -76,7 +76,7 @@
 
       <!-- Работа с файлами -->
       <section class="main__control control">
-  <div class="control__overlay"></div>
+  <div class="control__overlay" data-status="hide"></div>
 
   <!-- Выделить все файлы -->
   <div class="control__wrap control__wrap--selectAll" title="Выбрать все">
@@ -365,11 +365,24 @@
     </div>
   </section>
 
-  <!-- Всплывающее уведомление "Вам доступна коллекция" -->
-  <section class="notification notification--available" data-mode="open">
-    <p class="notification__text">Вам доступна коллекция «Ormann»</p>
-    <button class="notification__button notification__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
-  </section>
+  <!-- Всплывающее уведомление -->
+  <!-- Всплывающее уведомление "Коллекции удалены" -->
+<section class="notification notification--deleteCollection" data-mode="close">
+  <div class="notification__overlay"></div>
+  <p class="notification__text"><span class="notification__text--input">4 коллекции</span> удалены</p>
+  <button class="notification__button notification__button--return" type="button" name="button">Вернуть</button>
+</section>
+
+<!-- Всплывающее уведомление "Вам доступна коллекция" -->
+<section class="notification notification--available" data-mode="close">
+  <p class="notification__text">Вам доступна коллекция «<span class="notification__text--input">Ormann</span>»</p>
+  <button class="notification__button notification__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+</section>
+
+<!-- Всплывающее уведомление "Файлы отправлены" -->
+<section class="notification notification--filesSend" data-mode="close">
+  <p class="notification__text"><span class="notification__text--input">14 файлов</span> отправлены</p>
+</section>
 
   <script src="js/script.js"></script>
   <script src="js/picturefill.js"></script>

@@ -429,6 +429,7 @@ function checkFormLogin(form) {
 
 function notificationOpen(notification) {
   notification.dataset.mode = "open";
+  setTimeout(notificationClose, 5000, notification);
 }
 
 function notificationClose(notification) {

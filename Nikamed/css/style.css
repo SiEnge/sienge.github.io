@@ -1536,7 +1536,7 @@ body {
   -webkit-animation: appear 0.5s;
           animation: appear 0.5s;
 }
-.notification--deleteCollection {
+.notification[data-type="deleteCollection"] {
   background-color: #C41230;
 }
 .notification[data-mode="close"] {
