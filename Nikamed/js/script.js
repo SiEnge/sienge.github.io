@@ -485,7 +485,7 @@ function currentFilter() {
   if (filter) {
     let filterChoice = filter.querySelector(".filter__filterChoice");
     for (var i = 0; i < arrChoice.length; i++) {
-      let li = document.createElement('li'); 
+      let li = document.createElement("li"); 
       li.className = "filter__itemChoice"; //добавляет стили к элементу
       li.setAttribute("data-id", arrChoice[i][0]);
       li.innerHTML = arrChoice[i][1];
@@ -641,49 +641,36 @@ function checkBtnCollection(button, mode) {
   }
 }
 
-
 var updownBtn = document.querySelector(".updown");
 
-// if (updownBtn) {
-//   let main = document.querySelector(".main");
-//   let pageYLabel = 0;
-//   updownBtn.addEventListener("click", function(event) {
-//     main.scrollTo(0, 0);
-//     // updownBtn.dataset.mode = "";
-//   });
-
-
-//   main.addEventListener("scroll", function(event) {
-//     let pageY = main.scrollHeight || document.documentElement.scrollTop;
-//     let innerHeight = document.documentElement.clientHeight;
-
-//     switch (updownBtn.dataset.mode) {
-//       case "":
-//       if (pageY > innerHeight) {
-//         updownBtn.dataset.mode = "up";
-//       }
-//       break;
-
-//       case "up":
-//       if (pageY < innerHeight) {
-//         updownBtn.dataset.mode = "";
-//       }
-//       break;
-//     }
-//   });
-
-
-// }
-
 if (updownBtn) {
-  updownBtn.onclick = function() {
-  window.scrollTo(pageXOffset, 0);
-  // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
-};
+  let main = document.querySelector(".main");
 
-window.addEventListener('scroll', function() {
-  updownBtn.hidden = (pageYOffset < document.documentElement.clientHeight);
-});
+  main.addEventListener("scroll", trackScroll);
+  updownBtn.addEventListener("click", backToTop);
+
+  function trackScroll() {
+    let main = document.querySelector(".main");
+    var scrolled = main.scrollTop;
+    // var scrolled = main.pageYOffset;
+    var coords = document.documentElement.clientHeight;
+
+    if (scrolled > coords) {
+      updownBtn.dataset.mode = "show";
+      // updownBtn.classList.add("updown-show");
+    }
+    if (scrolled < coords) {
+      updownBtn.dataset.mode = "hide";
+      // updownBtn.classList.remove("updown-show");
+    }
+  }
+
+  function backToTop() {
+    let main = document.querySelector(".main");
+
+    if (main.scrollTop > 0) {
+      main.scrollBy(0, -40);
+      setTimeout(backToTop, 0);
+    }
+  }
 }
-
-
