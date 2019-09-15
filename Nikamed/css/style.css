@@ -777,8 +777,9 @@ body {
 .header__tab--collection {
   width: auto;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow-y: hidden;
 }
 .header__tab--collection:active {
   background-color: #FFFFFF;
@@ -2764,14 +2765,30 @@ body {
   color: #42515A;
   text-decoration: none;
   padding: 7px 6px;
-  display: block;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .collection__link--blue {
   color: #0072BC;
 }
-.collection__count {
+.collection__link--titleDesktop {
   display: none;
+}
+.collection__link--title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+.collection__count {
   opacity: 0.5;
   font-family: "Roboto";
   font-size: 14px;
@@ -2782,6 +2799,9 @@ body {
   text-align: center;
   color: #42515A;
   padding-left: 4px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 .collection__btnOpen {
   font-family: "Roboto";
@@ -2946,8 +2966,11 @@ body {
   .collection__nameWrap {
     min-height: 65px;
   }
-  .collection__count {
+  .collection__link--titleDesktop {
     display: inline;
+  }
+  .collection__link--title {
+    text-transform: lowercase;
   }
 }
 @media (min-width: 720px) {
