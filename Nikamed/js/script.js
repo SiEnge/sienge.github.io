@@ -565,11 +565,13 @@ function onNotice() {
 //закрыть Меню пользователя
 function openNotice() {
   document.querySelector(".main").dataset.notice = "open";
+  document.querySelector(".header__tab--user").dataset.mode = "open";
 }
 
 //закрыть Меню пользователя
 function closeNotice() {
   document.querySelector(".main").dataset.notice = "close";
+  document.querySelector(".header__tab--user").dataset.mode = "close";
 }
 
 //включить режим Действия с файлами
