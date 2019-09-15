@@ -124,6 +124,11 @@ document.addEventListener("click", function(event) {
     setTimeout(offNotice, 2000);
     return;
   }
+
+  // закрытие Уведомлений по overlay
+  if (target.classList.contains("notice__overlay")) {
+    closeNotice();
+  }
   
 
   // закрытие выпадающего окна "Меню пользователя" по overlay
@@ -560,17 +565,11 @@ function onNotice() {
 //закрыть Меню пользователя
 function openNotice() {
   document.querySelector(".main").dataset.notice = "open";
-
-  // document.querySelector(".user").dataset.list = "hide";
-  // document.querySelector(".header").dataset.user = "close";
 }
 
 //закрыть Меню пользователя
 function closeNotice() {
   document.querySelector(".main").dataset.notice = "close";
-
-  // document.querySelector(".user").dataset.list = "hide";
-  // document.querySelector(".header").dataset.user = "close";
 }
 
 //включить режим Действия с файлами
