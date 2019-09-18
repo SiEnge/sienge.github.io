@@ -651,18 +651,11 @@ if (updownBtn) {
 
   function trackScroll() {
     let main = document.querySelector(".main");
-    var scrolled = main.scrollTop;
-    // var scrolled = main.pageYOffset;
-    var coords = document.documentElement.clientHeight;
+    let scrolled = main.scrollTop;
+    let coords = document.documentElement.clientHeight;
 
-    if (scrolled > coords) {
-      updownBtn.dataset.mode = "show";
-      // updownBtn.classList.add("updown-show");
-    }
-    if (scrolled < coords) {
-      updownBtn.dataset.mode = "hide";
-      // updownBtn.classList.remove("updown-show");
-    }
+    if (scrolled > coords / 2) updownBtn.dataset.mode = "show";
+    if (scrolled < coords / 2) updownBtn.dataset.mode = "hide";
   }
 
   function backToTop() {
