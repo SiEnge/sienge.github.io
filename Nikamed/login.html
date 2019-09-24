@@ -35,14 +35,17 @@
         <li class="login__menuItem">
           <a href="http://www.login.ru/about/" target="_blank">О компании</a>
         </li>
-         <li class="login__menuItem">
+        <li class="login__menuItem">
           <a href="rules.html#dataProtection">Защита данных</a>
         </li>
-         <li class="login__menuItem">
+        <li class="login__menuItem">
           <a href="rules.html#termOfUse">Условия пользования</a>
         </li>
-         <li class="login__menuItem">
+        <li class="login__menuItem">
           <a href="">Видеогид</a>
+        </li>
+        <li class="login__menuItem">
+          <a href="">Забыли логин или пароль?</a>
         </li>
       </ul>
       
@@ -53,6 +56,14 @@
   <footer>
 
   </footer>
+  <!-- Всплывающее уведомление -->
+  <!-- Всплывающее уведомление -->
+<section class="notification" data-mode="close" data-attention="false">
+  <p class="notification__text">Неверный логин или пароль. Попробуйте ещё раз</p>
+  <button class="notification__button notification__button--return" type="button" name="button">Вернуть</button>
+
+  <button class="notification__button notification__button--close" type="button" name="button"><span class="visuallyhidden">Закрыть</span></button>
+</section>
 
   <script src="js/script.js"></script>
   <script src="js/picturefill.js"></script>
