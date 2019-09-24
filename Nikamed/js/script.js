@@ -270,8 +270,7 @@ document.addEventListener("click", function(event) {
 
   //открытие Уведомления "Удаление Коллекций
   if (target.classList.contains("action__button--deleteCollection")) {
-    notificationOpen(document.querySelector(".notification--deleteCollection"));
-    // setTimeout(notificationClose, 5000, document.querySelector(".notification--deleteCollection"));
+    notificationOpen(document.querySelector(".notification"));
     closeAction();
   }
 

@@ -1534,8 +1534,11 @@ body {
   -webkit-animation: appear 0.5s;
           animation: appear 0.5s;
 }
-.notification[data-type="deleteCollection"] {
+.notification[data-attention="true"] {
   background-color: #C41230;
+}
+.notification[data-attention="true"] .notification__button--return {
+  display: block;
 }
 .notification[data-mode="close"] {
   display: none;
@@ -1570,7 +1573,6 @@ body {
   padding: 0;
   background-color: transparent;
   border: none;
-  margin-left: auto;
   cursor: pointer;
   background-image: url("../img/notification_return.svg");
   background-size: 16px;
@@ -1578,10 +1580,13 @@ body {
   background-repeat: no-repeat;
 }
 .notification__button--return {
+  display: none;
   padding-left: 20px;
   background-image: url("../img/notification_return.svg");
+  margin-left: 10px;
 }
 .notification__button--close {
+  margin-left: auto;
   width: 16px;
   height: 16px;
   background-image: url("../img/notification_close.svg");
