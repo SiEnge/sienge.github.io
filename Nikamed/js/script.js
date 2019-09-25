@@ -106,18 +106,7 @@ document.addEventListener("click", function(event) {
 
   
 
-  // Открытие/закрытие выпадающего окна "Меню пользователя""
-  let userBtn = target.closest(".user__buttonOpen");
-  if (userBtn) {
-    let wrap = target.closest(".user");
-    if (wrap.dataset.list == "show") {
-      closeUser();
-    } else {
-      openUser();
-      closeNotice();
-    }
-    return;
-  }
+  
 
   // Открытие Уведомлений
   if (target.classList.contains("user__dropDownItem--notice")) {
@@ -365,6 +354,23 @@ document.addEventListener("click", function(event) {
 
 
 });
+
+// Открытие/закрытие выпадающего окна "Меню пользователя""
+  let userBtn = target.closest(".user__buttonOpen");
+
+  if (userBtn) {
+    userBtn.addEventListener("click", function(event) {
+
+    let user = document.querySelector(".user");
+      if (wrap.dataset.list == "show") {
+        closeUser();
+      } else {
+        openUser();
+        closeNotice();
+      }
+      return;
+    });
+  }
 
 document.addEventListener("input", function(event) {
   var target = event.target;
