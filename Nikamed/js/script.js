@@ -1,3 +1,6 @@
+'use strict';
+
+
 var arrChoice = [];
 
 document.addEventListener("click", function(event) {
