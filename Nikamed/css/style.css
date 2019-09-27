@@ -3217,7 +3217,7 @@ body {
   margin-left: 10px;
 }
 .rules__anchor {
-  display: none;
+  padding-bottom: 48px;
 }
 .rules__anchorList {
   padding: 0;
@@ -3269,6 +3269,10 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     padding-left: 48px;
     padding-right: 48px;
   }
