@@ -3393,9 +3393,19 @@ body {
   padding-top: 16px;
   padding-bottom: 12px;
 }
-.pop--settingCollection .pop__inputWrap {
+.pop--settingCollection .pop__blockWrap {
   display: block;
   padding-bottom: 16px;
+}
+.pop--settingCollection .pop__blockWrap--searchUser .pop__inputWrap {
+  position: relative;
+}
+.pop--settingCollection .pop__blockWrap--searchUser .pop__input {
+  margin-right: 0;
+  padding-right: 32px;
+}
+.pop--settingCollection .pop__blockWrap--searchUser .search__button {
+  right: 4px;
 }
 .pop__wrap {
   position: absolute;

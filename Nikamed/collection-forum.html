@@ -335,15 +335,24 @@
       
       <p class="pop__title">Настройки коллекции <span class="pop_title--collection">«Стельки»</span></p>
 
-      <div class="pop__inputWrap">
+      <div class="pop__blockWrap">
         <p class="pop__label">Название</p>
         <input class="pop__input" type="text" value="Стельки">
       </div>
 
-      <div class="pop__inputWrap">
+      <div class="pop__blockWrap pop__blockWrap--searchUser">
         <p class="pop__subtitle">Настройки доступа</p>
-        <input class="pop__input" type="text" value="">
+        <div class="pop__inputWrap">
+          <input class="pop__input" type="text" value="" placeholder="Найти пользователя">
+          <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
+        </div>
+        
       </div>
+
+      <!-- <form class="header__search search" action="" method="get">
+        <input class="search__input" type="text" name="" value="" placeholder="Введите ID">
+        <button class="search__button" type="button" name="button"><span class="visuallyhidden">Начать поиск</span></button>
+      </form> -->
       
 
       <ul class="pop__list pop__list--scroll pop__list--access">
