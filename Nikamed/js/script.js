@@ -1,6 +1,3 @@
-'use strict';
-
-
 var arrChoice = [];
 
 document.addEventListener("click", function(event) {
@@ -104,9 +101,18 @@ document.addEventListener("click", function(event) {
     closeUser();
   }
 
-  
-
-  
+  // Открытие/закрытие выпадающего окна "Меню пользователя""
+  let userBtn = target.closest(".user__buttonOpen");
+  if (userBtn) {
+    let wrap = target.closest(".user");
+    if (wrap.dataset.list == "show") {
+      closeUser();
+    } else {
+      openUser();
+      closeNotice();
+    }
+    return;
+  }
 
   // Открытие Уведомлений
   if (target.classList.contains("user__dropDownItem--notice")) {
@@ -263,6 +269,7 @@ document.addEventListener("click", function(event) {
   //открытие Уведомления "Удаление Коллекций
   if (target.classList.contains("action__button--deleteCollection")) {
     notificationOpen(document.querySelector(".notification"));
+    // setTimeout(notificationClose, 5000, document.querySelector(".notification--deleteCollection"));
     closeAction();
   }
 
@@ -354,23 +361,6 @@ document.addEventListener("click", function(event) {
 
 
 });
-
-// Открытие/закрытие выпадающего окна "Меню пользователя""
-  let userBtn = target.closest(".user__buttonOpen");
-
-  if (userBtn) {
-    userBtn.addEventListener("click", function(event) {
-
-    let user = document.querySelector(".user");
-      if (wrap.dataset.list == "show") {
-        closeUser();
-      } else {
-        openUser();
-        closeNotice();
-      }
-      return;
-    });
-  }
 
 document.addEventListener("input", function(event) {
   var target = event.target;
