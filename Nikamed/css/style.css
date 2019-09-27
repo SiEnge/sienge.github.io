@@ -3035,6 +3035,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   overflow-x: hidden;
+  -webkit-box-shadow: 0 -1px 0 0 #E1E4E8;
+          box-shadow: 0 -1px 0 0 #E1E4E8;
 }
 .carousel__wrap {
   width: calc(100% / 7);
@@ -3043,6 +3045,7 @@ body {
       -ms-flex: 0 0 calc(100% / 7);
           flex: 0 0 calc(100% / 7);
   border: 1px solid #E1E4E8;
+  border-top: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
