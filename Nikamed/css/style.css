@@ -334,6 +334,7 @@ body {
   position: relative;
   cursor: pointer;
   padding: 4px;
+  padding-right: 20px;
 }
 .dropDown[data-list="show"] .dropDown__list {
   display: block;
@@ -429,7 +430,10 @@ body {
   background-size: 8px;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -8px;
   padding-right: 15px;
 }
 .dropDown__button:hover {
