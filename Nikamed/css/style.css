@@ -2061,6 +2061,7 @@ body {
 .hashtag__item a {
   color: #0072BC;
   text-decoration: none;
+  word-break: break-all;
 }
 .hashtag__item a:hover {
   color: #0072BC;
