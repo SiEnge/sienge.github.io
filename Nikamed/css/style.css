@@ -3174,6 +3174,14 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
 }
+.rules__titleWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
 .rules__wrap {
   border-top: 1px solid #E1E4E8;
   padding-left: 16px;
@@ -3204,10 +3212,9 @@ body {
   font-weight: bold;
 }
 .rules__button {
-  height: 20px;
-  padding-right: 10px;
   background-image: url("../img/action_download.svg");
-  background-position: right 4px center;
+  margin-bottom: 0;
+  margin-left: 10px;
 }
 .rules__anchor {
   display: none;
@@ -3268,7 +3275,7 @@ body {
   .rules__item {
     margin-bottom: 32px;
   }
-  .rules__item .rules__title {
+  .rules__item .rules__titleWrap {
     margin-bottom: 24px;
   }
 }
