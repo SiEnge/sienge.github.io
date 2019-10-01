@@ -3804,6 +3804,10 @@ body {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
 }
+.main[data-search="none"] .control__wrap {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .main__filter {
   background-color: #FFFFFF;
   position: relative;
