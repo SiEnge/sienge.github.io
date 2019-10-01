@@ -2453,6 +2453,24 @@ body {
   letter-spacing: 0.1px;
   color: #909194;
 }
+.input[data-invalid="true"] input {
+  border-color: rgba(196, 18, 48, 0.5);
+}
+.input[data-invalid="true"] .input__msgValid {
+  display: block;
+}
+.input__msgValid {
+  display: none;
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #C41230;
+  margin-top: 4px;
+}
 .input__btnPassword {
   position: absolute;
   top: 50%;
