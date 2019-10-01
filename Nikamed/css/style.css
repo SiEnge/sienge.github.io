@@ -2547,10 +2547,16 @@ body {
   overflow: hidden;
   height: 45px;
   margin-right: 12px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   position: relative;
+}
+.file__preview img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .file__preview--video {
   background-position: center;
@@ -3062,7 +3068,7 @@ body {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
   }
-  .collection__btn {
+  .collection__btnWrap {
     margin-left: 0;
   }
   .collection__link {
