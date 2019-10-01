@@ -1709,8 +1709,9 @@ body {
   background-color: rgba(225, 228, 232, 0.5);
   padding: 6px 12px;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 80%;
-          flex: 1 0 80%;
+      -ms-flex: 1 0 calc(100% - 72px);
+          flex: 1 0 calc(100% - 72px);
+  width: calc(100% - 72px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
