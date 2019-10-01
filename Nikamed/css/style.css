@@ -1353,6 +1353,9 @@ body {
   .action__button--inCollection {
     background-image: url("../img/action_inCollection.svg");
   }
+  .action__button--outCollection {
+    background-image: url("../img/action_outCollection.svg");
+  }
   .action__button--download {
     background-image: url("../img/action_download.svg");
   }
@@ -3804,7 +3807,7 @@ body {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
 }
-.main[data-search="none"] .control__wrap {
+.main[data-search="none"] .main__control {
   opacity: 0.5;
   pointer-events: none;
 }
