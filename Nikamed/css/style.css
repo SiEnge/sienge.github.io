@@ -3340,6 +3340,13 @@ body {
   color: #42515A;
   margin: 0;
 }
+.password__text a {
+  color: #0072BC;
+  text-decoration: none;
+}
+.password__text a:hover {
+  color: #0072BC;
+}
 .password__step2 {
   padding-top: 72px;
   padding-left: 16px;
