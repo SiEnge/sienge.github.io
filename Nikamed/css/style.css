@@ -2750,15 +2750,11 @@ body {
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
 }
-.collection__header .collection__shared {
-  position: static;
-  border-radius: 20px;
-}
 .collection__header[data-rights="viewEdit"] .collection__btn--setting {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.collection__header[data-rights="viewEdit"] .collection__shared {
+.collection__header[data-rights="viewEdit"] .collection__btn--shared {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 1px solid #FFFFFF;
@@ -2766,7 +2762,7 @@ body {
 .collection__header[data-rights="onlyView"] .collection__btn--setting {
   display: none;
 }
-.collection__header[data-rights="edit"] .collection__shared {
+.collection__header[data-rights="edit"] .collection__btn--shared {
   display: none;
 }
 .collection__header--mycollection {
@@ -2784,6 +2780,13 @@ body {
 }
 .collection__btn {
   margin-left: auto;
+}
+.collection__btn--shared {
+  padding-right: 20px;
+  background-image: url("../img/collection_shared.svg");
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center right 4px;
 }
 .collection__container[data-action="true"] .collection__name {
   color: #42515A;
