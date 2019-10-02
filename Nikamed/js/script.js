@@ -372,16 +372,6 @@ document.addEventListener("input", function(event) {
   }
 });
 
-// document.addEventListener("change", function(event) {
-//   var target = event.target;
-//   let wrap = target.closest(".input");
-//   if (wrap) {
-//     if (wrap.classList.contains("login__input")) {
-//       checkFormLogin(target.form);
-//     }
-//   }
-// });
-
 document.addEventListener("focus", function(event) {
   var target = event.target;
   if (target.classList.contains("search__input")) {
@@ -435,20 +425,17 @@ function notificationClose(notification) {
 }
 
 function popOpen(pop, mode) {
-  // document.querySelector(".pop__overlay--" + mode).dataset.status = "show";
   pop.dataset.mode = "open";
   document.body.classList.add("overflowHidden");
 }
 
 function popClose(button) {
-  // document.querySelector(".pop__overlay").dataset.status = "hide";
   let pop = button.closest(".pop");
   pop.dataset.mode = "close";
   document.body.classList.remove("overflowHidden");
 }
 
 function popClose2(pop) {
-  // let pop = button.closest(".pop");
   pop.dataset.mode = "close";
   document.body.classList.remove("overflowHidden");
 }
@@ -456,7 +443,7 @@ function popClose2(pop) {
 
 function closeFilter() {
   document.querySelector(".main").dataset.filter = "close";
-  document.querySelector(".header__tab--filter").dataset.mode = "close";
+  if (document.querySelector(".header__tab--filter")) document.querySelector(".header__tab--filter").dataset.mode = "close";
   document.body.classList.remove("overflowHidden");
   arrChoice = [];
 }
