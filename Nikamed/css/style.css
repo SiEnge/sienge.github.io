@@ -1756,7 +1756,6 @@ body {
 }
 .onefile__version {
   margin-left: 12px;
-  padding: 0;
 }
 .onefile__version[data-status="hide"] {
   display: none;
