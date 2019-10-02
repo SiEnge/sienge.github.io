@@ -50,7 +50,7 @@ document.addEventListener("click", function(event) {
         }
         if (filterItemsChoice.length == 1) {
           filter.querySelector(".filter__btn--reset").disabled = true;
-          filter.querySelector(".filter__btn--apply").disabled = true;
+          // filter.querySelector(".filter__btn--apply").disabled = true;
         }
       }
     }
@@ -453,6 +453,8 @@ function openFilter() {
   document.querySelector(".main").dataset.filter = "open";
   document.querySelector(".header__tab--filter").dataset.mode = "open";
   document.body.classList.add("overflowHidden");
+  filter.querySelector(".filter__btn--apply").disabled = true;
+
 
   //копирование текущих выбранных фильтров
   let filterChoice = filter.querySelector(".filter__filterChoice");
@@ -483,6 +485,9 @@ function currentFilter() {
 function clearFilter() {
   let filter = document.querySelector(".filter");
   if (filter) {
+    filter.querySelector(".filter__btn--reset").disabled = true;
+    filter.querySelector(".filter__btn--apply").disabled = false;
+
     let filterChoice = filter.querySelector(".filter__filterChoice");
     let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
     for (var i = 0; i < filterItemsChoice.length; i++) {
@@ -603,13 +608,6 @@ function resetAction() {
 function checkCollectionCount(number) {
   if (+number > 0) return "99+";
 }
-
-// document.addEventListener("keydown",function(e){
-//   if (e.shiftKey&&flag==0) {
-//     console.log("Продолжаем!");
-//     flag++
-//   }
-// });
 
 function checkBtnCollection(button, mode) {
   if (mode == "check") {
