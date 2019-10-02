@@ -1800,16 +1800,22 @@ body {
           transform: rotate(180deg);
 }
 .onefile__image {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px 48px;
 }
 .onefile__image img {
+  width: auto;
+  height: auto;
   max-width: 100%;
   max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .onefile__btnWrap {
   display: -webkit-box;
@@ -1934,9 +1940,10 @@ body {
     padding-right: 18px;
   }
   .onefile__wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 284px;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "onefile__image onefile__property" "onefile__hashtag onefile__property";
     -webkit-box-flex: 1;
         -ms-flex: 1 0 50%;
             flex: 1 0 50%;
@@ -1954,30 +1961,16 @@ body {
     background-size: 24px;
   }
   .onefile__image {
-    position: static;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    grid-area: onefile__image;
   }
   .onefile__image img {
-    max-width: 424px;
-    max-height: 80%;
+    width: auto;
     height: auto;
+    max-width: 100%;
+    max-height: 100%;
   }
   .onefile__property {
-    width: 220px;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 220px;
-            flex: 0 0 220px;
+    grid-area: onefile__property;
     overflow-y: auto;
     padding-right: 48px;
     padding-top: 12px;
@@ -1988,10 +1981,7 @@ body {
             order: 2;
   }
   .onefile__hashtag {
-    position: absolute;
-    bottom: 95px;
-    left: 0;
-    width: calc(100% - 310px);
+    grid-area: onefile__hashtag;
   }
   .onefile__carousel {
     display: block;
