@@ -3977,7 +3977,7 @@ body {
   background-image: url("../img/nikamed__background.svg");
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 340px;
   padding-top: 24px;
   margin-top: auto;
   margin-bottom: auto;
@@ -3986,6 +3986,45 @@ body {
           flex: 1 0 auto;
   padding-left: 16px;
   padding-right: 16px;
+  position: relative;
+}
+.login__contact {
+  position: absolute;
+  left: 50%;
+  margin-left: -140px;
+  width: 280px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Roboto";
+  font-weight: normal;
+  font-style: normal;
+  color: #42515A;
+}
+.login__contactSupport p {
+  margin: 0;
+  font-size: 14px;
+}
+.login__contactSupport a {
+  color: #42515A;
+  text-decoration: none;
+}
+.login__contactSupport a:hover {
+  color: #42515A;
+}
+.login__contactName {
+  margin: 0;
 }
 .login__slogan {
   font-size: 16px;
@@ -4065,8 +4104,15 @@ body {
     background-size: 470px;
     background-position: top center;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 520px;
-            flex: 0 0 520px;
+        -ms-flex: 0 0 480px;
+            flex: 0 0 480px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .login__contact {
+    width: 320px;
+    margin-left: -160px;
+    bottom: 100px;
   }
   .login__slogan {
     font-size: 20px;
