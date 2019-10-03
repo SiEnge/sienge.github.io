@@ -2536,6 +2536,15 @@ body {
   height: 45px;
   margin-right: 12px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .file__preview img {
   max-width: 100%;
@@ -2545,17 +2554,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-.file__preview--video {
-  background-position: center;
-}
-.file__videoPreview {
-  margin: 0;
-  font-size: 0;
-  position: relative;
-}
-.file__videoPreview img {
-  width: 100%;
 }
 .file__videoTime {
   position: absolute;
@@ -2618,12 +2616,6 @@ body {
     height: 120px;
     margin-bottom: 16px;
     padding-right: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .file[data-mode="sizeM"] .file__videoTime {
     font-size: 12px;
