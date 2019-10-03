@@ -1355,9 +1355,6 @@ body {
   .action__button--inCollection {
     background-image: url("../img/action_inCollection.svg");
   }
-  .action__button--outCollection {
-    background-image: url("../img/action_outCollection.svg");
-  }
   .action__button--download {
     background-image: url("../img/action_download.svg");
   }
@@ -1553,8 +1550,10 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 150;
-  -webkit-animation: appear 0.5s;
-          animation: appear 0.5s;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .notification[data-attention="true"] {
   background-color: #C41230;
@@ -1563,7 +1562,8 @@ body {
   display: block;
 }
 .notification[data-mode="close"] {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 .notification__overlay {
   width: 100%;
@@ -3418,10 +3418,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -3443,10 +3442,6 @@ body {
 }
 .pop--settingCollection .pop__blockWrap--searchUser .search__button {
   right: 4px;
-}
-.pop--settingCollection .dropDown {
-  padding-left: 0;
-  padding-top: 8px;
 }
 .pop__wrap {
   position: absolute;
@@ -3746,18 +3741,9 @@ body {
       flex-wrap: wrap;
 }
 @media (min-width: 360px) {
-  .pop--settingCollection .pop__listItem {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .pop--settingCollection .dropDown {
-    padding-left: 4px;
-    padding-top: 4px;
+  .pop--settingCollection .pop__list--scroll {
+    overflow-y: visible;
+    max-height: none;
   }
 }
 @media (min-width: 440px) {
@@ -3935,6 +3921,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
+  min-height: 570px;
 }
 .login__header {
   max-width: 800px;

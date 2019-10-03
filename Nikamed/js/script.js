@@ -291,7 +291,7 @@ document.addEventListener("click", function(event) {
   }
 
   //открытие всплывающего окна "Настройки коллекции"
-  if (target.classList.contains("collection__btn--setting")) {
+  if (target.classList.contains("collection__btn--setting") || target.classList.contains("collection__btn--shared")) {
     closeAction();
     popOpen(document.querySelector(".pop--settingCollection"), "action");
   }
