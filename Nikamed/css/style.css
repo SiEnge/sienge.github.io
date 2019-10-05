@@ -3291,6 +3291,24 @@ body {
 .rules__anchorItem a:hover {
   color: #0072BC;
 }
+.rules__image {
+  text-align: center;
+  padding-top: 12px;
+}
+.rules__image img {
+  max-width: 400px;
+  max-height: 300px;
+  width: 100%;
+}
+.rules__video {
+  text-align: center;
+  padding-top: 12px;
+}
+.rules__video video {
+  max-width: 400px;
+  max-height: 300px;
+  width: 100%;
+}
 @media (min-width: 760px) {
   .rules__anchor {
     display: block;
@@ -3317,6 +3335,9 @@ body {
   }
   .rules__item .rules__titleWrap {
     margin-bottom: 24px;
+  }
+  .rules__video {
+    text-align: center;
   }
 }
 .password__header {
