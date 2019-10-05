@@ -19,11 +19,17 @@
 
     <form class="login__form">
       <div class="login__input input">
-        <input type="text" placeholder="Логин">
+        <div class="input__wrap">
+          <input type="text" placeholder="Логин">
+        </div>
+        <p class="input__msgValid">Пользователь с таким email не&nbsp;зарегистрирован в системе</p>
       </div>
       <div class="login__input input input--password" data-password="hide">
-        <input type="password" placeholder="Пароль">
-        <button class="input__btnPassword" type="button" title="Показать пароль"><span class="visuallyhidden">Показать/скрыть пароль</span></button>
+        <div class="input__wrap">
+          <input type="password" placeholder="Пароль">
+          <button class="input__btnPassword" type="button" title="Показать пароль"><span class="visuallyhidden">Показать/скрыть пароль</span></button>
+        </div>
+        <p class="input__msgValid">Введен неверный пароль</p>
       </div>
       <div class="login__input">
         <button class="login__button button button--ok" type="button" name="button" disabled="">Вход в портал</button>

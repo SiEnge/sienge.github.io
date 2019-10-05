@@ -2431,6 +2431,9 @@ body {
 .input[data-invalid="true"] .input__msgValid {
   display: block;
 }
+.input__wrap {
+  position: relative;
+}
 .input__msgValid {
   display: none;
   margin: 0;
