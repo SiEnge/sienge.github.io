@@ -50,8 +50,8 @@ document.addEventListener("click", function(event) {
         }
         if (filterItemsChoice.length == 1) {
           filter.querySelector(".filter__btn--reset").disabled = true;
-          // filter.querySelector(".filter__btn--apply").disabled = true;
         }
+        filter.querySelector(".filter__btn--apply").disabled = true;
       }
     }
   }
@@ -72,8 +72,8 @@ document.addEventListener("click", function(event) {
       let filterItemsChoice = filter.querySelectorAll(".filter__itemChoice");
       if (filterItemsChoice.length == 0) {
         filter.querySelector(".filter__btn--reset").disabled = true;
-        filter.querySelector(".filter__btn--apply").disabled = true;
       }
+      filter.querySelector(".filter__btn--apply").disabled = true;
 
     }
   }
@@ -473,10 +473,19 @@ function currentFilter() {
     let filterChoice = filter.querySelector(".filter__filterChoice");
     for (var i = 0; i < arrChoice.length; i++) {
       let li = document.createElement("li"); 
-      li.className = "filter__itemChoice"; //добавляет стили к элементу
+      li.className = "filter__itemChoice"; 
       li.setAttribute("data-id", arrChoice[i][0]);
       li.innerHTML = arrChoice[i][1];
       filterChoice.appendChild(li);
+    }
+
+    let filterItems = filter.querySelectorAll(".filter__item");
+    for (var i = 0; i < filterItems.length; i++) {
+      for (var j = 0; j < arrChoice.length; j++) {
+        if (filterItems[i].dataset.id == arrChoice[j][0]) {
+          filterItems[i].dataset.check = "true";
+        }
+      }
     }
   }
 }
