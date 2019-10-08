@@ -1844,6 +1844,7 @@ body {
   background-size: 24px;
   background-repeat: no-repeat;
   border-left: 1px solid #FFFFFF;
+  margin: 0;
 }
 .onefile__property {
   padding-left: 16px;
@@ -2979,6 +2980,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: auto;
 }
 .collection__status {
   height: 16px;

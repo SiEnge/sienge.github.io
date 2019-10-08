@@ -51,7 +51,7 @@ document.addEventListener("click", function(event) {
         if (filterItemsChoice.length == 1) {
           filter.querySelector(".filter__btn--reset").disabled = true;
         }
-        filter.querySelector(".filter__btn--apply").disabled = true;
+        filter.querySelector(".filter__btn--apply").disabled = false;
       }
     }
   }
@@ -73,7 +73,7 @@ document.addEventListener("click", function(event) {
       if (filterItemsChoice.length == 0) {
         filter.querySelector(".filter__btn--reset").disabled = true;
       }
-      filter.querySelector(".filter__btn--apply").disabled = true;
+      filter.querySelector(".filter__btn--apply").disabled = false;
 
     }
   }
@@ -176,15 +176,11 @@ document.addEventListener("click", function(event) {
 
 
   // Открытие/закрытие выпадающего окна
-  if (target.classList.contains("dropDown__name")) {
+  if (target.classList.contains("dropDown__name")||target.parentNode.classList.contains("dropDown__name")||target.classList.contains("dropDown__button")) {
     let wrap = target.closest(".dropDown");
     wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
   }
 
-  if (target.classList.contains("dropDown__button")) {
-    let wrap = target.closest(".dropDown");
-    wrap.dataset.list = (wrap.dataset.list == "show") ? "hide" : "show";
-  }
 
   //закрытие выпадающего списка по клику на overlay
   if (target.classList.contains("dropDown__overlay")) {
