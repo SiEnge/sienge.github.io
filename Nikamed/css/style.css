@@ -4154,3 +4154,47 @@ body {
     line-height: 16px;
   }
 }
+.onefile__main[data-disabled="true"] .onefile__image::before {
+  content: attr(data-disabled-text);
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: #909194;
+  text-align: center;
+}
+.onefile__main[data-disabled="true"] .onefile__wrap {
+  background-color: rgba(225, 228, 232, 0.5);
+  border-top: 1px solid #FFFFFF;
+}
+.onefile__main[data-disabled="true"] .onefile__image img {
+  display: none;
+}
+.onefile__main[data-disabled="true"] .property__text {
+  color: #909194;
+}
+.onefile__main[data-disabled="true"] .onefile__btn {
+  background-color: #E1E4E8;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel__item[data-disabled="true"]::before {
+  content: attr(data-disabled-text);
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: #909194;
+  text-align: center;
+}
+.carousel__item[data-disabled="true"] {
+  background-color: rgba(225, 228, 232, 0.5);
+  text-decoration: none;
+}
+.carousel__item[data-disabled="true"] .carousel__preview {
+  display: none;
+}
